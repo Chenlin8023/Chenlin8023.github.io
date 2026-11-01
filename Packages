@@ -1,3 +1,36 @@
+Package: com.applockplus.refactored
+Name: AppLock+ (应用锁+ 重构版)
+Version: 0.4.2-1
+Architecture: iphoneos-arm64e
+Section: Tweaks
+Priority: optional
+Maintainer: Chenlin8023
+Author: based on tien0246/ProtectedApp
+Depends: firmware (>= 14.0)
+Description: 按应用注入式应用锁（6 位密码 + Face ID/触控 ID），免 substrate。
+ 本包是「载体包」：安装后把 AppLockPlus.dylib 放到设备上，供 Debs / Filza 导出，
+ 再用 TrollFools 或 JailFools 注入到目标 App，而不是全局注入 SpringBoard。
+ .
+ 适用场景：需要给个别 App 上锁、但该 App 会检测越狱或无法全局注入时，
+ 逐个 App 注入本 dylib 即可，互不影响，也不改动系统其他应用。
+ .
+ 安装后位置：
+   /var/mobile/Documents/AppLockPlus/AppLockPlus.dylib
+ .
+ 使用步骤：
+ 1. 安装本包（或在 Sileo 里用 Debs 导出、在 Filza 里取上面的 dylib）；
+ 2. 用 TrollFools / JailFools 把 AppLockPlus.dylib 注入目标 App（如 QQ、微信）；
+ 3. 冷启动目标 App，首次进入会强制设置 6 位应用锁密码；
+ 4. 面容 ID 需要宿主 App 的 Info.plist 声明 NSFaceIDUsageDescription，
+    未声明的 App 会自动只用密码解锁，不会崩。
+ .
+ 锁屏界面右上角齿轮进入设置（需先验证密码）；应用内双指双击可直接呼出设置。
+ 本包不依赖 mobilesubstrate，也不要过 RootHide 转换器。
+Filename: debs/com.applockplus.refactored_0.4.2-1_iphoneos-arm64e.deb
+Size: 31232
+SHA256: 325233872be1c8b791f9920633970edb34392a32cc7027cd2ffdd6df7b03ea51
+MD5sum: add1242400876328885bdef04044ae86
+
 Package: com.local.bioprotectleakguard
 Name: BioProtect Leak Guard
 Description: 修复 BioProtect 的资源泄漏，解决长时间使用后桌面注销的问题。逆向 BioProtect 4.6-222 确认两类真实泄漏：一是 CFUserNotification 应答端口与主 RunLoop 源创建后全二进制无任何释放调用，二是文件监听回调每次触发都 open 一个 fd 且从不 close。本模块在宽限期后取消通知并摘除 RunLoop 源，在 fd 使用量超过水位时关闭经 F_GETPATH 复核一致的泄漏 fd，并每 5 分钟记录端口数与 fd 使用量。2.0.4 恢复 substrate 直连。2.0.5 影子日志挪至加载 5 秒后并新增 rootfs 前缀真实根直写。2.0.7 修正 arm64e 系统进程进安全模式的根因：clang19 工具链给 arm64e 编 CFSTR 常量时 isa 重定位未带认证，chained fixups 里 __cfstring 的 isa 全为无 PAC 普通绑定，而 Xcode 原版为认证绑定，objc_msgSend 遇常量字符串接收者即 SIGBUS；构建期把 isa 条目补丁为认证绑定（diversity=0x6AE1、地址分化、key=2，与原版逐位同形）后重签。2.0.8 修正真机验证暴露的定时器生命周期 bug：dispatch source 局部变量被 ARC 释放导致清扫与统计从未运行，端口照旧涨满；改为全局持有，并新增 mach_port_allocate 端口归因观测，统计行输出总分配数、BioProtect 调用方分配数与 Top 调用点偏移。arm64 加 arm64e 双切片原生 roothide 包。

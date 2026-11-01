@@ -5,13 +5,13 @@ Version: 1.0
 Codename: ios
 Architectures: iphoneos-arm64e iphoneos-arm64 iphoneos-arm
 Components: main
-Description: iOS 17 越狱插件修复与增强 (RootHide / roothide)
-Date: Sun, 01 Nov 2026 19:41:03 UTC
+Description: iOS 17 tweak 修复与增强 (RootHide / roothide)
+Date: Sun, 01 Nov 2026 19:49:48 UTC
 MD5Sum:
- ab69381391710dd60d9fe051dad30f8f 5453 Packages
- 09e1e8571aaaf1a251b8e902afccb163 3053 Packages.gz
- 99b2c62ed996a1c65fda01e023c0dae2 2932 Packages.xz
+ b642e5ed225d5ea07bcac38783ac2374 7070 Packages
+ 07f33ba9073aff17bfcaacfcaefa8d62 3883 Packages.gz
+ 3b04f8dfbe19114e399e1845311f6dda 3688 Packages.xz
 SHA256:
- 3812ffde3a1c362212253f1cc5e370b2ddc3f022f355981ee7b73b6f71d39955 5453 Packages
- dd006f4e786390fae3ae5ea26bacb7b6863e7c369bb7e236306a0fc01be0da13 3053 Packages.gz
- 9c4ea1ac79236db309c22ac91bd1e866893090b515aa7ffff42a756c3e9c5e0f 2932 Packages.xz
+ 69213fb1b89118d6eea7a20e76ee163da12aafc0336323cff90e2977924093b9 7070 Packages
+ c7d05b07896b1fe5d9abe13ba423c7bf2e8a59c210713f1da278dc0a9309f976 3883 Packages.gz
+ 92f561f5a52517cfb0a3d30345f98ea3b07942e0afb83ccb1cd4439aaa4d74db 3688 Packages.xz

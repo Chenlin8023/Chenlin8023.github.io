@@ -98,6 +98,29 @@
     <h2>收录的插件</h2>
 
     <div class="pkg">
+      <div><span class="name">AppLock+ 应用锁+（重构版）</span><span class="ver">0.4.2-1</span></div>
+      <div class="desc">
+        <b>按应用注入式</b>应用锁：6 位密码 + Face ID / 触控 ID，免 substrate。
+        修复原版「点取消即可绕过面容」「锁定时快速返回直接解锁」「密码明文存储」
+        「默认密码 0000」等问题。
+        <div class="note">
+          <b>⚠️ 本包是「载体包」，装完不会全局生效。</b><br>
+          安装后 dylib 位于
+          <code>/var/mobile/Documents/AppLockPlus/AppLockPlus.dylib</code>。
+          请用 <b>Debs 导出</b>（或 Filza 取出），再用 <b>TrollFools / JailFools</b>
+          把它注入到你想要上锁的那一个 App 里 —— 适合会检测越狱、无法全局注入的应用，
+          逐个 App 独立生效，不影响系统其他应用。
+        </div>
+      </div>
+      <div>
+        <span class="tag ok">iphoneos-arm64e</span>
+        <span class="tag">按应用注入</span>
+        <span class="tag">iOS 14 – 17.x</span>
+        <span class="tag">无 substrate 依赖</span>
+      </div>
+    </div>
+
+    <div class="pkg">
       <div><span class="name">LSTimeSeconds</span><span class="ver">0.0.7-1</span></div>
       <div class="desc">
         锁屏时钟显示实时秒数。修复原版在 iOS 17 完全失效的问题，并为 iPhone 锁屏新增
@@ -159,6 +182,8 @@
           roothide 包，转换器会重写二进制并破坏 arm64e 指针认证，导致安全模式。</li>
       <li><b>标 <code>iphoneos-arm64</code> 的是 rootless 包</b>：在 RootHide 设备上需要
           先用 RootHide 转换器转换，或使用支持 rootless 的引导环境。</li>
+      <li><b>AppLock+ 需要手动注入</b>：它不是全局插件，装完后必须用 TrollFools / JailFools
+          把 dylib 注入到目标 App，否则不会有任何效果。</li>
       <li><b>LSTimeSeconds 不支持 AOD 暗屏走秒</b>：LTPO 在 AOD 下锁 1 Hz，系统
           Flipbook 会短路常规重绘。熄屏自动暂停，亮屏立即恢复。</li>
       <li>回退版本：<code>apt install com.sini921.lstimeseconds=0.0.7-1</code></li>
@@ -167,9 +192,10 @@
 
   <footer>
     源码：<a href="https://github.com/Chenlin8023/LSTimeSeconds-iOS17">LSTimeSeconds</a> ·
+    <a href="https://github.com/Chenlin8023/AppLockPlus">AppLockPlus</a> ·
     <a href="https://github.com/Chenlin8023/CallAssist-PortLeak">CallAssist-PortLeak</a> ·
     <a href="https://github.com/Chenlin8023/VolumeManager-iOS17">VolumeManager</a><br>
-    原插件作者 b4db1r3 &amp; SINI / Limneos
+    原插件作者 b4db1r3 &amp; SINI / Limneos / tien0246
   </footer>
 
 </div>
