@@ -1,0 +1,17 @@
+Origin: Chenlin8023 Repo
+Label: Chenlin8023
+Suite: stable
+Version: 1.0
+Codename: ios
+Architectures: iphoneos-arm64e iphoneos-arm64 iphoneos-arm
+Components: main
+Description: iOS 17 越狱插件修复与增强 (RootHide / roothide)
+Date: Sun, 01 Nov 2026 19:41:03 UTC
+MD5Sum:
+ ab69381391710dd60d9fe051dad30f8f 5453 Packages
+ 09e1e8571aaaf1a251b8e902afccb163 3053 Packages.gz
+ 99b2c62ed996a1c65fda01e023c0dae2 2932 Packages.xz
+SHA256:
+ 3812ffde3a1c362212253f1cc5e370b2ddc3f022f355981ee7b73b6f71d39955 5453 Packages
+ dd006f4e786390fae3ae5ea26bacb7b6863e7c369bb7e236306a0fc01be0da13 3053 Packages.gz
+ 9c4ea1ac79236db309c22ac91bd1e866893090b515aa7ffff42a756c3e9c5e0f 2932 Packages.xz

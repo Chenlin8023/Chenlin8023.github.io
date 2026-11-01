@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chenlin8023 Repo · iOS 越狱插件源</title>
+<style>
+  :root {
+    --bg: #0b0d10; --card: #14181d; --line: #252b33;
+    --text: #e8edf3; --muted: #93a1b1; --accent: #3ea6ff; --warn: #ffb454;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; padding: 40px 20px 64px;
+    background: var(--bg); color: var(--text);
+    font: 15px/1.65 -apple-system, "SF Pro Text", "PingFang SC", "Microsoft YaHei", sans-serif;
+    -webkit-text-size-adjust: 100%;
+  }
+  .wrap { max-width: 760px; margin: 0 auto; }
+  h1 { font-size: 26px; margin: 0 0 6px; letter-spacing: -0.3px; }
+  .sub { color: var(--muted); margin: 0 0 26px; }
+  .card {
+    background: var(--card); border: 1px solid var(--line);
+    border-radius: 14px; padding: 20px; margin-bottom: 18px;
+  }
+  .card h2 {
+    font-size: 13px; margin: 0 0 12px; font-weight: 600; color: var(--muted);
+    text-transform: uppercase; letter-spacing: 0.08em;
+  }
+  code.url {
+    display: block; padding: 12px 14px; border-radius: 10px;
+    background: #0a0c0f; border: 1px solid var(--line);
+    font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+    font-size: 13px; word-break: break-all; color: #b9d7ff;
+  }
+  .btns { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 14px; }
+  .btn {
+    display: inline-block; padding: 10px 18px; border-radius: 10px;
+    background: var(--accent); color: #04121f; font-weight: 600;
+    text-decoration: none; font-size: 14px;
+  }
+  .btn.ghost { background: transparent; color: var(--text); border: 1px solid var(--line); }
+  ol { margin: 0; padding-left: 20px; color: var(--muted); }
+  ol li { margin-bottom: 8px; }
+  ol li b { color: var(--text); font-weight: 600; }
+  .pkg { border-top: 1px solid var(--line); padding: 16px 0; }
+  .pkg:first-of-type { border-top: 0; padding-top: 0; }
+  .pkg:last-of-type { padding-bottom: 0; }
+  .pkg .name { font-weight: 600; font-size: 16px; }
+  .pkg .ver {
+    color: var(--accent); font-size: 13px; margin-left: 8px;
+    font-family: ui-monospace, Menlo, monospace;
+  }
+  .pkg .desc { color: var(--muted); font-size: 14px; margin-top: 6px; }
+  .tag {
+    display: inline-block; font-size: 12px; padding: 2px 8px; border-radius: 6px;
+    border: 1px solid var(--line); color: var(--muted); margin-right: 6px; margin-top: 8px;
+  }
+  .tag.ok { color: #7ee0a8; border-color: #2c5a41; }
+  .tag.warn { color: var(--warn); border-color: #5a4526; }
+  .note {
+    border-left: 3px solid var(--warn); padding: 10px 14px; margin-top: 12px;
+    background: rgba(255,180,84,0.06); border-radius: 0 8px 8px 0;
+    color: #d8c3a2; font-size: 14px;
+  }
+  footer { color: #5f6b78; font-size: 13px; margin-top: 26px; text-align: center; }
+  a { color: var(--accent); }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <h1>Chenlin8023 Repo</h1>
+  <p class="sub">iOS 17 越狱插件修复与增强 · 只收录实机验证过的版本</p>
+
+  <div class="card">
+    <h2>源地址</h2>
+    <code class="url">https://chenlin8023.github.io/</code>
+    <div class="btns">
+      <a class="btn" href="sileo://source/https://chenlin8023.github.io/">在 Sileo 中添加</a>
+      <a class="btn ghost" href="zbra://sources/add/https://chenlin8023.github.io/">在 Zebra 中添加</a>
+      <a class="btn ghost" href="cydia://url/https://cydia.saurik.com/api/share#?source=https://chenlin8023.github.io/">在 Cydia 中添加</a>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>手动添加</h2>
+    <ol>
+      <li>打开 <b>Sileo</b>（或 Zebra / Cydia）</li>
+      <li>进入 <b>软件源</b> → 右上角 <b>+</b> → <b>添加源</b></li>
+      <li>粘贴上面的地址，确认添加</li>
+      <li>刷新源后搜索插件名即可安装</li>
+      <li>安装完 <b>Respring</b> 一次</li>
+    </ol>
+  </div>
+
+  <div class="card">
+    <h2>收录的插件</h2>
+
+    <div class="pkg">
+      <div><span class="name">LSTimeSeconds</span><span class="ver">0.0.7-1</span></div>
+      <div class="desc">
+        锁屏时钟显示实时秒数。修复原版在 iOS 17 完全失效的问题，并为 iPhone 锁屏新增
+        <b>字号缩放</b>与<b>上下位置调节</b>；长按进入壁纸编辑不再冲突。
+        时间格式跟随设备 12/24 小时制。不支持 AOD 暗屏走秒（原因见文档）。
+      </div>
+      <div>
+        <span class="tag ok">iphoneos-arm64e</span>
+        <span class="tag">RootHide 原生</span>
+        <span class="tag">iOS 15 – 17.x</span>
+      </div>
+    </div>
+
+    <div class="pkg">
+      <div><span class="name">BioProtect Leak Guard</span><span class="ver">2.0.13</span></div>
+      <div class="desc">
+        BioProtect 资源泄漏修复。CFUserNotification 应答端口与主 RunLoop 源创建后从不释放、
+        文件监听回调每次 open 一个 fd 且从不 close —— 长时间使用后桌面注销的元凶。
+        本模块在宽限期后取消通知并摘除 RunLoop 源，在 fd 超水位时关闭经
+        <code>F_GETPATH</code> 复核一致的泄漏 fd。
+      </div>
+      <div>
+        <span class="tag ok">iphoneos-arm64e</span>
+        <span class="tag">RootHide 原生</span>
+        <span class="tag">iOS 14 – 17.x</span>
+      </div>
+    </div>
+
+    <div class="pkg">
+      <div><span class="name">VolumeManager (Full)</span><span class="ver">1.2.0</span></div>
+      <div class="desc">
+        每 App 独立音量。重写音量引擎消除 16 位 PCM 被按 4 字节硬读导致的爆音，
+        补上三重刷新（通知 + 时间戳轮询 + 备用层），改完音量即时生效。
+        全量包，自带原版组件。
+      </div>
+      <div>
+        <span class="tag warn">iphoneos-arm64</span>
+        <span class="tag warn">Rootless · RootHide 需转换器</span>
+      </div>
+    </div>
+
+    <div class="pkg">
+      <div><span class="name">VolumeManager Prefs Clean</span><span class="ver">1.1.0</span></div>
+      <div class="desc">
+        VolumeManager 设置面板净化模块：摘掉原作者的推广条目与残留链接按钮。
+        可单独安装，也适用于已装原版的设备。
+      </div>
+      <div>
+        <span class="tag warn">iphoneos-arm64</span>
+        <span class="tag warn">Rootless · RootHide 需转换器</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>注意事项</h2>
+    <ol>
+      <li><b>标 <code>iphoneos-arm64e</code> 的包不要过 RootHide 转换器</b>：这些是原生
+          roothide 包，转换器会重写二进制并破坏 arm64e 指针认证，导致安全模式。</li>
+      <li><b>标 <code>iphoneos-arm64</code> 的是 rootless 包</b>：在 RootHide 设备上需要
+          先用 RootHide 转换器转换，或使用支持 rootless 的引导环境。</li>
+      <li><b>LSTimeSeconds 不支持 AOD 暗屏走秒</b>：LTPO 在 AOD 下锁 1 Hz，系统
+          Flipbook 会短路常规重绘。熄屏自动暂停，亮屏立即恢复。</li>
+      <li>回退版本：<code>apt install com.sini921.lstimeseconds=0.0.7-1</code></li>
+    </ol>
+  </div>
+
+  <footer>
+    源码：<a href="https://github.com/Chenlin8023/LSTimeSeconds-iOS17">LSTimeSeconds</a> ·
+    <a href="https://github.com/Chenlin8023/CallAssist-PortLeak">CallAssist-PortLeak</a> ·
+    <a href="https://github.com/Chenlin8023/VolumeManager-iOS17">VolumeManager</a><br>
+    原插件作者 b4db1r3 &amp; SINI / Limneos
+  </footer>
+
+</div>
+</body>
+</html>
