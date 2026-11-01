@@ -27,9 +27,9 @@ Description: 按应用注入式应用锁（6 位密码 + Face ID/触控 ID），
  锁屏界面右上角齿轮进入设置（需先验证密码）；应用内双指双击可直接呼出设置。
  本包不依赖 mobilesubstrate，也不要过 RootHide 转换器。
 Filename: debs/com.applockplus.refactored_0.4.2-1_iphoneos-arm64e.deb
-Size: 31660
-SHA256: c43a3e405d78532f1ae170da291991d26fab52ef84c53134f8f78bfe7ad5ddb6
-MD5sum: 57e8bba19944ab7576db5130da86d17a
+Size: 32436
+SHA256: 5a615cbc726393cb97f5e836034f00f8686a44633107521e038513c59c2fef64
+MD5sum: 7d3781d076a846e99c3a612aa0464a92
 
 Package: com.local.bioprotectleakguard
 Name: BioProtect Leak Guard
