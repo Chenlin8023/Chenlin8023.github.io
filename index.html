@@ -98,34 +98,30 @@
     <h2>收录的插件</h2>
 
     <div class="pkg">
-      <div><span class="name">AppLock+ 应用锁+（重构版）</span><span class="ver">0.4.2-1</span></div>
+      <div><span class="name">AppLock+</span><span class="ver">0.4.2-1</span></div>
       <div class="desc">
-        <b>按应用注入式</b>应用锁：6 位密码 + Face ID / 触控 ID，免 substrate。
-        修复原版「点取消即可绕过面容」「锁定时快速返回直接解锁」「密码明文存储」
-        「默认密码 0000」等问题。
+        按应用注入式应用锁，6 位密码 + Face ID / 触控 ID，免 substrate。
         <div class="note">
-          <b>⚠️ 本包是「载体包」，装完不会全局生效。</b><br>
-          安装后 dylib 位于
-          <code>/var/mobile/Documents/AppLockPlus/AppLockPlus.dylib</code>。
-          请用 <b>Debs 导出</b>（或 Filza 取出），再用 <b>TrollFools / JailFools</b>
-          把它注入到你想要上锁的那一个 App 里 —— 适合会检测越狱、无法全局注入的应用，
-          逐个 App 独立生效，不影响系统其他应用。
+          <b>载体包，装完不会全局生效。</b>dylib 位于
+          <code>/var/mobile/Documents/AppLockPlus/AppLockPlus.dylib</code>，
+          用 <b>Debs 导出</b>或 Filza 取出，再用 <b>TrollFools / JailFools</b>
+          注入到要上锁的那一个 App —— 适合检测越狱、无法全局注入的应用。
         </div>
       </div>
       <div>
         <span class="tag ok">iphoneos-arm64e</span>
         <span class="tag">按应用注入</span>
-        <span class="tag">iOS 14 – 17.x</span>
         <span class="tag">无 substrate 依赖</span>
       </div>
     </div>
 
     <div class="pkg">
-      <div><span class="name">LSTimeSeconds</span><span class="ver">0.0.7-1</span></div>
+      <div><span class="name">CallAssist PortLeak</span><span class="ver">2.1.0</span></div>
       <div class="desc">
-        锁屏时钟显示实时秒数。修复原版在 iOS 17 完全失效的问题，并为 iPhone 锁屏新增
-        <b>字号缩放</b>与<b>上下位置调节</b>；长按进入壁纸编辑不再冲突。
-        时间格式跟随设备 12/24 小时制。不支持 AOD 暗屏走秒（原因见文档）。
+        SpringBoard Mach 端口泄漏的侦查与止血。定责 CallAssist：以约 2 次/秒轮询 IOKit
+        电池与电源接口，XPC 连接从不释放，占泄漏约 96%（BioProtect 已排除）。
+        每 5 分钟输出端口 / fd 统计与 Top 调用点，并对
+        <code>com.apple.iokit.powerdxpc</code> 连接做接管-宽限-回收，来电助手可继续使用。
       </div>
       <div>
         <span class="tag ok">iphoneos-arm64e</span>
@@ -135,26 +131,23 @@
     </div>
 
     <div class="pkg">
-      <div><span class="name">BioProtect Leak Guard</span><span class="ver">2.0.13</span></div>
+      <div><span class="name">LSTimeSeconds</span><span class="ver">0.0.7-1</span></div>
       <div class="desc">
-        BioProtect 资源泄漏修复。CFUserNotification 应答端口与主 RunLoop 源创建后从不释放、
-        文件监听回调每次 open 一个 fd 且从不 close —— 长时间使用后桌面注销的元凶。
-        本模块在宽限期后取消通知并摘除 RunLoop 源，在 fd 超水位时关闭经
-        <code>F_GETPATH</code> 复核一致的泄漏 fd。
+        锁屏时钟显示实时秒数，支持字号缩放与上下位置调节。时间格式跟随设备 12/24 小时制；
+        长按进入壁纸编辑不受影响。不支持 AOD 暗屏走秒，亮屏即时恢复。
       </div>
       <div>
         <span class="tag ok">iphoneos-arm64e</span>
         <span class="tag">RootHide 原生</span>
-        <span class="tag">iOS 14 – 17.x</span>
+        <span class="tag">iOS 15 – 17.x</span>
       </div>
     </div>
 
     <div class="pkg">
       <div><span class="name">VolumeManager (Full)</span><span class="ver">1.2.0</span></div>
       <div class="desc">
-        每 App 独立音量。重写音量引擎消除 16 位 PCM 被按 4 字节硬读导致的爆音，
-        补上三重刷新（通知 + 时间戳轮询 + 备用层），改完音量即时生效。
-        全量包，自带原版组件。
+        每个 App 独立音量。重写音量引擎消除 16 位 PCM 爆音，改完即时生效；
+        1.2.0 新增混音策略层，多 App 可稳定同时播放。全量包，已内置设置面板净化。
       </div>
       <div>
         <span class="tag warn">iphoneos-arm64</span>
@@ -163,14 +156,15 @@
     </div>
 
     <div class="pkg">
-      <div><span class="name">VolumeManager Prefs Clean</span><span class="ver">1.1.0</span></div>
+      <div><span class="name">VolumeManager 面板净化</span><span class="ver">1.1.0</span></div>
       <div class="desc">
-        VolumeManager 设置面板净化模块：摘掉原作者的推广条目与残留链接按钮。
-        可单独安装，也适用于已装原版的设备。
+        <b>单独补丁</b>，仅供已安装原版 VolumeManager 的设备补装；装
+        VolumeManager (Full) 的用户已内置该功能，<b>无需再装</b>。
+        移除面板里的打赏、推广、反盗版与攻击性文字，功能开关全部保留。
       </div>
       <div>
         <span class="tag warn">iphoneos-arm64</span>
-        <span class="tag warn">Rootless · RootHide 需转换器</span>
+        <span class="tag">补丁</span>
       </div>
     </div>
   </div>

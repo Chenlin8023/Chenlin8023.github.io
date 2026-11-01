@@ -1,5 +1,5 @@
 Package: com.applockplus.refactored
-Name: AppLock+ (应用锁+ 重构版)
+Name: AppLock+ (应用锁+)
 Version: 0.4.2-1
 Architecture: iphoneos-arm64e
 Section: Tweaks
@@ -7,88 +7,89 @@ Priority: optional
 Maintainer: Chenlin8023
 Author: based on tien0246/ProtectedApp
 Depends: firmware (>= 14.0)
-Description: 按应用注入式应用锁（6 位密码 + Face ID/触控 ID），免 substrate。
- 本包是「载体包」：安装后把 AppLockPlus.dylib 放到设备上，供 Debs / Filza 导出，
- 再用 TrollFools 或 JailFools 注入到目标 App，而不是全局注入 SpringBoard。
- .
- 适用场景：需要给个别 App 上锁、但该 App 会检测越狱或无法全局注入时，
- 逐个 App 注入本 dylib 即可，互不影响，也不改动系统其他应用。
- .
- 安装后位置：
-   /var/mobile/Documents/AppLockPlus/AppLockPlus.dylib
- .
- 使用步骤：
- 1. 安装本包（或在 Sileo 里用 Debs 导出、在 Filza 里取上面的 dylib）；
- 2. 用 TrollFools / JailFools 把 AppLockPlus.dylib 注入目标 App（如 QQ、微信）；
- 3. 冷启动目标 App，首次进入会强制设置 6 位应用锁密码；
- 4. 面容 ID 需要宿主 App 的 Info.plist 声明 NSFaceIDUsageDescription，
-    未声明的 App 会自动只用密码解锁，不会崩。
- .
- 锁屏界面右上角齿轮进入设置（需先验证密码）；应用内双指双击可直接呼出设置。
- 本包不依赖 mobilesubstrate，也不要过 RootHide 转换器。
+Description: 按应用注入式应用锁，6 位密码 + Face ID / 触控 ID，免 substrate。
+ 本包是载体包：装完不会全局生效。dylib 位于
+ /var/mobile/Documents/AppLockPlus/AppLockPlus.dylib，
+ 用 Debs 导出或 Filza 取出，再由 TrollFools / JailFools 注入目标 App。
+ 适合会检测越狱、无法全局注入的应用。不要过 RootHide 转换器。
 Filename: debs/com.applockplus.refactored_0.4.2-1_iphoneos-arm64e.deb
-Size: 32436
-SHA256: 5a615cbc726393cb97f5e836034f00f8686a44633107521e038513c59c2fef64
-MD5sum: 7d3781d076a846e99c3a612aa0464a92
+Size: 32012
+SHA256: f3149361faf11a3b40fe95c92440694d04326297ce3a1db1f013719b3ad6ff60
+MD5sum: 4ed7ba5663fc9c9e7ab22efe5d5cf137
 
-Package: com.local.bioprotectleakguard
-Name: BioProtect Leak Guard
-Description: 修复 BioProtect 的资源泄漏，解决长时间使用后桌面注销的问题。逆向 BioProtect 4.6-222 确认两类真实泄漏：一是 CFUserNotification 应答端口与主 RunLoop 源创建后全二进制无任何释放调用，二是文件监听回调每次触发都 open 一个 fd 且从不 close。本模块在宽限期后取消通知并摘除 RunLoop 源，在 fd 使用量超过水位时关闭经 F_GETPATH 复核一致的泄漏 fd，并每 5 分钟记录端口数与 fd 使用量。2.0.4 恢复 substrate 直连。2.0.5 影子日志挪至加载 5 秒后并新增 rootfs 前缀真实根直写。2.0.7 修正 arm64e 系统进程进安全模式的根因：clang19 工具链给 arm64e 编 CFSTR 常量时 isa 重定位未带认证，chained fixups 里 __cfstring 的 isa 全为无 PAC 普通绑定，而 Xcode 原版为认证绑定，objc_msgSend 遇常量字符串接收者即 SIGBUS；构建期把 isa 条目补丁为认证绑定（diversity=0x6AE1、地址分化、key=2，与原版逐位同形）后重签。2.0.8 修正真机验证暴露的定时器生命周期 bug：dispatch source 局部变量被 ARC 释放导致清扫与统计从未运行，端口照旧涨满；改为全局持有，并新增 mach_port_allocate 端口归因观测，统计行输出总分配数、BioProtect 调用方分配数与 Top 调用点偏移。arm64 加 arm64e 双切片原生 roothide 包。
-Maintainer: local
-Author: local
-Section: Tweaks
-Depends: mobilesubstrate, firmware (>= 15.0)
+Package: com.local.callassistportleak
+Name: CallAssist PortLeak
+Version: 2.1.0
 Architecture: iphoneos-arm64e
-Version: 2.0.13
-Installed-Size: 220
-Filename: debs/com.local.bioprotectleakguard_2.0.13_iphoneos-arm64e.deb
-Size: 19144
-SHA256: 0dfaa2fcb020e7fbf1d4fb760af80ac3fbca9d58076ac40c5efd94cf1c700f08
-MD5sum: fd57a20375527562fd5205b23d883314
+Section: Tweaks
+Priority: optional
+Maintainer: Chenlin8023
+Author: Chenlin8023
+Depends: mobilesubstrate, firmware (>= 15.0)
+Conflicts: com.local.bioprotectleakguard
+Replaces: com.local.bioprotectleakguard
+Description: SpringBoard Mach 端口泄漏的侦查与止血工具，定责并抑制 CallAssist 的 IOKit 轮询泄漏。
+ 逐层观测归因后确认：CallAssist 以约 2 次/秒轮询 IOKit 电池与电源接口，
+ XPC 连接从不释放，占端口泄漏约 96%；BioProtect 经核对无关。
+ 本工具每 5 分钟输出端口与 fd 统计、Top 调用点；
+ 对「插件驱动且服务名为 com.apple.iokit.powerdxpc」的连接做接管-宽限-回收，
+ 来电助手可继续正常使用。原生 roothide arm64e。
+Filename: debs/com.local.callassistportleak_2.1.0_iphoneos-arm64e.deb
+Size: 18620
+SHA256: 8b32aabb4c821f23d7783fe2163aaa913edc61d91ad29b043b9a47dbea4fc3d9
+MD5sum: 462f0fad7350f7db2064f6e8fff3abfa
 
 Package: com.local.volmanaudioqueue.full
-Name: VolManAudioQueue Full
-Description: VolumeManager 全量重打包版，一个 deb 装完整套。内含原版设置面板 VolumeManagerPrefs、音量 HUD VolumeManagerSBHUD、主模块 VolumeManager，重写后的每 App 音量引擎 VolManAudioQueue，以及设置面板净化模块 VolManPrefsClean。唯一不含的是原版有杂音的 VolumeManagerAudioQueue 模块。1.1.0 新增净化：设置界面里原作者的支付宝打赏条目与收款链接、GitHub 关注与查看源码条目、Sileo 源条目、反盗版声明，以及面板末尾那段针对其他插件作者的长篇攻击文字全部移除，功能开关一个不少。全新安装只需装这一个包，Orion 运行时由系统按依赖自动安装。1.1.3 修正净化模块的文件权限，此前该模块因缺少执行位从未被系统加载，因此既无日志也无效果。1.2.0 新增混音策略层：挂钩 AVAudioSession 的 setActive 与 setCategory 系列，在每次激活前把会话重新声明为可混音（MixWithOthers），让多个 App 稳定同时播放；该层与音量配置解耦、无条件安装，保留 App 的 mode 与路由选项，录音类不改类别，私有 API 探测后才挂。默认开启，可用 vmMixEnabled / vmMixGuard / vmMixExcludedApps 或 vmaq-mix-off 关闭。
-Maintainer: local
-Author: local
+Name: VolumeManager (Full)
+Version: 1.2.0
+Architecture: iphoneos-arm64
 Section: Tweaks
+Priority: optional
+Maintainer: Chenlin8023
+Author: Chenlin8023
 Depends: mobilesubstrate, firmware (>= 15.0), dev.theos.orion (>= 1.0.0)
 Conflicts: byg.iosios.net.volume-manager, com.local.volmanaudioqueue
 Replaces: byg.iosios.net.volume-manager, com.local.volmanaudioqueue
-Architecture: iphoneos-arm64
-Version: 1.2.0
-Installed-Size: 1184
+Description: 每个 App 独立音量，重写音量引擎消除爆音，改完即时生效。
+ 修复 16 位 PCM 被按 4 字节硬读导致的杂音；补齐三重刷新；
+ 1.2.0 新增混音策略层，多 App 可稳定同时播放。
+ 全量包，一个包装完全套并已净化设置面板，无需再装单独补丁。
 Filename: debs/com.local.volmanaudioqueue.full_1.2.0_iphoneos-arm64.deb
-Size: 171256
-SHA256: e82f33ea31ba62ac990bfc63994950cf578fffa17bd83b74837b8d413381ad50
-MD5sum: e777c34a069b89c5d540bf1a906818cd
+Size: 170824
+SHA256: 4fa5776a45652caab7dc47712236151b681987dffa406faccc2f86a724eaf109
+MD5sum: e33742def8506e786dd1dbbae3060720
 
 Package: com.local.volmanprefsclean
-Name: VolManPrefsClean
-Description: VolumeManager 设置面板净化模块。移除原作者遗留的支付宝打赏收款链接、GitHub 关注与查看源码链接、Sileo 源、反盗版声明，以及面板末尾针对其他插件作者的长篇攻击文字，功能性开关全部保留。1.1.0 改为双保险：打包时先把原版面板二进制里的推广文案与链接按等长原则静态清空并重新签名，运行时再在 -setSpecifiers: / -specifiers 两处把整条条目摘掉，同时拦截残留按钮与 alipay/github/sileo 链接；顺带把「启用混响(isEnabled mixable)」的调试后缀改为「启用混音」。日志落在 /tmp/vm-prefsclean.log。arm64 单切片。
-Maintainer: local
-Author: local
-Section: Tweaks
-Depends: mobilesubstrate, firmware (>= 15.0)
-Architecture: iphoneos-arm64
+Name: VolumeManager 面板净化（单独补丁）
 Version: 1.1.0
-Installed-Size: 108
+Architecture: iphoneos-arm64
+Section: Tweaks
+Priority: optional
+Maintainer: Chenlin8023
+Author: Chenlin8023
+Depends: mobilesubstrate, firmware (>= 15.0)
+Description: VolumeManager 设置面板净化补丁，仅供已安装原版 VolumeManager 的设备使用。
+ 安装 VolumeManager (Full) 的用户已内置该功能，无需再装本包。
+ 移除面板中作者的打赏、推广、反盗版与攻击性文字，功能开关全部保留。
 Filename: debs/com.local.volmanprefsclean_1.1.0_iphoneos-arm64.deb
-Size: 13114
-SHA256: d6fc81f6ee16709e968c7b492b983baf368a0925150fe02ed94ff23011b74186
-MD5sum: 89038784a6384879398e05c3c5a2c540
+Size: 12920
+SHA256: 0644dbeec85f267616d0af959cd9d9e56133fd9f047d277c850406643c3850a0
+MD5sum: 92d302ba5bab312714517ff91faba9bc
 
 Package: com.sini921.lstimeseconds
-Name: LSTimeSeconds(roothide)
-Description: 为锁屏时间增加秒数。已修复 iOS 17.2.1 未生效、闪烁及长按冲突，支持字号缩放与上下位置调节。不支持全天候显示(AOD)，亮屏时实时走秒。适配 roothide 原生 arm64e。
-Maintainer: b4db1r3 & SINI
-Author: b4db1r3 & SINI
-Section: 越狱插件
-Depends: mobilesubstrate, preferenceloader
-Architecture: iphoneos-arm64e
+Name: LSTimeSeconds
 Version: 0.0.7-1
-Installed-Size: 448
+Architecture: iphoneos-arm64e
+Section: Tweaks
+Priority: optional
+Maintainer: Chenlin8023
+Author: b4db1r3 & SINI
+Depends: mobilesubstrate, preferenceloader
+Description: 锁屏时钟显示实时秒数，支持字号缩放与上下位置调节。
+ 时间格式跟随设备 12/24 小时制；长按进入壁纸编辑不受影响。
+ 不支持全天候显示（AOD）暗屏走秒，亮屏时即时走秒。
+ 原生 roothide arm64e。
 Filename: debs/com.sini921.lstimeseconds_0.0.7-1_iphoneos-arm64e.deb
-Size: 37440
-SHA256: 79b1030b265c1a6734e8a948afb7e8fd7919998f9d760883bb3e28566beed4e3
-MD5sum: a26c0a5656fcd40ac02a079a4eb6a398
+Size: 37452
+SHA256: dd2dc0c29bdd2024759b54bde97d6e959aff58f6b184cbf6a2f90cf13b394658
+MD5sum: 7085fb5c11b6ce12a7323692df0c22d3
