@@ -12,6 +12,7 @@ Description: 按应用注入式应用锁，6 位密码 + Face ID / 触控 ID，�
  /var/mobile/Documents/AppLockPlus/AppLockPlus.dylib，
  用 Debs 导出或 Filza 取出，再由 TrollFools / JailFools 注入目标 App。
  适合会检测越狱、无法全局注入的应用。不要过 RootHide 转换器。
+ 实机验证：iOS 17.2.1（RootHide）
 Filename: debs/com.applockplus.refactored_0.4.2-1_iphoneos-arm64e.deb
 Size: 32012
 SHA256: f3149361faf11a3b40fe95c92440694d04326297ce3a1db1f013719b3ad6ff60
@@ -34,6 +35,7 @@ Description: SpringBoard Mach 端口泄漏的侦查与止血工具，定责并�
  本工具每 5 分钟输出端口与 fd 统计、Top 调用点；
  对「插件驱动且服务名为 com.apple.iokit.powerdxpc」的连接做接管-宽限-回收，
  来电助手可继续正常使用。原生 roothide arm64e。
+ 实机验证：iOS 17.2.1（RootHide）
 Filename: debs/com.local.callassistportleak_2.1.0_iphoneos-arm64e.deb
 Size: 18620
 SHA256: 8b32aabb4c821f23d7783fe2163aaa913edc61d91ad29b043b9a47dbea4fc3d9
@@ -54,6 +56,7 @@ Description: 每个 App 独立音量，重写音量引擎消除爆音，改完�
  修复 16 位 PCM 被按 4 字节硬读导致的杂音；补齐三重刷新；
  1.2.0 新增混音策略层，多 App 可稳定同时播放。
  全量包，一个包装完全套并已净化设置面板，无需再装单独补丁。
+ 实机验证：iOS 17.2.1（RootHide）
 Filename: debs/com.local.volmanaudioqueue.full_1.2.0_iphoneos-arm64.deb
 Size: 170824
 SHA256: 4fa5776a45652caab7dc47712236151b681987dffa406faccc2f86a724eaf109
@@ -71,6 +74,7 @@ Depends: mobilesubstrate, firmware (>= 15.0)
 Description: VolumeManager 设置面板净化补丁，仅供已安装原版 VolumeManager 的设备使用。
  安装 VolumeManager (Full) 的用户已内置该功能，无需再装本包。
  移除面板中作者的打赏、推广、反盗版与攻击性文字，功能开关全部保留。
+ 实机验证：iOS 17.2.1（RootHide）
 Filename: debs/com.local.volmanprefsclean_1.1.0_iphoneos-arm64.deb
 Size: 12920
 SHA256: 0644dbeec85f267616d0af959cd9d9e56133fd9f047d277c850406643c3850a0
@@ -89,6 +93,7 @@ Description: 锁屏时钟显示实时秒数，支持字号缩放与上下位置�
  时间格式跟随设备 12/24 小时制；长按进入壁纸编辑不受影响。
  不支持全天候显示（AOD）暗屏走秒，亮屏时即时走秒。
  原生 roothide arm64e。
+ 实机验证：iOS 17.2.1（RootHide）
 Filename: debs/com.sini921.lstimeseconds_0.0.7-1_iphoneos-arm64e.deb
 Size: 37452
 SHA256: dd2dc0c29bdd2024759b54bde97d6e959aff58f6b184cbf6a2f90cf13b394658
@@ -105,6 +110,7 @@ Description: 锁屏时钟显示实时秒数，支持字号缩放与上下位置�
  时间格式跟随设备 12/24 小时制；长按进入壁纸编辑不受影响。
  不支持全天候显示（AOD）暗屏走秒，亮屏时即时走秒。
  原生 rootless（/var/jb）包，arm64 + arm64e，适配 iOS 16–17。
+ 实机验证：iOS 17.2.1（RootHide）
 Architecture: iphoneos-arm64
 Version: 0.0.7-2
 Installed-Size: 444
@@ -124,6 +130,7 @@ Description: 锁屏时钟显示实时秒数，支持字号缩放与上下位置�
  时间格式跟随设备 12/24 小时制；长按进入壁纸编辑不受影响。
  不支持全天候显示（AOD）暗屏走秒，亮屏时即时走秒。
  原生 rootless（/var/jb）包，arm64 + arm64e，适配 iOS 16–17。
+ 实机验证：iOS 16.0.3（rootless）
 Architecture: iphoneos-arm64
 Version: 0.0.7-4
 Installed-Size: 428
@@ -131,3 +138,23 @@ Filename: debs/com.sini921.lstimeseconds_0.0.7-4_iphoneos-arm64.deb
 Size: 36272
 SHA256: 42b90875155d39d1caf2b6ca4e764cd2e4d5a3a5edf6f4659db534f44b9a577f
 MD5sum: c7791b3065ceed5ac6311e99a313af24
+
+Package: com.sini921.lstimeseconds
+Name: LSTimeSeconds
+Section: Tweaks
+Priority: optional
+Maintainer: Chenlin8023
+Author: b4db1r3 & SINI
+Depends: mobilesubstrate, preferenceloader
+Description: 锁屏时钟显示实时秒数，支持字号缩放与上下位置调节。
+ 时间格式跟随设备 12/24 小时制；长按进入壁纸编辑不受影响。
+ 不支持全天候显示（AOD）暗屏走秒，亮屏时即时走秒。
+ 原生 rootless（/var/jb）包，arm64 + arm64e，适配 iOS 16–17。
+ 实机验证：iOS 16.0.3（rootless）
+Architecture: iphoneos-arm64
+Version: 0.0.7-5
+Installed-Size: 444
+Filename: debs/com.sini921.lstimeseconds_0.0.7-5_iphoneos-arm64.deb
+Size: 36536
+SHA256: 2006fa89d1911a8942efbc09ff4791e3e8b4427b48aabdc7fd23863e476ebb56
+MD5sum: bbb8362a5db5c0cf604a8d9f36d555c1
