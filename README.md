@@ -12,7 +12,7 @@ https://chenlin8023.github.io/
 | CallAssist PortLeak | 2.1.0 | iphoneos-arm64e | iOS 17.2.1 | CallAssist IOKit 轮询端口泄漏的侦查与止血 |
 | LSTimeSeconds (RootHide) | 0.0.7-1 | iphoneos-arm64e | iOS 17.2.1 | 锁屏实时秒数 + 字号缩放 + 上下位置调节 |
 | LSTimeSeconds (rootless) | 0.0.7-5 | iphoneos-arm64 | iOS 16.0.3 | 同上，`/var/jb` 版本；修复熄屏唤醒冻结，增加日志轮转与秒针对齐 |
-| VolumeManager (Full) | 1.2.0 | iphoneos-arm64 | iOS 17.2.1 | 每 App 独立音量，消除爆音（rootless，RootHide 需转换） |
+| VolumeManager (Full) | 1.2.1 | iphoneos-arm64 | iOS 17.2.1 | 每 App 独立音量，消除爆音；1.2.1 修多 App 同播数小时后静音失效并精简日志（rootless，RootHide 需转换） |
 | VolumeManager Prefs Clean | 1.1.0 | iphoneos-arm64 | iOS 17.2.1 | 音量设置面板净化（rootless，RootHide 需转换） |
 
 只收录在真机验证过的构建。LSTimeSeconds rootless 0.0.7-4/5 在 iOS 16.0.3 验证，其余包在 iOS 17.2.1 验证。
