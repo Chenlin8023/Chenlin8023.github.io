@@ -93,3 +93,22 @@ Filename: debs/com.sini921.lstimeseconds_0.0.7-1_iphoneos-arm64e.deb
 Size: 37452
 SHA256: dd2dc0c29bdd2024759b54bde97d6e959aff58f6b184cbf6a2f90cf13b394658
 MD5sum: 7085fb5c11b6ce12a7323692df0c22d3
+
+Package: com.sini921.lstimeseconds
+Name: LSTimeSeconds
+Section: Tweaks
+Priority: optional
+Maintainer: Chenlin8023
+Author: b4db1r3 & SINI
+Depends: mobilesubstrate, preferenceloader
+Description: 锁屏时钟显示实时秒数，支持字号缩放与上下位置调节。
+ 时间格式跟随设备 12/24 小时制；长按进入壁纸编辑不受影响。
+ 不支持全天候显示（AOD）暗屏走秒，亮屏时即时走秒。
+ 原生 rootless（/var/jb）包，arm64 + arm64e，适配 iOS 16–17。
+Architecture: iphoneos-arm64
+Version: 0.0.7-2
+Installed-Size: 444
+Filename: debs/com.sini921.lstimeseconds_0.0.7-2_iphoneos-arm64.deb
+Size: 36260
+SHA256: 45877157ddfe7df911e5eebe4fe5142e00421493c22c91ef335b73940d229fc5
+MD5sum: c9d60ea4bb888935944b870681cd5b6e

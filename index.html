@@ -131,7 +131,7 @@
     </div>
 
     <div class="pkg">
-      <div><span class="name">LSTimeSeconds</span><span class="ver">0.0.7-1</span></div>
+      <div><span class="name">LSTimeSeconds (RootHide)</span><span class="ver">0.0.7-1</span></div>
       <div class="desc">
         锁屏时钟显示实时秒数，支持字号缩放与上下位置调节。时间格式跟随设备 12/24 小时制；
         长按进入壁纸编辑不受影响。不支持 AOD 暗屏走秒，亮屏即时恢复。
@@ -140,6 +140,19 @@
         <span class="tag ok">iphoneos-arm64e</span>
         <span class="tag">RootHide 原生</span>
         <span class="tag">iOS 15 – 17.x</span>
+      </div>
+    </div>
+
+    <div class="pkg">
+      <div><span class="name">LSTimeSeconds (rootless)</span><span class="ver">0.0.7-2</span></div>
+      <div class="desc">
+        同一功能的 rootless 构建，安装到 <code>/var/jb</code>。锁屏实时秒数、字号缩放、
+        上下位置调节；设置面板由源码编译。修复了面板因 arm64e 类元数据缺少 PAC 导致的闪退。
+      </div>
+      <div>
+        <span class="tag warn">iphoneos-arm64</span>
+        <span class="tag warn">Rootless · RootHide 需转换器</span>
+        <span class="tag">iOS 16 – 17.x</span>
       </div>
     </div>
 
@@ -175,12 +188,18 @@
       <li><b>标 <code>iphoneos-arm64e</code> 的包不要过 RootHide 转换器</b>：这些是原生
           roothide 包，转换器会重写二进制并破坏 arm64e 指针认证，导致安全模式。</li>
       <li><b>标 <code>iphoneos-arm64</code> 的是 rootless 包</b>：在 RootHide 设备上需要
-          先用 RootHide 转换器转换，或使用支持 rootless 的引导环境。</li>
+          先用 RootHide 转换器转换，或使用支持 rootless 的引导环境；普通 rootless 设备
+          则直接安装。</li>
+      <li><b>架构可见性</b>：普通 rootless / rootful 设备（APT 架构为
+          <code>iphoneos-arm64</code> / <code>iphoneos-arm</code>）在 Sileo 里
+          <b>看不到</b> <code>iphoneos-arm64e</code> 的 roothide 包；RootHide 设备通常
+          同时启用两种架构，所以能看到 arm64 的 rootless 包（需转换）。</li>
       <li><b>AppLock+ 需要手动注入</b>：它不是全局插件，装完后必须用 TrollFools / JailFools
           把 dylib 注入到目标 App，否则不会有任何效果。</li>
       <li><b>LSTimeSeconds 不支持 AOD 暗屏走秒</b>：LTPO 在 AOD 下锁 1 Hz，系统
           Flipbook 会短路常规重绘。熄屏自动暂停，亮屏立即恢复。</li>
-      <li>回退版本：<code>apt install com.sini921.lstimeseconds=0.0.7-1</code></li>
+      <li>回退版本：RootHide 用 <code>apt install com.sini921.lstimeseconds=0.0.7-1</code>；
+          rootless 用 <code>apt install com.sini921.lstimeseconds=0.0.7-2</code>。</li>
     </ol>
   </div>
 
