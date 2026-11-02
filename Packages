@@ -18,6 +18,26 @@ Size: 32012
 SHA256: f3149361faf11a3b40fe95c92440694d04326297ce3a1db1f013719b3ad6ff60
 MD5sum: 4ed7ba5663fc9c9e7ab22efe5d5cf137
 
+Package: com.chenlin8023.notifiericons
+Name: NotifierIcons
+Section: Tweaks
+Priority: optional
+Maintainer: Chenlin8023
+Author: Chenlin8023
+Depends: mobilesubstrate, preferenceloader
+Description: 状态栏显示选中应用的通知小图标（带红色角标数字），有角标才出现、清零即消失。
+ 仅注入 SpringBoard（桌面/锁屏生效，App 内不显示），图标位置可调（居中/灵动岛左/右 + 微调）。
+ 架构参考 NotifierDots（iOS 11-14.3）与 MooreBarX15，适配 iOS 16-17。
+ rootless（/var/jb）包，arm64 + arm64e。构建为诊断版：调试日志默认开启。
+ 实机验证：iOS 17.2.1（RootHide）
+Architecture: iphoneos-arm64
+Version: 0.9.2
+Installed-Size: 444
+Filename: debs/com.chenlin8023.notifiericons_0.9.2_iphoneos-arm64.deb
+Size: 35272
+SHA256: 1b1f54096625900cf1752d001cfa9890b101d1b35763fa8602ce819288da0aa1
+MD5sum: 653647ce581a51c457209287f3cff178
+
 Package: com.local.callassistportleak
 Name: CallAssist PortLeak
 Version: 2.1.0

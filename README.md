@@ -8,6 +8,7 @@ https://chenlin8023.github.io/
 
 | 插件 | 版本 | 架构 | 实机验证 | 说明 |
 |---|---|---|---|---|
+| NotifierIcons | 0.9.2 | iphoneos-arm64 | iOS 17.2.1 | 状态栏应用通知图标（安卓通知语义） |
 | AppLock+ (应用锁+) | 0.4.2-1 | iphoneos-arm64e | iOS 17.2.1 | 按应用注入式应用锁（载体包，需 TrollFools/JailFools 注入） |
 | CallAssist PortLeak | 2.1.0 | iphoneos-arm64e | iOS 17.2.1 | CallAssist IOKit 轮询端口泄漏的侦查与止血 |
 | LSTimeSeconds (RootHide) | 0.0.7-1 | iphoneos-arm64e | iOS 17.2.1 | 锁屏实时秒数 + 字号缩放 + 上下位置调节 |
