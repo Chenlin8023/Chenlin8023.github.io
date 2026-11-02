@@ -144,10 +144,11 @@
     </div>
 
     <div class="pkg">
-      <div><span class="name">LSTimeSeconds (rootless)</span><span class="ver">0.0.7-2</span></div>
+      <div><span class="name">LSTimeSeconds (rootless)</span><span class="ver">0.0.7-4</span></div>
       <div class="desc">
         同一功能的 rootless 构建，安装到 <code>/var/jb</code>。锁屏实时秒数、字号缩放、
-        上下位置调节；设置面板由源码编译。修复了面板因 arm64e 类元数据缺少 PAC 导致的闪退。
+        上下位置调节；设置面板由源码编译。修复了面板 PAC 闪退，以及 iOS 16
+        熄屏再亮屏后秒数冻结的问题。
       </div>
       <div>
         <span class="tag warn">iphoneos-arm64</span>
@@ -199,7 +200,7 @@
       <li><b>LSTimeSeconds 不支持 AOD 暗屏走秒</b>：LTPO 在 AOD 下锁 1 Hz，系统
           Flipbook 会短路常规重绘。熄屏自动暂停，亮屏立即恢复。</li>
       <li>回退版本：RootHide 用 <code>apt install com.sini921.lstimeseconds=0.0.7-1</code>；
-          rootless 用 <code>apt install com.sini921.lstimeseconds=0.0.7-2</code>。</li>
+          rootless 用 <code>apt install com.sini921.lstimeseconds=0.0.7-4</code>。</li>
     </ol>
   </div>
 

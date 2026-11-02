@@ -11,7 +11,7 @@ https://chenlin8023.github.io/
 | AppLock+ (应用锁+) | 0.4.2-1 | iphoneos-arm64e | 按应用注入式应用锁（载体包，需 TrollFools/JailFools 注入） |
 | CallAssist PortLeak | 2.1.0 | iphoneos-arm64e | CallAssist IOKit 轮询端口泄漏的侦查与止血 |
 | LSTimeSeconds (RootHide) | 0.0.7-1 | iphoneos-arm64e | 锁屏实时秒数 + 字号缩放 + 上下位置调节 |
-| LSTimeSeconds (rootless) | 0.0.7-2 | iphoneos-arm64 | 同上，`/var/jb` 版本，iOS 16–17 |
+| LSTimeSeconds (rootless) | 0.0.7-4 | iphoneos-arm64 | 同上，`/var/jb` 版本，iOS 16–17；修复熄屏唤醒冻结 |
 | VolumeManager (Full) | 1.2.0 | iphoneos-arm64 | 每 App 独立音量，消除爆音（rootless，RootHide 需转换） |
 | VolumeManager Prefs Clean | 1.1.0 | iphoneos-arm64 | 音量设置面板净化（rootless，RootHide 需转换） |
 
