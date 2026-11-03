@@ -97,6 +97,28 @@ Size: 172644
 SHA256: c1aa74845c7d7271fa7933bb3b7f238d9369c2bfa7ee151eb68f50aecea34fc4
 MD5sum: c8fa92c8bd69d987e7f5025a176d67d2
 
+Package: com.local.volmanaudioqueue.full
+Name: VolumeManager (Full)
+Section: Tweaks
+Priority: optional
+Maintainer: Chenlin8023
+Author: Chenlin8023
+Depends: mobilesubstrate, firmware (>= 15.0), dev.theos.orion (>= 1.0.0)
+Conflicts: byg.iosios.net.volume-manager, com.local.volmanaudioqueue
+Replaces: byg.iosios.net.volume-manager, com.local.volmanaudioqueue
+Description: 每个 App 独立音量，重写音量引擎消除爆音，改完即时生效。
+ 修复 16 位 PCM 被按 4 字节硬读导致的杂音；补齐三重刷新；
+ 1.2.0 新增混音策略层，多 App 可稳定同时播放。
+ 全量包，一个包装完全套并已净化设置面板，无需再装单独补丁。 1.2.5 引擎修复「数小时后无法单独调节、已静音应用失去静音」：ctx 表 32→512 并废除对已释放单元的存活探测（v1.2.1 的 Dispose 挂钩拦不到 AVFoundation 内部销毁路径 AudioQueueDispose、AUGraph 关闭、CFRelease，32 槽实际仍会耗尽，且存活探测对已释放对象属未定义行为）；配置文件瞬时读失败改为保持原系数并自动重试；新增包装占用率自证日志（每 32 次包装一行）。本版起仅提供 rootless 形态，roothide 设备安装时由转换器自动处理全部路径（引擎、面板、HUD），面板开关问题随之消失。 1.2.6 修「升级后的腾讯阅读/起点读书听书等 AQ 直连路径滑杆调节无变化」：AudioQueue 备用层此前只在 App 设置音量的瞬间缩放一次、系数变化完全不传播，现增加 AQ 基准登记表（AudioQueueDispose 摘除+环形覆盖兜底）与实时回写，并把 AVFoundation 钩子内部触发的 AQ 调用归 AVF 所有（不再二次缩放也不登记，排除潜在 factor²）。 1.2.7 修「同一批 App 1.2.0 能调节而 1.2.5/1.2.6 不能」（A/B 实测定案）：移除 v1.2.1 引入的 AudioComponentInstanceDispose 钩子 —— 该 API 实质是 CFRelease，框架嵌套清理调用它时单元可能仍有引用并未销毁，钩子却抢先清掉 ctx 魔数使存续单元的渲染回调静默失效（满音量不缩放且零日志），备用层又因已布防让位，表现为滑杆无效；512 槽下该钩子防耗尽的意义已不成立，槽位复用回归 1.2.0 语义。
+ 实机验证：iOS 17.2.1（RootHide）
+Architecture: iphoneos-arm64
+Version: 1.2.7
+Installed-Size: 1200
+Filename: debs/com.local.volmanaudioqueue.full_1.2.7_iphoneos-arm64.deb
+Size: 174368
+SHA256: c1e93239af76b111954ddc28d3ad726bbb7a36a247d15342a0fc1017b3b16cc2
+MD5sum: e4c2ae0184776964576b18fb8ab73d9c
+
 Package: com.local.volmanprefsclean
 Name: VolumeManager 面板净化（单独补丁）
 Version: 1.1.0
