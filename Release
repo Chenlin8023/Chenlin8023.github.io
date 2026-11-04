@@ -6,12 +6,12 @@ Codename: ios
 Architectures: iphoneos-arm64e iphoneos-arm64 iphoneos-arm
 Components: main
 Description: iOS 17 tweak 修复与增强 (RootHide / roothide)
-Date: Wed, 04 Nov 2026 01:20:06 UTC
+Date: Wed, 04 Nov 2026 01:35:12 UTC
 MD5Sum:
- 417f3f30b5c8d881387c6da026cd3b13 7868 Packages
- ecff5b08b17412bc77af91b65c05614f 3020 Packages.gz
- ca91523fc82a119490f6bd742fc317dc 2824 Packages.xz
+ 856630cd12010ce2cb3b4bf10de737ca 9771 Packages
+ 09f63b04cd6527ec80a32664f8b7987f 3860 Packages.gz
+ 5c53bfb245ad715a61d74a0dd3ab039c 3584 Packages.xz
 SHA256:
- 442343c5537bec4e5476b397d4fd459e78d93716d30aca52c8de33eab44e492c 7868 Packages
- 045e2c7c8e05813f0426bbe5df81e25ecd48b810d6271c298cca0e6bceb94426 3020 Packages.gz
- 1a22ec87e23b55015df642a0823ecfecf3b1e52a1a78de5798a14bc77925ace4 2824 Packages.xz
+ 3f5e34aa7661b2f879a4d179e18e49e4597cb18b21160d4af64e1f7bd90f0a94 9771 Packages
+ df12cb09fc5b341f51ad9cb256b1f0bb797615af8ee52e107a0149847d885761 3860 Packages.gz
+ 911b5fc53c96bc4b3f1d278d44f430be78c4e82fcff40cd7b78b3e08712dc02d 3584 Packages.xz

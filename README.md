@@ -18,6 +18,8 @@ https://chenlin8023.github.io/
 
 只收录在真机验证过的构建。LSTimeSeconds rootless 0.0.7-4/5 在 iOS 16.0.3 验证，其余包在 iOS 17.2.1 验证。
 
+VolumeManager 同时保留 **1.2.0（稳定版，可直接安装/降级）** 与 **1.3.0（过渡版，注入过的 App 需重新注入引擎）**。
+
 > 架构可见性：普通 rootless / rootful 设备的 APT 架构是 `iphoneos-arm64` / `iphoneos-arm`，
 > Sileo 会过滤掉 `iphoneos-arm64e` 的 roothide 包，所以看不到 AppLock+、CallAssist、
 > LSTimeSeconds (RootHide)；RootHide 设备通常同时启用 arm64e 与 arm64，两种都能看到。
