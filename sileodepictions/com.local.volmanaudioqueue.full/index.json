@@ -1,0 +1,193 @@
+{
+  "minVersion": "0.4",
+  "class": "DepictionTabView",
+  "tintColor": "#3ea6ff",
+  "tabs": [
+    {
+      "class": "DepictionStackView",
+      "tabname": "功能",
+      "views": [
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "- 每个 App 独立音量（最低静音）；多 App 同时播放，互不打断；改完立即生效\n- 重写音量引擎，消除 16 位 PCM 爆音\n- 混音策略层：挂钩 AVAudioSession setActive / setCategory，保证多 App 同播稳定\n- 全量包：含设置面板、音量 HUD、音量引擎；面板推广 / 打赏 / 攻击文字已清理\n- 1.3.0 修复长时间播放后静音失效（ctx 表 32→512，并输出占用率日志）"
+        }
+      ]
+    },
+    {
+      "class": "DepictionStackView",
+      "tabname": "兼容性",
+      "views": [
+        {
+          "class": "DepictionSubheaderView",
+          "title": "v1.3.0 · iphoneos-arm64",
+          "useBoldText": true,
+          "useBottomMargin": true
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "机型",
+          "text": "iPhone 15 Pro"
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "验证 iOS",
+          "text": "17.2.1"
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "越狱形态",
+          "text": "rootless（/var/jb）"
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "验证状态",
+          "text": "已验证"
+        },
+        {
+          "class": "DepictionSubheaderView",
+          "title": "v1.2.0 · iphoneos-arm64",
+          "useBoldText": true,
+          "useBottomMargin": true
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "机型",
+          "text": "iPhone 15 Pro"
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "验证 iOS",
+          "text": "17.2.1"
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "越狱形态",
+          "text": "rootless（/var/jb）"
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "验证状态",
+          "text": "已验证"
+        },
+        {
+          "class": "DepictionSubheaderView",
+          "title": "注意事项",
+          "useBoldText": true,
+          "useBottomMargin": true
+        },
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "- rootless（/var/jb）包，arm64；RootHide 需转换或使用 rootless 引导环境。\n- 1.3.0 是过渡版：用 JailFools 等工具把引擎注入到 App 的，升级后需覆盖 .app/Frameworks/VolManAudioQueue.dylib 并重新打开 App；验收看容器日志头 === v1.3.0。\n- 1.2.0 是稳定回退版，可直接安装 / 降级。\n- 依赖 Orion 运行时（dev.theos.orion），由系统按依赖安装。"
+        }
+      ]
+    },
+    {
+      "class": "DepictionStackView",
+      "tabname": "更新日志",
+      "views": [
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "Sileo：安装后在插件页长按「修改 / MODIFY」选择历史版本；Irisin / Zebra 可直接在版本列表选择。每个版本下方有 .deb 直链。"
+        },
+        {
+          "class": "DepictionSubheaderView",
+          "title": "v1.3.0 · 2026-11-04",
+          "useBoldText": true,
+          "useBottomMargin": true
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "验证",
+          "text": "已验证"
+        },
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "- 渲染回调层 ctx 表 32→512，修复长时间播放后静音失效\n- 新增 ctx 占用 / 峰值 / 累计包装日志，失败不再静默\n- 不采用动态扩容：渲染回调持有槽位指针，realloc 会让已装回调的 refCon 失效"
+        },
+        {
+          "class": "DepictionTableButtonView",
+          "title": "下载 v1.3.0（iphoneos-arm64）",
+          "action": "https://chenlin8023.github.io/debs/com.local.volmanaudioqueue.full_1.3.0_iphoneos-arm64.deb",
+          "openExternal": true
+        },
+        {
+          "class": "DepictionSubheaderView",
+          "title": "v1.2.0 · 2026-10-23",
+          "useBoldText": true,
+          "useBottomMargin": true
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "验证",
+          "text": "已验证"
+        },
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "- 新增混音策略层，多 App 稳定同时播放\n- 全量包整合设置面板、音量 HUD、音量引擎；面板净化\n- 作为 1.3.0 的稳定回退版保留"
+        },
+        {
+          "class": "DepictionTableButtonView",
+          "title": "下载 v1.2.0（iphoneos-arm64）",
+          "action": "https://chenlin8023.github.io/debs/com.local.volmanaudioqueue.full_1.2.0_iphoneos-arm64.deb",
+          "openExternal": true
+        },
+        {
+          "class": "DepictionSubheaderView",
+          "title": "v1.2.1 – 1.2.7 · 2026-11-03",
+          "useBoldText": true,
+          "useBottomMargin": true
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "状态",
+          "text": "未上架 / 已移除"
+        },
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "- 多变量优化期，结论不可归因；1.3.0 由 1.2.0 + ctx 512 重新定案。"
+        },
+        {
+          "class": "DepictionSubheaderView",
+          "title": "v1.1.3 / 1.1.0 · 2026-10-23",
+          "useBoldText": true,
+          "useBottomMargin": true
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "状态",
+          "text": "历史版本"
+        },
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "- 1.1.3 修正净化模块文件权限（此前缺少执行位未加载）；1.1.0 新增面板净化。"
+        }
+      ]
+    },
+    {
+      "class": "DepictionStackView",
+      "tabname": "反馈",
+      "views": [
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "反馈时请附：插件版本、机型、iOS 版本、越狱环境、复现步骤、日志或截图。"
+        },
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "反馈时请附：App 容器 Documents 下的 VolMan 日志、日志头版本、注入形态（动态注入 / JailFools 拷贝）、复现步骤。"
+        },
+        {
+          "class": "DepictionTableButtonView",
+          "title": "项目仓库",
+          "action": "https://github.com/Chenlin8023/VolumeManager-iOS17",
+          "openExternal": true
+        },
+        {
+          "class": "DepictionTableButtonView",
+          "title": "提交问题 / 反馈",
+          "action": "https://github.com/Chenlin8023/Chenlin8023.github.io/issues/new?template=package-feedback.yml",
+          "openExternal": true
+        }
+      ]
+    }
+  ]
+}

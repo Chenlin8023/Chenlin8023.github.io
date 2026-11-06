@@ -1,0 +1,146 @@
+{
+  "minVersion": "0.4",
+  "class": "DepictionTabView",
+  "tintColor": "#3ea6ff",
+  "tabs": [
+    {
+      "class": "DepictionStackView",
+      "tabname": "功能",
+      "views": [
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "- 状态栏下方显示选中 App 的通知小图标；有未读角标才出现，清零即消失（安卓通知语义）\n- 真实 App 图标（format 0–12 自动探测 + 磁盘缓存 + 字母头像兜底）\n- 最多 6 个，按应用名排序；独立悬浮窗渲染，与灵动岛布局解耦\n- 位置预设（居中 / 岛左 / 岛右）+ 微调；改动即时生效；仅桌面 / 锁屏显示，进 App 自动消失\n- 设置面板选择 App；2 秒轮询 + badge 事件双通道"
+        }
+      ]
+    },
+    {
+      "class": "DepictionStackView",
+      "tabname": "兼容性",
+      "views": [
+        {
+          "class": "DepictionSubheaderView",
+          "title": "v0.9.2 · iphoneos-arm64",
+          "useBoldText": true,
+          "useBottomMargin": true
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "机型",
+          "text": "iPhone 15 Pro"
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "验证 iOS",
+          "text": "17.2.1"
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "越狱形态",
+          "text": "rootless（/var/jb）"
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "验证状态",
+          "text": "已验证"
+        },
+        {
+          "class": "DepictionSubheaderView",
+          "title": "注意事项",
+          "useBoldText": true,
+          "useBottomMargin": true
+        },
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "- 仅注入 SpringBoard：桌面 / 锁屏生效，App 内不显示。\n- 0.9.2 起无角标化：不再显示红色角标数字，图标出现即通知、清零即隐藏。\n- rootless（/var/jb）包，arm64；RootHide 需转换或使用 rootless 引导环境。"
+        }
+      ]
+    },
+    {
+      "class": "DepictionStackView",
+      "tabname": "更新日志",
+      "views": [
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "Sileo：安装后在插件页长按「修改 / MODIFY」选择历史版本；Irisin / Zebra 可直接在版本列表选择。每个版本下方有 .deb 直链。"
+        },
+        {
+          "class": "DepictionSubheaderView",
+          "title": "v0.9.2 · 2026-11-03",
+          "useBoldText": true,
+          "useBottomMargin": true
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "验证",
+          "text": "已验证"
+        },
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "- 形态定稿：整体移除红点与数字角标及全部相关开关\n- 修复 0.9.1 角标 x 坐标漏加图标偏移、全部叠画在第一个图标上的潜伏 bug\n- 图标出现即通知、清零即隐藏；面板脚注明示无通知时不显示图标行"
+        },
+        {
+          "class": "DepictionTableButtonView",
+          "title": "下载 v0.9.2（iphoneos-arm64）",
+          "action": "https://chenlin8023.github.io/debs/com.chenlin8023.notifiericons_0.9.2_iphoneos-arm64.deb",
+          "openExternal": true
+        },
+        {
+          "class": "DepictionSubheaderView",
+          "title": "v0.9.1 · 2026-11-03",
+          "useBoldText": true,
+          "useBottomMargin": true
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "状态",
+          "text": "历史版本"
+        },
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "- 新增角标显示数字开关；日志 128KB 轮转，保留 .1/.2 两份历史。"
+        },
+        {
+          "class": "DepictionSubheaderView",
+          "title": "v0.9.0 · 2026-11-03",
+          "useBoldText": true,
+          "useBottomMargin": true
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "状态",
+          "text": "历史版本"
+        },
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "- 真图标链路打通：启动期捕获 SBIconController → iconManager → iconModel.leafIconForIdentifier: → SBIconImageCache。"
+        }
+      ]
+    },
+    {
+      "class": "DepictionStackView",
+      "tabname": "反馈",
+      "views": [
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "反馈时请附：插件版本、机型、iOS 版本、越狱环境、复现步骤、日志或截图。"
+        },
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "反馈时请附：是否有未读通知、选中的应用、图标行是否出现、设置面板截图。"
+        },
+        {
+          "class": "DepictionTableButtonView",
+          "title": "项目仓库",
+          "action": "https://github.com/Chenlin8023/notifiericons",
+          "openExternal": true
+        },
+        {
+          "class": "DepictionTableButtonView",
+          "title": "提交问题 / 反馈",
+          "action": "https://github.com/Chenlin8023/Chenlin8023.github.io/issues/new?template=package-feedback.yml",
+          "openExternal": true
+        }
+      ]
+    }
+  ]
+}

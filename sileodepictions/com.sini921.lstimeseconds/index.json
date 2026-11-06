@@ -1,0 +1,240 @@
+{
+  "minVersion": "0.4",
+  "class": "DepictionTabView",
+  "tintColor": "#3ea6ff",
+  "tabs": [
+    {
+      "class": "DepictionStackView",
+      "tabname": "功能",
+      "views": [
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "- 锁屏时钟显示实时秒数，自动跟随设备 12/24 小时制\n- 字号缩放 0.60–1.25（默认 0.88），以壁纸原始字号为基准，不抖动\n- 上下位置调节 ±100pt，解除裁剪；时钟水平自动居中\n- 长按进入壁纸自定义时静默旁路，滤镜、字体、景深编辑保持系统原样\n- 熄屏暂停刷新省电，亮屏立即恢复并校准\n- 设置面板：启用开关、字号滑块、位置滑块、注销按钮"
+        }
+      ]
+    },
+    {
+      "class": "DepictionStackView",
+      "tabname": "兼容性",
+      "views": [
+        {
+          "class": "DepictionSubheaderView",
+          "title": "v0.0.7-5 · iphoneos-arm64",
+          "useBoldText": true,
+          "useBottomMargin": true
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "机型",
+          "text": "AOD 机型（具体机型未记录）"
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "验证 iOS",
+          "text": "16.0.3"
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "越狱形态",
+          "text": "rootless（/var/jb）"
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "验证状态",
+          "text": "已验证"
+        },
+        {
+          "class": "DepictionSubheaderView",
+          "title": "v0.0.7-4 · iphoneos-arm64",
+          "useBoldText": true,
+          "useBottomMargin": true
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "机型",
+          "text": "AOD 机型（具体机型未记录）"
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "验证 iOS",
+          "text": "16.0.3"
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "越狱形态",
+          "text": "rootless（/var/jb）"
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "验证状态",
+          "text": "已验证"
+        },
+        {
+          "class": "DepictionSubheaderView",
+          "title": "v0.0.7-2 · iphoneos-arm64",
+          "useBoldText": true,
+          "useBottomMargin": true
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "机型",
+          "text": "未单独验证"
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "验证 iOS",
+          "text": "—"
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "越狱形态",
+          "text": "rootless（/var/jb）"
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "验证状态",
+          "text": "未单独验证"
+        },
+        {
+          "class": "DepictionSubheaderView",
+          "title": "注意事项",
+          "useBoldText": true,
+          "useBottomMargin": true
+        },
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "- AOD 暗屏不走秒：系统在暗屏使用 1Hz Flipbook，应用层无法刷新；亮屏立即恢复。\n- RootHide 用户请安装 LSTimeSeconds (RootHide)，不要与本包混装。\n- rootless 包安装到 /var/jb；普通 rootless 设备直接安装，RootHide 需转换或使用 rootless 引导环境。\n- 0.0.7-2 未单独验证；0.0.7-4 / 0.0.7-5 已在 iOS 16.0.3 真机验证。"
+        }
+      ]
+    },
+    {
+      "class": "DepictionStackView",
+      "tabname": "更新日志",
+      "views": [
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "Sileo：安装后在插件页长按「修改 / MODIFY」选择历史版本；Irisin / Zebra 可直接在版本列表选择。每个版本下方有 .deb 直链。"
+        },
+        {
+          "class": "DepictionSubheaderView",
+          "title": "v0.0.7-5 · 2026-11-02",
+          "useBoldText": true,
+          "useBottomMargin": true
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "验证",
+          "text": "已验证"
+        },
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "- 日志超过 256KB 轮转为 .1，避免长期使用无限增长\n- 1Hz 计时器首次 fire 对齐到下一个整秒（+10ms），秒数跳动更匀\n- 刷新与停表逻辑与 0.0.7-4 一致"
+        },
+        {
+          "class": "DepictionTableButtonView",
+          "title": "下载 v0.0.7-5（iphoneos-arm64）",
+          "action": "https://chenlin8023.github.io/debs/com.sini921.lstimeseconds_0.0.7-5_iphoneos-arm64.deb",
+          "openExternal": true
+        },
+        {
+          "class": "DepictionSubheaderView",
+          "title": "v0.0.7-4 · 2026-11-02",
+          "useBoldText": true,
+          "useBottomMargin": true
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "验证",
+          "text": "已验证"
+        },
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "- 修复 iOS 16 熄屏再亮屏后秒数冻结：tick 不再依据 g_isScreenOff 跳过刷新\n- 熄屏、背光 state=2、视图注销时不再停止计时器，避免停止后无人重启\n- 撤回 0.0.7-3 的全局 block 方案，改为最小改动"
+        },
+        {
+          "class": "DepictionTableButtonView",
+          "title": "下载 v0.0.7-4（iphoneos-arm64）",
+          "action": "https://chenlin8023.github.io/debs/com.sini921.lstimeseconds_0.0.7-4_iphoneos-arm64.deb",
+          "openExternal": true
+        },
+        {
+          "class": "DepictionSubheaderView",
+          "title": "v0.0.7-2 · 2026-11-02",
+          "useBoldText": true,
+          "useBottomMargin": true
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "验证",
+          "text": "未单独验证"
+        },
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "- rootless 适配：substrate 依赖与 /var/jb rpath\n- 设置面板改为源码编译，修复 arm64e 类元数据 PAC 导致的闪退\n- 功能与 RootHide 版一致，后续 0.0.7-4 已覆盖其修复"
+        },
+        {
+          "class": "DepictionTableButtonView",
+          "title": "下载 v0.0.7-2（iphoneos-arm64）",
+          "action": "https://chenlin8023.github.io/debs/com.sini921.lstimeseconds_0.0.7-2_iphoneos-arm64.deb",
+          "openExternal": true
+        },
+        {
+          "class": "DepictionSubheaderView",
+          "title": "v0.0.7-3 · 2026-11-02",
+          "useBoldText": true,
+          "useBottomMargin": true
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "状态",
+          "text": "已撤回"
+        },
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "- 新增全局 block 被 ARC retain，clang19 生成的 block isa 没有 PAC，objc_retain 时 SIGBUS；在 iOS 16.0.3 触发安全模式。"
+        },
+        {
+          "class": "DepictionSubheaderView",
+          "title": "v0.0.8 · 2026-11-02",
+          "useBoldText": true,
+          "useBottomMargin": true
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "状态",
+          "text": "已撤回"
+        },
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "- 设置面板二进制在 arm64e 上进入设置闪退；根因是 __objc_data 的 class/superclass 指针缺少 PAC。"
+        }
+      ]
+    },
+    {
+      "class": "DepictionStackView",
+      "tabname": "反馈",
+      "views": [
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "反馈时请附：插件版本、机型、iOS 版本、越狱环境、复现步骤、日志或截图。"
+        },
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "日志：/var/mobile/Library/LSTimeSeconds.log（超过 256KB 轮转为 .1）"
+        },
+        {
+          "class": "DepictionTableButtonView",
+          "title": "项目仓库",
+          "action": "https://github.com/Chenlin8023/LSTimeSeconds-iOS17",
+          "openExternal": true
+        },
+        {
+          "class": "DepictionTableButtonView",
+          "title": "提交问题 / 反馈",
+          "action": "https://github.com/Chenlin8023/Chenlin8023.github.io/issues/new?template=package-feedback.yml",
+          "openExternal": true
+        }
+      ]
+    }
+  ]
+}

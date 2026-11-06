@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LSTimeSeconds (rootless) · Chenlin8023 Repo</title><style>
+:root{--bg:#0b0d10;--card:#14181d;--line:#252b33;--text:#e8edf3;--muted:#93a1b1;--accent:#3ea6ff;--warn:#ffb454;--ok:#7ee0a8}
+*{box-sizing:border-box}
+body{margin:0;padding:34px 18px 64px;background:var(--bg);color:var(--text);
+font:15px/1.7 -apple-system,"SF Pro Text","PingFang SC","Microsoft YaHei",sans-serif;-webkit-text-size-adjust:100%}
+.wrap{max-width:760px;margin:0 auto}
+a{color:var(--accent)}
+.top{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-bottom:18px}
+.back{color:var(--muted);text-decoration:none;font-size:14px}
+h1{font-size:26px;margin:0 0 4px;letter-spacing:-.3px}
+.sub{color:var(--muted);margin:0 0 18px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px;margin-bottom:16px}
+.card h2{font-size:13px;margin:0 0 12px;color:var(--muted);text-transform:uppercase;letter-spacing:.08em}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.tag{display:inline-block;font-size:12px;padding:3px 9px;border-radius:6px;border:1px solid var(--line);color:var(--muted)}
+.tag.ok{color:var(--ok);border-color:#2c5a41}
+.tag.warn{color:var(--warn);border-color:#5a4526}
+.btn{display:inline-block;padding:9px 16px;border-radius:9px;background:var(--accent);color:#04121f;
+font-weight:600;text-decoration:none;font-size:14px;margin:6px 8px 0 0}
+.btn.ghost{background:transparent;color:var(--text);border:1px solid var(--line)}
+ul{margin:0;padding-left:20px}
+li{margin-bottom:7px}
+.note{color:var(--muted);font-size:14px}
+.ver{border-top:1px solid var(--line);padding:16px 0}
+.ver:first-of-type{border-top:0;padding-top:0}
+.ver .head{font-weight:600;font-size:16px}
+.ver .date{color:var(--muted);font-size:13px;margin-left:8px}
+.ver .status{font-size:13px;color:var(--accent);margin-top:4px}
+.ver ul{margin-top:8px;color:var(--muted)}
+footer{color:#5f6b78;font-size:13px;margin-top:26px;text-align:center}
+</style></head>
+<body><div class="wrap">
+<div class="top"><a class="back" href="../../">← 返回 Chenlin8023 Repo</a></div>
+<h1>LSTimeSeconds (rootless)</h1>
+<p class="sub">锁屏时钟显示实时秒数，支持字号缩放与上下位置调节（rootless /var/jb 构建）。</p>
+<div class="tags"><span class="tag">iphoneos-arm64</span><span class="tag">rootless（/var/jb）</span><span class="tag ok">已验证</span><span class="tag">另有 0.0.7-4 / 0.0.7-2</span></div>
+
+<div class="card" id="features"><h2>功能</h2><ul><li>锁屏时钟显示实时秒数，自动跟随设备 12/24 小时制</li><li>字号缩放 0.60–1.25（默认 0.88），以壁纸原始字号为基准，不抖动</li><li>上下位置调节 ±100pt，解除裁剪；时钟水平自动居中</li><li>长按进入壁纸自定义时静默旁路，滤镜、字体、景深编辑保持系统原样</li><li>熄屏暂停刷新省电，亮屏立即恢复并校准</li><li>设置面板：启用开关、字号滑块、位置滑块、注销按钮</li></ul></div>
+<div class="card" id="compatibility"><h2>兼容性</h2><div class="ver"><div class="head">v0.0.7-5</div><div class="date">2026-11-02 · iphoneos-arm64</div><div class="status">已验证</div><ul><li>机型：AOD 机型（具体机型未记录）</li><li>验证 iOS：16.0.3</li><li>越狱形态：rootless（/var/jb）</li></ul></div><div class="ver"><div class="head">v0.0.7-4</div><div class="date">2026-11-02 · iphoneos-arm64</div><div class="status">已验证</div><ul><li>机型：AOD 机型（具体机型未记录）</li><li>验证 iOS：16.0.3</li><li>越狱形态：rootless（/var/jb）</li></ul></div><div class="ver"><div class="head">v0.0.7-2</div><div class="date">2026-11-02 · iphoneos-arm64</div><div class="status">未单独验证</div><ul><li>机型：未单独验证</li><li>验证 iOS：—</li><li>越狱形态：rootless（/var/jb）</li></ul></div><div class="note" style="margin-top:12px"><b>注意事项</b><ul><li>AOD 暗屏不走秒：系统在暗屏使用 1Hz Flipbook，应用层无法刷新；亮屏立即恢复。</li><li>RootHide 用户请安装 LSTimeSeconds (RootHide)，不要与本包混装。</li><li>rootless 包安装到 /var/jb；普通 rootless 设备直接安装，RootHide 需转换或使用 rootless 引导环境。</li><li>0.0.7-2 未单独验证；0.0.7-4 / 0.0.7-5 已在 iOS 16.0.3 真机验证。</li></ul></div></div>
+<div class="card" id="changelog"><h2>更新日志</h2><p class="note">Sileo：安装后在插件页长按「修改 / MODIFY」选择历史版本；Irisin / Zebra 可直接在版本列表选择。每个版本下方有 .deb 直链。</p><div class="ver"><div class="head">v0.0.7-5</div><div class="date">2026-11-02 · iphoneos-arm64</div><div class="status">已验证</div><ul><li>日志超过 256KB 轮转为 .1，避免长期使用无限增长</li><li>1Hz 计时器首次 fire 对齐到下一个整秒（+10ms），秒数跳动更匀</li><li>刷新与停表逻辑与 0.0.7-4 一致</li></ul><a class="btn ghost" href="../../debs/com.sini921.lstimeseconds_0.0.7-5_iphoneos-arm64.deb">下载 v0.0.7-5（iphoneos-arm64）</a></div><div class="ver"><div class="head">v0.0.7-4</div><div class="date">2026-11-02 · iphoneos-arm64</div><div class="status">已验证</div><ul><li>修复 iOS 16 熄屏再亮屏后秒数冻结：tick 不再依据 g_isScreenOff 跳过刷新</li><li>熄屏、背光 state=2、视图注销时不再停止计时器，避免停止后无人重启</li><li>撤回 0.0.7-3 的全局 block 方案，改为最小改动</li></ul><a class="btn ghost" href="../../debs/com.sini921.lstimeseconds_0.0.7-4_iphoneos-arm64.deb">下载 v0.0.7-4（iphoneos-arm64）</a></div><div class="ver"><div class="head">v0.0.7-2</div><div class="date">2026-11-02 · iphoneos-arm64</div><div class="status">未单独验证</div><ul><li>rootless 适配：substrate 依赖与 /var/jb rpath</li><li>设置面板改为源码编译，修复 arm64e 类元数据 PAC 导致的闪退</li><li>功能与 RootHide 版一致，后续 0.0.7-4 已覆盖其修复</li></ul><a class="btn ghost" href="../../debs/com.sini921.lstimeseconds_0.0.7-2_iphoneos-arm64.deb">下载 v0.0.7-2（iphoneos-arm64）</a></div><div class="ver"><div class="head">v0.0.7-3</div><div class="date">2026-11-02</div><div class="status">已撤回</div><ul><li>新增全局 block 被 ARC retain，clang19 生成的 block isa 没有 PAC，objc_retain 时 SIGBUS；在 iOS 16.0.3 触发安全模式。</li></ul></div><div class="ver"><div class="head">v0.0.8</div><div class="date">2026-11-02</div><div class="status">已撤回</div><ul><li>设置面板二进制在 arm64e 上进入设置闪退；根因是 __objc_data 的 class/superclass 指针缺少 PAC。</li></ul></div></div>
+<div class="card" id="feedback"><h2>反馈</h2>
+<p>反馈时请附：插件版本、机型、iOS 版本、越狱环境、复现步骤、日志或截图。</p>
+<p class="note">日志：/var/mobile/Library/LSTimeSeconds.log（超过 256KB 轮转为 .1）</p>
+<a class="btn" href="https://github.com/Chenlin8023/Chenlin8023.github.io/issues/new?template=package-feedback.yml">提交问题 / 反馈</a>
+<a class="btn ghost" href="https://github.com/Chenlin8023/LSTimeSeconds-iOS17">项目仓库</a>
+</div>
+<footer>Chenlin8023 Repo · <a href="https://github.com/Chenlin8023/LSTimeSeconds-iOS17">https://github.com/Chenlin8023/LSTimeSeconds-iOS17</a></footer>
+</div></body></html>

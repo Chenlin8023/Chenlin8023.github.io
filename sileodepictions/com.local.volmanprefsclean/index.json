@@ -1,0 +1,116 @@
+{
+  "minVersion": "0.4",
+  "class": "DepictionTabView",
+  "tintColor": "#3ea6ff",
+  "tabs": [
+    {
+      "class": "DepictionStackView",
+      "tabname": "功能",
+      "views": [
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "- 单独补丁，仅用于已安装原版 VolumeManager 的设备\n- 移除面板中的打赏、推广、反盗版与攻击性文字\n- 功能开关全部保留\n- VolumeManager (Full) 已内置本功能，无需再装"
+        }
+      ]
+    },
+    {
+      "class": "DepictionStackView",
+      "tabname": "兼容性",
+      "views": [
+        {
+          "class": "DepictionSubheaderView",
+          "title": "v1.1.0 · iphoneos-arm64",
+          "useBoldText": true,
+          "useBottomMargin": true
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "机型",
+          "text": "iPhone 15 Pro"
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "验证 iOS",
+          "text": "17.2.1"
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "越狱形态",
+          "text": "rootless（/var/jb）"
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "验证状态",
+          "text": "已验证"
+        },
+        {
+          "class": "DepictionSubheaderView",
+          "title": "注意事项",
+          "useBoldText": true,
+          "useBottomMargin": true
+        },
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "- rootless（/var/jb）包，arm64。\n- 仅作为原版 VolumeManager 的补丁；Full 包用户不要重复安装。\n- 实机验证：iPhone 15 Pro / iOS 17.2.1（RootHide）。"
+        }
+      ]
+    },
+    {
+      "class": "DepictionStackView",
+      "tabname": "更新日志",
+      "views": [
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "Sileo：安装后在插件页长按「修改 / MODIFY」选择历史版本；Irisin / Zebra 可直接在版本列表选择。每个版本下方有 .deb 直链。"
+        },
+        {
+          "class": "DepictionSubheaderView",
+          "title": "v1.1.0 · 2026-11-02",
+          "useBoldText": true,
+          "useBottomMargin": true
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "验证",
+          "text": "已验证"
+        },
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "- 静态 + 运行时双重净化：面板条目与运行时文案都处理\n- 修复净化模块文件权限（此前缺少执行位，系统未加载）"
+        },
+        {
+          "class": "DepictionTableButtonView",
+          "title": "下载 v1.1.0（iphoneos-arm64）",
+          "action": "https://chenlin8023.github.io/debs/com.local.volmanprefsclean_1.1.0_iphoneos-arm64.deb",
+          "openExternal": true
+        }
+      ]
+    },
+    {
+      "class": "DepictionStackView",
+      "tabname": "反馈",
+      "views": [
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "反馈时请附：插件版本、机型、iOS 版本、越狱环境、复现步骤、日志或截图。"
+        },
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "反馈时请附：是否安装 VolumeManager (Full)、面板截图、模块是否加载。"
+        },
+        {
+          "class": "DepictionTableButtonView",
+          "title": "项目仓库",
+          "action": "https://github.com/Chenlin8023/VolumeManager-iOS17",
+          "openExternal": true
+        },
+        {
+          "class": "DepictionTableButtonView",
+          "title": "提交问题 / 反馈",
+          "action": "https://github.com/Chenlin8023/Chenlin8023.github.io/issues/new?template=package-feedback.yml",
+          "openExternal": true
+        }
+      ]
+    }
+  ]
+}

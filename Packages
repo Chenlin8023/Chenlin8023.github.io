@@ -1,5 +1,91 @@
+Package: com.sini921.lstimeseconds.roothide
+Version: 0.0.7-1
+Architecture: iphoneos-arm64e
+Section: Tweaks
+Priority: optional
+Maintainer: Chenlin8023
+Author: b4db1r3 & SINI
+Depends: mobilesubstrate, preferenceloader
+Conflicts: com.sini921.lstimeseconds
+Name: LSTimeSeconds (RootHide)
+Description: 锁屏时钟显示实时秒数，支持字号缩放与上下位置调节。
+ 实机验证：iPhone 15 Pro / iOS 17.2.1
+ 项目仓库：https://github.com/Chenlin8023/LSTimeSeconds-iOS17
+Homepage: https://github.com/Chenlin8023/LSTimeSeconds-iOS17
+SileoDepiction: https://chenlin8023.github.io/sileodepictions/com.sini921.lstimeseconds.roothide/index.json
+Depiction: https://chenlin8023.github.io/depictions/com.sini921.lstimeseconds.roothide/index.html
+Filename: debs/com.sini921.lstimeseconds.roothide_0.0.7-1_iphoneos-arm64e.deb
+Size: 39670
+SHA256: 45445a5c5c58ad0c1082bad2196a2e273f76d19b6b5bc525682ccecbd39368e0
+MD5sum: a229ea88d1e377c80569fcb2f255331b
+
+Package: com.sini921.lstimeseconds
+Section: Tweaks
+Priority: optional
+Maintainer: Chenlin8023
+Author: b4db1r3 & SINI
+Depends: mobilesubstrate, preferenceloader
+Architecture: iphoneos-arm64
+Version: 0.0.7-5
+Installed-Size: 444
+Conflicts: com.sini921.lstimeseconds.roothide
+Name: LSTimeSeconds (rootless)
+Description: 锁屏时钟显示实时秒数，支持字号缩放与上下位置调节（rootless /var/jb 构建）。
+ 实机验证：AOD 机型（具体机型未记录） / iOS 16.0.3
+ 项目仓库：https://github.com/Chenlin8023/LSTimeSeconds-iOS17
+Homepage: https://github.com/Chenlin8023/LSTimeSeconds-iOS17
+SileoDepiction: https://chenlin8023.github.io/sileodepictions/com.sini921.lstimeseconds/index.json
+Depiction: https://chenlin8023.github.io/depictions/com.sini921.lstimeseconds/index.html
+Filename: debs/com.sini921.lstimeseconds_0.0.7-5_iphoneos-arm64.deb
+Size: 38494
+SHA256: dfbae627593ddec60beeb5fda54fccc37c395a085d583fa455efd29843ede042
+MD5sum: ce7fd642dcd259f5de02753b123c3628
+
+Package: com.sini921.lstimeseconds
+Section: Tweaks
+Priority: optional
+Maintainer: Chenlin8023
+Author: b4db1r3 & SINI
+Depends: mobilesubstrate, preferenceloader
+Architecture: iphoneos-arm64
+Version: 0.0.7-4
+Installed-Size: 428
+Conflicts: com.sini921.lstimeseconds.roothide
+Name: LSTimeSeconds (rootless)
+Description: 锁屏时钟显示实时秒数，支持字号缩放与上下位置调节（rootless /var/jb 构建）。
+ 实机验证：AOD 机型（具体机型未记录） / iOS 16.0.3
+ 项目仓库：https://github.com/Chenlin8023/LSTimeSeconds-iOS17
+Homepage: https://github.com/Chenlin8023/LSTimeSeconds-iOS17
+SileoDepiction: https://chenlin8023.github.io/sileodepictions/com.sini921.lstimeseconds/index.json
+Depiction: https://chenlin8023.github.io/depictions/com.sini921.lstimeseconds/index.html
+Filename: debs/com.sini921.lstimeseconds_0.0.7-4_iphoneos-arm64.deb
+Size: 38302
+SHA256: d3c44a7ed03ab22c9cb9da5d7ae7b1181f11028b7fb3eb03000bf39dd59053bf
+MD5sum: a0b25c274eb95e70c02ffbeb224bf552
+
+Package: com.sini921.lstimeseconds
+Section: Tweaks
+Priority: optional
+Maintainer: Chenlin8023
+Author: b4db1r3 & SINI
+Depends: mobilesubstrate, preferenceloader
+Architecture: iphoneos-arm64
+Version: 0.0.7-2
+Installed-Size: 444
+Conflicts: com.sini921.lstimeseconds.roothide
+Name: LSTimeSeconds (rootless)
+Description: 锁屏时钟显示实时秒数，支持字号缩放与上下位置调节（rootless /var/jb 构建）。
+ 实机验证：未单独验证
+ 项目仓库：https://github.com/Chenlin8023/LSTimeSeconds-iOS17
+Homepage: https://github.com/Chenlin8023/LSTimeSeconds-iOS17
+SileoDepiction: https://chenlin8023.github.io/sileodepictions/com.sini921.lstimeseconds/index.json
+Depiction: https://chenlin8023.github.io/depictions/com.sini921.lstimeseconds/index.html
+Filename: debs/com.sini921.lstimeseconds_0.0.7-2_iphoneos-arm64.deb
+Size: 38280
+SHA256: ba47cadd059ed93209f37f3cfe309bf40f52a5cea094f0ade742b661a1eabc1d
+MD5sum: c2e1b26675a4984443565f01c49ad759
+
 Package: com.applockplus.refactored
-Name: AppLock+ (应用锁+)
 Version: 0.4.2-1
 Architecture: iphoneos-arm64e
 Section: Tweaks
@@ -7,39 +93,40 @@ Priority: optional
 Maintainer: Chenlin8023
 Author: based on tien0246/ProtectedApp
 Depends: firmware (>= 14.0)
+Name: AppLock+ (应用锁+)
 Description: 按应用注入式应用锁，6 位密码 + Face ID / 触控 ID，免 substrate。
- 本包是载体包：装完不会全局生效。dylib 位于
- /var/mobile/Documents/AppLockPlus/AppLockPlus.dylib，
- 用 Debs 导出或 Filza 取出，再由 TrollFools / JailFools 注入目标 App。
- 适合会检测越狱、无法全局注入的应用。不要过 RootHide 转换器。
- 实机验证：iOS 17.2.1（RootHide）
+ 实机验证：iPhone 15 Pro / iOS 17.2.1
+ 项目仓库：https://github.com/Chenlin8023/AppLockPlus
+Homepage: https://github.com/Chenlin8023/AppLockPlus
+SileoDepiction: https://chenlin8023.github.io/sileodepictions/com.applockplus.refactored/index.json
+Depiction: https://chenlin8023.github.io/depictions/com.applockplus.refactored/index.html
 Filename: debs/com.applockplus.refactored_0.4.2-1_iphoneos-arm64e.deb
-Size: 32012
-SHA256: f3149361faf11a3b40fe95c92440694d04326297ce3a1db1f013719b3ad6ff60
-MD5sum: 4ed7ba5663fc9c9e7ab22efe5d5cf137
+Size: 36316
+SHA256: 6cec5fb5004cdbf0b0bbe9a8d378e309dda2a858a37073df0f4a8f7a87f90481
+MD5sum: eecd5c8feb632280d1b606b2cd3c234b
 
 Package: com.chenlin8023.notifiericons
-Name: NotifierIcons
 Section: Tweaks
 Priority: optional
 Maintainer: Chenlin8023
 Author: Chenlin8023
 Depends: mobilesubstrate, preferenceloader
-Description: 状态栏显示选中应用的通知小图标（带红色角标数字），有角标才出现、清零即消失。
- 仅注入 SpringBoard（桌面/锁屏生效，App 内不显示），图标位置可调（居中/灵动岛左/右 + 微调）。
- 架构参考 NotifierDots（iOS 11-14.3）与 MooreBarX15，适配 iOS 16-17。
- rootless（/var/jb）包，arm64 + arm64e。构建为诊断版：调试日志默认开启。
- 实机验证：iOS 17.2.1（RootHide）
 Architecture: iphoneos-arm64
 Version: 0.9.2
 Installed-Size: 444
+Name: NotifierIcons
+Description: 状态栏显示选中应用的通知小图标；有未读角标才出现，清零即消失。
+ 实机验证：iPhone 15 Pro / iOS 17.2.1
+ 项目仓库：https://github.com/Chenlin8023/notifiericons
+Homepage: https://github.com/Chenlin8023/notifiericons
+SileoDepiction: https://chenlin8023.github.io/sileodepictions/com.chenlin8023.notifiericons/index.json
+Depiction: https://chenlin8023.github.io/depictions/com.chenlin8023.notifiericons/index.html
 Filename: debs/com.chenlin8023.notifiericons_0.9.2_iphoneos-arm64.deb
-Size: 35272
-SHA256: 1b1f54096625900cf1752d001cfa9890b101d1b35763fa8602ce819288da0aa1
-MD5sum: 653647ce581a51c457209287f3cff178
+Size: 39836
+SHA256: 62e8a2616c1b35cbb212a157e073a0601ca3602b75b6a8305e0249802dc702c2
+MD5sum: 1969cf72b7ee36af2d52ce057f4e301a
 
 Package: com.local.callassistportleak
-Name: CallAssist PortLeak
 Version: 2.1.0
 Architecture: iphoneos-arm64e
 Section: Tweaks
@@ -49,38 +136,19 @@ Author: Chenlin8023
 Depends: mobilesubstrate, firmware (>= 15.0)
 Conflicts: com.local.bioprotectleakguard
 Replaces: com.local.bioprotectleakguard
-Description: SpringBoard Mach 端口泄漏的侦查与止血工具，定责并抑制 CallAssist 的 IOKit 轮询泄漏。
- 逐层观测归因后确认：CallAssist 以约 2 次/秒轮询 IOKit 电池与电源接口，
- XPC 连接从不释放，占端口泄漏约 96%；BioProtect 经核对无关。
- 本工具每 5 分钟输出端口与 fd 统计、Top 调用点；
- 对「插件驱动且服务名为 com.apple.iokit.powerdxpc」的连接做接管-宽限-回收，
- 来电助手可继续正常使用。原生 roothide arm64e。
- 实机验证：iOS 17.2.1（RootHide）
+Name: CallAssist PortLeak
+Description: SpringBoard Mach 端口泄漏的侦查与止血工具；定责并抑制 CallAssist 的 IOKit 轮询泄漏。
+ 实机验证：待确认（2.0.14 已验证）；iPhone 15 Pro / iOS 17.2.1
+ 项目仓库：https://github.com/Chenlin8023/CallAssist-PortLeak
+Homepage: https://github.com/Chenlin8023/CallAssist-PortLeak
+SileoDepiction: https://chenlin8023.github.io/sileodepictions/com.local.callassistportleak/index.json
+Depiction: https://chenlin8023.github.io/depictions/com.local.callassistportleak/index.html
 Filename: debs/com.local.callassistportleak_2.1.0_iphoneos-arm64e.deb
-Size: 18620
-SHA256: 8b32aabb4c821f23d7783fe2163aaa913edc61d91ad29b043b9a47dbea4fc3d9
-MD5sum: 462f0fad7350f7db2064f6e8fff3abfa
+Size: 20182
+SHA256: bc893c0830a320b7a2c6dc8f4cad3441802e0c51f3b9718952319c5e4fab3b71
+MD5sum: e34f11a3463e10f16647a9b39454bd5e
 
 Package: com.local.volmanaudioqueue.full
-Name: VolManAudioQueue Full
-Description: VolumeManager 全量重打包版，一个 deb 装完整套。内含原版设置面板 VolumeManagerPrefs、音量 HUD VolumeManagerSBHUD、主模块 VolumeManager，重写后的每 App 音量引擎 VolManAudioQueue，以及设置面板净化模块 VolManPrefsClean。唯一不含的是原版有杂音的 VolumeManagerAudioQueue 模块。1.1.0 新增净化：设置界面里原作者的支付宝打赏条目与收款链接、GitHub 关注与查看源码条目、Sileo 源条目、反盗版声明，以及面板末尾那段针对其他插件作者的长篇攻击文字全部移除，功能开关一个不少。全新安装只需装这一个包，Orion 运行时由系统按依赖自动安装。1.1.3 修正净化模块的文件权限，此前该模块因缺少执行位从未被系统加载，因此既无日志也无效果。1.2.0 新增混音策略层：挂钩 AVAudioSession 的 setActive 与 setCategory 系列，在每次激活前把会话重新声明为可混音（MixWithOthers），让多个 App 稳定同时播放；该层与音量配置解耦、无条件安装，保留 App 的 mode 与路由选项，录音类不改类别，私有 API 探测后才挂。默认开启，可用 vmMixEnabled / vmMixGuard / vmMixExcludedApps 或 vmaq-mix-off 关闭。
- 实机验证：iOS 17.2.1（RootHide）
-Maintainer: local
-Author: local
-Section: Tweaks
-Depends: mobilesubstrate, firmware (>= 15.0), dev.theos.orion (>= 1.0.0)
-Conflicts: byg.iosios.net.volume-manager, com.local.volmanaudioqueue
-Replaces: byg.iosios.net.volume-manager, com.local.volmanaudioqueue
-Architecture: iphoneos-arm64
-Version: 1.2.0
-Installed-Size: 1184
-Filename: debs/com.local.volmanaudioqueue.full_1.2.0_iphoneos-arm64.deb
-Size: 171256
-SHA256: e82f33ea31ba62ac990bfc63994950cf578fffa17bd83b74837b8d413381ad50
-MD5sum: e777c34a069b89c5d540bf1a906818cd
-
-Package: com.local.volmanaudioqueue.full
-Name: VolumeManager (Full)
 Version: 1.3.0
 Architecture: iphoneos-arm64
 Section: Tweaks
@@ -90,19 +158,42 @@ Author: Chenlin8023
 Depends: mobilesubstrate, firmware (>= 15.0), dev.theos.orion (>= 1.0.0)
 Conflicts: byg.iosios.net.volume-manager, com.local.volmanaudioqueue
 Replaces: byg.iosios.net.volume-manager, com.local.volmanaudioqueue
+Name: VolumeManager (Full)
 Description: 每个 App 独立音量，多个 App 可同时播放。
- 功能：每个 App 单独调音量（最低静音）；多 App 同时播放，互不打断；改完立即生效。
- 修复：静音或低音量在长时间播放后失效（恢复原音量）。
- 全量包：含设置面板、音量 HUD 与音量引擎，面板推广文案已清理。
- 提示：App 若用 JailFools 等工具注入过，升级后需重新注入引擎。
- 实机验证：iOS 17.2.1（RootHide）
+ 实机验证：iPhone 15 Pro / iOS 17.2.1
+ 项目仓库：https://github.com/Chenlin8023/VolumeManager-iOS17
+Homepage: https://github.com/Chenlin8023/VolumeManager-iOS17
+SileoDepiction: https://chenlin8023.github.io/sileodepictions/com.local.volmanaudioqueue.full/index.json
+Depiction: https://chenlin8023.github.io/depictions/com.local.volmanaudioqueue.full/index.html
 Filename: debs/com.local.volmanaudioqueue.full_1.3.0_iphoneos-arm64.deb
-Size: 192926
-SHA256: e1b8d6e0d4a98aab76c4d6f264a0423afb08d7a1dcec296756e36524e6e9d840
-MD5sum: 38b067dbaff5d2f3c7365797908c3212
+Size: 192910
+SHA256: cdb46aaf45bd6595c36b2fecf88a375eee8c26cc3d799eb81e69e80cc7a658f2
+MD5sum: 38ad13c4c7cdeac51ed85cfb0ebd7620
+
+Package: com.local.volmanaudioqueue.full
+Maintainer: Chenlin8023
+Author: Chenlin8023
+Section: Tweaks
+Depends: mobilesubstrate, firmware (>= 15.0), dev.theos.orion (>= 1.0.0)
+Conflicts: byg.iosios.net.volume-manager, com.local.volmanaudioqueue
+Replaces: byg.iosios.net.volume-manager, com.local.volmanaudioqueue
+Architecture: iphoneos-arm64
+Version: 1.2.0
+Installed-Size: 1184
+Name: VolumeManager (Full)
+Priority: optional
+Description: 每个 App 独立音量，多个 App 可同时播放。
+ 实机验证：iPhone 15 Pro / iOS 17.2.1
+ 项目仓库：https://github.com/Chenlin8023/VolumeManager-iOS17
+Homepage: https://github.com/Chenlin8023/VolumeManager-iOS17
+SileoDepiction: https://chenlin8023.github.io/sileodepictions/com.local.volmanaudioqueue.full/index.json
+Depiction: https://chenlin8023.github.io/depictions/com.local.volmanaudioqueue.full/index.html
+Filename: debs/com.local.volmanaudioqueue.full_1.2.0_iphoneos-arm64.deb
+Size: 191328
+SHA256: ea50dc7d1909bdc89cc63c81f29fe9f205cc3d4063835cbf074e225a83282598
+MD5sum: cfcb65823ff547f24110083e422b381d
 
 Package: com.local.volmanprefsclean
-Name: VolumeManager 面板净化（单独补丁）
 Version: 1.1.0
 Architecture: iphoneos-arm64
 Section: Tweaks
@@ -110,90 +201,14 @@ Priority: optional
 Maintainer: Chenlin8023
 Author: Chenlin8023
 Depends: mobilesubstrate, firmware (>= 15.0)
-Description: VolumeManager 设置面板净化补丁，仅供已安装原版 VolumeManager 的设备使用。
- 安装 VolumeManager (Full) 的用户已内置该功能，无需再装本包。
- 移除面板中作者的打赏、推广、反盗版与攻击性文字，功能开关全部保留。
- 实机验证：iOS 17.2.1（RootHide）
+Name: VolumeManager 面板净化
+Description: VolumeManager 设置面板净化补丁；移除推广与攻击性文字，功能开关保留。
+ 实机验证：iPhone 15 Pro / iOS 17.2.1
+ 项目仓库：https://github.com/Chenlin8023/VolumeManager-iOS17
+Homepage: https://github.com/Chenlin8023/VolumeManager-iOS17
+SileoDepiction: https://chenlin8023.github.io/sileodepictions/com.local.volmanprefsclean/index.json
+Depiction: https://chenlin8023.github.io/depictions/com.local.volmanprefsclean/index.html
 Filename: debs/com.local.volmanprefsclean_1.1.0_iphoneos-arm64.deb
-Size: 12920
-SHA256: 0644dbeec85f267616d0af959cd9d9e56133fd9f047d277c850406643c3850a0
-MD5sum: 92d302ba5bab312714517ff91faba9bc
-
-Package: com.sini921.lstimeseconds
-Name: LSTimeSeconds
-Version: 0.0.7-1
-Architecture: iphoneos-arm64e
-Section: Tweaks
-Priority: optional
-Maintainer: Chenlin8023
-Author: b4db1r3 & SINI
-Depends: mobilesubstrate, preferenceloader
-Description: 锁屏时钟显示实时秒数，支持字号缩放与上下位置调节。
- 时间格式跟随设备 12/24 小时制；长按进入壁纸编辑不受影响。
- 不支持全天候显示（AOD）暗屏走秒，亮屏时即时走秒。
- 原生 roothide arm64e。
- 实机验证：iOS 17.2.1（RootHide）
-Filename: debs/com.sini921.lstimeseconds_0.0.7-1_iphoneos-arm64e.deb
-Size: 37452
-SHA256: dd2dc0c29bdd2024759b54bde97d6e959aff58f6b184cbf6a2f90cf13b394658
-MD5sum: 7085fb5c11b6ce12a7323692df0c22d3
-
-Package: com.sini921.lstimeseconds
-Name: LSTimeSeconds
-Section: Tweaks
-Priority: optional
-Maintainer: Chenlin8023
-Author: b4db1r3 & SINI
-Depends: mobilesubstrate, preferenceloader
-Description: 锁屏时钟显示实时秒数，支持字号缩放与上下位置调节。
- 时间格式跟随设备 12/24 小时制；长按进入壁纸编辑不受影响。
- 不支持全天候显示（AOD）暗屏走秒，亮屏时即时走秒。
- 原生 rootless（/var/jb）包，arm64 + arm64e，适配 iOS 16–17。
- 实机验证：iOS 17.2.1（RootHide）
-Architecture: iphoneos-arm64
-Version: 0.0.7-2
-Installed-Size: 444
-Filename: debs/com.sini921.lstimeseconds_0.0.7-2_iphoneos-arm64.deb
-Size: 36260
-SHA256: 45877157ddfe7df911e5eebe4fe5142e00421493c22c91ef335b73940d229fc5
-MD5sum: c9d60ea4bb888935944b870681cd5b6e
-
-Package: com.sini921.lstimeseconds
-Name: LSTimeSeconds
-Section: Tweaks
-Priority: optional
-Maintainer: Chenlin8023
-Author: b4db1r3 & SINI
-Depends: mobilesubstrate, preferenceloader
-Description: 锁屏时钟显示实时秒数，支持字号缩放与上下位置调节。
- 时间格式跟随设备 12/24 小时制；长按进入壁纸编辑不受影响。
- 不支持全天候显示（AOD）暗屏走秒，亮屏时即时走秒。
- 原生 rootless（/var/jb）包，arm64 + arm64e，适配 iOS 16–17。
- 实机验证：iOS 16.0.3（rootless）
-Architecture: iphoneos-arm64
-Version: 0.0.7-4
-Installed-Size: 428
-Filename: debs/com.sini921.lstimeseconds_0.0.7-4_iphoneos-arm64.deb
-Size: 36272
-SHA256: 42b90875155d39d1caf2b6ca4e764cd2e4d5a3a5edf6f4659db534f44b9a577f
-MD5sum: c7791b3065ceed5ac6311e99a313af24
-
-Package: com.sini921.lstimeseconds
-Name: LSTimeSeconds
-Section: Tweaks
-Priority: optional
-Maintainer: Chenlin8023
-Author: b4db1r3 & SINI
-Depends: mobilesubstrate, preferenceloader
-Description: 锁屏时钟显示实时秒数，支持字号缩放与上下位置调节。
- 时间格式跟随设备 12/24 小时制；长按进入壁纸编辑不受影响。
- 不支持全天候显示（AOD）暗屏走秒，亮屏时即时走秒。
- 原生 rootless（/var/jb）包，arm64 + arm64e，适配 iOS 16–17。
- 实机验证：iOS 16.0.3（rootless）
-Architecture: iphoneos-arm64
-Version: 0.0.7-5
-Installed-Size: 444
-Filename: debs/com.sini921.lstimeseconds_0.0.7-5_iphoneos-arm64.deb
-Size: 36536
-SHA256: 2006fa89d1911a8942efbc09ff4791e3e8b4427b48aabdc7fd23863e476ebb56
-MD5sum: bbb8362a5db5c0cf604a8d9f36d555c1
+Size: 14052
+SHA256: 621609da7db7d0e18579f21e5f804d217bf0c04a2253198a58da36d88fdb74eb
+MD5sum: b3f4ba71a6e65f42221448b32ab6bb77

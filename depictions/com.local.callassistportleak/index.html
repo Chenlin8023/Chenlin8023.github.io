@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CallAssist PortLeak · Chenlin8023 Repo</title><style>
+:root{--bg:#0b0d10;--card:#14181d;--line:#252b33;--text:#e8edf3;--muted:#93a1b1;--accent:#3ea6ff;--warn:#ffb454;--ok:#7ee0a8}
+*{box-sizing:border-box}
+body{margin:0;padding:34px 18px 64px;background:var(--bg);color:var(--text);
+font:15px/1.7 -apple-system,"SF Pro Text","PingFang SC","Microsoft YaHei",sans-serif;-webkit-text-size-adjust:100%}
+.wrap{max-width:760px;margin:0 auto}
+a{color:var(--accent)}
+.top{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-bottom:18px}
+.back{color:var(--muted);text-decoration:none;font-size:14px}
+h1{font-size:26px;margin:0 0 4px;letter-spacing:-.3px}
+.sub{color:var(--muted);margin:0 0 18px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px;margin-bottom:16px}
+.card h2{font-size:13px;margin:0 0 12px;color:var(--muted);text-transform:uppercase;letter-spacing:.08em}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.tag{display:inline-block;font-size:12px;padding:3px 9px;border-radius:6px;border:1px solid var(--line);color:var(--muted)}
+.tag.ok{color:var(--ok);border-color:#2c5a41}
+.tag.warn{color:var(--warn);border-color:#5a4526}
+.btn{display:inline-block;padding:9px 16px;border-radius:9px;background:var(--accent);color:#04121f;
+font-weight:600;text-decoration:none;font-size:14px;margin:6px 8px 0 0}
+.btn.ghost{background:transparent;color:var(--text);border:1px solid var(--line)}
+ul{margin:0;padding-left:20px}
+li{margin-bottom:7px}
+.note{color:var(--muted);font-size:14px}
+.ver{border-top:1px solid var(--line);padding:16px 0}
+.ver:first-of-type{border-top:0;padding-top:0}
+.ver .head{font-weight:600;font-size:16px}
+.ver .date{color:var(--muted);font-size:13px;margin-left:8px}
+.ver .status{font-size:13px;color:var(--accent);margin-top:4px}
+.ver ul{margin-top:8px;color:var(--muted)}
+footer{color:#5f6b78;font-size:13px;margin-top:26px;text-align:center}
+</style></head>
+<body><div class="wrap">
+<div class="top"><a class="back" href="../../">← 返回 Chenlin8023 Repo</a></div>
+<h1>CallAssist PortLeak</h1>
+<p class="sub">SpringBoard Mach 端口泄漏的侦查与止血工具；定责并抑制 CallAssist 的 IOKit 轮询泄漏。</p>
+<div class="tags"><span class="tag">iphoneos-arm64e</span><span class="tag">RootHide 原生</span><span class="tag warn">待确认（2.0.14 已验证）</span></div>
+
+<div class="card" id="features"><h2>功能</h2><ul><li>观测：每 5 分钟输出端口 / fd 统计、Top 调用点、xpcA / xpcF / p5 指标</li><li>既有止血：CFUserNotification 应答端口宽限后取消、摘除泄漏 RunLoop 源、fd 超水位时复核后关闭</li><li>XPC 接管-宽限-回收：钩住 xpc_connection_create*，栈回溯确认插件驱动且服务名命中回收名单</li><li>512 槽指针去重；5 秒清扫；默认 10 秒宽限后 xpc_connection_cancel + xpc_release</li><li>系统框架直呼与纯系统路径的连接不碰；回收服务名单可通过 config.plist 配置</li><li>原生 roothide arm64e</li></ul></div>
+<div class="card" id="compatibility"><h2>兼容性</h2><div class="ver"><div class="head">v2.1.0</div><div class="date">2026-11-03 · iphoneos-arm64e</div><div class="status">待确认（2.0.14 已验证）</div><ul><li>机型：iPhone 15 Pro</li><li>验证 iOS：17.2.1</li><li>越狱形态：RootHide 原生</li></ul></div><div class="note" style="margin-top:12px"><b>注意事项</b><ul><li>项目已更名 CallAssistLeakGuard；当前发布包 ID 仍是旧 ID com.local.callassistportleak，2.1.0 更名重建待完成。</li><li>2.1.0 待真机确认；2.0.14 已验证回收有效。</li><li>从旧 ID（com.local.bioprotectleakguard）升级必须先卸载旧包；新旧共存会双重注入。</li><li>原生 roothide arm64e，不要过 RootHide 转换器。</li></ul></div></div>
+<div class="card" id="changelog"><h2>更新日志</h2><p class="note">Sileo：安装后在插件页长按「修改 / MODIFY」选择历史版本；Irisin / Zebra 可直接在版本列表选择。每个版本下方有 .deb 直链。</p><div class="ver"><div class="head">v2.1.0</div><div class="date">2026-11-03 · iphoneos-arm64e</div><div class="status">待确认（2.0.14 已验证）</div><ul><li>项目更名 CallAssistLeakGuard，计划将包 ID 改为 com.local.callassistleakguard（当前发布包仍为旧 ID）</li><li>功能同 2.0.14：回收服务名单可配置；新增 p5 端口净增量指标</li><li>2.0.13 起确认 powerdxpc 回收有效（xpcA≈xpcF）</li></ul><a class="btn ghost" href="../../debs/com.local.callassistportleak_2.1.0_iphoneos-arm64e.deb">下载 v2.1.0（iphoneos-arm64e）</a></div><div class="ver"><div class="head">v2.0.14</div><div class="date">2026-11-03</div><div class="status">旧 ID 已验证</div><ul><li>回收服务范围改为可配置（XPCReclaimServices，前缀匹配）；安全条件不变。</li></ul></div><div class="ver"><div class="head">v2.0.13</div><div class="date">2026-11-02</div><div class="status">旧 ID 已验证</div><ul><li>真机日志确认 powerdxpc 回收有效；统计行新增 p5 端口净增量。</li></ul></div><div class="ver"><div class="head">v2.0.7 / 2.0.8</div><div class="date">2026-10-26</div><div class="status">旧 ID 历史版本</div><ul><li>2.0.7 修复 arm64e __cfstring isa 未认证导致的 SIGBUS；2.0.8 修复定时器被 ARC 释放、清扫从未运行的 bug。</li></ul></div></div>
+<div class="card" id="feedback"><h2>反馈</h2>
+<p>反馈时请附：插件版本、机型、iOS 版本、越狱环境、复现步骤、日志或截图。</p>
+<p class="note">反馈时请附：CallAssistLeakGuard 的 guard.log、config.plist 中 XPCReclaimServices、设备使用时长与复现步骤。</p>
+<a class="btn" href="https://github.com/Chenlin8023/Chenlin8023.github.io/issues/new?template=package-feedback.yml">提交问题 / 反馈</a>
+<a class="btn ghost" href="https://github.com/Chenlin8023/CallAssist-PortLeak">项目仓库</a>
+</div>
+<footer>Chenlin8023 Repo · <a href="https://github.com/Chenlin8023/CallAssist-PortLeak">https://github.com/Chenlin8023/CallAssist-PortLeak</a></footer>
+</div></body></html>

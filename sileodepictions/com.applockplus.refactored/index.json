@@ -1,0 +1,116 @@
+{
+  "minVersion": "0.4",
+  "class": "DepictionTabView",
+  "tintColor": "#3ea6ff",
+  "tabs": [
+    {
+      "class": "DepictionStackView",
+      "tabname": "功能",
+      "views": [
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "- 按应用注入：适合会检测越狱、无法全局注入的 App（TrollFools / JailFools）\n- 6 位应用锁密码；首次启动强制设置，不使用默认 0000\n- Face ID / 触控 ID 作为快捷方式；取消、失败或识别不可用时停留在密码键盘，不放行\n- 密码 PBKDF2-SHA256（2 万次迭代 + 16 字节随机盐），优先存 Keychain；恒定时间比较\n- 连续输错 5 次起指数冷却（1→2→4…分钟，上限 17 小时），状态持久化，杀进程不重置\n- 后台快照模糊遮盖；双指双击进入设置；支持 UIWindowScene / SwiftUI\n- 载体包：dylib 需手动注入目标 App，装完不会全局生效"
+        }
+      ]
+    },
+    {
+      "class": "DepictionStackView",
+      "tabname": "兼容性",
+      "views": [
+        {
+          "class": "DepictionSubheaderView",
+          "title": "v0.4.2-1 · iphoneos-arm64e",
+          "useBoldText": true,
+          "useBottomMargin": true
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "机型",
+          "text": "iPhone 15 Pro"
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "验证 iOS",
+          "text": "17.2.1"
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "越狱形态",
+          "text": "RootHide（按应用注入，免 substrate）"
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "验证状态",
+          "text": "已验证"
+        },
+        {
+          "class": "DepictionSubheaderView",
+          "title": "注意事项",
+          "useBoldText": true,
+          "useBottomMargin": true
+        },
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "- 载体包：dylib 位于 /var/mobile/Documents/AppLockPlus/，用 Debs 导出或 Filza 取出，再由 TrollFools / JailFools 注入目标 App。\n- 不要过 RootHide 转换器；本包是免 substrate 的按应用注入 dylib。\n- 构建目标 iOS 14+；实机验证为 iPhone 15 Pro / iOS 17.2.1。"
+        }
+      ]
+    },
+    {
+      "class": "DepictionStackView",
+      "tabname": "更新日志",
+      "views": [
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "Sileo：安装后在插件页长按「修改 / MODIFY」选择历史版本；Irisin / Zebra 可直接在版本列表选择。每个版本下方有 .deb 直链。"
+        },
+        {
+          "class": "DepictionSubheaderView",
+          "title": "v0.4.2-1 · 2026-11-04",
+          "useBoldText": true,
+          "useBottomMargin": true
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "验证",
+          "text": "已验证"
+        },
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "- 重构自 tien0246/ProtectedApp；修复 Face ID 取消即放行、快速返回解锁、明文密码、默认 0000 等绕过与安全问题\n- 首次启动强制设置 6 位密码；完整中文设置面板；Keychain/PBKDF2 存储；指数冷却；后台快照模糊；UIWindowScene 适配\n- 双指双击设置入口；移除魔改版的 Telegram 推广行为"
+        },
+        {
+          "class": "DepictionTableButtonView",
+          "title": "下载 v0.4.2-1（iphoneos-arm64e）",
+          "action": "https://chenlin8023.github.io/debs/com.applockplus.refactored_0.4.2-1_iphoneos-arm64e.deb",
+          "openExternal": true
+        }
+      ]
+    },
+    {
+      "class": "DepictionStackView",
+      "tabname": "反馈",
+      "views": [
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "反馈时请附：插件版本、机型、iOS 版本、越狱环境、复现步骤、日志或截图。"
+        },
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "反馈时请附：目标 App 名称、注入工具（TrollFools / JailFools）、是否首次启动、是否设置过密码。"
+        },
+        {
+          "class": "DepictionTableButtonView",
+          "title": "项目仓库",
+          "action": "https://github.com/Chenlin8023/AppLockPlus",
+          "openExternal": true
+        },
+        {
+          "class": "DepictionTableButtonView",
+          "title": "提交问题 / 反馈",
+          "action": "https://github.com/Chenlin8023/Chenlin8023.github.io/issues/new?template=package-feedback.yml",
+          "openExternal": true
+        }
+      ]
+    }
+  ]
+}

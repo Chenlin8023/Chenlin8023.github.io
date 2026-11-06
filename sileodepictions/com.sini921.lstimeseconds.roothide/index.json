@@ -1,0 +1,131 @@
+{
+  "minVersion": "0.4",
+  "class": "DepictionTabView",
+  "tintColor": "#3ea6ff",
+  "tabs": [
+    {
+      "class": "DepictionStackView",
+      "tabname": "功能",
+      "views": [
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "- 锁屏时钟显示实时秒数，自动跟随设备 12/24 小时制\n- 字号缩放 0.60–1.25（默认 0.88），以壁纸原始字号为基准，不抖动\n- 上下位置调节 ±100pt，解除裁剪；时钟水平自动居中\n- 长按进入壁纸自定义时静默旁路，滤镜、字体、景深编辑保持系统原样\n- 熄屏暂停刷新省电，亮屏立即恢复并校准\n- 设置面板：启用开关、字号滑块、位置滑块、注销按钮"
+        }
+      ]
+    },
+    {
+      "class": "DepictionStackView",
+      "tabname": "兼容性",
+      "views": [
+        {
+          "class": "DepictionSubheaderView",
+          "title": "v0.0.7-1 · iphoneos-arm64e",
+          "useBoldText": true,
+          "useBottomMargin": true
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "机型",
+          "text": "iPhone 15 Pro"
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "验证 iOS",
+          "text": "17.2.1"
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "越狱形态",
+          "text": "RootHide 原生"
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "验证状态",
+          "text": "已验证"
+        },
+        {
+          "class": "DepictionSubheaderView",
+          "title": "注意事项",
+          "useBoldText": true,
+          "useBottomMargin": true
+        },
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "- AOD 暗屏不走秒：系统在暗屏使用 1Hz Flipbook，应用层无法刷新；亮屏立即恢复。\n- 这是独立的 RootHide Package ID；从旧包升级必须先卸载旧 LSTimeSeconds，再安装本包。\n- 卸载旧包不会删除偏好设置（com.b4db1r3.lstsprefs），新包会沿用。\n- 原生 roothide arm64e，不要过 RootHide 转换器。"
+        }
+      ]
+    },
+    {
+      "class": "DepictionStackView",
+      "tabname": "更新日志",
+      "views": [
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "Sileo：安装后在插件页长按「修改 / MODIFY」选择历史版本；Irisin / Zebra 可直接在版本列表选择。每个版本下方有 .deb 直链。"
+        },
+        {
+          "class": "DepictionSubheaderView",
+          "title": "v0.0.7-1 · 2026-11-02",
+          "useBoldText": true,
+          "useBottomMargin": true
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "验证",
+          "text": "已验证"
+        },
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "- 修复原版在 iOS 17 上完全不生效的四个根因：版本硬编码、通知名不匹配、旧键误判、字号震荡\n- 改为直接 hook CSProminentDisplayViewController / CSProminentTimeView，并保留 SBFLockScreenDateView 兜底\n- 四通道写文字；字号以原始值为基准单次锚定，避免每秒抖动\n- 原生 roothide arm64e，不经转换器"
+        },
+        {
+          "class": "DepictionTableButtonView",
+          "title": "下载 v0.0.7-1（iphoneos-arm64e）",
+          "action": "https://chenlin8023.github.io/debs/com.sini921.lstimeseconds.roothide_0.0.7-1_iphoneos-arm64e.deb",
+          "openExternal": true
+        },
+        {
+          "class": "DepictionSubheaderView",
+          "title": "v0.0.8 · 2026-11-02",
+          "useBoldText": true,
+          "useBottomMargin": true
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "状态",
+          "text": "已撤回"
+        },
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "- 自建 PSListController 面板在真机进入设置闪退；根因是 arm64e 类元数据缺少 PAC。版本号已回退到 0.0.7-1。"
+        }
+      ]
+    },
+    {
+      "class": "DepictionStackView",
+      "tabname": "反馈",
+      "views": [
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "反馈时请附：插件版本、机型、iOS 版本、越狱环境、复现步骤、日志或截图。"
+        },
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "日志：/var/mobile/Library/LSTimeSeconds.log（超过 256KB 轮转为 .1）"
+        },
+        {
+          "class": "DepictionTableButtonView",
+          "title": "项目仓库",
+          "action": "https://github.com/Chenlin8023/LSTimeSeconds-iOS17",
+          "openExternal": true
+        },
+        {
+          "class": "DepictionTableButtonView",
+          "title": "提交问题 / 反馈",
+          "action": "https://github.com/Chenlin8023/Chenlin8023.github.io/issues/new?template=package-feedback.yml",
+          "openExternal": true
+        }
+      ]
+    }
+  ]
+}

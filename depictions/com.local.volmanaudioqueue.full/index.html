@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>VolumeManager (Full) · Chenlin8023 Repo</title><style>
+:root{--bg:#0b0d10;--card:#14181d;--line:#252b33;--text:#e8edf3;--muted:#93a1b1;--accent:#3ea6ff;--warn:#ffb454;--ok:#7ee0a8}
+*{box-sizing:border-box}
+body{margin:0;padding:34px 18px 64px;background:var(--bg);color:var(--text);
+font:15px/1.7 -apple-system,"SF Pro Text","PingFang SC","Microsoft YaHei",sans-serif;-webkit-text-size-adjust:100%}
+.wrap{max-width:760px;margin:0 auto}
+a{color:var(--accent)}
+.top{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-bottom:18px}
+.back{color:var(--muted);text-decoration:none;font-size:14px}
+h1{font-size:26px;margin:0 0 4px;letter-spacing:-.3px}
+.sub{color:var(--muted);margin:0 0 18px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px;margin-bottom:16px}
+.card h2{font-size:13px;margin:0 0 12px;color:var(--muted);text-transform:uppercase;letter-spacing:.08em}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.tag{display:inline-block;font-size:12px;padding:3px 9px;border-radius:6px;border:1px solid var(--line);color:var(--muted)}
+.tag.ok{color:var(--ok);border-color:#2c5a41}
+.tag.warn{color:var(--warn);border-color:#5a4526}
+.btn{display:inline-block;padding:9px 16px;border-radius:9px;background:var(--accent);color:#04121f;
+font-weight:600;text-decoration:none;font-size:14px;margin:6px 8px 0 0}
+.btn.ghost{background:transparent;color:var(--text);border:1px solid var(--line)}
+ul{margin:0;padding-left:20px}
+li{margin-bottom:7px}
+.note{color:var(--muted);font-size:14px}
+.ver{border-top:1px solid var(--line);padding:16px 0}
+.ver:first-of-type{border-top:0;padding-top:0}
+.ver .head{font-weight:600;font-size:16px}
+.ver .date{color:var(--muted);font-size:13px;margin-left:8px}
+.ver .status{font-size:13px;color:var(--accent);margin-top:4px}
+.ver ul{margin-top:8px;color:var(--muted)}
+footer{color:#5f6b78;font-size:13px;margin-top:26px;text-align:center}
+</style></head>
+<body><div class="wrap">
+<div class="top"><a class="back" href="../../">← 返回 Chenlin8023 Repo</a></div>
+<h1>VolumeManager (Full)</h1>
+<p class="sub">每个 App 独立音量，多个 App 可同时播放。</p>
+<div class="tags"><span class="tag">iphoneos-arm64</span><span class="tag">rootless（/var/jb）</span><span class="tag ok">已验证</span><span class="tag">另有 1.2.0</span></div>
+
+<div class="card" id="features"><h2>功能</h2><ul><li>每个 App 独立音量（最低静音）；多 App 同时播放，互不打断；改完立即生效</li><li>重写音量引擎，消除 16 位 PCM 爆音</li><li>混音策略层：挂钩 AVAudioSession setActive / setCategory，保证多 App 同播稳定</li><li>全量包：含设置面板、音量 HUD、音量引擎；面板推广 / 打赏 / 攻击文字已清理</li><li>1.3.0 修复长时间播放后静音失效（ctx 表 32→512，并输出占用率日志）</li></ul></div>
+<div class="card" id="compatibility"><h2>兼容性</h2><div class="ver"><div class="head">v1.3.0</div><div class="date">2026-11-04 · iphoneos-arm64</div><div class="status">已验证</div><ul><li>机型：iPhone 15 Pro</li><li>验证 iOS：17.2.1</li><li>越狱形态：rootless（/var/jb）</li></ul></div><div class="ver"><div class="head">v1.2.0</div><div class="date">2026-10-23 · iphoneos-arm64</div><div class="status">已验证</div><ul><li>机型：iPhone 15 Pro</li><li>验证 iOS：17.2.1</li><li>越狱形态：rootless（/var/jb）</li></ul></div><div class="note" style="margin-top:12px"><b>注意事项</b><ul><li>rootless（/var/jb）包，arm64；RootHide 需转换或使用 rootless 引导环境。</li><li>1.3.0 是过渡版：用 JailFools 等工具把引擎注入到 App 的，升级后需覆盖 .app/Frameworks/VolManAudioQueue.dylib 并重新打开 App；验收看容器日志头 === v1.3.0。</li><li>1.2.0 是稳定回退版，可直接安装 / 降级。</li><li>依赖 Orion 运行时（dev.theos.orion），由系统按依赖安装。</li></ul></div></div>
+<div class="card" id="changelog"><h2>更新日志</h2><p class="note">Sileo：安装后在插件页长按「修改 / MODIFY」选择历史版本；Irisin / Zebra 可直接在版本列表选择。每个版本下方有 .deb 直链。</p><div class="ver"><div class="head">v1.3.0</div><div class="date">2026-11-04 · iphoneos-arm64</div><div class="status">已验证</div><ul><li>渲染回调层 ctx 表 32→512，修复长时间播放后静音失效</li><li>新增 ctx 占用 / 峰值 / 累计包装日志，失败不再静默</li><li>不采用动态扩容：渲染回调持有槽位指针，realloc 会让已装回调的 refCon 失效</li></ul><a class="btn ghost" href="../../debs/com.local.volmanaudioqueue.full_1.3.0_iphoneos-arm64.deb">下载 v1.3.0（iphoneos-arm64）</a></div><div class="ver"><div class="head">v1.2.0</div><div class="date">2026-10-23 · iphoneos-arm64</div><div class="status">已验证</div><ul><li>新增混音策略层，多 App 稳定同时播放</li><li>全量包整合设置面板、音量 HUD、音量引擎；面板净化</li><li>作为 1.3.0 的稳定回退版保留</li></ul><a class="btn ghost" href="../../debs/com.local.volmanaudioqueue.full_1.2.0_iphoneos-arm64.deb">下载 v1.2.0（iphoneos-arm64）</a></div><div class="ver"><div class="head">v1.2.1 – 1.2.7</div><div class="date">2026-11-03</div><div class="status">未上架 / 已移除</div><ul><li>多变量优化期，结论不可归因；1.3.0 由 1.2.0 + ctx 512 重新定案。</li></ul></div><div class="ver"><div class="head">v1.1.3 / 1.1.0</div><div class="date">2026-10-23</div><div class="status">历史版本</div><ul><li>1.1.3 修正净化模块文件权限（此前缺少执行位未加载）；1.1.0 新增面板净化。</li></ul></div></div>
+<div class="card" id="feedback"><h2>反馈</h2>
+<p>反馈时请附：插件版本、机型、iOS 版本、越狱环境、复现步骤、日志或截图。</p>
+<p class="note">反馈时请附：App 容器 Documents 下的 VolMan 日志、日志头版本、注入形态（动态注入 / JailFools 拷贝）、复现步骤。</p>
+<a class="btn" href="https://github.com/Chenlin8023/Chenlin8023.github.io/issues/new?template=package-feedback.yml">提交问题 / 反馈</a>
+<a class="btn ghost" href="https://github.com/Chenlin8023/VolumeManager-iOS17">项目仓库</a>
+</div>
+<footer>Chenlin8023 Repo · <a href="https://github.com/Chenlin8023/VolumeManager-iOS17">https://github.com/Chenlin8023/VolumeManager-iOS17</a></footer>
+</div></body></html>

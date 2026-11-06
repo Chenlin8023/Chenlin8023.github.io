@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AppLock+ (应用锁+) · Chenlin8023 Repo</title><style>
+:root{--bg:#0b0d10;--card:#14181d;--line:#252b33;--text:#e8edf3;--muted:#93a1b1;--accent:#3ea6ff;--warn:#ffb454;--ok:#7ee0a8}
+*{box-sizing:border-box}
+body{margin:0;padding:34px 18px 64px;background:var(--bg);color:var(--text);
+font:15px/1.7 -apple-system,"SF Pro Text","PingFang SC","Microsoft YaHei",sans-serif;-webkit-text-size-adjust:100%}
+.wrap{max-width:760px;margin:0 auto}
+a{color:var(--accent)}
+.top{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-bottom:18px}
+.back{color:var(--muted);text-decoration:none;font-size:14px}
+h1{font-size:26px;margin:0 0 4px;letter-spacing:-.3px}
+.sub{color:var(--muted);margin:0 0 18px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px;margin-bottom:16px}
+.card h2{font-size:13px;margin:0 0 12px;color:var(--muted);text-transform:uppercase;letter-spacing:.08em}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.tag{display:inline-block;font-size:12px;padding:3px 9px;border-radius:6px;border:1px solid var(--line);color:var(--muted)}
+.tag.ok{color:var(--ok);border-color:#2c5a41}
+.tag.warn{color:var(--warn);border-color:#5a4526}
+.btn{display:inline-block;padding:9px 16px;border-radius:9px;background:var(--accent);color:#04121f;
+font-weight:600;text-decoration:none;font-size:14px;margin:6px 8px 0 0}
+.btn.ghost{background:transparent;color:var(--text);border:1px solid var(--line)}
+ul{margin:0;padding-left:20px}
+li{margin-bottom:7px}
+.note{color:var(--muted);font-size:14px}
+.ver{border-top:1px solid var(--line);padding:16px 0}
+.ver:first-of-type{border-top:0;padding-top:0}
+.ver .head{font-weight:600;font-size:16px}
+.ver .date{color:var(--muted);font-size:13px;margin-left:8px}
+.ver .status{font-size:13px;color:var(--accent);margin-top:4px}
+.ver ul{margin-top:8px;color:var(--muted)}
+footer{color:#5f6b78;font-size:13px;margin-top:26px;text-align:center}
+</style></head>
+<body><div class="wrap">
+<div class="top"><a class="back" href="../../">← 返回 Chenlin8023 Repo</a></div>
+<h1>AppLock+ (应用锁+)</h1>
+<p class="sub">按应用注入式应用锁，6 位密码 + Face ID / 触控 ID，免 substrate。</p>
+<div class="tags"><span class="tag">iphoneos-arm64e</span><span class="tag">RootHide（按应用注入，免 substrate）</span><span class="tag ok">已验证</span></div>
+
+<div class="card" id="features"><h2>功能</h2><ul><li>按应用注入：适合会检测越狱、无法全局注入的 App（TrollFools / JailFools）</li><li>6 位应用锁密码；首次启动强制设置，不使用默认 0000</li><li>Face ID / 触控 ID 作为快捷方式；取消、失败或识别不可用时停留在密码键盘，不放行</li><li>密码 PBKDF2-SHA256（2 万次迭代 + 16 字节随机盐），优先存 Keychain；恒定时间比较</li><li>连续输错 5 次起指数冷却（1→2→4…分钟，上限 17 小时），状态持久化，杀进程不重置</li><li>后台快照模糊遮盖；双指双击进入设置；支持 UIWindowScene / SwiftUI</li><li>载体包：dylib 需手动注入目标 App，装完不会全局生效</li></ul></div>
+<div class="card" id="compatibility"><h2>兼容性</h2><div class="ver"><div class="head">v0.4.2-1</div><div class="date">2026-11-04 · iphoneos-arm64e</div><div class="status">已验证</div><ul><li>机型：iPhone 15 Pro</li><li>验证 iOS：17.2.1</li><li>越狱形态：RootHide（按应用注入，免 substrate）</li></ul></div><div class="note" style="margin-top:12px"><b>注意事项</b><ul><li>载体包：dylib 位于 /var/mobile/Documents/AppLockPlus/，用 Debs 导出或 Filza 取出，再由 TrollFools / JailFools 注入目标 App。</li><li>不要过 RootHide 转换器；本包是免 substrate 的按应用注入 dylib。</li><li>构建目标 iOS 14+；实机验证为 iPhone 15 Pro / iOS 17.2.1。</li></ul></div></div>
+<div class="card" id="changelog"><h2>更新日志</h2><p class="note">Sileo：安装后在插件页长按「修改 / MODIFY」选择历史版本；Irisin / Zebra 可直接在版本列表选择。每个版本下方有 .deb 直链。</p><div class="ver"><div class="head">v0.4.2-1</div><div class="date">2026-11-04 · iphoneos-arm64e</div><div class="status">已验证</div><ul><li>重构自 tien0246/ProtectedApp；修复 Face ID 取消即放行、快速返回解锁、明文密码、默认 0000 等绕过与安全问题</li><li>首次启动强制设置 6 位密码；完整中文设置面板；Keychain/PBKDF2 存储；指数冷却；后台快照模糊；UIWindowScene 适配</li><li>双指双击设置入口；移除魔改版的 Telegram 推广行为</li></ul><a class="btn ghost" href="../../debs/com.applockplus.refactored_0.4.2-1_iphoneos-arm64e.deb">下载 v0.4.2-1（iphoneos-arm64e）</a></div></div>
+<div class="card" id="feedback"><h2>反馈</h2>
+<p>反馈时请附：插件版本、机型、iOS 版本、越狱环境、复现步骤、日志或截图。</p>
+<p class="note">反馈时请附：目标 App 名称、注入工具（TrollFools / JailFools）、是否首次启动、是否设置过密码。</p>
+<a class="btn" href="https://github.com/Chenlin8023/Chenlin8023.github.io/issues/new?template=package-feedback.yml">提交问题 / 反馈</a>
+<a class="btn ghost" href="https://github.com/Chenlin8023/AppLockPlus">项目仓库</a>
+</div>
+<footer>Chenlin8023 Repo · <a href="https://github.com/Chenlin8023/AppLockPlus">https://github.com/Chenlin8023/AppLockPlus</a></footer>
+</div></body></html>

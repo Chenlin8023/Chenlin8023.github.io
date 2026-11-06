@@ -1,0 +1,161 @@
+{
+  "minVersion": "0.4",
+  "class": "DepictionTabView",
+  "tintColor": "#3ea6ff",
+  "tabs": [
+    {
+      "class": "DepictionStackView",
+      "tabname": "功能",
+      "views": [
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "- 观测：每 5 分钟输出端口 / fd 统计、Top 调用点、xpcA / xpcF / p5 指标\n- 既有止血：CFUserNotification 应答端口宽限后取消、摘除泄漏 RunLoop 源、fd 超水位时复核后关闭\n- XPC 接管-宽限-回收：钩住 xpc_connection_create*，栈回溯确认插件驱动且服务名命中回收名单\n- 512 槽指针去重；5 秒清扫；默认 10 秒宽限后 xpc_connection_cancel + xpc_release\n- 系统框架直呼与纯系统路径的连接不碰；回收服务名单可通过 config.plist 配置\n- 原生 roothide arm64e"
+        }
+      ]
+    },
+    {
+      "class": "DepictionStackView",
+      "tabname": "兼容性",
+      "views": [
+        {
+          "class": "DepictionSubheaderView",
+          "title": "v2.1.0 · iphoneos-arm64e",
+          "useBoldText": true,
+          "useBottomMargin": true
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "机型",
+          "text": "iPhone 15 Pro"
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "验证 iOS",
+          "text": "17.2.1"
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "越狱形态",
+          "text": "RootHide 原生"
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "验证状态",
+          "text": "待确认（2.0.14 已验证）"
+        },
+        {
+          "class": "DepictionSubheaderView",
+          "title": "注意事项",
+          "useBoldText": true,
+          "useBottomMargin": true
+        },
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "- 项目已更名 CallAssistLeakGuard；当前发布包 ID 仍是旧 ID com.local.callassistportleak，2.1.0 更名重建待完成。\n- 2.1.0 待真机确认；2.0.14 已验证回收有效。\n- 从旧 ID（com.local.bioprotectleakguard）升级必须先卸载旧包；新旧共存会双重注入。\n- 原生 roothide arm64e，不要过 RootHide 转换器。"
+        }
+      ]
+    },
+    {
+      "class": "DepictionStackView",
+      "tabname": "更新日志",
+      "views": [
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "Sileo：安装后在插件页长按「修改 / MODIFY」选择历史版本；Irisin / Zebra 可直接在版本列表选择。每个版本下方有 .deb 直链。"
+        },
+        {
+          "class": "DepictionSubheaderView",
+          "title": "v2.1.0 · 2026-11-03",
+          "useBoldText": true,
+          "useBottomMargin": true
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "验证",
+          "text": "待确认（2.0.14 已验证）"
+        },
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "- 项目更名 CallAssistLeakGuard，计划将包 ID 改为 com.local.callassistleakguard（当前发布包仍为旧 ID）\n- 功能同 2.0.14：回收服务名单可配置；新增 p5 端口净增量指标\n- 2.0.13 起确认 powerdxpc 回收有效（xpcA≈xpcF）"
+        },
+        {
+          "class": "DepictionTableButtonView",
+          "title": "下载 v2.1.0（iphoneos-arm64e）",
+          "action": "https://chenlin8023.github.io/debs/com.local.callassistportleak_2.1.0_iphoneos-arm64e.deb",
+          "openExternal": true
+        },
+        {
+          "class": "DepictionSubheaderView",
+          "title": "v2.0.14 · 2026-11-03",
+          "useBoldText": true,
+          "useBottomMargin": true
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "状态",
+          "text": "旧 ID 已验证"
+        },
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "- 回收服务范围改为可配置（XPCReclaimServices，前缀匹配）；安全条件不变。"
+        },
+        {
+          "class": "DepictionSubheaderView",
+          "title": "v2.0.13 · 2026-11-02",
+          "useBoldText": true,
+          "useBottomMargin": true
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "状态",
+          "text": "旧 ID 已验证"
+        },
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "- 真机日志确认 powerdxpc 回收有效；统计行新增 p5 端口净增量。"
+        },
+        {
+          "class": "DepictionSubheaderView",
+          "title": "v2.0.7 / 2.0.8 · 2026-10-26",
+          "useBoldText": true,
+          "useBottomMargin": true
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "状态",
+          "text": "旧 ID 历史版本"
+        },
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "- 2.0.7 修复 arm64e __cfstring isa 未认证导致的 SIGBUS；2.0.8 修复定时器被 ARC 释放、清扫从未运行的 bug。"
+        }
+      ]
+    },
+    {
+      "class": "DepictionStackView",
+      "tabname": "反馈",
+      "views": [
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "反馈时请附：插件版本、机型、iOS 版本、越狱环境、复现步骤、日志或截图。"
+        },
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "反馈时请附：CallAssistLeakGuard 的 guard.log、config.plist 中 XPCReclaimServices、设备使用时长与复现步骤。"
+        },
+        {
+          "class": "DepictionTableButtonView",
+          "title": "项目仓库",
+          "action": "https://github.com/Chenlin8023/CallAssist-PortLeak",
+          "openExternal": true
+        },
+        {
+          "class": "DepictionTableButtonView",
+          "title": "提交问题 / 反馈",
+          "action": "https://github.com/Chenlin8023/Chenlin8023.github.io/issues/new?template=package-feedback.yml",
+          "openExternal": true
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,108 @@
+name: 插件问题反馈
+description: 反馈越狱源插件的安装、注入、设置或使用问题
+title: "[插件反馈] "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        感谢反馈。请尽量填写完整；版本、机型、iOS 和日志能大幅提高定位效率。
+        如果问题涉及注入，请注明使用的是 TrollFools 还是 JailFools。
+
+  - type: dropdown
+    id: package
+    attributes:
+      label: 插件
+      options:
+        - LSTimeSeconds (RootHide)
+        - LSTimeSeconds (rootless)
+        - AppLock+ (应用锁+)
+        - NotifierIcons
+        - CallAssist PortLeak
+        - VolumeManager (Full)
+        - VolumeManager 面板净化
+    validations:
+      required: true
+
+  - type: input
+    id: version
+    attributes:
+      label: 插件版本
+      placeholder: 例如 0.0.7-1 / 2.1.0 / 1.3.0
+    validations:
+      required: true
+
+  - type: input
+    id: device
+    attributes:
+      label: 设备机型
+      placeholder: 例如 iPhone 15 Pro
+    validations:
+      required: true
+
+  - type: input
+    id: ios
+    attributes:
+      label: iOS 版本
+      placeholder: 例如 17.2.1
+    validations:
+      required: true
+
+  - type: dropdown
+    id: jailbreak
+    attributes:
+      label: 越狱环境
+      options:
+        - RootHide（roothide bootstrap）
+        - rootless（/var/jb，Dopamine / palera1n 等）
+        - rootful
+        - 其他 / 不确定
+    validations:
+      required: true
+
+  - type: input
+    id: install
+    attributes:
+      label: 安装 / 注入方式
+      placeholder: 例如 Sileo 直接安装、TrollFools 注入目标 App、JailFools 拷贝到 .app/Frameworks
+    validations:
+      required: false
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: 问题描述
+      description: 发生了什么？你预期是什么？
+      placeholder: 例如：安装后 Respring，锁屏没有出现秒数；设置面板能打开。
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: 复现步骤
+      placeholder: |
+        1. ...
+        2. ...
+        3. ...
+    validations:
+      required: false
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: 日志 / 截图
+      description: |
+        可粘贴日志或拖入截图。
+        LSTimeSeconds 日志：/var/mobile/Library/LSTimeSeconds.log
+        VolumeManager：App 容器 Documents 下的 VolMan 日志，注意日志头版本
+        CallAssist：CallAssistLeakGuard 的 guard.log
+    validations:
+      required: false
+
+  - type: input
+    id: contact
+    attributes:
+      label: 联系方式（可选）
+      description: 如果希望私下跟进，可留 GitHub 用户名或邮箱。
+    validations:
+      required: false
