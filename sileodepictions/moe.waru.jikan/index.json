@@ -1,0 +1,174 @@
+{
+  "minVersion": "0.4",
+  "class": "DepictionTabView",
+  "tintColor": "#3ea6ff",
+  "tabs": [
+    {
+      "class": "DepictionStackView",
+      "tabname": "功能",
+      "views": [
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "- 锁屏胶囊实时显示距充满电/目标电量的时间，支持 Apple 官方模型与 Jikan 历史学习两种算法\n- 充电目标可调：Apple 模型 80/85/90/95/100%，Jikan 算法 1–100% 任选\n- 胶囊样式（经典/进度环）、位置（横竖屏独立）、背景透明度可调\n- 堆叠显示电池电压、温度、充电功率；达到目标电量时推送通知\n- 可与 ChargeLimiter 同步充电上限；可隐藏滑动解锁文字与专注模式指示器"
+        }
+      ]
+    },
+    {
+      "class": "DepictionStackView",
+      "tabname": "兼容性",
+      "views": [
+        {
+          "class": "DepictionSubheaderView",
+          "title": "v1.2.1-1+debug · iphoneos-arm64e",
+          "useBoldText": true,
+          "useBottomMargin": true
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "机型",
+          "text": "iPhone 15 Pro"
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "验证 iOS",
+          "text": "17.2.1"
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "越狱形态",
+          "text": "RootHide 原生"
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "验证状态",
+          "text": "已验证"
+        },
+        {
+          "class": "DepictionSubheaderView",
+          "title": "v1.2.0 · iphoneos-arm64e",
+          "useBoldText": true,
+          "useBottomMargin": true
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "机型",
+          "text": "iPhone 15 Pro"
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "验证 iOS",
+          "text": "17.2.1"
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "越狱形态",
+          "text": "RootHide 原生"
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "验证状态",
+          "text": "已验证"
+        },
+        {
+          "class": "DepictionSubheaderView",
+          "title": "注意事项",
+          "useBoldText": true,
+          "useBottomMargin": true
+        },
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "- 原生 roothide arm64e（iphoneos-arm64e），直接安装，不要过 RootHide 转换器。\n- 1.2.1-1+debug 为内置简体中文的分支构建（Chenlin8023 fork）；1.2.0 为上游 waruhachi 原版英文界面。\n- 与简体中文语言包（moe.waru.jikan.lang.zh-hans）互斥，二选一。\n- iOS 14+；依赖 mobilesubstrate、preferenceloader。"
+        }
+      ]
+    },
+    {
+      "class": "DepictionStackView",
+      "tabname": "更新日志",
+      "views": [
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "Sileo：安装后在插件页长按「修改 / MODIFY」选择历史版本；Irisin / Zebra 可直接在版本列表选择。每个版本下方有 .deb 直链。"
+        },
+        {
+          "class": "DepictionSubheaderView",
+          "title": "v1.2.1-1+debug · 2026-11-08",
+          "useBoldText": true,
+          "useBottomMargin": true
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "验证",
+          "text": "已验证"
+        },
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "- 内置简体中文翻译：设置页/锁屏胶囊/通知共 109 条文案全覆盖\n- GitHub Actions macOS 上以 Apple 官方工具链构建，无任何二进制补丁\n- 上游 1.2.1 主线全部功能"
+        },
+        {
+          "class": "DepictionTableButtonView",
+          "title": "下载 v1.2.1-1+debug（iphoneos-arm64e）",
+          "action": "https://chenlin8023.github.io/debs/moe.waru.jikan_1.2.1-1+debug_iphoneos-arm64e.deb",
+          "openExternal": true
+        },
+        {
+          "class": "DepictionSubheaderView",
+          "title": "v1.2.0 · 2026-11-06",
+          "useBoldText": true,
+          "useBottomMargin": true
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "验证",
+          "text": "已验证"
+        },
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "- 上游 waruhachi/Jikan 官方 Release 原版，英文界面\n- 可搭配简体中文语言包（moe.waru.jikan.lang.zh-hans）汉化"
+        },
+        {
+          "class": "DepictionTableButtonView",
+          "title": "下载 v1.2.0（iphoneos-arm64e）",
+          "action": "https://chenlin8023.github.io/debs/moe.waru.jikan_1.2.0_iphoneos-arm64e.deb",
+          "openExternal": true
+        },
+        {
+          "class": "DepictionSubheaderView",
+          "title": "v1.2.1-local · 2026-11-08",
+          "useBoldText": true,
+          "useBottomMargin": true
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "状态",
+          "text": "已放弃"
+        },
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "- 本地 clang19 构建线：clang19 缺少 Apple 私有的栈上 block isa 运行期签名代码生成（-fptrauth-block-isa 不存在），实机 msgSend 认证失败进安全模式，无法用二进制后处理弥补。\n- 已改用仓库自带 GitHub Actions（Apple 官方工具链）构建；留档见 Jikan/packages/local-pipeline-ref。"
+        }
+      ]
+    },
+    {
+      "class": "DepictionStackView",
+      "tabname": "反馈",
+      "views": [
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "反馈时请附：插件版本、机型、iOS 版本、越狱环境、复现步骤、日志或截图。"
+        },
+        {
+          "class": "DepictionTableButtonView",
+          "title": "项目仓库",
+          "action": "https://github.com/Chenlin8023/Jikan",
+          "openExternal": true
+        },
+        {
+          "class": "DepictionTableButtonView",
+          "title": "提交问题 / 反馈",
+          "action": "https://github.com/Chenlin8023/Chenlin8023.github.io/issues/new?template=package-feedback.yml",
+          "openExternal": true
+        }
+      ]
+    }
+  ]
+}

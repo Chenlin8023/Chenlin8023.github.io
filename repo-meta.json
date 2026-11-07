@@ -35,8 +35,12 @@
           "date": "2026-11-02",
           "arch": "iphoneos-arm64e",
           "jailbreak": "RootHide 原生",
-          "devices": ["iPhone 15 Pro"],
-          "ios": ["17.2.1"],
+          "devices": [
+            "iPhone 15 Pro"
+          ],
+          "ios": [
+            "17.2.1"
+          ],
           "verified": "已验证",
           "changes": [
             "修复原版在 iOS 17 上完全不生效的四个根因：版本硬编码、通知名不匹配、旧键误判、字号震荡",
@@ -85,8 +89,12 @@
           "date": "2026-11-02",
           "arch": "iphoneos-arm64",
           "jailbreak": "rootless（/var/jb）",
-          "devices": ["AOD 机型（具体机型未记录）"],
-          "ios": ["16.0.3"],
+          "devices": [
+            "AOD 机型（具体机型未记录）"
+          ],
+          "ios": [
+            "16.0.3"
+          ],
           "verified": "已验证",
           "changes": [
             "日志超过 256KB 轮转为 .1，避免长期使用无限增长",
@@ -99,8 +107,12 @@
           "date": "2026-11-02",
           "arch": "iphoneos-arm64",
           "jailbreak": "rootless（/var/jb）",
-          "devices": ["AOD 机型（具体机型未记录）"],
-          "ios": ["16.0.3"],
+          "devices": [
+            "AOD 机型（具体机型未记录）"
+          ],
+          "ios": [
+            "16.0.3"
+          ],
           "verified": "已验证",
           "changes": [
             "修复 iOS 16 熄屏再亮屏后秒数冻结：tick 不再依据 g_isScreenOff 跳过刷新",
@@ -113,8 +125,12 @@
           "date": "2026-11-02",
           "arch": "iphoneos-arm64",
           "jailbreak": "rootless（/var/jb）",
-          "devices": ["未单独验证"],
-          "ios": ["—"],
+          "devices": [
+            "未单独验证"
+          ],
+          "ios": [
+            "—"
+          ],
           "verified": "未单独验证",
           "changes": [
             "rootless 适配：substrate 依赖与 /var/jb rpath",
@@ -170,8 +186,12 @@
           "date": "2026-11-04",
           "arch": "iphoneos-arm64e",
           "jailbreak": "RootHide（按应用注入，免 substrate）",
-          "devices": ["iPhone 15 Pro"],
-          "ios": ["17.2.1"],
+          "devices": [
+            "iPhone 15 Pro"
+          ],
+          "ios": [
+            "17.2.1"
+          ],
           "verified": "已验证",
           "changes": [
             "重构自 tien0246/ProtectedApp；修复 Face ID 取消即放行、快速返回解锁、明文密码、默认 0000 等绕过与安全问题",
@@ -207,8 +227,12 @@
           "date": "2026-11-03",
           "arch": "iphoneos-arm64",
           "jailbreak": "rootless（/var/jb）",
-          "devices": ["iPhone 15 Pro"],
-          "ios": ["17.2.1"],
+          "devices": [
+            "iPhone 15 Pro"
+          ],
+          "ios": [
+            "17.2.1"
+          ],
           "verified": "已验证",
           "changes": [
             "形态定稿：整体移除红点与数字角标及全部相关开关",
@@ -264,8 +288,12 @@
           "date": "2026-11-03",
           "arch": "iphoneos-arm64e",
           "jailbreak": "RootHide 原生",
-          "devices": ["iPhone 15 Pro"],
-          "ios": ["17.2.1"],
+          "devices": [
+            "iPhone 15 Pro"
+          ],
+          "ios": [
+            "17.2.1"
+          ],
           "verified": "待确认（2.0.14 已验证）",
           "changes": [
             "项目更名 CallAssistLeakGuard，计划将包 ID 改为 com.local.callassistleakguard（当前发布包仍为旧 ID）",
@@ -328,8 +356,12 @@
           "date": "2026-11-04",
           "arch": "iphoneos-arm64",
           "jailbreak": "rootless（/var/jb）",
-          "devices": ["iPhone 15 Pro"],
-          "ios": ["17.2.1"],
+          "devices": [
+            "iPhone 15 Pro"
+          ],
+          "ios": [
+            "17.2.1"
+          ],
           "verified": "已验证",
           "changes": [
             "渲染回调层 ctx 表 32→512，修复长时间播放后静音失效",
@@ -342,8 +374,12 @@
           "date": "2026-10-23",
           "arch": "iphoneos-arm64",
           "jailbreak": "rootless（/var/jb）",
-          "devices": ["iPhone 15 Pro"],
-          "ios": ["17.2.1"],
+          "devices": [
+            "iPhone 15 Pro"
+          ],
+          "ios": [
+            "17.2.1"
+          ],
           "verified": "已验证",
           "changes": [
             "新增混音策略层，多 App 稳定同时播放",
@@ -396,12 +432,122 @@
           "date": "2026-11-02",
           "arch": "iphoneos-arm64",
           "jailbreak": "rootless（/var/jb）",
-          "devices": ["iPhone 15 Pro"],
-          "ios": ["17.2.1"],
+          "devices": [
+            "iPhone 15 Pro"
+          ],
+          "ios": [
+            "17.2.1"
+          ],
           "verified": "已验证",
           "changes": [
             "静态 + 运行时双重净化：面板条目与运行时文案都处理",
             "修复净化模块文件权限（此前缺少执行位，系统未加载）"
+          ]
+        }
+      ]
+    },
+    {
+      "package": "moe.waru.jikan",
+      "display_name": "Jikan（锁屏充电预估）",
+      "summary": "在锁定屏幕上实时显示充满电（或目标电量）所需的时间预估。",
+      "features": [
+        "锁屏胶囊实时显示距充满电/目标电量的时间，支持 Apple 官方模型与 Jikan 历史学习两种算法",
+        "充电目标可调：Apple 模型 80/85/90/95/100%，Jikan 算法 1–100% 任选",
+        "胶囊样式（经典/进度环）、位置（横竖屏独立）、背景透明度可调",
+        "堆叠显示电池电压、温度、充电功率；达到目标电量时推送通知",
+        "可与 ChargeLimiter 同步充电上限；可隐藏滑动解锁文字与专注模式指示器"
+      ],
+      "compatibility": {
+        "notes": [
+          "原生 roothide arm64e（iphoneos-arm64e），直接安装，不要过 RootHide 转换器。",
+          "1.2.1-1+debug 为内置简体中文的分支构建（Chenlin8023 fork）；1.2.0 为上游 waruhachi 原版英文界面。",
+          "与简体中文语言包（moe.waru.jikan.lang.zh-hans）互斥，二选一。",
+          "iOS 14+；依赖 mobilesubstrate、preferenceloader。"
+        ]
+      },
+      "repo_url": "https://github.com/Chenlin8023/Jikan",
+      "variants": [
+        {
+          "version": "1.2.1-1+debug",
+          "date": "2026-11-08",
+          "arch": "iphoneos-arm64e",
+          "jailbreak": "RootHide 原生",
+          "devices": [
+            "iPhone 15 Pro"
+          ],
+          "ios": [
+            "17.2.1"
+          ],
+          "verified": "已验证",
+          "changes": [
+            "内置简体中文翻译：设置页/锁屏胶囊/通知共 109 条文案全覆盖",
+            "GitHub Actions macOS 上以 Apple 官方工具链构建，无任何二进制补丁",
+            "上游 1.2.1 主线全部功能"
+          ]
+        },
+        {
+          "version": "1.2.0",
+          "date": "2026-11-06",
+          "arch": "iphoneos-arm64e",
+          "jailbreak": "RootHide 原生",
+          "devices": [
+            "iPhone 15 Pro"
+          ],
+          "ios": [
+            "17.2.1"
+          ],
+          "verified": "已验证",
+          "changes": [
+            "上游 waruhachi/Jikan 官方 Release 原版，英文界面",
+            "可搭配简体中文语言包（moe.waru.jikan.lang.zh-hans）汉化"
+          ]
+        }
+      ],
+      "history": [
+        {
+          "version": "1.2.1-local",
+          "date": "2026-11-08",
+          "status": "已放弃",
+          "notes": [
+            "本地 clang19 构建线：clang19 缺少 Apple 私有的栈上 block isa 运行期签名代码生成（-fptrauth-block-isa 不存在），实机 msgSend 认证失败进安全模式，无法用二进制后处理弥补。",
+            "已改用仓库自带 GitHub Actions（Apple 官方工具链）构建；留档见 Jikan/packages/local-pipeline-ref。"
+          ]
+        }
+      ]
+    },
+    {
+      "package": "moe.waru.jikan.lang.zh-hans",
+      "display_name": "Jikan 简体中文语言包",
+      "summary": "为 Jikan 提供简体中文界面的纯数据语言包，不需要重新编译本体。",
+      "features": [
+        "覆盖设置页、锁屏胶囊、通知等全部 109 条界面文案",
+        "纯数据包（约 3.5KB），不含任何二进制",
+        "本体更新如新增文案，缺失键自动回退英文，无需跟着更新"
+      ],
+      "compatibility": {
+        "notes": [
+          "需要 Jikan 本体 1.2 以上（上游原版即可），安装前先装本体。",
+          "系统语言为简体中文（zh-Hans）时生效。",
+          "与内置中文的分支构建（moe.waru.jikan 1.2.1-1+debug）互斥：二者写同一路径，同装会报文件冲突。",
+          "纯数据包，不含二进制，无架构要求（按 roothide 仓库惯例标记 iphoneos-arm64e）。"
+        ]
+      },
+      "repo_url": "https://github.com/Chenlin8023/Jikan",
+      "variants": [
+        {
+          "version": "1.2.1",
+          "date": "2026-11-08",
+          "arch": "iphoneos-arm64e",
+          "jailbreak": "RootHide 原生",
+          "devices": [
+            "iPhone 15 Pro"
+          ],
+          "ios": [
+            "17.2.1"
+          ],
+          "verified": "已验证",
+          "changes": [
+            "首发：109 条界面文案简体中文翻译"
           ]
         }
       ]

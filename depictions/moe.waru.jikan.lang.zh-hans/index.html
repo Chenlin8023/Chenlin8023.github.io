@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Jikan 简体中文语言包 · Chenlin8023 Repo</title><style>
+:root{--bg:#0b0d10;--card:#14181d;--line:#252b33;--text:#e8edf3;--muted:#93a1b1;--accent:#3ea6ff;--warn:#ffb454;--ok:#7ee0a8}
+*{box-sizing:border-box}
+body{margin:0;padding:34px 18px 64px;background:var(--bg);color:var(--text);
+font:15px/1.7 -apple-system,"SF Pro Text","PingFang SC","Microsoft YaHei",sans-serif;-webkit-text-size-adjust:100%}
+.wrap{max-width:760px;margin:0 auto}
+a{color:var(--accent)}
+.top{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-bottom:18px}
+.back{color:var(--muted);text-decoration:none;font-size:14px}
+h1{font-size:26px;margin:0 0 4px;letter-spacing:-.3px}
+.sub{color:var(--muted);margin:0 0 18px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px;margin-bottom:16px}
+.card h2{font-size:13px;margin:0 0 12px;color:var(--muted);text-transform:uppercase;letter-spacing:.08em}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.tag{display:inline-block;font-size:12px;padding:3px 9px;border-radius:6px;border:1px solid var(--line);color:var(--muted)}
+.tag.ok{color:var(--ok);border-color:#2c5a41}
+.tag.warn{color:var(--warn);border-color:#5a4526}
+.btn{display:inline-block;padding:9px 16px;border-radius:9px;background:var(--accent);color:#04121f;
+font-weight:600;text-decoration:none;font-size:14px;margin:6px 8px 0 0}
+.btn.ghost{background:transparent;color:var(--text);border:1px solid var(--line)}
+ul{margin:0;padding-left:20px}
+li{margin-bottom:7px}
+.note{color:var(--muted);font-size:14px}
+.ver{border-top:1px solid var(--line);padding:16px 0}
+.ver:first-of-type{border-top:0;padding-top:0}
+.ver .head{font-weight:600;font-size:16px}
+.ver .date{color:var(--muted);font-size:13px;margin-left:8px}
+.ver .status{font-size:13px;color:var(--accent);margin-top:4px}
+.ver ul{margin-top:8px;color:var(--muted)}
+footer{color:#5f6b78;font-size:13px;margin-top:26px;text-align:center}
+</style></head>
+<body><div class="wrap">
+<div class="top"><a class="back" href="../../">← 返回 Chenlin8023 Repo</a></div>
+<h1>Jikan 简体中文语言包</h1>
+<p class="sub">为 Jikan 提供简体中文界面的纯数据语言包，不需要重新编译本体。</p>
+<div class="tags"><span class="tag">iphoneos-arm64e</span><span class="tag">RootHide 原生</span><span class="tag ok">已验证</span></div>
+
+<div class="card" id="features"><h2>功能</h2><ul><li>覆盖设置页、锁屏胶囊、通知等全部 109 条界面文案</li><li>纯数据包（约 3.5KB），不含任何二进制</li><li>本体更新如新增文案，缺失键自动回退英文，无需跟着更新</li></ul></div>
+<div class="card" id="compatibility"><h2>兼容性</h2><div class="ver"><div class="head">v1.2.1</div><div class="date">2026-11-08 · iphoneos-arm64e</div><div class="status">已验证</div><ul><li>机型：iPhone 15 Pro</li><li>验证 iOS：17.2.1</li><li>越狱形态：RootHide 原生</li></ul></div><div class="note" style="margin-top:12px"><b>注意事项</b><ul><li>需要 Jikan 本体 1.2 以上（上游原版即可），安装前先装本体。</li><li>系统语言为简体中文（zh-Hans）时生效。</li><li>与内置中文的分支构建（moe.waru.jikan 1.2.1-1+debug）互斥：二者写同一路径，同装会报文件冲突。</li><li>纯数据包，不含二进制，无架构要求（按 roothide 仓库惯例标记 iphoneos-arm64e）。</li></ul></div></div>
+<div class="card" id="changelog"><h2>更新日志</h2><p class="note">Sileo：安装后在插件页长按「修改 / MODIFY」选择历史版本；Irisin / Zebra 可直接在版本列表选择。每个版本下方有 .deb 直链。</p><div class="ver"><div class="head">v1.2.1</div><div class="date">2026-11-08 · iphoneos-arm64e</div><div class="status">已验证</div><ul><li>首发：109 条界面文案简体中文翻译</li></ul><a class="btn ghost" href="../../debs/moe.waru.jikan.lang.zh-hans_1.2.1_iphoneos-arm64e.deb">下载 v1.2.1（iphoneos-arm64e）</a></div></div>
+<div class="card" id="feedback"><h2>反馈</h2>
+<p>反馈时请附：插件版本、机型、iOS 版本、越狱环境、复现步骤、日志或截图。</p>
+
+<a class="btn" href="https://github.com/Chenlin8023/Chenlin8023.github.io/issues/new?template=package-feedback.yml">提交问题 / 反馈</a>
+<a class="btn ghost" href="https://github.com/Chenlin8023/Jikan">项目仓库</a>
+</div>
+<footer>Chenlin8023 Repo · <a href="https://github.com/Chenlin8023/Jikan">https://github.com/Chenlin8023/Jikan</a></footer>
+</div></body></html>

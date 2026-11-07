@@ -212,3 +212,65 @@ Filename: debs/com.local.volmanprefsclean_1.1.0_iphoneos-arm64.deb
 Size: 14052
 SHA256: 621609da7db7d0e18579f21e5f804d217bf0c04a2253198a58da36d88fdb74eb
 MD5sum: b3f4ba71a6e65f42221448b32ab6bb77
+
+Package: moe.waru.jikan
+Maintainer: waruhachi
+Author: waruhachi
+Section: Tweaks
+Depends: firmware (>= 14.0), mobilesubstrate (>= 0.9.5000), preferenceloader
+Architecture: iphoneos-arm64e
+Version: 1.2.1-1+debug
+Installed-Size: 2712
+Name: Jikan（锁屏充电预估）
+Priority: optional
+Description: 在锁定屏幕上实时显示充满电（或目标电量）所需的时间预估。
+ 实机验证：iPhone 15 Pro / iOS 17.2.1
+ 项目仓库：https://github.com/Chenlin8023/Jikan
+Homepage: https://github.com/Chenlin8023/Jikan
+SileoDepiction: https://chenlin8023.github.io/sileodepictions/moe.waru.jikan/index.json
+Depiction: https://chenlin8023.github.io/depictions/moe.waru.jikan/index.html
+Filename: debs/moe.waru.jikan_1.2.1-1+debug_iphoneos-arm64e.deb
+Size: 430892
+SHA256: 2259a4a53516ab79fda5a91e1738e65a10d9830b4edc182327ceae0cc946a449
+MD5sum: 1d47fe9a8805f4a52bc928c0dc0a1d56
+
+Package: moe.waru.jikan
+Maintainer: waruhachi
+Author: waruhachi
+Section: Tweaks
+Depends: firmware (>= 14.0), mobilesubstrate (>= 0.9.5000), preferenceloader
+Architecture: iphoneos-arm64e
+Version: 1.2.0
+Installed-Size: 2704
+Name: Jikan（锁屏充电预估）
+Priority: optional
+Description: 在锁定屏幕上实时显示充满电（或目标电量）所需的时间预估。
+ 实机验证：iPhone 15 Pro / iOS 17.2.1
+ 项目仓库：https://github.com/Chenlin8023/Jikan
+Homepage: https://github.com/Chenlin8023/Jikan
+SileoDepiction: https://chenlin8023.github.io/sileodepictions/moe.waru.jikan/index.json
+Depiction: https://chenlin8023.github.io/depictions/moe.waru.jikan/index.html
+Filename: debs/moe.waru.jikan_1.2.0_iphoneos-arm64e.deb
+Size: 389656
+SHA256: 186ca7b1cc740833ec0c2bc24e6fc4d86b0932d417ffcab2cdf08a8310de719b
+MD5sum: 9842992e52788a33ffdba50dfe0120b9
+
+Package: moe.waru.jikan.lang.zh-hans
+Version: 1.2.1
+Architecture: iphoneos-arm64e
+Maintainer: Chenlin8023
+Author: Chenlin8023
+Section: Localization
+Depends: moe.waru.jikan (>= 1.2)
+Name: Jikan 简体中文语言包
+Priority: optional
+Description: 为 Jikan 提供简体中文界面的纯数据语言包，不需要重新编译本体。
+ 实机验证：iPhone 15 Pro / iOS 17.2.1
+ 项目仓库：https://github.com/Chenlin8023/Jikan
+Homepage: https://github.com/Chenlin8023/Jikan
+SileoDepiction: https://chenlin8023.github.io/sileodepictions/moe.waru.jikan.lang.zh-hans/index.json
+Depiction: https://chenlin8023.github.io/depictions/moe.waru.jikan.lang.zh-hans/index.html
+Filename: debs/moe.waru.jikan.lang.zh-hans_1.2.1_iphoneos-arm64e.deb
+Size: 3504
+SHA256: 3f706d7a64081c3b7064c27e56dfa1896fd771ce51d6231f29785c6b3c7f6c0b
+MD5sum: b24112901fa84d43c93e7c002d9efad1
