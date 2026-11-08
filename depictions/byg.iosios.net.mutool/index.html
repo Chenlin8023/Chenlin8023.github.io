@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MUtool 工具箱（修改版） · Chenlin8023 Repo</title><style>
+:root{--bg:#0b0d10;--card:#14181d;--line:#252b33;--text:#e8edf3;--muted:#93a1b1;--accent:#3ea6ff;--warn:#ffb454;--ok:#7ee0a8}
+*{box-sizing:border-box}
+body{margin:0;padding:34px 18px 64px;background:var(--bg);color:var(--text);
+font:15px/1.7 -apple-system,"SF Pro Text","PingFang SC","Microsoft YaHei",sans-serif;-webkit-text-size-adjust:100%}
+.wrap{max-width:760px;margin:0 auto}
+a{color:var(--accent)}
+.top{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-bottom:18px}
+.back{color:var(--muted);text-decoration:none;font-size:14px}
+h1{font-size:26px;margin:0 0 4px;letter-spacing:-.3px}
+.sub{color:var(--muted);margin:0 0 18px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px;margin-bottom:16px}
+.card h2{font-size:13px;margin:0 0 12px;color:var(--muted);text-transform:uppercase;letter-spacing:.08em}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.tag{display:inline-block;font-size:12px;padding:3px 9px;border-radius:6px;border:1px solid var(--line);color:var(--muted)}
+.tag.ok{color:var(--ok);border-color:#2c5a41}
+.tag.warn{color:var(--warn);border-color:#5a4526}
+.btn{display:inline-block;padding:9px 16px;border-radius:9px;background:var(--accent);color:#04121f;
+font-weight:600;text-decoration:none;font-size:14px;margin:6px 8px 0 0}
+.btn.ghost{background:transparent;color:var(--text);border:1px solid var(--line)}
+ul{margin:0;padding-left:20px}
+li{margin-bottom:7px}
+.note{color:var(--muted);font-size:14px}
+.ver{border-top:1px solid var(--line);padding:16px 0}
+.ver:first-of-type{border-top:0;padding-top:0}
+.ver .head{font-weight:600;font-size:16px}
+.ver .date{color:var(--muted);font-size:13px;margin-left:8px}
+.ver .status{font-size:13px;color:var(--accent);margin-top:4px}
+.ver ul{margin-top:8px;color:var(--muted)}
+footer{color:#5f6b78;font-size:13px;margin-top:26px;text-align:center}
+</style></head>
+<body><div class="wrap">
+<div class="top"><a class="back" href="../../">← 返回 Chenlin8023 Repo</a></div>
+<h1>MUtool 工具箱（修改版）</h1>
+<p class="sub">MUtool 多功能工具集的本地修改构建：解除授权验证、移除授权与推广界面，功能与官方版一致。</p>
+<div class="tags"><span class="tag">iphoneos-arm64</span><span class="tag">rootless /var/jb（RootHide 实测）</span><span class="tag ok">已验证</span></div>
+
+<div class="card" id="features"><h2>功能</h2><ul><li>灵动岛电池胶囊与电源菜单、桌面悬浮信息药丸（网速 / CPU / 内存 / 电池 / 天气 / 时间）</li><li>三合一状态栏、文件夹主题与大文件夹、状态栏文字图标变色</li><li>通话自动录音与录屏增强、双卡 T9 拨号、自动禁用 SIM 与卡槽管理</li><li>IPCC 运营商配置、WiFi 永连、充电提示音与 MagSafe 动画、温控调优</li><li>锁屏与主屏幕增强、定时任务、电池健康与深度信息、SMC 寄存器读写</li><li>修改版特有：全部功能免授权直接可用，无激活 / 推广界面，不连接授权服务器</li></ul></div>
+<div class="card" id="compatibility"><h2>兼容性</h2><div class="ver"><div class="head">v2.2.80-8</div><div class="date">2026-11-09 · iphoneos-arm64</div><div class="status">已验证</div><ul><li>机型：iPhone 15 Pro</li><li>验证 iOS：17.2.1</li><li>越狱形态：rootless /var/jb（RootHide 实测）</li></ul></div><div class="note" style="margin-top:12px"><b>注意事项</b><ul><li>基于 Muzi 官方 MUtool 2.2.80 deb 的二进制修改构建（非源码编译）；Package id / 依赖与官方包一致。</li><li>rootless（/var/jb），iphoneos-arm64（内含 arm64 + arm64e 双 slice），RootHide 下安装路径与官方包相同。</li><li>与官方包同 id：安装即覆盖官方版；回滚重装官方 2.2.80 即可。</li><li>设置页已移除『设备授权 / 关于 / 推广』区块，各功能页不再出现未激活提示。</li><li>官方声明 iOS 15–17；本包实机验证 iOS 17.2.1（iPhone 15 Pro · RootHide）。</li></ul></div></div>
+<div class="card" id="changelog"><h2>更新日志</h2><p class="note">Sileo：安装后在插件页长按「修改 / MODIFY」选择历史版本；Irisin / Zebra 可直接在版本列表选择。每个版本下方有 .deb 直链。</p><div class="ver"><div class="head">v2.2.80-8</div><div class="date">2026-11-09 · iphoneos-arm64</div><div class="status">已验证</div><ul><li>基于官方 2.2.80 修改：30 处授权闸补丁（statusForProduct / isAuthorizedForProduct / remainingSeconds，arm64+arm64e 双 slice）</li><li>设置主页面移除 9 行：设备授权 / 激活·查看UDID / 注销设备 / 关于 / QQ群 / GitHub / Sini921·合作开发者 / 木子源 / 版权页脚（带寄存器活跃性校验的行摘除桩）</li><li>授权与推广文案等长净化约 588 处；7 条授权 / 推广 URL 改为等长 0.0.0.0 占位（防 URL 强解崩溃）</li><li>移除未引用的 LICENSE@3x.png；ldid 重签；修复 v1 arm64e retab 导致的 PAC 崩溃（收尾改 ret）</li><li>实机验证：SpringBoard / 设置 / 悬浮药丸 / 录音 / 温控均正常；官方 2.2.80 可直接覆盖回滚</li></ul><a class="btn ghost" href="../../debs/byg.iosios.net.mutool_2.2.80-8_iphoneos-arm64.deb">下载 v2.2.80-8（iphoneos-arm64）</a></div><div class="ver"><div class="head">v2.2.80-4</div><div class="date">2026-11-09</div><div class="status">已放弃</div><ul><li>v1 补丁在 arm64e slice 用 retab 收尾：arm64e ABI 的 bl 产生未签名 LR，retab 认证失败 → SpringBoard/chronod PAC 崩溃循环（.ips 实锤 MUtoolCapture+0x6ec0）。已改为 ret 收尾。</li></ul></div><div class="ver"><div class="head">v2.2.80-7</div><div class="date">2026-11-09</div><div class="status">已被取代</div><ul><li>授权放行修正版（30 处补丁），实机验证通过；被 2.2.80-8（同补丁 + 痕迹净化）取代。</li></ul></div></div>
+<div class="card" id="feedback"><h2>反馈</h2>
+<p>反馈时请附：插件版本、机型、iOS 版本、越狱环境、复现步骤、日志或截图。</p>
+
+<a class="btn" href="https://github.com/Chenlin8023/Chenlin8023.github.io/issues/new?template=package-feedback.yml">提交问题 / 反馈</a>
+<a class="btn ghost" href="https://github.com/muzikeji">项目仓库</a>
+</div>
+<footer>Chenlin8023 Repo · <a href="https://github.com/muzikeji">https://github.com/muzikeji</a></footer>
+</div></body></html>
