@@ -41,7 +41,7 @@
         {
           "class": "DepictionTableTextView",
           "title": "验证状态",
-          "text": "未单独验证（与 0.3.4 同一二进制，仅打包形态改为 rootless）"
+          "text": "已验证（iPhone 15 Pro / iOS 17.2.1 RootHide：MUtool 2.2.80-11 + 本包，天气自动更新正常）"
         },
         {
           "class": "DepictionSubheaderView",
@@ -72,7 +72,7 @@
         {
           "class": "DepictionTableTextView",
           "title": "验证",
-          "text": "未单独验证（与 0.3.4 同一二进制，仅打包形态改为 rootless）"
+          "text": "已验证（iPhone 15 Pro / iOS 17.2.1 RootHide：MUtool 2.2.80-11 + 本包，天气自动更新正常）"
         },
         {
           "class": "DepictionMarkdownView",

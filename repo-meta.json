@@ -703,7 +703,7 @@
      "ios": [
       "17.2.1"
      ],
-     "verified": "未单独验证（与 0.3.4 同一二进制，仅打包形态改为 rootless）",
+     "verified": "已验证（iPhone 15 Pro / iOS 17.2.1 RootHide：MUtool 2.2.80-11 + 本包，天气自动更新正常）",
      "changes": [
       "首个源内版本：自动定位 + 写入 MUtool open-meteo 参数 + ReloadPrefs",
       "定位改为多源投票（pconline / ipip / 淘宝），跨城需二次确认，单源异常不切换",
