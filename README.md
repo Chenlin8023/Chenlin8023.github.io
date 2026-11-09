@@ -20,6 +20,8 @@ https://chenlin8023.github.io/
 | CallAssist PortLeak | 2.1.0 | `iphoneos-arm64e` | 2.1.0 待确认；2.0.14 已验证 | [CallAssist-PortLeak](https://github.com/Chenlin8023/CallAssist-PortLeak) |
 | VolumeManager (Full) | 1.3.0 / 1.2.0 | `iphoneos-arm64` | iPhone 15 Pro / iOS 17.2.1 | [VolumeManager-iOS17](https://github.com/Chenlin8023/VolumeManager-iOS17) |
 | VolumeManager 面板净化 | 1.1.0 | `iphoneos-arm64` | iPhone 15 Pro / iOS 17.2.1 | 同上 |
+| MUtool 工具箱（修改版） | 2.2.80-11 | `iphoneos-arm64` | iPhone 15 Pro / iOS 17.2.1 | [muzikeji](https://github.com/muzikeji) |
+| SysWeatherBridge（系统天气桥） | 0.3.5 | `iphoneos-arm64` | 未单独验证（与 0.3.4 同二进制） | 本仓库 |
 
 ### 关键说明
 

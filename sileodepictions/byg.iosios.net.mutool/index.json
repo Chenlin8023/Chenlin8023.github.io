@@ -9,7 +9,7 @@
       "views": [
         {
           "class": "DepictionMarkdownView",
-          "markdown": "- 灵动岛电池胶囊与电源菜单、桌面悬浮信息药丸（网速 / CPU / 内存 / 电池 / 天气 / 时间）\n- 三合一状态栏、文件夹主题与大文件夹、状态栏文字图标变色\n- 通话自动录音与录屏增强、双卡 T9 拨号、自动禁用 SIM 与卡槽管理\n- IPCC 运营商配置、WiFi 永连、充电提示音与 MagSafe 动画、温控调优\n- 锁屏与主屏幕增强、定时任务、电池健康与深度信息、SMC 寄存器读写\n- 修改版特有：全部功能免授权直接可用，无激活 / 推广界面，不连接授权服务器"
+          "markdown": "- 灵动岛电池胶囊与电源菜单、桌面悬浮信息药丸（网速 / CPU / 内存 / 电池 / 天气 / 时间）\n- 三合一状态栏、文件夹主题与大文件夹、状态栏文字图标变色\n- 通话自动录音与录屏增强、双卡 T9 拨号、自动禁用 SIM 与卡槽管理\n- IPCC 运营商配置、WiFi 永连、充电提示音与 MagSafe 动画、温控调优\n- 锁屏与主屏幕增强、定时任务、电池健康与深度信息、SMC 寄存器读写\n- 修改版特有：全部功能免授权直接可用，无激活 / 推广界面，不连接授权服务器\n- 天气模块：数据固定来自 Open-Meteo，自动定位、无需手动经纬度/API（依赖 SysWeatherBridge），设置页只保留说明与开关"
         }
       ]
     },
@@ -17,6 +17,58 @@
       "class": "DepictionStackView",
       "tabname": "兼容性",
       "views": [
+        {
+          "class": "DepictionSubheaderView",
+          "title": "v2.2.80-11 · iphoneos-arm64",
+          "useBoldText": true,
+          "useBottomMargin": true
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "机型",
+          "text": "iPhone 15 Pro"
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "验证 iOS",
+          "text": "17.2.1"
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "越狱形态",
+          "text": "rootless /var/jb（RootHide 实测）"
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "验证状态",
+          "text": "已验证（用户实机确认）"
+        },
+        {
+          "class": "DepictionSubheaderView",
+          "title": "v2.2.80-9 · iphoneos-arm64",
+          "useBoldText": true,
+          "useBottomMargin": true
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "机型",
+          "text": "iPhone 15 Pro"
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "验证 iOS",
+          "text": "17.2.1"
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "越狱形态",
+          "text": "rootless /var/jb（RootHide 实测）"
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "验证状态",
+          "text": "已被 2.2.80-11 取代（补丁已并入 -11 并实机验证）"
+        },
         {
           "class": "DepictionSubheaderView",
           "title": "v2.2.80-8 · iphoneos-arm64",
@@ -41,7 +93,7 @@
         {
           "class": "DepictionTableTextView",
           "title": "验证状态",
-          "text": "已验证"
+          "text": "已验证（被 2.2.80-9 取代）"
         },
         {
           "class": "DepictionSubheaderView",
@@ -51,7 +103,7 @@
         },
         {
           "class": "DepictionMarkdownView",
-          "markdown": "- 基于 Muzi 官方 MUtool 2.2.80 deb 的二进制修改构建（非源码编译）；Package id / 依赖与官方包一致。\n- rootless（/var/jb），iphoneos-arm64（内含 arm64 + arm64e 双 slice），RootHide 下安装路径与官方包相同。\n- 与官方包同 id：安装即覆盖官方版；回滚重装官方 2.2.80 即可。\n- 设置页已移除『设备授权 / 关于 / 推广』区块，各功能页不再出现未激活提示。\n- 官方声明 iOS 15–17；本包实机验证 iOS 17.2.1（iPhone 15 Pro · RootHide）。"
+          "markdown": "- 基于 Muzi 官方 MUtool 2.2.80 deb 的二进制修改构建（非源码编译）；Package id / 依赖与官方包一致。\n- rootless（/var/jb），iphoneos-arm64（内含 arm64 + arm64e 双 slice），RootHide 下安装路径与官方包相同。\n- 与官方包同 id：安装即覆盖官方版；回滚重装官方 2.2.80 即可。\n- 设置页已移除『设备授权 / 关于 / 推广』区块，各功能页不再出现未激活提示。\n- 官方声明 iOS 15–17；本包实机验证 iOS 17.2.1（iPhone 15 Pro · RootHide）。\n- 2.2.80-11 起依赖 com.local.sysweatherbridge（自动定位 + 天气参数桥），源会自动安装。\n- 天气设置页已移除来源选择与经纬度/和风参数输入，避免误以为需要手填。"
         }
       ]
     },
@@ -65,6 +117,48 @@
         },
         {
           "class": "DepictionSubheaderView",
+          "title": "v2.2.80-11 · 2026-11-09",
+          "useBoldText": true,
+          "useBottomMargin": true
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "验证",
+          "text": "已验证（用户实机确认）"
+        },
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "- 基于 2.2.80-9：授权放行、痕迹净化、天气节拍补丁全部保留\n- 设置页天气模块重构：移除「天气来源 / Open-Meteo 纬度 / 经度 / 和风 Host / Key / 位置」六行，只保留一段说明——数据固定来自 Open-Meteo、自动定位，无需手动填写\n- 新增依赖 com.local.sysweatherbridge（自动定位 + 天气参数桥）：装本体时由源自动带上，药丸天气自动跟随位置\n- 修正 2.2.80-10 的授权回归：该版替换 mutoolprefs 时误用原始样本，设置面板授权补丁丢失（显示未激活）；本版以 -9 的已授权 mutoolprefs 为底重打天气页补丁\n- 静态验收：5 个二进制授权闸 6/6、双 slice 天气页 NOP 6 处、footer 文案替换、ldid 签名、root:root；MUtool/Capture/Pasted/Thermal 与 -9 逐字节一致"
+        },
+        {
+          "class": "DepictionTableButtonView",
+          "title": "下载 v2.2.80-11（iphoneos-arm64）",
+          "action": "https://chenlin8023.github.io/debs/byg.iosios.net.mutool_2.2.80-11_iphoneos-arm64.deb",
+          "openExternal": true
+        },
+        {
+          "class": "DepictionSubheaderView",
+          "title": "v2.2.80-9 · 2026-11-09",
+          "useBoldText": true,
+          "useBottomMargin": true
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "验证",
+          "text": "已被 2.2.80-11 取代（补丁已并入 -11 并实机验证）"
+        },
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "- 在 2.2.80-8 基础上修复天气悬浮窗长时间显示 --（系统天气源，完整逆向定位缓存链）\n- 根因：MUtool 系统源读取 WeatherPreferences 共享缓存（由电话助手在打开天气悬浮窗时写入），且有两处「缓存 updateTime 超时即判无效」的判定——超时后快照被清空 → 悬浮窗显示 --；电话助手不常开则缓存持续陈旧，-- 长期不恢复\n- 修复：NOP 两处超时判定跳转（hasFreshSnapshot 的 age>300s、系统源解析的 age>检查间隔，arm64/arm64e 各 2 处指令补丁）——只要缓存有数据就持续显示并在下次检查时更新，不再因缓存陈旧清空为 --（时钟回拨保护 -3600s 判定保留）\n- 辅助：成功后下次检查间隔 900s → 120s，每 2 分钟重读共享缓存，电话助手刷新后最多 2 分钟自动跟上\n- 共 6 处补丁（双 slice：2 数据 + 4 指令），与 -8 逐字节仅差 20 字节；授权放行与痕迹净化全部保留；静态验收 30 处授权闸 + 52 项断言全过，实机验证进行中"
+        },
+        {
+          "class": "DepictionTableButtonView",
+          "title": "下载 v2.2.80-9（iphoneos-arm64）",
+          "action": "https://chenlin8023.github.io/debs/byg.iosios.net.mutool_2.2.80-9_iphoneos-arm64.deb",
+          "openExternal": true
+        },
+        {
+          "class": "DepictionSubheaderView",
           "title": "v2.2.80-8 · 2026-11-09",
           "useBoldText": true,
           "useBottomMargin": true
@@ -72,11 +166,11 @@
         {
           "class": "DepictionTableTextView",
           "title": "验证",
-          "text": "已验证"
+          "text": "已验证（被 2.2.80-9 取代）"
         },
         {
           "class": "DepictionMarkdownView",
-          "markdown": "- 基于官方 2.2.80 修改：30 处授权闸补丁（statusForProduct / isAuthorizedForProduct / remainingSeconds，arm64+arm64e 双 slice）\n- 设置主页面移除 9 行：设备授权 / 激活·查看UDID / 注销设备 / 关于 / QQ群 / GitHub / Sini921·合作开发者 / 木子源 / 版权页脚（带寄存器活跃性校验的行摘除桩）\n- 授权与推广文案等长净化约 588 处；7 条授权 / 推广 URL 改为等长 0.0.0.0 占位（防 URL 强解崩溃）\n- 移除未引用的 LICENSE@3x.png；ldid 重签；修复 v1 arm64e retab 导致的 PAC 崩溃（收尾改 ret）\n- 实机验证：SpringBoard / 设置 / 悬浮药丸 / 录音 / 温控均正常；官方 2.2.80 可直接覆盖回滚"
+          "markdown": "- 2.2.80-8：30 处授权闸补丁 + 痕迹净化（详见 2.2.80-9 更新日志前身）。"
         },
         {
           "class": "DepictionTableButtonView",
@@ -113,6 +207,36 @@
         {
           "class": "DepictionMarkdownView",
           "markdown": "- 授权放行修正版（30 处补丁），实机验证通过；被 2.2.80-8（同补丁 + 痕迹净化）取代。"
+        },
+        {
+          "class": "DepictionSubheaderView",
+          "title": "v2.2.80-8 · 2026-11-09",
+          "useBoldText": true,
+          "useBottomMargin": true
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "状态",
+          "text": "已被取代"
+        },
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "- 被 2.2.80-9（天气节拍修复）取代；完整日志见版本列表 v2.2.80-8。"
+        },
+        {
+          "class": "DepictionSubheaderView",
+          "title": "v2.2.80-10 · 2026-11-09",
+          "useBoldText": true,
+          "useBottomMargin": true
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "状态",
+          "text": "已作废"
+        },
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "- 替换 mutoolprefs 时误用原始样本，设置面板授权补丁丢失（显示未激活）；被 2.2.80-11 修复并取代。"
         }
       ]
     },

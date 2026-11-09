@@ -1,619 +1,736 @@
 {
-  "repo": {
-    "name": "Chenlin8023 Repo",
-    "url": "https://chenlin8023.github.io/",
-    "feedback_url": "https://github.com/Chenlin8023/Chenlin8023.github.io/issues/new?template=package-feedback.yml",
-    "source_repo": "https://github.com/Chenlin8023/Chenlin8023.github.io",
-    "tint": "#3ea6ff"
-  },
-  "packages": [
+ "repo": {
+  "name": "Chenlin8023 Repo",
+  "url": "https://chenlin8023.github.io/",
+  "feedback_url": "https://github.com/Chenlin8023/Chenlin8023.github.io/issues/new?template=package-feedback.yml",
+  "source_repo": "https://github.com/Chenlin8023/Chenlin8023.github.io",
+  "tint": "#3ea6ff"
+ },
+ "packages": [
+  {
+   "package": "com.sini921.lstimeseconds.roothide",
+   "display_name": "LSTimeSeconds (RootHide)",
+   "summary": "锁屏时钟显示实时秒数，支持字号缩放与上下位置调节。",
+   "features": [
+    "锁屏时钟显示实时秒数，自动跟随设备 12/24 小时制",
+    "字号缩放 0.60–1.25（默认 0.88），以壁纸原始字号为基准，不抖动",
+    "上下位置调节 ±100pt，解除裁剪；时钟水平自动居中",
+    "长按进入壁纸自定义时静默旁路，滤镜、字体、景深编辑保持系统原样",
+    "熄屏暂停刷新省电，亮屏立即恢复并校准",
+    "设置面板：启用开关、字号滑块、位置滑块、注销按钮"
+   ],
+   "compatibility": {
+    "notes": [
+     "AOD 暗屏不走秒：系统在暗屏使用 1Hz Flipbook，应用层无法刷新；亮屏立即恢复。",
+     "这是独立的 RootHide Package ID；从旧包升级必须先卸载旧 LSTimeSeconds，再安装本包。",
+     "卸载旧包不会删除偏好设置（com.b4db1r3.lstsprefs），新包会沿用。",
+     "原生 roothide arm64e，不要过 RootHide 转换器。"
+    ]
+   },
+   "repo_url": "https://github.com/Chenlin8023/LSTimeSeconds-iOS17",
+   "log_hint": "日志：/var/mobile/Library/LSTimeSeconds.log（超过 256KB 轮转为 .1）",
+   "variants": [
     {
-      "package": "com.sini921.lstimeseconds.roothide",
-      "display_name": "LSTimeSeconds (RootHide)",
-      "summary": "锁屏时钟显示实时秒数，支持字号缩放与上下位置调节。",
-      "features": [
-        "锁屏时钟显示实时秒数，自动跟随设备 12/24 小时制",
-        "字号缩放 0.60–1.25（默认 0.88），以壁纸原始字号为基准，不抖动",
-        "上下位置调节 ±100pt，解除裁剪；时钟水平自动居中",
-        "长按进入壁纸自定义时静默旁路，滤镜、字体、景深编辑保持系统原样",
-        "熄屏暂停刷新省电，亮屏立即恢复并校准",
-        "设置面板：启用开关、字号滑块、位置滑块、注销按钮"
-      ],
-      "compatibility": {
-        "notes": [
-          "AOD 暗屏不走秒：系统在暗屏使用 1Hz Flipbook，应用层无法刷新；亮屏立即恢复。",
-          "这是独立的 RootHide Package ID；从旧包升级必须先卸载旧 LSTimeSeconds，再安装本包。",
-          "卸载旧包不会删除偏好设置（com.b4db1r3.lstsprefs），新包会沿用。",
-          "原生 roothide arm64e，不要过 RootHide 转换器。"
-        ]
-      },
-      "repo_url": "https://github.com/Chenlin8023/LSTimeSeconds-iOS17",
-      "log_hint": "日志：/var/mobile/Library/LSTimeSeconds.log（超过 256KB 轮转为 .1）",
-      "variants": [
-        {
-          "version": "0.0.7-1",
-          "date": "2026-11-02",
-          "arch": "iphoneos-arm64e",
-          "jailbreak": "RootHide 原生",
-          "devices": [
-            "iPhone 15 Pro"
-          ],
-          "ios": [
-            "17.2.1"
-          ],
-          "verified": "已验证",
-          "changes": [
-            "修复原版在 iOS 17 上完全不生效的四个根因：版本硬编码、通知名不匹配、旧键误判、字号震荡",
-            "改为直接 hook CSProminentDisplayViewController / CSProminentTimeView，并保留 SBFLockScreenDateView 兜底",
-            "四通道写文字；字号以原始值为基准单次锚定，避免每秒抖动",
-            "原生 roothide arm64e，不经转换器"
-          ]
-        }
-      ],
-      "history": [
-        {
-          "version": "0.0.8",
-          "date": "2026-11-02",
-          "status": "已撤回",
-          "notes": [
-            "自建 PSListController 面板在真机进入设置闪退；根因是 arm64e 类元数据缺少 PAC。版本号已回退到 0.0.7-1。"
-          ]
-        }
-      ]
-    },
-    {
-      "package": "com.sini921.lstimeseconds",
-      "display_name": "LSTimeSeconds (rootless)",
-      "summary": "锁屏时钟显示实时秒数，支持字号缩放与上下位置调节（rootless /var/jb 构建）。",
-      "features": [
-        "锁屏时钟显示实时秒数，自动跟随设备 12/24 小时制",
-        "字号缩放 0.60–1.25（默认 0.88），以壁纸原始字号为基准，不抖动",
-        "上下位置调节 ±100pt，解除裁剪；时钟水平自动居中",
-        "长按进入壁纸自定义时静默旁路，滤镜、字体、景深编辑保持系统原样",
-        "熄屏暂停刷新省电，亮屏立即恢复并校准",
-        "设置面板：启用开关、字号滑块、位置滑块、注销按钮"
-      ],
-      "compatibility": {
-        "notes": [
-          "AOD 暗屏不走秒：系统在暗屏使用 1Hz Flipbook，应用层无法刷新；亮屏立即恢复。",
-          "RootHide 用户请安装 LSTimeSeconds (RootHide)，不要与本包混装。",
-          "rootless 包安装到 /var/jb；普通 rootless 设备直接安装，RootHide 需转换或使用 rootless 引导环境。",
-          "0.0.7-2 未单独验证；0.0.7-4 / 0.0.7-5 已在 iOS 16.0.3 真机验证。"
-        ]
-      },
-      "repo_url": "https://github.com/Chenlin8023/LSTimeSeconds-iOS17",
-      "log_hint": "日志：/var/mobile/Library/LSTimeSeconds.log（超过 256KB 轮转为 .1）",
-      "variants": [
-        {
-          "version": "0.0.7-5",
-          "date": "2026-11-02",
-          "arch": "iphoneos-arm64",
-          "jailbreak": "rootless（/var/jb）",
-          "devices": [
-            "AOD 机型（具体机型未记录）"
-          ],
-          "ios": [
-            "16.0.3"
-          ],
-          "verified": "已验证",
-          "changes": [
-            "日志超过 256KB 轮转为 .1，避免长期使用无限增长",
-            "1Hz 计时器首次 fire 对齐到下一个整秒（+10ms），秒数跳动更匀",
-            "刷新与停表逻辑与 0.0.7-4 一致"
-          ]
-        },
-        {
-          "version": "0.0.7-4",
-          "date": "2026-11-02",
-          "arch": "iphoneos-arm64",
-          "jailbreak": "rootless（/var/jb）",
-          "devices": [
-            "AOD 机型（具体机型未记录）"
-          ],
-          "ios": [
-            "16.0.3"
-          ],
-          "verified": "已验证",
-          "changes": [
-            "修复 iOS 16 熄屏再亮屏后秒数冻结：tick 不再依据 g_isScreenOff 跳过刷新",
-            "熄屏、背光 state=2、视图注销时不再停止计时器，避免停止后无人重启",
-            "撤回 0.0.7-3 的全局 block 方案，改为最小改动"
-          ]
-        },
-        {
-          "version": "0.0.7-2",
-          "date": "2026-11-02",
-          "arch": "iphoneos-arm64",
-          "jailbreak": "rootless（/var/jb）",
-          "devices": [
-            "未单独验证"
-          ],
-          "ios": [
-            "—"
-          ],
-          "verified": "未单独验证",
-          "changes": [
-            "rootless 适配：substrate 依赖与 /var/jb rpath",
-            "设置面板改为源码编译，修复 arm64e 类元数据 PAC 导致的闪退",
-            "功能与 RootHide 版一致，后续 0.0.7-4 已覆盖其修复"
-          ]
-        }
-      ],
-      "history": [
-        {
-          "version": "0.0.7-3",
-          "date": "2026-11-02",
-          "status": "已撤回",
-          "notes": [
-            "新增全局 block 被 ARC retain，clang19 生成的 block isa 没有 PAC，objc_retain 时 SIGBUS；在 iOS 16.0.3 触发安全模式。"
-          ]
-        },
-        {
-          "version": "0.0.8",
-          "date": "2026-11-02",
-          "status": "已撤回",
-          "notes": [
-            "设置面板二进制在 arm64e 上进入设置闪退；根因是 __objc_data 的 class/superclass 指针缺少 PAC。"
-          ]
-        }
-      ]
-    },
-    {
-      "package": "com.applockplus.refactored",
-      "display_name": "AppLock+ (应用锁+)",
-      "summary": "按应用注入式应用锁，6 位密码 + Face ID / 触控 ID，免 substrate。",
-      "features": [
-        "按应用注入：适合会检测越狱、无法全局注入的 App（TrollFools / JailFools）",
-        "6 位应用锁密码；首次启动强制设置，不使用默认 0000",
-        "Face ID / 触控 ID 作为快捷方式；取消、失败或识别不可用时停留在密码键盘，不放行",
-        "密码 PBKDF2-SHA256（2 万次迭代 + 16 字节随机盐），优先存 Keychain；恒定时间比较",
-        "连续输错 5 次起指数冷却（1→2→4…分钟，上限 17 小时），状态持久化，杀进程不重置",
-        "后台快照模糊遮盖；双指双击进入设置；支持 UIWindowScene / SwiftUI",
-        "载体包：dylib 需手动注入目标 App，装完不会全局生效"
-      ],
-      "compatibility": {
-        "notes": [
-          "载体包：dylib 位于 /var/mobile/Documents/AppLockPlus/，用 Debs 导出或 Filza 取出，再由 TrollFools / JailFools 注入目标 App。",
-          "不要过 RootHide 转换器；本包是免 substrate 的按应用注入 dylib。",
-          "构建目标 iOS 14+；实机验证为 iPhone 15 Pro / iOS 17.2.1。"
-        ]
-      },
-      "repo_url": "https://github.com/Chenlin8023/AppLockPlus",
-      "log_hint": "反馈时请附：目标 App 名称、注入工具（TrollFools / JailFools）、是否首次启动、是否设置过密码。",
-      "variants": [
-        {
-          "version": "0.4.2-1",
-          "date": "2026-11-04",
-          "arch": "iphoneos-arm64e",
-          "jailbreak": "RootHide（按应用注入，免 substrate）",
-          "devices": [
-            "iPhone 15 Pro"
-          ],
-          "ios": [
-            "17.2.1"
-          ],
-          "verified": "已验证",
-          "changes": [
-            "重构自 tien0246/ProtectedApp；修复 Face ID 取消即放行、快速返回解锁、明文密码、默认 0000 等绕过与安全问题",
-            "首次启动强制设置 6 位密码；完整中文设置面板；Keychain/PBKDF2 存储；指数冷却；后台快照模糊；UIWindowScene 适配",
-            "双指双击设置入口；移除魔改版的 Telegram 推广行为"
-          ]
-        }
-      ]
-    },
-    {
-      "package": "com.chenlin8023.notifiericons",
-      "display_name": "NotifierIcons",
-      "summary": "状态栏显示选中应用的通知小图标；有未读角标才出现，清零即消失。",
-      "features": [
-        "状态栏下方显示选中 App 的通知小图标；有未读角标才出现，清零即消失（安卓通知语义）",
-        "真实 App 图标（format 0–12 自动探测 + 磁盘缓存 + 字母头像兜底）",
-        "最多 6 个，按应用名排序；独立悬浮窗渲染，与灵动岛布局解耦",
-        "位置预设（居中 / 岛左 / 岛右）+ 微调；改动即时生效；仅桌面 / 锁屏显示，进 App 自动消失",
-        "设置面板选择 App；2 秒轮询 + badge 事件双通道"
-      ],
-      "compatibility": {
-        "notes": [
-          "仅注入 SpringBoard：桌面 / 锁屏生效，App 内不显示。",
-          "0.9.2 起无角标化：不再显示红色角标数字，图标出现即通知、清零即隐藏。",
-          "rootless（/var/jb）包，arm64；RootHide 需转换或使用 rootless 引导环境。"
-        ]
-      },
-      "repo_url": "https://github.com/Chenlin8023/notifiericons",
-      "log_hint": "反馈时请附：是否有未读通知、选中的应用、图标行是否出现、设置面板截图。",
-      "variants": [
-        {
-          "version": "0.9.2",
-          "date": "2026-11-03",
-          "arch": "iphoneos-arm64",
-          "jailbreak": "rootless（/var/jb）",
-          "devices": [
-            "iPhone 15 Pro"
-          ],
-          "ios": [
-            "17.2.1"
-          ],
-          "verified": "已验证",
-          "changes": [
-            "形态定稿：整体移除红点与数字角标及全部相关开关",
-            "修复 0.9.1 角标 x 坐标漏加图标偏移、全部叠画在第一个图标上的潜伏 bug",
-            "图标出现即通知、清零即隐藏；面板脚注明示无通知时不显示图标行"
-          ]
-        }
-      ],
-      "history": [
-        {
-          "version": "0.9.1",
-          "date": "2026-11-03",
-          "status": "历史版本",
-          "notes": [
-            "新增角标显示数字开关；日志 128KB 轮转，保留 .1/.2 两份历史。"
-          ]
-        },
-        {
-          "version": "0.9.0",
-          "date": "2026-11-03",
-          "status": "历史版本",
-          "notes": [
-            "真图标链路打通：启动期捕获 SBIconController → iconManager → iconModel.leafIconForIdentifier: → SBIconImageCache。"
-          ]
-        }
-      ]
-    },
-    {
-      "package": "com.local.callassistportleak",
-      "display_name": "CallAssist PortLeak",
-      "summary": "SpringBoard Mach 端口泄漏的侦查与止血工具；定责并抑制 CallAssist 的 IOKit 轮询泄漏。",
-      "features": [
-        "观测：每 5 分钟输出端口 / fd 统计、Top 调用点、xpcA / xpcF / p5 指标",
-        "既有止血：CFUserNotification 应答端口宽限后取消、摘除泄漏 RunLoop 源、fd 超水位时复核后关闭",
-        "XPC 接管-宽限-回收：钩住 xpc_connection_create*，栈回溯确认插件驱动且服务名命中回收名单",
-        "512 槽指针去重；5 秒清扫；默认 10 秒宽限后 xpc_connection_cancel + xpc_release",
-        "系统框架直呼与纯系统路径的连接不碰；回收服务名单可通过 config.plist 配置",
-        "原生 roothide arm64e"
-      ],
-      "compatibility": {
-        "notes": [
-          "项目已更名 CallAssistLeakGuard；当前发布包 ID 仍是旧 ID com.local.callassistportleak，2.1.0 更名重建待完成。",
-          "2.1.0 待真机确认；2.0.14 已验证回收有效。",
-          "从旧 ID（com.local.bioprotectleakguard）升级必须先卸载旧包；新旧共存会双重注入。",
-          "原生 roothide arm64e，不要过 RootHide 转换器。"
-        ]
-      },
-      "repo_url": "https://github.com/Chenlin8023/CallAssist-PortLeak",
-      "log_hint": "反馈时请附：CallAssistLeakGuard 的 guard.log、config.plist 中 XPCReclaimServices、设备使用时长与复现步骤。",
-      "variants": [
-        {
-          "version": "2.1.0",
-          "date": "2026-11-03",
-          "arch": "iphoneos-arm64e",
-          "jailbreak": "RootHide 原生",
-          "devices": [
-            "iPhone 15 Pro"
-          ],
-          "ios": [
-            "17.2.1"
-          ],
-          "verified": "待确认（2.0.14 已验证）",
-          "changes": [
-            "项目更名 CallAssistLeakGuard，计划将包 ID 改为 com.local.callassistleakguard（当前发布包仍为旧 ID）",
-            "功能同 2.0.14：回收服务名单可配置；新增 p5 端口净增量指标",
-            "2.0.13 起确认 powerdxpc 回收有效（xpcA≈xpcF）"
-          ]
-        }
-      ],
-      "history": [
-        {
-          "version": "2.0.14",
-          "date": "2026-11-03",
-          "status": "旧 ID 已验证",
-          "notes": [
-            "回收服务范围改为可配置（XPCReclaimServices，前缀匹配）；安全条件不变。"
-          ]
-        },
-        {
-          "version": "2.0.13",
-          "date": "2026-11-02",
-          "status": "旧 ID 已验证",
-          "notes": [
-            "真机日志确认 powerdxpc 回收有效；统计行新增 p5 端口净增量。"
-          ]
-        },
-        {
-          "version": "2.0.7 / 2.0.8",
-          "date": "2026-10-26",
-          "status": "旧 ID 历史版本",
-          "notes": [
-            "2.0.7 修复 arm64e __cfstring isa 未认证导致的 SIGBUS；2.0.8 修复定时器被 ARC 释放、清扫从未运行的 bug。"
-          ]
-        }
-      ]
-    },
-    {
-      "package": "com.local.volmanaudioqueue.full",
-      "display_name": "VolumeManager (Full)",
-      "summary": "每个 App 独立音量，多个 App 可同时播放。",
-      "features": [
-        "每个 App 独立音量（最低静音）；多 App 同时播放，互不打断；改完立即生效",
-        "重写音量引擎，消除 16 位 PCM 爆音",
-        "混音策略层：挂钩 AVAudioSession setActive / setCategory，保证多 App 同播稳定",
-        "全量包：含设置面板、音量 HUD、音量引擎；面板推广 / 打赏 / 攻击文字已清理",
-        "1.3.0 修复长时间播放后静音失效（ctx 表 32→512，并输出占用率日志）"
-      ],
-      "compatibility": {
-        "notes": [
-          "rootless（/var/jb）包，arm64；RootHide 需转换或使用 rootless 引导环境。",
-          "1.3.0 是过渡版：用 JailFools 等工具把引擎注入到 App 的，升级后需覆盖 .app/Frameworks/VolManAudioQueue.dylib 并重新打开 App；验收看容器日志头 === v1.3.0。",
-          "1.2.0 是稳定回退版，可直接安装 / 降级。",
-          "依赖 Orion 运行时（dev.theos.orion），由系统按依赖安装。"
-        ]
-      },
-      "repo_url": "https://github.com/Chenlin8023/VolumeManager-iOS17",
-      "log_hint": "反馈时请附：App 容器 Documents 下的 VolMan 日志、日志头版本、注入形态（动态注入 / JailFools 拷贝）、复现步骤。",
-      "variants": [
-        {
-          "version": "1.3.0",
-          "date": "2026-11-04",
-          "arch": "iphoneos-arm64",
-          "jailbreak": "rootless（/var/jb）",
-          "devices": [
-            "iPhone 15 Pro"
-          ],
-          "ios": [
-            "17.2.1"
-          ],
-          "verified": "已验证",
-          "changes": [
-            "渲染回调层 ctx 表 32→512，修复长时间播放后静音失效",
-            "新增 ctx 占用 / 峰值 / 累计包装日志，失败不再静默",
-            "不采用动态扩容：渲染回调持有槽位指针，realloc 会让已装回调的 refCon 失效"
-          ]
-        },
-        {
-          "version": "1.2.0",
-          "date": "2026-10-23",
-          "arch": "iphoneos-arm64",
-          "jailbreak": "rootless（/var/jb）",
-          "devices": [
-            "iPhone 15 Pro"
-          ],
-          "ios": [
-            "17.2.1"
-          ],
-          "verified": "已验证",
-          "changes": [
-            "新增混音策略层，多 App 稳定同时播放",
-            "全量包整合设置面板、音量 HUD、音量引擎；面板净化",
-            "作为 1.3.0 的稳定回退版保留"
-          ]
-        }
-      ],
-      "history": [
-        {
-          "version": "1.2.1 – 1.2.7",
-          "date": "2026-11-03",
-          "status": "未上架 / 已移除",
-          "notes": [
-            "多变量优化期，结论不可归因；1.3.0 由 1.2.0 + ctx 512 重新定案。"
-          ]
-        },
-        {
-          "version": "1.1.3 / 1.1.0",
-          "date": "2026-10-23",
-          "status": "历史版本",
-          "notes": [
-            "1.1.3 修正净化模块文件权限（此前缺少执行位未加载）；1.1.0 新增面板净化。"
-          ]
-        }
-      ]
-    },
-    {
-      "package": "com.local.volmanprefsclean",
-      "display_name": "VolumeManager 面板净化",
-      "summary": "VolumeManager 设置面板净化补丁；移除推广与攻击性文字，功能开关保留。",
-      "features": [
-        "单独补丁，仅用于已安装原版 VolumeManager 的设备",
-        "移除面板中的打赏、推广、反盗版与攻击性文字",
-        "功能开关全部保留",
-        "VolumeManager (Full) 已内置本功能，无需再装"
-      ],
-      "compatibility": {
-        "notes": [
-          "rootless（/var/jb）包，arm64。",
-          "仅作为原版 VolumeManager 的补丁；Full 包用户不要重复安装。",
-          "实机验证：iPhone 15 Pro / iOS 17.2.1（RootHide）。"
-        ]
-      },
-      "repo_url": "https://github.com/Chenlin8023/VolumeManager-iOS17",
-      "log_hint": "反馈时请附：是否安装 VolumeManager (Full)、面板截图、模块是否加载。",
-      "variants": [
-        {
-          "version": "1.1.0",
-          "date": "2026-11-02",
-          "arch": "iphoneos-arm64",
-          "jailbreak": "rootless（/var/jb）",
-          "devices": [
-            "iPhone 15 Pro"
-          ],
-          "ios": [
-            "17.2.1"
-          ],
-          "verified": "已验证",
-          "changes": [
-            "静态 + 运行时双重净化：面板条目与运行时文案都处理",
-            "修复净化模块文件权限（此前缺少执行位，系统未加载）"
-          ]
-        }
-      ]
-    },
-    {
-      "package": "moe.waru.jikan",
-      "display_name": "Jikan（锁屏充电预估）",
-      "summary": "在锁定屏幕上实时显示充满电（或目标电量）所需的时间预估。",
-      "features": [
-        "锁屏胶囊实时显示距充满电/目标电量的时间，支持 Apple 官方模型与 Jikan 历史学习两种算法",
-        "充电目标可调：Apple 模型 80/85/90/95/100%，Jikan 算法 1–100% 任选",
-        "胶囊样式（经典/进度环）、位置（横竖屏独立）、背景透明度可调",
-        "堆叠显示电池电压、温度、充电功率；达到目标电量时推送通知",
-        "可与 ChargeLimiter 同步充电上限；可隐藏滑动解锁文字与专注模式指示器"
-      ],
-      "compatibility": {
-        "notes": [
-          "原生 roothide arm64e（iphoneos-arm64e），直接安装，不要过 RootHide 转换器。",
-          "1.2.1-1+debug 为内置简体中文的分支构建（Chenlin8023 fork）；1.2.0 为上游 waruhachi 原版英文界面。",
-          "与简体中文语言包（moe.waru.jikan.lang.zh-hans）互斥，二选一。",
-          "iOS 14+；依赖 mobilesubstrate、preferenceloader。"
-        ]
-      },
-      "repo_url": "https://github.com/Chenlin8023/Jikan",
-      "variants": [
-        {
-          "version": "1.2.1-1+debug",
-          "date": "2026-11-08",
-          "arch": "iphoneos-arm64e",
-          "jailbreak": "RootHide 原生",
-          "devices": [
-            "iPhone 15 Pro"
-          ],
-          "ios": [
-            "17.2.1"
-          ],
-          "verified": "已验证",
-          "changes": [
-            "内置简体中文翻译：设置页/锁屏胶囊/通知共 109 条文案全覆盖",
-            "GitHub Actions macOS 上以 Apple 官方工具链构建，无任何二进制补丁",
-            "上游 1.2.1 主线全部功能"
-          ]
-        },
-        {
-          "version": "1.2.0",
-          "date": "2026-11-06",
-          "arch": "iphoneos-arm64e",
-          "jailbreak": "RootHide 原生",
-          "devices": [
-            "iPhone 15 Pro"
-          ],
-          "ios": [
-            "17.2.1"
-          ],
-          "verified": "已验证",
-          "changes": [
-            "上游 waruhachi/Jikan 官方 Release 原版，英文界面",
-            "可搭配简体中文语言包（moe.waru.jikan.lang.zh-hans）汉化"
-          ]
-        }
-      ],
-      "history": [
-        {
-          "version": "1.2.1-local",
-          "date": "2026-11-08",
-          "status": "已放弃",
-          "notes": [
-            "本地 clang19 构建线：clang19 缺少 Apple 私有的栈上 block isa 运行期签名代码生成（-fptrauth-block-isa 不存在），实机 msgSend 认证失败进安全模式，无法用二进制后处理弥补。",
-            "已改用仓库自带 GitHub Actions（Apple 官方工具链）构建；留档见 Jikan/packages/local-pipeline-ref。"
-          ]
-        }
-      ]
-    },
-    {
-      "package": "moe.waru.jikan.lang.zh-hans",
-      "display_name": "Jikan 简体中文语言包",
-      "summary": "为 Jikan 提供简体中文界面的纯数据语言包，不需要重新编译本体。",
-      "features": [
-        "覆盖设置页、锁屏胶囊、通知等全部 109 条界面文案",
-        "纯数据包（约 3.5KB），不含任何二进制",
-        "本体更新如新增文案，缺失键自动回退英文，无需跟着更新"
-      ],
-      "compatibility": {
-        "notes": [
-          "需要 Jikan 本体 1.2 以上（上游原版即可），安装前先装本体。",
-          "系统语言为简体中文（zh-Hans）时生效。",
-          "与内置中文的分支构建（moe.waru.jikan 1.2.1-1+debug）互斥：二者写同一路径，同装会报文件冲突。",
-          "纯数据包，不含二进制，无架构要求（按 roothide 仓库惯例标记 iphoneos-arm64e）。"
-        ]
-      },
-      "repo_url": "https://github.com/Chenlin8023/Jikan",
-      "variants": [
-        {
-          "version": "1.2.1",
-          "date": "2026-11-08",
-          "arch": "iphoneos-arm64e",
-          "jailbreak": "RootHide 原生",
-          "devices": [
-            "iPhone 15 Pro"
-          ],
-          "ios": [
-            "17.2.1"
-          ],
-          "verified": "已验证",
-          "changes": [
-            "首发：109 条界面文案简体中文翻译"
-          ]
-        }
-      ]
-    },
-    {
-      "package": "byg.iosios.net.mutool",
-      "display_name": "MUtool 工具箱（修改版）",
-      "summary": "MUtool 多功能工具集的本地修改构建：解除授权验证、移除授权与推广界面，功能与官方版一致。",
-      "features": [
-        "灵动岛电池胶囊与电源菜单、桌面悬浮信息药丸（网速 / CPU / 内存 / 电池 / 天气 / 时间）",
-        "三合一状态栏、文件夹主题与大文件夹、状态栏文字图标变色",
-        "通话自动录音与录屏增强、双卡 T9 拨号、自动禁用 SIM 与卡槽管理",
-        "IPCC 运营商配置、WiFi 永连、充电提示音与 MagSafe 动画、温控调优",
-        "锁屏与主屏幕增强、定时任务、电池健康与深度信息、SMC 寄存器读写",
-        "修改版特有：全部功能免授权直接可用，无激活 / 推广界面，不连接授权服务器"
-      ],
-      "compatibility": {
-        "notes": [
-          "基于 Muzi 官方 MUtool 2.2.80 deb 的二进制修改构建（非源码编译）；Package id / 依赖与官方包一致。",
-          "rootless（/var/jb），iphoneos-arm64（内含 arm64 + arm64e 双 slice），RootHide 下安装路径与官方包相同。",
-          "与官方包同 id：安装即覆盖官方版；回滚重装官方 2.2.80 即可。",
-          "设置页已移除『设备授权 / 关于 / 推广』区块，各功能页不再出现未激活提示。",
-          "官方声明 iOS 15–17；本包实机验证 iOS 17.2.1（iPhone 15 Pro · RootHide）。"
-        ]
-      },
-      "repo_url": "https://github.com/muzikeji",
-      "variants": [
-        {
-          "version": "2.2.80-8",
-          "date": "2026-11-09",
-          "arch": "iphoneos-arm64",
-          "jailbreak": "rootless /var/jb（RootHide 实测）",
-          "devices": [
-            "iPhone 15 Pro"
-          ],
-          "ios": [
-            "17.2.1"
-          ],
-          "verified": "已验证",
-          "changes": [
-            "基于官方 2.2.80 修改：30 处授权闸补丁（statusForProduct / isAuthorizedForProduct / remainingSeconds，arm64+arm64e 双 slice）",
-            "设置主页面移除 9 行：设备授权 / 激活·查看UDID / 注销设备 / 关于 / QQ群 / GitHub / Sini921·合作开发者 / 木子源 / 版权页脚（带寄存器活跃性校验的行摘除桩）",
-            "授权与推广文案等长净化约 588 处；7 条授权 / 推广 URL 改为等长 0.0.0.0 占位（防 URL 强解崩溃）",
-            "移除未引用的 LICENSE@3x.png；ldid 重签；修复 v1 arm64e retab 导致的 PAC 崩溃（收尾改 ret）",
-            "实机验证：SpringBoard / 设置 / 悬浮药丸 / 录音 / 温控均正常；官方 2.2.80 可直接覆盖回滚"
-          ]
-        }
-      ],
-      "history": [
-        {
-          "version": "2.2.80-4",
-          "date": "2026-11-09",
-          "status": "已放弃",
-          "notes": [
-            "v1 补丁在 arm64e slice 用 retab 收尾：arm64e ABI 的 bl 产生未签名 LR，retab 认证失败 → SpringBoard/chronod PAC 崩溃循环（.ips 实锤 MUtoolCapture+0x6ec0）。已改为 ret 收尾。"
-          ]
-        },
-        {
-          "version": "2.2.80-7",
-          "date": "2026-11-09",
-          "status": "已被取代",
-          "notes": [
-            "授权放行修正版（30 处补丁），实机验证通过；被 2.2.80-8（同补丁 + 痕迹净化）取代。"
-          ]
-        }
-      ]
+     "version": "0.0.7-1",
+     "date": "2026-11-02",
+     "arch": "iphoneos-arm64e",
+     "jailbreak": "RootHide 原生",
+     "devices": [
+      "iPhone 15 Pro"
+     ],
+     "ios": [
+      "17.2.1"
+     ],
+     "verified": "已验证",
+     "changes": [
+      "修复原版在 iOS 17 上完全不生效的四个根因：版本硬编码、通知名不匹配、旧键误判、字号震荡",
+      "改为直接 hook CSProminentDisplayViewController / CSProminentTimeView，并保留 SBFLockScreenDateView 兜底",
+      "四通道写文字；字号以原始值为基准单次锚定，避免每秒抖动",
+      "原生 roothide arm64e，不经转换器"
+     ]
     }
-  ]
+   ],
+   "history": [
+    {
+     "version": "0.0.8",
+     "date": "2026-11-02",
+     "status": "已撤回",
+     "notes": [
+      "自建 PSListController 面板在真机进入设置闪退；根因是 arm64e 类元数据缺少 PAC。版本号已回退到 0.0.7-1。"
+     ]
+    }
+   ]
+  },
+  {
+   "package": "com.sini921.lstimeseconds",
+   "display_name": "LSTimeSeconds (rootless)",
+   "summary": "锁屏时钟显示实时秒数，支持字号缩放与上下位置调节（rootless /var/jb 构建）。",
+   "features": [
+    "锁屏时钟显示实时秒数，自动跟随设备 12/24 小时制",
+    "字号缩放 0.60–1.25（默认 0.88），以壁纸原始字号为基准，不抖动",
+    "上下位置调节 ±100pt，解除裁剪；时钟水平自动居中",
+    "长按进入壁纸自定义时静默旁路，滤镜、字体、景深编辑保持系统原样",
+    "熄屏暂停刷新省电，亮屏立即恢复并校准",
+    "设置面板：启用开关、字号滑块、位置滑块、注销按钮"
+   ],
+   "compatibility": {
+    "notes": [
+     "AOD 暗屏不走秒：系统在暗屏使用 1Hz Flipbook，应用层无法刷新；亮屏立即恢复。",
+     "RootHide 用户请安装 LSTimeSeconds (RootHide)，不要与本包混装。",
+     "rootless 包安装到 /var/jb；普通 rootless 设备直接安装，RootHide 需转换或使用 rootless 引导环境。",
+     "0.0.7-2 未单独验证；0.0.7-4 / 0.0.7-5 已在 iOS 16.0.3 真机验证。"
+    ]
+   },
+   "repo_url": "https://github.com/Chenlin8023/LSTimeSeconds-iOS17",
+   "log_hint": "日志：/var/mobile/Library/LSTimeSeconds.log（超过 256KB 轮转为 .1）",
+   "variants": [
+    {
+     "version": "0.0.7-5",
+     "date": "2026-11-02",
+     "arch": "iphoneos-arm64",
+     "jailbreak": "rootless（/var/jb）",
+     "devices": [
+      "AOD 机型（具体机型未记录）"
+     ],
+     "ios": [
+      "16.0.3"
+     ],
+     "verified": "已验证",
+     "changes": [
+      "日志超过 256KB 轮转为 .1，避免长期使用无限增长",
+      "1Hz 计时器首次 fire 对齐到下一个整秒（+10ms），秒数跳动更匀",
+      "刷新与停表逻辑与 0.0.7-4 一致"
+     ]
+    },
+    {
+     "version": "0.0.7-4",
+     "date": "2026-11-02",
+     "arch": "iphoneos-arm64",
+     "jailbreak": "rootless（/var/jb）",
+     "devices": [
+      "AOD 机型（具体机型未记录）"
+     ],
+     "ios": [
+      "16.0.3"
+     ],
+     "verified": "已验证",
+     "changes": [
+      "修复 iOS 16 熄屏再亮屏后秒数冻结：tick 不再依据 g_isScreenOff 跳过刷新",
+      "熄屏、背光 state=2、视图注销时不再停止计时器，避免停止后无人重启",
+      "撤回 0.0.7-3 的全局 block 方案，改为最小改动"
+     ]
+    },
+    {
+     "version": "0.0.7-2",
+     "date": "2026-11-02",
+     "arch": "iphoneos-arm64",
+     "jailbreak": "rootless（/var/jb）",
+     "devices": [
+      "未单独验证"
+     ],
+     "ios": [
+      "—"
+     ],
+     "verified": "未单独验证",
+     "changes": [
+      "rootless 适配：substrate 依赖与 /var/jb rpath",
+      "设置面板改为源码编译，修复 arm64e 类元数据 PAC 导致的闪退",
+      "功能与 RootHide 版一致，后续 0.0.7-4 已覆盖其修复"
+     ]
+    }
+   ],
+   "history": [
+    {
+     "version": "0.0.7-3",
+     "date": "2026-11-02",
+     "status": "已撤回",
+     "notes": [
+      "新增全局 block 被 ARC retain，clang19 生成的 block isa 没有 PAC，objc_retain 时 SIGBUS；在 iOS 16.0.3 触发安全模式。"
+     ]
+    },
+    {
+     "version": "0.0.8",
+     "date": "2026-11-02",
+     "status": "已撤回",
+     "notes": [
+      "设置面板二进制在 arm64e 上进入设置闪退；根因是 __objc_data 的 class/superclass 指针缺少 PAC。"
+     ]
+    }
+   ]
+  },
+  {
+   "package": "com.applockplus.refactored",
+   "display_name": "AppLock+ (应用锁+)",
+   "summary": "按应用注入式应用锁，6 位密码 + Face ID / 触控 ID，免 substrate。",
+   "features": [
+    "按应用注入：适合会检测越狱、无法全局注入的 App（TrollFools / JailFools）",
+    "6 位应用锁密码；首次启动强制设置，不使用默认 0000",
+    "Face ID / 触控 ID 作为快捷方式；取消、失败或识别不可用时停留在密码键盘，不放行",
+    "密码 PBKDF2-SHA256（2 万次迭代 + 16 字节随机盐），优先存 Keychain；恒定时间比较",
+    "连续输错 5 次起指数冷却（1→2→4…分钟，上限 17 小时），状态持久化，杀进程不重置",
+    "后台快照模糊遮盖；双指双击进入设置；支持 UIWindowScene / SwiftUI",
+    "载体包：dylib 需手动注入目标 App，装完不会全局生效"
+   ],
+   "compatibility": {
+    "notes": [
+     "载体包：dylib 位于 /var/mobile/Documents/AppLockPlus/，用 Debs 导出或 Filza 取出，再由 TrollFools / JailFools 注入目标 App。",
+     "不要过 RootHide 转换器；本包是免 substrate 的按应用注入 dylib。",
+     "构建目标 iOS 14+；实机验证为 iPhone 15 Pro / iOS 17.2.1。"
+    ]
+   },
+   "repo_url": "https://github.com/Chenlin8023/AppLockPlus",
+   "log_hint": "反馈时请附：目标 App 名称、注入工具（TrollFools / JailFools）、是否首次启动、是否设置过密码。",
+   "variants": [
+    {
+     "version": "0.4.2-1",
+     "date": "2026-11-04",
+     "arch": "iphoneos-arm64e",
+     "jailbreak": "RootHide（按应用注入，免 substrate）",
+     "devices": [
+      "iPhone 15 Pro"
+     ],
+     "ios": [
+      "17.2.1"
+     ],
+     "verified": "已验证",
+     "changes": [
+      "重构自 tien0246/ProtectedApp；修复 Face ID 取消即放行、快速返回解锁、明文密码、默认 0000 等绕过与安全问题",
+      "首次启动强制设置 6 位密码；完整中文设置面板；Keychain/PBKDF2 存储；指数冷却；后台快照模糊；UIWindowScene 适配",
+      "双指双击设置入口；移除魔改版的 Telegram 推广行为"
+     ]
+    }
+   ]
+  },
+  {
+   "package": "com.chenlin8023.notifiericons",
+   "display_name": "NotifierIcons",
+   "summary": "状态栏显示选中应用的通知小图标；有未读角标才出现，清零即消失。",
+   "features": [
+    "状态栏下方显示选中 App 的通知小图标；有未读角标才出现，清零即消失（安卓通知语义）",
+    "真实 App 图标（format 0–12 自动探测 + 磁盘缓存 + 字母头像兜底）",
+    "最多 6 个，按应用名排序；独立悬浮窗渲染，与灵动岛布局解耦",
+    "位置预设（居中 / 岛左 / 岛右）+ 微调；改动即时生效；仅桌面 / 锁屏显示，进 App 自动消失",
+    "设置面板选择 App；2 秒轮询 + badge 事件双通道"
+   ],
+   "compatibility": {
+    "notes": [
+     "仅注入 SpringBoard：桌面 / 锁屏生效，App 内不显示。",
+     "0.9.2 起无角标化：不再显示红色角标数字，图标出现即通知、清零即隐藏。",
+     "rootless（/var/jb）包，arm64；RootHide 需转换或使用 rootless 引导环境。"
+    ]
+   },
+   "repo_url": "https://github.com/Chenlin8023/notifiericons",
+   "log_hint": "反馈时请附：是否有未读通知、选中的应用、图标行是否出现、设置面板截图。",
+   "variants": [
+    {
+     "version": "0.9.2",
+     "date": "2026-11-03",
+     "arch": "iphoneos-arm64",
+     "jailbreak": "rootless（/var/jb）",
+     "devices": [
+      "iPhone 15 Pro"
+     ],
+     "ios": [
+      "17.2.1"
+     ],
+     "verified": "已验证",
+     "changes": [
+      "形态定稿：整体移除红点与数字角标及全部相关开关",
+      "修复 0.9.1 角标 x 坐标漏加图标偏移、全部叠画在第一个图标上的潜伏 bug",
+      "图标出现即通知、清零即隐藏；面板脚注明示无通知时不显示图标行"
+     ]
+    }
+   ],
+   "history": [
+    {
+     "version": "0.9.1",
+     "date": "2026-11-03",
+     "status": "历史版本",
+     "notes": [
+      "新增角标显示数字开关；日志 128KB 轮转，保留 .1/.2 两份历史。"
+     ]
+    },
+    {
+     "version": "0.9.0",
+     "date": "2026-11-03",
+     "status": "历史版本",
+     "notes": [
+      "真图标链路打通：启动期捕获 SBIconController → iconManager → iconModel.leafIconForIdentifier: → SBIconImageCache。"
+     ]
+    }
+   ]
+  },
+  {
+   "package": "com.local.callassistportleak",
+   "display_name": "CallAssist PortLeak",
+   "summary": "SpringBoard Mach 端口泄漏的侦查与止血工具；定责并抑制 CallAssist 的 IOKit 轮询泄漏。",
+   "features": [
+    "观测：每 5 分钟输出端口 / fd 统计、Top 调用点、xpcA / xpcF / p5 指标",
+    "既有止血：CFUserNotification 应答端口宽限后取消、摘除泄漏 RunLoop 源、fd 超水位时复核后关闭",
+    "XPC 接管-宽限-回收：钩住 xpc_connection_create*，栈回溯确认插件驱动且服务名命中回收名单",
+    "512 槽指针去重；5 秒清扫；默认 10 秒宽限后 xpc_connection_cancel + xpc_release",
+    "系统框架直呼与纯系统路径的连接不碰；回收服务名单可通过 config.plist 配置",
+    "原生 roothide arm64e"
+   ],
+   "compatibility": {
+    "notes": [
+     "项目已更名 CallAssistLeakGuard；当前发布包 ID 仍是旧 ID com.local.callassistportleak，2.1.0 更名重建待完成。",
+     "2.1.0 待真机确认；2.0.14 已验证回收有效。",
+     "从旧 ID（com.local.bioprotectleakguard）升级必须先卸载旧包；新旧共存会双重注入。",
+     "原生 roothide arm64e，不要过 RootHide 转换器。"
+    ]
+   },
+   "repo_url": "https://github.com/Chenlin8023/CallAssist-PortLeak",
+   "log_hint": "反馈时请附：CallAssistLeakGuard 的 guard.log、config.plist 中 XPCReclaimServices、设备使用时长与复现步骤。",
+   "variants": [
+    {
+     "version": "2.1.0",
+     "date": "2026-11-03",
+     "arch": "iphoneos-arm64e",
+     "jailbreak": "RootHide 原生",
+     "devices": [
+      "iPhone 15 Pro"
+     ],
+     "ios": [
+      "17.2.1"
+     ],
+     "verified": "待确认（2.0.14 已验证）",
+     "changes": [
+      "项目更名 CallAssistLeakGuard，计划将包 ID 改为 com.local.callassistleakguard（当前发布包仍为旧 ID）",
+      "功能同 2.0.14：回收服务名单可配置；新增 p5 端口净增量指标",
+      "2.0.13 起确认 powerdxpc 回收有效（xpcA≈xpcF）"
+     ]
+    }
+   ],
+   "history": [
+    {
+     "version": "2.0.14",
+     "date": "2026-11-03",
+     "status": "旧 ID 已验证",
+     "notes": [
+      "回收服务范围改为可配置（XPCReclaimServices，前缀匹配）；安全条件不变。"
+     ]
+    },
+    {
+     "version": "2.0.13",
+     "date": "2026-11-02",
+     "status": "旧 ID 已验证",
+     "notes": [
+      "真机日志确认 powerdxpc 回收有效；统计行新增 p5 端口净增量。"
+     ]
+    },
+    {
+     "version": "2.0.7 / 2.0.8",
+     "date": "2026-10-26",
+     "status": "旧 ID 历史版本",
+     "notes": [
+      "2.0.7 修复 arm64e __cfstring isa 未认证导致的 SIGBUS；2.0.8 修复定时器被 ARC 释放、清扫从未运行的 bug。"
+     ]
+    }
+   ]
+  },
+  {
+   "package": "com.local.volmanaudioqueue.full",
+   "display_name": "VolumeManager (Full)",
+   "summary": "每个 App 独立音量，多个 App 可同时播放。",
+   "features": [
+    "每个 App 独立音量（最低静音）；多 App 同时播放，互不打断；改完立即生效",
+    "重写音量引擎，消除 16 位 PCM 爆音",
+    "混音策略层：挂钩 AVAudioSession setActive / setCategory，保证多 App 同播稳定",
+    "全量包：含设置面板、音量 HUD、音量引擎；面板推广 / 打赏 / 攻击文字已清理",
+    "1.3.0 修复长时间播放后静音失效（ctx 表 32→512，并输出占用率日志）"
+   ],
+   "compatibility": {
+    "notes": [
+     "rootless（/var/jb）包，arm64；RootHide 需转换或使用 rootless 引导环境。",
+     "1.3.0 是过渡版：用 JailFools 等工具把引擎注入到 App 的，升级后需覆盖 .app/Frameworks/VolManAudioQueue.dylib 并重新打开 App；验收看容器日志头 === v1.3.0。",
+     "1.2.0 是稳定回退版，可直接安装 / 降级。",
+     "依赖 Orion 运行时（dev.theos.orion），由系统按依赖安装。"
+    ]
+   },
+   "repo_url": "https://github.com/Chenlin8023/VolumeManager-iOS17",
+   "log_hint": "反馈时请附：App 容器 Documents 下的 VolMan 日志、日志头版本、注入形态（动态注入 / JailFools 拷贝）、复现步骤。",
+   "variants": [
+    {
+     "version": "1.3.0",
+     "date": "2026-11-04",
+     "arch": "iphoneos-arm64",
+     "jailbreak": "rootless（/var/jb）",
+     "devices": [
+      "iPhone 15 Pro"
+     ],
+     "ios": [
+      "17.2.1"
+     ],
+     "verified": "已验证",
+     "changes": [
+      "渲染回调层 ctx 表 32→512，修复长时间播放后静音失效",
+      "新增 ctx 占用 / 峰值 / 累计包装日志，失败不再静默",
+      "不采用动态扩容：渲染回调持有槽位指针，realloc 会让已装回调的 refCon 失效"
+     ]
+    },
+    {
+     "version": "1.2.0",
+     "date": "2026-10-23",
+     "arch": "iphoneos-arm64",
+     "jailbreak": "rootless（/var/jb）",
+     "devices": [
+      "iPhone 15 Pro"
+     ],
+     "ios": [
+      "17.2.1"
+     ],
+     "verified": "已验证",
+     "changes": [
+      "新增混音策略层，多 App 稳定同时播放",
+      "全量包整合设置面板、音量 HUD、音量引擎；面板净化",
+      "作为 1.3.0 的稳定回退版保留"
+     ]
+    }
+   ],
+   "history": [
+    {
+     "version": "1.2.1 – 1.2.7",
+     "date": "2026-11-03",
+     "status": "未上架 / 已移除",
+     "notes": [
+      "多变量优化期，结论不可归因；1.3.0 由 1.2.0 + ctx 512 重新定案。"
+     ]
+    },
+    {
+     "version": "1.1.3 / 1.1.0",
+     "date": "2026-10-23",
+     "status": "历史版本",
+     "notes": [
+      "1.1.3 修正净化模块文件权限（此前缺少执行位未加载）；1.1.0 新增面板净化。"
+     ]
+    }
+   ]
+  },
+  {
+   "package": "com.local.volmanprefsclean",
+   "display_name": "VolumeManager 面板净化",
+   "summary": "VolumeManager 设置面板净化补丁；移除推广与攻击性文字，功能开关保留。",
+   "features": [
+    "单独补丁，仅用于已安装原版 VolumeManager 的设备",
+    "移除面板中的打赏、推广、反盗版与攻击性文字",
+    "功能开关全部保留",
+    "VolumeManager (Full) 已内置本功能，无需再装"
+   ],
+   "compatibility": {
+    "notes": [
+     "rootless（/var/jb）包，arm64。",
+     "仅作为原版 VolumeManager 的补丁；Full 包用户不要重复安装。",
+     "实机验证：iPhone 15 Pro / iOS 17.2.1（RootHide）。"
+    ]
+   },
+   "repo_url": "https://github.com/Chenlin8023/VolumeManager-iOS17",
+   "log_hint": "反馈时请附：是否安装 VolumeManager (Full)、面板截图、模块是否加载。",
+   "variants": [
+    {
+     "version": "1.1.0",
+     "date": "2026-11-02",
+     "arch": "iphoneos-arm64",
+     "jailbreak": "rootless（/var/jb）",
+     "devices": [
+      "iPhone 15 Pro"
+     ],
+     "ios": [
+      "17.2.1"
+     ],
+     "verified": "已验证",
+     "changes": [
+      "静态 + 运行时双重净化：面板条目与运行时文案都处理",
+      "修复净化模块文件权限（此前缺少执行位，系统未加载）"
+     ]
+    }
+   ]
+  },
+  {
+   "package": "moe.waru.jikan",
+   "display_name": "Jikan（锁屏充电预估）",
+   "summary": "在锁定屏幕上实时显示充满电（或目标电量）所需的时间预估。",
+   "features": [
+    "锁屏胶囊实时显示距充满电/目标电量的时间，支持 Apple 官方模型与 Jikan 历史学习两种算法",
+    "充电目标可调：Apple 模型 80/85/90/95/100%，Jikan 算法 1–100% 任选",
+    "胶囊样式（经典/进度环）、位置（横竖屏独立）、背景透明度可调",
+    "堆叠显示电池电压、温度、充电功率；达到目标电量时推送通知",
+    "可与 ChargeLimiter 同步充电上限；可隐藏滑动解锁文字与专注模式指示器"
+   ],
+   "compatibility": {
+    "notes": [
+     "原生 roothide arm64e（iphoneos-arm64e），直接安装，不要过 RootHide 转换器。",
+     "1.2.1-1+debug 为内置简体中文的分支构建（Chenlin8023 fork）；1.2.0 为上游 waruhachi 原版英文界面。",
+     "与简体中文语言包（moe.waru.jikan.lang.zh-hans）互斥，二选一。",
+     "iOS 14+；依赖 mobilesubstrate、preferenceloader。"
+    ]
+   },
+   "repo_url": "https://github.com/Chenlin8023/Jikan",
+   "variants": [
+    {
+     "version": "1.2.1-1+debug",
+     "date": "2026-11-08",
+     "arch": "iphoneos-arm64e",
+     "jailbreak": "RootHide 原生",
+     "devices": [
+      "iPhone 15 Pro"
+     ],
+     "ios": [
+      "17.2.1"
+     ],
+     "verified": "已验证",
+     "changes": [
+      "内置简体中文翻译：设置页/锁屏胶囊/通知共 109 条文案全覆盖",
+      "GitHub Actions macOS 上以 Apple 官方工具链构建，无任何二进制补丁",
+      "上游 1.2.1 主线全部功能"
+     ]
+    },
+    {
+     "version": "1.2.0",
+     "date": "2026-11-06",
+     "arch": "iphoneos-arm64e",
+     "jailbreak": "RootHide 原生",
+     "devices": [
+      "iPhone 15 Pro"
+     ],
+     "ios": [
+      "17.2.1"
+     ],
+     "verified": "已验证",
+     "changes": [
+      "上游 waruhachi/Jikan 官方 Release 原版，英文界面",
+      "可搭配简体中文语言包（moe.waru.jikan.lang.zh-hans）汉化"
+     ]
+    }
+   ],
+   "history": [
+    {
+     "version": "1.2.1-local",
+     "date": "2026-11-08",
+     "status": "已放弃",
+     "notes": [
+      "本地 clang19 构建线：clang19 缺少 Apple 私有的栈上 block isa 运行期签名代码生成（-fptrauth-block-isa 不存在），实机 msgSend 认证失败进安全模式，无法用二进制后处理弥补。",
+      "已改用仓库自带 GitHub Actions（Apple 官方工具链）构建；留档见 Jikan/packages/local-pipeline-ref。"
+     ]
+    }
+   ]
+  },
+  {
+   "package": "moe.waru.jikan.lang.zh-hans",
+   "display_name": "Jikan 简体中文语言包",
+   "summary": "为 Jikan 提供简体中文界面的纯数据语言包，不需要重新编译本体。",
+   "features": [
+    "覆盖设置页、锁屏胶囊、通知等全部 109 条界面文案",
+    "纯数据包（约 3.5KB），不含任何二进制",
+    "本体更新如新增文案，缺失键自动回退英文，无需跟着更新"
+   ],
+   "compatibility": {
+    "notes": [
+     "需要 Jikan 本体 1.2 以上（上游原版即可），安装前先装本体。",
+     "系统语言为简体中文（zh-Hans）时生效。",
+     "与内置中文的分支构建（moe.waru.jikan 1.2.1-1+debug）互斥：二者写同一路径，同装会报文件冲突。",
+     "纯数据包，不含二进制，无架构要求（按 roothide 仓库惯例标记 iphoneos-arm64e）。"
+    ]
+   },
+   "repo_url": "https://github.com/Chenlin8023/Jikan",
+   "variants": [
+    {
+     "version": "1.2.1",
+     "date": "2026-11-08",
+     "arch": "iphoneos-arm64e",
+     "jailbreak": "RootHide 原生",
+     "devices": [
+      "iPhone 15 Pro"
+     ],
+     "ios": [
+      "17.2.1"
+     ],
+     "verified": "已验证",
+     "changes": [
+      "首发：109 条界面文案简体中文翻译"
+     ]
+    }
+   ]
+  },
+  {
+   "package": "byg.iosios.net.mutool",
+   "display_name": "MUtool 工具箱（修改版）",
+   "summary": "MUtool 多功能工具集的本地修改构建：解除授权验证、移除授权与推广界面，功能与官方版一致。",
+   "features": [
+    "灵动岛电池胶囊与电源菜单、桌面悬浮信息药丸（网速 / CPU / 内存 / 电池 / 天气 / 时间）",
+    "三合一状态栏、文件夹主题与大文件夹、状态栏文字图标变色",
+    "通话自动录音与录屏增强、双卡 T9 拨号、自动禁用 SIM 与卡槽管理",
+    "IPCC 运营商配置、WiFi 永连、充电提示音与 MagSafe 动画、温控调优",
+    "锁屏与主屏幕增强、定时任务、电池健康与深度信息、SMC 寄存器读写",
+    "修改版特有：全部功能免授权直接可用，无激活 / 推广界面，不连接授权服务器",
+    "天气模块：数据固定来自 Open-Meteo，自动定位、无需手动经纬度/API（依赖 SysWeatherBridge），设置页只保留说明与开关"
+   ],
+   "compatibility": {
+    "notes": [
+     "基于 Muzi 官方 MUtool 2.2.80 deb 的二进制修改构建（非源码编译）；Package id / 依赖与官方包一致。",
+     "rootless（/var/jb），iphoneos-arm64（内含 arm64 + arm64e 双 slice），RootHide 下安装路径与官方包相同。",
+     "与官方包同 id：安装即覆盖官方版；回滚重装官方 2.2.80 即可。",
+     "设置页已移除『设备授权 / 关于 / 推广』区块，各功能页不再出现未激活提示。",
+     "官方声明 iOS 15–17；本包实机验证 iOS 17.2.1（iPhone 15 Pro · RootHide）。",
+     "2.2.80-11 起依赖 com.local.sysweatherbridge（自动定位 + 天气参数桥），源会自动安装。",
+     "天气设置页已移除来源选择与经纬度/和风参数输入，避免误以为需要手填。"
+    ]
+   },
+   "repo_url": "https://github.com/muzikeji",
+   "variants": [
+    {
+     "version": "2.2.80-11",
+     "date": "2026-11-09",
+     "arch": "iphoneos-arm64",
+     "jailbreak": "rootless /var/jb（RootHide 实测）",
+     "devices": [
+      "iPhone 15 Pro"
+     ],
+     "ios": [
+      "17.2.1"
+     ],
+     "verified": "已验证（用户实机确认）",
+     "changes": [
+      "基于 2.2.80-9：授权放行、痕迹净化、天气节拍补丁全部保留",
+      "设置页天气模块重构：移除「天气来源 / Open-Meteo 纬度 / 经度 / 和风 Host / Key / 位置」六行，只保留一段说明——数据固定来自 Open-Meteo、自动定位，无需手动填写",
+      "新增依赖 com.local.sysweatherbridge（自动定位 + 天气参数桥）：装本体时由源自动带上，药丸天气自动跟随位置",
+      "修正 2.2.80-10 的授权回归：该版替换 mutoolprefs 时误用原始样本，设置面板授权补丁丢失（显示未激活）；本版以 -9 的已授权 mutoolprefs 为底重打天气页补丁",
+      "静态验收：5 个二进制授权闸 6/6、双 slice 天气页 NOP 6 处、footer 文案替换、ldid 签名、root:root；MUtool/Capture/Pasted/Thermal 与 -9 逐字节一致"
+     ]
+    },
+    {
+     "version": "2.2.80-9",
+     "date": "2026-11-09",
+     "arch": "iphoneos-arm64",
+     "jailbreak": "rootless /var/jb（RootHide 实测）",
+     "devices": [
+      "iPhone 15 Pro"
+     ],
+     "ios": [
+      "17.2.1"
+     ],
+     "verified": "已被 2.2.80-11 取代（补丁已并入 -11 并实机验证）",
+     "changes": [
+      "在 2.2.80-8 基础上修复天气悬浮窗长时间显示 --（系统天气源，完整逆向定位缓存链）",
+      "根因：MUtool 系统源读取 WeatherPreferences 共享缓存（由电话助手在打开天气悬浮窗时写入），且有两处「缓存 updateTime 超时即判无效」的判定——超时后快照被清空 → 悬浮窗显示 --；电话助手不常开则缓存持续陈旧，-- 长期不恢复",
+      "修复：NOP 两处超时判定跳转（hasFreshSnapshot 的 age>300s、系统源解析的 age>检查间隔，arm64/arm64e 各 2 处指令补丁）——只要缓存有数据就持续显示并在下次检查时更新，不再因缓存陈旧清空为 --（时钟回拨保护 -3600s 判定保留）",
+      "辅助：成功后下次检查间隔 900s → 120s，每 2 分钟重读共享缓存，电话助手刷新后最多 2 分钟自动跟上",
+      "共 6 处补丁（双 slice：2 数据 + 4 指令），与 -8 逐字节仅差 20 字节；授权放行与痕迹净化全部保留；静态验收 30 处授权闸 + 52 项断言全过，实机验证进行中"
+     ]
+    },
+    {
+     "version": "2.2.80-8",
+     "date": "2026-11-09",
+     "arch": "iphoneos-arm64",
+     "jailbreak": "rootless /var/jb（RootHide 实测）",
+     "devices": [
+      "iPhone 15 Pro"
+     ],
+     "ios": [
+      "17.2.1"
+     ],
+     "verified": "已验证（被 2.2.80-9 取代）",
+     "changes": [
+      "2.2.80-8：30 处授权闸补丁 + 痕迹净化（详见 2.2.80-9 更新日志前身）。"
+     ]
+    }
+   ],
+   "history": [
+    {
+     "version": "2.2.80-4",
+     "date": "2026-11-09",
+     "status": "已放弃",
+     "notes": [
+      "v1 补丁在 arm64e slice 用 retab 收尾：arm64e ABI 的 bl 产生未签名 LR，retab 认证失败 → SpringBoard/chronod PAC 崩溃循环（.ips 实锤 MUtoolCapture+0x6ec0）。已改为 ret 收尾。"
+     ]
+    },
+    {
+     "version": "2.2.80-7",
+     "date": "2026-11-09",
+     "status": "已被取代",
+     "notes": [
+      "授权放行修正版（30 处补丁），实机验证通过；被 2.2.80-8（同补丁 + 痕迹净化）取代。"
+     ]
+    },
+    {
+     "version": "2.2.80-8",
+     "date": "2026-11-09",
+     "status": "已被取代",
+     "notes": [
+      "被 2.2.80-9（天气节拍修复）取代；完整日志见版本列表 v2.2.80-8。"
+     ]
+    },
+    {
+     "version": "2.2.80-10",
+     "date": "2026-11-09",
+     "status": "已作废",
+     "notes": [
+      "替换 mutoolprefs 时误用原始样本，设置面板授权补丁丢失（显示未激活）；被 2.2.80-11 修复并取代。"
+     ]
+    }
+   ]
+  },
+  {
+   "package": "com.local.sysweatherbridge",
+   "display_name": "SysWeatherBridge（系统天气桥）",
+   "summary": "自动定位并把经纬度写入 MUtool 的 open-meteo 天气参数，免去手动填写；MUtool 修改版 2.2.80-11 起自动依赖。",
+   "features": [
+    "自动定位：GPS（可用时）→ IP 定位（pconline / ipip / 淘宝多源投票，城市级）→ 天气缓存坐标兜底",
+    "多源投票：与上次位置 ≤200km 直接采纳；跨城需 ≥2 个 IP 源互差 ≤50km 且连续两次确认（间隔 ≥10 分钟），单源异常不会把天气带跑",
+    "把两位小数的经纬度写入 com.muzi.mutoolprefs 并发送 ReloadPrefs，MUtool 药丸立即按新坐标拉取 open-meteo",
+    "每 30 分钟复查定位；天气本体仍由 MUtool 按自身节拍刷新",
+    "零 block、零编译期 ObjC 类，不 hook 任何方法，只在 SpringBoard 内运行"
+   ],
+   "compatibility": {
+    "notes": [
+     "rootless（/var/jb），iphoneos-arm64，内含 arm64 + arm64e 双 slice；RootHide 通过转换器安装（与 MUtool 本体同路径）。",
+     "MUtool 修改版 2.2.80-11 起自动依赖本包；单独安装无副作用，不修改任何插件本体。",
+     "SpringBoard 的 GPS 被 TCC 限制（未授权），实际使用 IP 定位，精度为城市级；同城不变化，跨市/跨省 10–30 分钟内跟上。",
+     "从旧 roothide 原生 0.3.4 升级：先 dpkg -r --force-depends com.local.sysweatherbridge，再安装本包。"
+    ]
+   },
+   "repo_url": "https://github.com/Chenlin8023/Chenlin8023.github.io",
+   "log_hint": "日志：/var/mobile/Library/Logs/SysWeatherBridge.log（超过 256KB 自动截断）",
+   "variants": [
+    {
+     "version": "0.3.5",
+     "date": "2026-11-09",
+     "arch": "iphoneos-arm64",
+     "jailbreak": "rootless /var/jb（RootHide 走转换器）",
+     "devices": [
+      "iPhone 15 Pro"
+     ],
+     "ios": [
+      "17.2.1"
+     ],
+     "verified": "未单独验证（与 0.3.4 同一二进制，仅打包形态改为 rootless）",
+     "changes": [
+      "首个源内版本：自动定位 + 写入 MUtool open-meteo 参数 + ReloadPrefs",
+      "定位改为多源投票（pconline / ipip / 淘宝），跨城需二次确认，单源异常不切换",
+      "经纬度按 MUtool 要求写两位小数 NSString（非字符串会被它替换成空串导致无数据）",
+      "打包形态为 rootless（/var/jb），兼容 rootless 与 RootHide；dylib 含 arm64+arm64e 双 slice",
+      "静态验收：FAT 双切片、dylib 755、无 /var/jb 字面量、无 block 符号、__cfstring isa auth=76 plain=0"
+     ]
+    }
+   ],
+   "history": [
+    {
+     "version": "0.3.4",
+     "date": "2026-11-09",
+     "status": "未发布（内部）",
+     "notes": [
+      "多源投票定位；roothide 原生打包，实测通过但架构对 rootless/arm64 设备不可见。"
+     ]
+    },
+    {
+     "version": "0.3.0",
+     "date": "2026-11-09",
+     "status": "未发布（内部）",
+     "notes": [
+      "从改写 WeatherPreferences 内存缓存改为写 MUtool 自己的 open-meteo 参数；双写 cfprefsd + 落盘。"
+     ]
+    }
+   ]
+  }
+ ]
 }

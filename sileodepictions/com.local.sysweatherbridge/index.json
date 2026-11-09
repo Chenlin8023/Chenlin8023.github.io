@@ -1,0 +1,146 @@
+{
+  "minVersion": "0.4",
+  "class": "DepictionTabView",
+  "tintColor": "#3ea6ff",
+  "tabs": [
+    {
+      "class": "DepictionStackView",
+      "tabname": "功能",
+      "views": [
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "- 自动定位：GPS（可用时）→ IP 定位（pconline / ipip / 淘宝多源投票，城市级）→ 天气缓存坐标兜底\n- 多源投票：与上次位置 ≤200km 直接采纳；跨城需 ≥2 个 IP 源互差 ≤50km 且连续两次确认（间隔 ≥10 分钟），单源异常不会把天气带跑\n- 把两位小数的经纬度写入 com.muzi.mutoolprefs 并发送 ReloadPrefs，MUtool 药丸立即按新坐标拉取 open-meteo\n- 每 30 分钟复查定位；天气本体仍由 MUtool 按自身节拍刷新\n- 零 block、零编译期 ObjC 类，不 hook 任何方法，只在 SpringBoard 内运行"
+        }
+      ]
+    },
+    {
+      "class": "DepictionStackView",
+      "tabname": "兼容性",
+      "views": [
+        {
+          "class": "DepictionSubheaderView",
+          "title": "v0.3.5 · iphoneos-arm64",
+          "useBoldText": true,
+          "useBottomMargin": true
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "机型",
+          "text": "iPhone 15 Pro"
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "验证 iOS",
+          "text": "17.2.1"
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "越狱形态",
+          "text": "rootless /var/jb（RootHide 走转换器）"
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "验证状态",
+          "text": "未单独验证（与 0.3.4 同一二进制，仅打包形态改为 rootless）"
+        },
+        {
+          "class": "DepictionSubheaderView",
+          "title": "注意事项",
+          "useBoldText": true,
+          "useBottomMargin": true
+        },
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "- rootless（/var/jb），iphoneos-arm64，内含 arm64 + arm64e 双 slice；RootHide 通过转换器安装（与 MUtool 本体同路径）。\n- MUtool 修改版 2.2.80-11 起自动依赖本包；单独安装无副作用，不修改任何插件本体。\n- SpringBoard 的 GPS 被 TCC 限制（未授权），实际使用 IP 定位，精度为城市级；同城不变化，跨市/跨省 10–30 分钟内跟上。\n- 从旧 roothide 原生 0.3.4 升级：先 dpkg -r --force-depends com.local.sysweatherbridge，再安装本包。"
+        }
+      ]
+    },
+    {
+      "class": "DepictionStackView",
+      "tabname": "更新日志",
+      "views": [
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "Sileo：安装后在插件页长按「修改 / MODIFY」选择历史版本；Irisin / Zebra 可直接在版本列表选择。每个版本下方有 .deb 直链。"
+        },
+        {
+          "class": "DepictionSubheaderView",
+          "title": "v0.3.5 · 2026-11-09",
+          "useBoldText": true,
+          "useBottomMargin": true
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "验证",
+          "text": "未单独验证（与 0.3.4 同一二进制，仅打包形态改为 rootless）"
+        },
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "- 首个源内版本：自动定位 + 写入 MUtool open-meteo 参数 + ReloadPrefs\n- 定位改为多源投票（pconline / ipip / 淘宝），跨城需二次确认，单源异常不切换\n- 经纬度按 MUtool 要求写两位小数 NSString（非字符串会被它替换成空串导致无数据）\n- 打包形态为 rootless（/var/jb），兼容 rootless 与 RootHide；dylib 含 arm64+arm64e 双 slice\n- 静态验收：FAT 双切片、dylib 755、无 /var/jb 字面量、无 block 符号、__cfstring isa auth=76 plain=0"
+        },
+        {
+          "class": "DepictionTableButtonView",
+          "title": "下载 v0.3.5（iphoneos-arm64）",
+          "action": "https://chenlin8023.github.io/debs/com.local.sysweatherbridge_0.3.5_iphoneos-arm64.deb",
+          "openExternal": true
+        },
+        {
+          "class": "DepictionSubheaderView",
+          "title": "v0.3.4 · 2026-11-09",
+          "useBoldText": true,
+          "useBottomMargin": true
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "状态",
+          "text": "未发布（内部）"
+        },
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "- 多源投票定位；roothide 原生打包，实测通过但架构对 rootless/arm64 设备不可见。"
+        },
+        {
+          "class": "DepictionSubheaderView",
+          "title": "v0.3.0 · 2026-11-09",
+          "useBoldText": true,
+          "useBottomMargin": true
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "状态",
+          "text": "未发布（内部）"
+        },
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "- 从改写 WeatherPreferences 内存缓存改为写 MUtool 自己的 open-meteo 参数；双写 cfprefsd + 落盘。"
+        }
+      ]
+    },
+    {
+      "class": "DepictionStackView",
+      "tabname": "反馈",
+      "views": [
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "反馈时请附：插件版本、机型、iOS 版本、越狱环境、复现步骤、日志或截图。"
+        },
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "日志：/var/mobile/Library/Logs/SysWeatherBridge.log（超过 256KB 自动截断）"
+        },
+        {
+          "class": "DepictionTableButtonView",
+          "title": "项目仓库",
+          "action": "https://github.com/Chenlin8023/Chenlin8023.github.io",
+          "openExternal": true
+        },
+        {
+          "class": "DepictionTableButtonView",
+          "title": "提交问题 / 反馈",
+          "action": "https://github.com/Chenlin8023/Chenlin8023.github.io/issues/new?template=package-feedback.yml",
+          "openExternal": true
+        }
+      ]
+    }
+  ]
+}

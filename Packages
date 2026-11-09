@@ -276,6 +276,54 @@ SHA256: 3f706d7a64081c3b7064c27e56dfa1896fd771ce51d6231f29785c6b3c7f6c0b
 MD5sum: b24112901fa84d43c93e7c002d9efad1
 
 Package: byg.iosios.net.mutool
+Version: 2.2.80-11
+Section: 杂七杂八
+Maintainer: 搬运工
+Depends: mobilesubstrate, preferenceloader, firmware (>= 15.0), com.local.sysweatherbridge (>= 0.3.3)
+Conflicts: com.muzi.mutoollite
+Architecture: iphoneos-arm64
+Installed-Size: 5972
+Author: Muzi
+Sponsor: 搬运工
+Icon: https://chinesebuilding.club/pic/cydia.png
+Name: MUtool 工具箱（修改版）
+Priority: optional
+Description: MUtool 多功能工具集的本地修改构建：解除授权验证、移除授权与推广界面，功能与官方版一致。
+ 实机验证：iPhone 15 Pro / iOS 17.2.1
+ 项目仓库：https://github.com/muzikeji
+Homepage: https://github.com/muzikeji
+SileoDepiction: https://chenlin8023.github.io/sileodepictions/byg.iosios.net.mutool/index.json
+Depiction: https://chenlin8023.github.io/depictions/byg.iosios.net.mutool/index.html
+Filename: debs/byg.iosios.net.mutool_2.2.80-11_iphoneos-arm64.deb
+Size: 907528
+SHA256: ffd5a0c14870d05b6942b6a1b730b3d8aa4213cac18f9b0998f32ebd045afc56
+MD5sum: 3903382feca22c510882b337b10b7167
+
+Package: byg.iosios.net.mutool
+Version: 2.2.80-9
+Section: 杂七杂八
+Maintainer: 搬运工
+Depends: mobilesubstrate, preferenceloader, firmware (>= 15.0)
+Conflicts: com.muzi.mutoollite
+Architecture: iphoneos-arm64
+Installed-Size: 5972
+Author: Muzi
+Sponsor: 搬运工
+Icon: https://chinesebuilding.club/pic/cydia.png
+Name: MUtool 工具箱（修改版）
+Priority: optional
+Description: MUtool 多功能工具集的本地修改构建：解除授权验证、移除授权与推广界面，功能与官方版一致。
+ 实机验证：已被 2.2.80-11 取代（补丁已并入 -11 并实机验证）；iPhone 15 Pro / iOS 17.2.1
+ 项目仓库：https://github.com/muzikeji
+Homepage: https://github.com/muzikeji
+SileoDepiction: https://chenlin8023.github.io/sileodepictions/byg.iosios.net.mutool/index.json
+Depiction: https://chenlin8023.github.io/depictions/byg.iosios.net.mutool/index.html
+Filename: debs/byg.iosios.net.mutool_2.2.80-9_iphoneos-arm64.deb
+Size: 2066848
+SHA256: b112ee5bb7909014f84a5cd20d69a683adc4f290b8fc4eb1942e6788a5ca46dc
+MD5sum: bcd8f64830a9c7992ae61a5734d28471
+
+Package: byg.iosios.net.mutool
 Version: 2.2.80-8
 Section: 杂七杂八
 Maintainer: 搬运工
@@ -298,3 +346,24 @@ Filename: debs/byg.iosios.net.mutool_2.2.80-8_iphoneos-arm64.deb
 Size: 2066842
 SHA256: ac524b7b7b77fcf01061e92c4bce3549fd3d38e463621c173aa696eede4c94de
 MD5sum: 7ba28843de4aa8aaa4c46296793c658f
+
+Package: com.local.sysweatherbridge
+Maintainer: local
+Author: local
+Section: Tweaks
+Depends: mobilesubstrate, firmware (>= 15.0)
+Architecture: iphoneos-arm64
+Version: 0.3.5
+Installed-Size: 220
+Name: SysWeatherBridge（系统天气桥）
+Priority: optional
+Description: 自动定位并把经纬度写入 MUtool 的 open-meteo 天气参数，免去手动填写；MUtool 修改版 2.2.80-11 起自动依赖。
+ 实机验证：未单独验证
+ 项目仓库：https://github.com/Chenlin8023/Chenlin8023.github.io
+Homepage: https://github.com/Chenlin8023/Chenlin8023.github.io
+SileoDepiction: https://chenlin8023.github.io/sileodepictions/com.local.sysweatherbridge/index.json
+Depiction: https://chenlin8023.github.io/depictions/com.local.sysweatherbridge/index.html
+Filename: debs/com.local.sysweatherbridge_0.3.5_iphoneos-arm64.deb
+Size: 14964
+SHA256: 43bf44e13beb83e83c7870b01a6a8f5d9448fb257994faf80363fa3b329220ad
+MD5sum: 20387911255437a4c995e7b69969c9d6
