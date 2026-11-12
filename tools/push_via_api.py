@@ -7,9 +7,9 @@ import sys
 import urllib.request
 
 REPO = "Chenlin8023/Chenlin8023.github.io"
-BASE = "3827842"  # 仅用于本地 diff（远端 base 由 API 实时读取）          # 远端当前 master
+BASE = "661236c"  # 仅用于本地 diff（远端 base 由 API 实时读取）          # 远端当前 master
 ROOT = r"D:/WorkBudy/iOS-Tweaks/root-site"
-MSG = "repo: MUtool 2.2.80-12（修复悬浮窗位置漂移与双行渲染，用户实机确认）"
+MSG = "README: MUtool 版本表更新到 2.2.80-12"
 
 
 def api(method, path, payload=None):
