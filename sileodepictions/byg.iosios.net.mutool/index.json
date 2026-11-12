@@ -19,6 +19,32 @@
       "views": [
         {
           "class": "DepictionSubheaderView",
+          "title": "v2.2.80-12 · iphoneos-arm64",
+          "useBoldText": true,
+          "useBottomMargin": true
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "机型",
+          "text": "iPhone 15 Pro"
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "验证 iOS",
+          "text": "17.2.1"
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "越狱形态",
+          "text": "rootless /var/jb（RootHide 实测）"
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "验证状态",
+          "text": "已验证（用户实机确认：不再出现悬浮窗位置漂移与双行渲染）"
+        },
+        {
+          "class": "DepictionSubheaderView",
           "title": "v2.2.80-11 · iphoneos-arm64",
           "useBoldText": true,
           "useBottomMargin": true
@@ -41,7 +67,7 @@
         {
           "class": "DepictionTableTextView",
           "title": "验证状态",
-          "text": "已验证（用户实机确认）"
+          "text": "已被 2.2.80-12 取代（悬浮窗位置修复并入 -12）"
         },
         {
           "class": "DepictionSubheaderView",
@@ -117,6 +143,27 @@
         },
         {
           "class": "DepictionSubheaderView",
+          "title": "v2.2.80-12 · 2026-11-12",
+          "useBoldText": true,
+          "useBottomMargin": true
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "验证",
+          "text": "已验证（用户实机确认：不再出现悬浮窗位置漂移与双行渲染）"
+        },
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "- 修复桌面悬浮信息药丸的位置漂移（原版自带缺陷，与授权 / 天气 / 净化补丁无关）\n- 根因：持久化的药丸坐标取自旋转后的 rootVC 本地坐标系，而方向切换、ReloadPrefs（天气桥定位成功即发）、尺寸变化等每条路径都会用当前 bounds 对已存坐标重新钳位并重放；药丸又是 center 锚定，折行或尺寸变化时视觉上下对称外扩，表现为「漂移」\n- 修复：applyInitialPositionWithTargetBounds: 的「已有 pillPositionX/Y」分支跳过重新钳位，直接按存储坐标 setCenter；无存储时的默认锚点分支保持原样（首次安装仍自动落位并写回）\n- 补丁量：MUtool.dylib 双 slice 各 3 处（fmov d14/d1 → d10/d11、分支目标改到 setBounds 入口），共 6 字节；其余 dylib、设置面板与资源与 2.2.80-11 逐字节一致\n- 静态验收：6 点字节 + 反汇编断言 6 ok；授权闸、天气 120s 节拍、天气页摘行、痕迹净化全部保留；ldid 重签、root:root、-Zxz\n- 实机：iPhone 15 Pro / iOS 17.2.1 RootHide，用户确认漂移与双行现象均未复现"
+        },
+        {
+          "class": "DepictionTableButtonView",
+          "title": "下载 v2.2.80-12（iphoneos-arm64）",
+          "action": "https://chenlin8023.github.io/debs/byg.iosios.net.mutool_2.2.80-12_iphoneos-arm64.deb",
+          "openExternal": true
+        },
+        {
+          "class": "DepictionSubheaderView",
           "title": "v2.2.80-11 · 2026-11-09",
           "useBoldText": true,
           "useBottomMargin": true
@@ -124,7 +171,7 @@
         {
           "class": "DepictionTableTextView",
           "title": "验证",
-          "text": "已验证（用户实机确认）"
+          "text": "已被 2.2.80-12 取代（悬浮窗位置修复并入 -12）"
         },
         {
           "class": "DepictionMarkdownView",

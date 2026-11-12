@@ -579,6 +579,27 @@
    "repo_url": "https://github.com/muzikeji",
    "variants": [
     {
+     "version": "2.2.80-12",
+     "date": "2026-11-12",
+     "arch": "iphoneos-arm64",
+     "jailbreak": "rootless /var/jb（RootHide 实测）",
+     "devices": [
+      "iPhone 15 Pro"
+     ],
+     "ios": [
+      "17.2.1"
+     ],
+     "verified": "已验证（用户实机确认：不再出现悬浮窗位置漂移与双行渲染）",
+     "changes": [
+      "修复桌面悬浮信息药丸的位置漂移（原版自带缺陷，与授权 / 天气 / 净化补丁无关）",
+      "根因：持久化的药丸坐标取自旋转后的 rootVC 本地坐标系，而方向切换、ReloadPrefs（天气桥定位成功即发）、尺寸变化等每条路径都会用当前 bounds 对已存坐标重新钳位并重放；药丸又是 center 锚定，折行或尺寸变化时视觉上下对称外扩，表现为「漂移」",
+      "修复：applyInitialPositionWithTargetBounds: 的「已有 pillPositionX/Y」分支跳过重新钳位，直接按存储坐标 setCenter；无存储时的默认锚点分支保持原样（首次安装仍自动落位并写回）",
+      "补丁量：MUtool.dylib 双 slice 各 3 处（fmov d14/d1 → d10/d11、分支目标改到 setBounds 入口），共 6 字节；其余 dylib、设置面板与资源与 2.2.80-11 逐字节一致",
+      "静态验收：6 点字节 + 反汇编断言 6 ok；授权闸、天气 120s 节拍、天气页摘行、痕迹净化全部保留；ldid 重签、root:root、-Zxz",
+      "实机：iPhone 15 Pro / iOS 17.2.1 RootHide，用户确认漂移与双行现象均未复现"
+     ]
+    },
+    {
      "version": "2.2.80-11",
      "date": "2026-11-09",
      "arch": "iphoneos-arm64",
@@ -589,7 +610,7 @@
      "ios": [
       "17.2.1"
      ],
-     "verified": "已验证（用户实机确认）",
+     "verified": "已被 2.2.80-12 取代（悬浮窗位置修复并入 -12）",
      "changes": [
       "基于 2.2.80-9：授权放行、痕迹净化、天气节拍补丁全部保留",
       "设置页天气模块重构：移除「天气来源 / Open-Meteo 纬度 / 经度 / 和风 Host / Key / 位置」六行，只保留一段说明——数据固定来自 Open-Meteo、自动定位，无需手动填写",

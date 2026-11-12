@@ -276,7 +276,7 @@ SHA256: 3f706d7a64081c3b7064c27e56dfa1896fd771ce51d6231f29785c6b3c7f6c0b
 MD5sum: b24112901fa84d43c93e7c002d9efad1
 
 Package: byg.iosios.net.mutool
-Version: 2.2.80-11
+Version: 2.2.80-12
 Section: 杂七杂八
 Maintainer: 搬运工
 Depends: mobilesubstrate, preferenceloader, firmware (>= 15.0), com.local.sysweatherbridge (>= 0.3.3)
@@ -290,6 +290,30 @@ Name: MUtool 工具箱（修改版）
 Priority: optional
 Description: MUtool 多功能工具集的本地修改构建：解除授权验证、移除授权与推广界面，功能与官方版一致。
  实机验证：iPhone 15 Pro / iOS 17.2.1
+ 项目仓库：https://github.com/muzikeji
+Homepage: https://github.com/muzikeji
+SileoDepiction: https://chenlin8023.github.io/sileodepictions/byg.iosios.net.mutool/index.json
+Depiction: https://chenlin8023.github.io/depictions/byg.iosios.net.mutool/index.html
+Filename: debs/byg.iosios.net.mutool_2.2.80-12_iphoneos-arm64.deb
+Size: 906436
+SHA256: c4f255b0e40976ff72b344116632a266449607957b92e0700fe1c867e074c8e6
+MD5sum: 8d0b382a5ca4cb84c6faac13cd9ef54d
+
+Package: byg.iosios.net.mutool
+Version: 2.2.80-11
+Section: 杂七杂八
+Maintainer: 搬运工
+Depends: mobilesubstrate, preferenceloader, firmware (>= 15.0), com.local.sysweatherbridge (>= 0.3.3)
+Conflicts: com.muzi.mutoollite
+Architecture: iphoneos-arm64
+Installed-Size: 5972
+Author: Muzi
+Sponsor: 搬运工
+Icon: https://chinesebuilding.club/pic/cydia.png
+Name: MUtool 工具箱（修改版）
+Priority: optional
+Description: MUtool 多功能工具集的本地修改构建：解除授权验证、移除授权与推广界面，功能与官方版一致。
+ 实机验证：已被 2.2.80-12 取代（悬浮窗位置修复并入 -12）；iPhone 15 Pro / iOS 17.2.1
  项目仓库：https://github.com/muzikeji
 Homepage: https://github.com/muzikeji
 SileoDepiction: https://chenlin8023.github.io/sileodepictions/byg.iosios.net.mutool/index.json

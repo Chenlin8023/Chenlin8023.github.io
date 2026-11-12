@@ -7,9 +7,9 @@ import sys
 import urllib.request
 
 REPO = "Chenlin8023/Chenlin8023.github.io"
-BASE = "cef4f98"  # 仅用于本地 diff（远端 base 由 API 实时读取）          # 远端当前 master
+BASE = "3827842"  # 仅用于本地 diff（远端 base 由 API 实时读取）          # 远端当前 master
 ROOT = r"D:/WorkBudy/iOS-Tweaks/root-site"
-MSG = "repo: SysWeatherBridge 0.3.5 标记实机已验证（MUtool 2.2.80-11 组合）"
+MSG = "repo: MUtool 2.2.80-12（修复悬浮窗位置漂移与双行渲染，用户实机确认）"
 
 
 def api(method, path, payload=None):
