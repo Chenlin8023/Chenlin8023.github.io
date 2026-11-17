@@ -1,0 +1,116 @@
+{
+  "minVersion": "0.4",
+  "class": "DepictionTabView",
+  "tintColor": "#3ea6ff",
+  "tabs": [
+    {
+      "class": "DepictionStackView",
+      "tabname": "功能",
+      "views": [
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "- 基于 Muzi 官方 MUtool(roothide) 2.1.66 的二进制修改：仅去除授权，功能与官方版一致（本条目不展开功能介绍，详见官方说明）\n- 破解方法：安装后在 MUtool 设置的授权码栏填任意非空字符串（例如 1）保存，即解锁全部功能；无需真实配置码、不连接授权服务器\n- 注意：2.1.66 官方本就不含药丸天气模块（天气显示请使用电话助手等独立工具）"
+        }
+      ]
+    },
+    {
+      "class": "DepictionStackView",
+      "tabname": "兼容性",
+      "views": [
+        {
+          "class": "DepictionSubheaderView",
+          "title": "v2.1.66-1 · iphoneos-arm64e",
+          "useBoldText": true,
+          "useBottomMargin": true
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "机型",
+          "text": "iPhone 15 Pro"
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "验证 iOS",
+          "text": "17.2.1"
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "越狱形态",
+          "text": "roothide 原生（空前缀，RootHide 实测）"
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "验证状态",
+          "text": "已验证（用户实机确认授权破解生效）"
+        },
+        {
+          "class": "DepictionSubheaderView",
+          "title": "注意事项",
+          "useBoldText": true,
+          "useBottomMargin": true
+        },
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "- roothide 原生包（iphoneos-arm64e，空前缀路径）：RootHide 环境直接安装、不过转换器；其它越狱形态请勿安装本包\n- 与官方包同 id（com.muzi.mutool）：安装即覆盖官方 2.1.66；回滚重装官方包即可\n- 净化：设置页 GitHub / Sini921 / muzikeji / QQ 群 / Sileo 源共 10 处外链已指向 0.0.0.0（失效），LICENSE 资源移除\n- 官方声明 iOS 15–17；本包实机验证 iOS 17.2.1（iPhone 15 Pro · RootHide）\n- 旧版 MUtool 修改版（2.2.80 线，rootless /var/jb）继续保留提供，见「MUtool 工具箱（修改版）」条目"
+        }
+      ]
+    },
+    {
+      "class": "DepictionStackView",
+      "tabname": "更新日志",
+      "views": [
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "Sileo：安装后在插件页长按「修改 / MODIFY」选择历史版本；Irisin / Zebra 可直接在版本列表选择。每个版本下方有 .deb 直链。"
+        },
+        {
+          "class": "DepictionSubheaderView",
+          "title": "v2.1.66-1 · 2026-11-18",
+          "useBoldText": true,
+          "useBottomMargin": true
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "验证",
+          "text": "已验证（用户实机确认授权破解生效）"
+        },
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "- 基于 Muzi 官方 MUtool(roothide) 2.1.66：仅去除授权 + 痕迹净化，其余与官方包逐字节一致\n- 授权体系逆向：该版本为 UDID + 配置码 + 内嵌密钥 HMAC-SHA256 门禁（区别于 2.2.80 线的 MuziAuthShield）\n- 破解方法：5 个含授权二进制（MUtool / Capture / Pasted / Thermal / mutoolprefs，arm64+arm64e 双副本）的校验器与比较点共 12 处改为恒返回已授权\n- 保留 enabled 偏好语义：各功能仍可在设置内单独开关（比较点补丁而非功能入口补丁）\n- 净化：设置页 GitHub / Sini921 / muzikeji / QQ 群 / Sileo 源共 10 处外链死化（等长指向 0.0.0.0），LICENSE@3x.png 移除\n- 静态验收：成品回抽 12/12 补丁点断言 + URL 残留扫描为 0 + ldid 重签 + gzip root:root\n- 本版本官方即不含药丸天气模块（天气显示请配合电话助手等独立工具）"
+        },
+        {
+          "class": "DepictionTableButtonView",
+          "title": "下载 v2.1.66-1（iphoneos-arm64e）",
+          "action": "https://chenlin8023.github.io/debs/com.muzi.mutool_2.1.66-1_iphoneos-arm64e.deb",
+          "openExternal": true
+        }
+      ]
+    },
+    {
+      "class": "DepictionStackView",
+      "tabname": "反馈",
+      "views": [
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "反馈时请附：插件版本、机型、iOS 版本、越狱环境、复现步骤、日志或截图。"
+        },
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "反馈前请先确认：授权码栏已填任意非空字符串（破解版解锁条件）。"
+        },
+        {
+          "class": "DepictionTableButtonView",
+          "title": "项目仓库",
+          "action": "https://github.com/muzikeji",
+          "openExternal": true
+        },
+        {
+          "class": "DepictionTableButtonView",
+          "title": "提交问题 / 反馈",
+          "action": "https://github.com/Chenlin8023/Chenlin8023.github.io/issues/new?template=package-feedback.yml",
+          "openExternal": true
+        }
+      ]
+    }
+  ]
+}

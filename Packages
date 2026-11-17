@@ -371,6 +371,29 @@ Size: 2066842
 SHA256: ac524b7b7b77fcf01061e92c4bce3549fd3d38e463621c173aa696eede4c94de
 MD5sum: 7ba28843de4aa8aaa4c46296793c658f
 
+Package: com.muzi.mutool
+Maintainer: Muzi
+Author: Muzi
+Section: Tweaks
+Depends: mobilesubstrate, preferenceloader, firmware (>= 15.0)
+Conflicts: com.muzi.mutoollite
+Icon: https://muzikeji.github.io/sileo/icons/mutool.png
+Architecture: iphoneos-arm64e
+Version: 2.1.66-1
+Installed-Size: 4956
+Name: MUtool 工具箱（roothide · 授权破解版）
+Priority: optional
+Description: MUtool(roothide) 2.1.66 授权破解版：去除授权验证，设置内授权码填任意非空字符即可解锁全部功能。
+ 实机验证：iPhone 15 Pro / iOS 17.2.1
+ 项目仓库：https://github.com/muzikeji
+Homepage: https://github.com/muzikeji
+SileoDepiction: https://chenlin8023.github.io/sileodepictions/com.muzi.mutool/index.json
+Depiction: https://chenlin8023.github.io/depictions/com.muzi.mutool/index.html
+Filename: debs/com.muzi.mutool_2.1.66-1_iphoneos-arm64e.deb
+Size: 1416936
+SHA256: c9ab0fea5b0a0bc796d88d0e5a3b9785b3760f33d419798bb1c9d6dff294b0bd
+MD5sum: 3dcca3e8068ce471d399dd748fa40723
+
 Package: com.local.sysweatherbridge
 Maintainer: local
 Author: local
