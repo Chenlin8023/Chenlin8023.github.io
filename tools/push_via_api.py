@@ -7,9 +7,9 @@ import sys
 import urllib.request
 
 REPO = "Chenlin8023/Chenlin8023.github.io"
-BASE = "661236c"  # 仅用于本地 diff（远端 base 由 API 实时读取）          # 远端当前 master
+BASE = "690d902"  # 本地提交；其树内容与远端 a63bc55 一致（API 提交由它生成）
 ROOT = r"D:/WorkBudy/iOS-Tweaks/root-site"
-MSG = "README: MUtool 版本表更新到 2.2.80-12"
+MSG = "repo: MUtool 2.2.80-13 存续性维护版上架；下架旧版与 SysWeatherBridge；仅保留 -13 与 2.1.66-1"
 
 
 def api(method, path, payload=None):

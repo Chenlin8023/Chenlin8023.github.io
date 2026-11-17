@@ -555,15 +555,14 @@
     {
       "package": "byg.iosios.net.mutool",
       "display_name": "MUtool 工具箱（修改版）",
-      "summary": "MUtool 多功能工具集的本地修改构建：解除授权验证、移除授权与推广界面，功能与官方版一致。",
+      "summary": "MUtool 多功能工具集的本地修改构建（存续性维护版）：解除授权验证、移除授权与推广界面；天气保持官方模块，系统天气源在 iOS 17 不可用，请在设置中选 Open-Meteo 并手动输入本地经纬度（两位小数），更换地点后重新填写。",
       "features": [
-        "灵动岛电池胶囊与电源菜单、桌面悬浮信息药丸（网速 / CPU / 内存 / 电池 / 天气 / 时间）",
-        "三合一状态栏、文件夹主题与大文件夹、状态栏文字图标变色",
-        "通话自动录音与录屏增强、双卡 T9 拨号、自动禁用 SIM 与卡槽管理",
-        "IPCC 运营商配置、WiFi 永连、充电提示音与 MagSafe 动画、温控调优",
-        "锁屏与主屏幕增强、定时任务、电池健康与深度信息、SMC 寄存器读写",
+        "灵动岛电池胶囊与电源菜单、桌面悬浮信息药丸（网速 / CPU / 内存 / 电池 / 时间 / 天气）",
+        "通话自动录音与录屏增强、双卡 T9 拨号、自动禁用 SIM 与卡槽管理、IPCC 运营商配置",
+        "充电提示音与 MagSafe 动画、充电限制、温控调优、锁屏与主屏幕增强、定时任务、电池健康与深度信息",
         "修改版特有：全部功能免授权直接可用，无激活 / 推广界面，不连接授权服务器",
-        "天气模块：数据固定来自 Open-Meteo，自动定位、无需手动经纬度/API（依赖 SysWeatherBridge），设置页只保留说明与开关"
+        "天气模块保持官方原样（系统 / Open-Meteo / 和风 三源）：系统天气源在 iOS 17 实际不可用，请选 Open-Meteo 并手动输入本地经纬度（小数点后两位，如 29.56/106.56）；每次更换地点后需重新输入",
+        "天气自动定位桥（SysWeatherBridge）已退役：本版不再依赖，卸载该插件不影响任何功能"
       ],
       "compatibility": {
         "notes": [
@@ -573,14 +572,15 @@
           "设置页已移除『设备授权 / 关于 / 推广』区块，各功能页不再出现未激活提示。",
           "官方声明 iOS 15–17；本包实机验证 iOS 17.2.1（iPhone 15 Pro · RootHide）。",
           "2.2.80-11 起依赖 com.local.sysweatherbridge（自动定位 + 天气参数桥），源会自动安装。",
-          "天气设置页已移除来源选择与经纬度/和风参数输入，避免误以为需要手填。"
+          "2.2.80-13 起为存续性维护版：无 SysWeatherBridge 依赖，天气需手动经纬度（页脚有说明）；悬浮窗位置漂移修复保留。",
+          "旧版 2.2.80-8 / -9 / -11 / -12 已下架（历史变更见本页更新日志摘要），仅提供 2.2.80-13。"
         ]
       },
       "repo_url": "https://github.com/muzikeji",
       "variants": [
         {
-          "version": "2.2.80-12",
-          "date": "2026-11-12",
+          "version": "2.2.80-13",
+          "date": "2026-11-18",
           "arch": "iphoneos-arm64",
           "jailbreak": "rootless /var/jb（RootHide 实测）",
           "devices": [
@@ -589,104 +589,27 @@
           "ios": [
             "17.2.1"
           ],
-          "verified": "已验证（用户实机确认：不再出现悬浮窗位置漂移与双行渲染）",
+          "verified": "已验证（用户实机确认：经纬度手填可用、药丸正常、功能免授权）",
           "changes": [
-            "修复桌面悬浮信息药丸的位置漂移（原版自带缺陷，与授权 / 天气 / 净化补丁无关）",
-            "根因：持久化的药丸坐标取自旋转后的 rootVC 本地坐标系，而方向切换、ReloadPrefs（天气桥定位成功即发）、尺寸变化等每条路径都会用当前 bounds 对已存坐标重新钳位并重放；药丸又是 center 锚定，折行或尺寸变化时视觉上下对称外扩，表现为「漂移」",
-            "修复：applyInitialPositionWithTargetBounds: 的「已有 pillPositionX/Y」分支跳过重新钳位，直接按存储坐标 setCenter；无存储时的默认锚点分支保持原样（首次安装仍自动落位并写回）",
-            "补丁量：MUtool.dylib 双 slice 各 3 处（fmov d14/d1 → d10/d11、分支目标改到 setBounds 入口），共 6 字节；其余 dylib、设置面板与资源与 2.2.80-11 逐字节一致",
-            "静态验收：6 点字节 + 反汇编断言 6 ok；授权闸、天气 120s 节拍、天气页摘行、痕迹净化全部保留；ldid 重签、root:root、-Zxz",
-            "实机：iPhone 15 Pro / iOS 17.2.1 RootHide，用户确认漂移与双行现象均未复现"
-          ]
-        },
-        {
-          "version": "2.2.80-11",
-          "date": "2026-11-09",
-          "arch": "iphoneos-arm64",
-          "jailbreak": "rootless /var/jb（RootHide 实测）",
-          "devices": [
-            "iPhone 15 Pro"
-          ],
-          "ios": [
-            "17.2.1"
-          ],
-          "verified": "已被 2.2.80-12 取代（悬浮窗位置修复并入 -12）",
-          "changes": [
-            "基于 2.2.80-9：授权放行、痕迹净化、天气节拍补丁全部保留",
-            "设置页天气模块重构：移除「天气来源 / Open-Meteo 纬度 / 经度 / 和风 Host / Key / 位置」六行，只保留一段说明——数据固定来自 Open-Meteo、自动定位，无需手动填写",
-            "新增依赖 com.local.sysweatherbridge（自动定位 + 天气参数桥）：装本体时由源自动带上，药丸天气自动跟随位置",
-            "修正 2.2.80-10 的授权回归：该版替换 mutoolprefs 时误用原始样本，设置面板授权补丁丢失（显示未激活）；本版以 -9 的已授权 mutoolprefs 为底重打天气页补丁",
-            "静态验收：5 个二进制授权闸 6/6、双 slice 天气页 NOP 6 处、footer 文案替换、ldid 签名、root:root；MUtool/Capture/Pasted/Thermal 与 -9 逐字节一致"
-          ]
-        },
-        {
-          "version": "2.2.80-9",
-          "date": "2026-11-09",
-          "arch": "iphoneos-arm64",
-          "jailbreak": "rootless /var/jb（RootHide 实测）",
-          "devices": [
-            "iPhone 15 Pro"
-          ],
-          "ios": [
-            "17.2.1"
-          ],
-          "verified": "已被 2.2.80-11 取代（补丁已并入 -11 并实机验证）",
-          "changes": [
-            "在 2.2.80-8 基础上修复天气悬浮窗长时间显示 --（系统天气源，完整逆向定位缓存链）",
-            "根因：MUtool 系统源读取 WeatherPreferences 共享缓存（由电话助手在打开天气悬浮窗时写入），且有两处「缓存 updateTime 超时即判无效」的判定——超时后快照被清空 → 悬浮窗显示 --；电话助手不常开则缓存持续陈旧，-- 长期不恢复",
-            "修复：NOP 两处超时判定跳转（hasFreshSnapshot 的 age>300s、系统源解析的 age>检查间隔，arm64/arm64e 各 2 处指令补丁）——只要缓存有数据就持续显示并在下次检查时更新，不再因缓存陈旧清空为 --（时钟回拨保护 -3600s 判定保留）",
-            "辅助：成功后下次检查间隔 900s → 120s，每 2 分钟重读共享缓存，电话助手刷新后最多 2 分钟自动跟上",
-            "共 6 处补丁（双 slice：2 数据 + 4 指令），与 -8 逐字节仅差 20 字节；授权放行与痕迹净化全部保留；静态验收 30 处授权闸 + 52 项断言全过，实机验证进行中"
-          ]
-        },
-        {
-          "version": "2.2.80-8",
-          "date": "2026-11-09",
-          "arch": "iphoneos-arm64",
-          "jailbreak": "rootless /var/jb（RootHide 实测）",
-          "devices": [
-            "iPhone 15 Pro"
-          ],
-          "ios": [
-            "17.2.1"
-          ],
-          "verified": "已验证（被 2.2.80-9 取代）",
-          "changes": [
-            "2.2.80-8：30 处授权闸补丁 + 痕迹净化（详见 2.2.80-9 更新日志前身）。"
+            "以官方 2.2.80 原始包为基线重建（非在 -12 上叠加）",
+            "去除授权：MuziAuthShield 三方法 × 5 二进制 × 双架构共 30 处恒返回已授权",
+            "痕迹净化：设置页「设备授权 / 激活·查看UDID / 注销设备 / 关于 / QQ群 / GitHub / Sini921 / 木子源 / ©页脚」9 行摘除（双架构），文案与外链死化",
+            "修复桌面悬浮信息药丸位置漂移（原版自带缺陷）：已存坐标不再被重钳位重放，6 字节补丁",
+            "天气模块保持官方原样：三源与经纬度输入行全保留；页脚注明——系统天气源 iOS 17 不可用，请选 Open-Meteo 并手动输入本地经纬度（小数点后两位），每次更换地点后重新输入",
+            "移除 SysWeatherBridge 依赖：卸载该辅助插件不影响本包任何功能",
+            "静态验收：授权 30/30、漂移 6/6、页脚新注记 2/2 切片且旧文案无残留、外链 0 残留、天气模块串与官方逐项一致"
           ]
         }
       ],
       "history": [
         {
-          "version": "2.2.80-4",
-          "date": "2026-11-09",
-          "status": "已放弃",
+          "version": "2.2.80-1 ~ -12",
+          "date": "2026-11-09 ~ 11-12",
+          "status": "已下架（全部被 2.2.80-13 取代，不再提供历史版本回退）",
           "notes": [
-            "v1 补丁在 arm64e slice 用 retab 收尾：arm64e ABI 的 bl 产生未签名 LR，retab 认证失败 → SpringBoard/chronod PAC 崩溃循环（.ips 实锤 MUtoolCapture+0x6ec0）。已改为 ret 收尾。"
-          ]
-        },
-        {
-          "version": "2.2.80-7",
-          "date": "2026-11-09",
-          "status": "已被取代",
-          "notes": [
-            "授权放行修正版（30 处补丁），实机验证通过；被 2.2.80-8（同补丁 + 痕迹净化）取代。"
-          ]
-        },
-        {
-          "version": "2.2.80-8",
-          "date": "2026-11-09",
-          "status": "已被取代",
-          "notes": [
-            "被 2.2.80-9（天气节拍修复）取代；完整日志见版本列表 v2.2.80-8。"
-          ]
-        },
-        {
-          "version": "2.2.80-10",
-          "date": "2026-11-09",
-          "status": "已作废",
-          "notes": [
-            "替换 mutoolprefs 时误用原始样本，设置面板授权补丁丢失（显示未激活）；被 2.2.80-11 修复并取代。"
+            "2026-11-09 首发：-7 授权去除（MuziAuthShield 30 处）、-8 痕迹净化",
+            "天气与悬浮窗漂移问题历经多次再版：-9 天气节拍、-10/-11 天气页重构（依赖自动定位桥）、-12 悬浮窗位置漂移修复",
+            "2026-11-18 天气优化线终止（自动定位桥退役），收敛为存续性维护版 2.2.80-13：天气手动经纬度，模块不再调整"
           ]
         }
       ]
@@ -732,68 +655,6 @@
             "净化：设置页 GitHub / Sini921 / muzikeji / QQ 群 / Sileo 源共 10 处外链死化（等长指向 0.0.0.0），LICENSE@3x.png 移除",
             "静态验收：成品回抽 12/12 补丁点断言 + URL 残留扫描为 0 + ldid 重签 + gzip root:root",
             "本版本官方即不含药丸天气模块（天气显示请配合电话助手等独立工具）"
-          ]
-        }
-      ]
-    },
-    {
-      "package": "com.local.sysweatherbridge",
-      "display_name": "SysWeatherBridge（系统天气桥）",
-      "summary": "自动定位并把经纬度写入 MUtool 的 open-meteo 天气参数，免去手动填写；MUtool 修改版 2.2.80-11 起自动依赖。",
-      "features": [
-        "自动定位：GPS（可用时）→ IP 定位（pconline / ipip / 淘宝多源投票，城市级）→ 天气缓存坐标兜底",
-        "多源投票：与上次位置 ≤200km 直接采纳；跨城需 ≥2 个 IP 源互差 ≤50km 且连续两次确认（间隔 ≥10 分钟），单源异常不会把天气带跑",
-        "把两位小数的经纬度写入 com.muzi.mutoolprefs 并发送 ReloadPrefs，MUtool 药丸立即按新坐标拉取 open-meteo",
-        "每 30 分钟复查定位；天气本体仍由 MUtool 按自身节拍刷新",
-        "零 block、零编译期 ObjC 类，不 hook 任何方法，只在 SpringBoard 内运行"
-      ],
-      "compatibility": {
-        "notes": [
-          "rootless（/var/jb），iphoneos-arm64，内含 arm64 + arm64e 双 slice；RootHide 通过转换器安装（与 MUtool 本体同路径）。",
-          "MUtool 修改版 2.2.80-11 起自动依赖本包；单独安装无副作用，不修改任何插件本体。",
-          "SpringBoard 的 GPS 被 TCC 限制（未授权），实际使用 IP 定位，精度为城市级；同城不变化，跨市/跨省 10–30 分钟内跟上。",
-          "从旧 roothide 原生 0.3.4 升级：先 dpkg -r --force-depends com.local.sysweatherbridge，再安装本包。"
-        ]
-      },
-      "repo_url": "https://github.com/Chenlin8023/Chenlin8023.github.io",
-      "log_hint": "日志：/var/mobile/Library/Logs/SysWeatherBridge.log（超过 256KB 自动截断）",
-      "variants": [
-        {
-          "version": "0.3.5",
-          "date": "2026-11-09",
-          "arch": "iphoneos-arm64",
-          "jailbreak": "rootless /var/jb（RootHide 走转换器）",
-          "devices": [
-            "iPhone 15 Pro"
-          ],
-          "ios": [
-            "17.2.1"
-          ],
-          "verified": "已验证（iPhone 15 Pro / iOS 17.2.1 RootHide：MUtool 2.2.80-11 + 本包，天气自动更新正常）",
-          "changes": [
-            "首个源内版本：自动定位 + 写入 MUtool open-meteo 参数 + ReloadPrefs",
-            "定位改为多源投票（pconline / ipip / 淘宝），跨城需二次确认，单源异常不切换",
-            "经纬度按 MUtool 要求写两位小数 NSString（非字符串会被它替换成空串导致无数据）",
-            "打包形态为 rootless（/var/jb），兼容 rootless 与 RootHide；dylib 含 arm64+arm64e 双 slice",
-            "静态验收：FAT 双切片、dylib 755、无 /var/jb 字面量、无 block 符号、__cfstring isa auth=76 plain=0"
-          ]
-        }
-      ],
-      "history": [
-        {
-          "version": "0.3.4",
-          "date": "2026-11-09",
-          "status": "未发布（内部）",
-          "notes": [
-            "多源投票定位；roothide 原生打包，实测通过但架构对 rootless/arm64 设备不可见。"
-          ]
-        },
-        {
-          "version": "0.3.0",
-          "date": "2026-11-09",
-          "status": "未发布（内部）",
-          "notes": [
-            "从改写 WeatherPreferences 内存缓存改为写 MUtool 自己的 open-meteo 参数；双写 cfprefsd + 落盘。"
           ]
         }
       ]
