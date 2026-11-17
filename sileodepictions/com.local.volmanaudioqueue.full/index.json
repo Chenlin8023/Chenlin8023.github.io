@@ -9,7 +9,7 @@
       "views": [
         {
           "class": "DepictionMarkdownView",
-          "markdown": "- 每个 App 独立音量（最低静音）；多 App 同时播放，互不打断；改完立即生效\n- 重写音量引擎，消除 16 位 PCM 爆音\n- 混音策略层：挂钩 AVAudioSession setActive / setCategory，保证多 App 同播稳定\n- 全量包：含设置面板、音量 HUD、音量引擎；面板推广 / 打赏 / 攻击文字已清理\n- 1.3.0 修复长时间播放后静音失效（ctx 表 32→512，并输出占用率日志）"
+          "markdown": "- 每个 App 独立音量（最低静音）；多 App 同时播放，互不打断；改完立即生效\n- 重写音量引擎，消除 16 位 PCM 爆音\n- 混音策略层：挂钩 AVAudioSession setActive / setCategory，保证多 App 同播稳定\n- 全量包：含设置面板、音量 HUD、音量引擎；面板推广 / 打赏 / 攻击文字已清理\n- 1.3.0 修复长时间播放后静音失效（ctx 表 32→512，并输出占用率日志）\n- 1.3.4 修复快速调音音量骤降（echo 基准污染）；拷贝注入副本安装时自动刷新；新增失效自证探针（日志带 pid / 渲染回调缩放统计 / 采样率）"
         }
       ]
     },
@@ -17,6 +17,32 @@
       "class": "DepictionStackView",
       "tabname": "兼容性",
       "views": [
+        {
+          "class": "DepictionSubheaderView",
+          "title": "v1.3.4 · iphoneos-arm64",
+          "useBoldText": true,
+          "useBottomMargin": true
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "机型",
+          "text": "iPhone 15 Pro"
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "验证 iOS",
+          "text": "17.2.1"
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "越狱形态",
+          "text": "rootless（/var/jb）"
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "验证状态",
+          "text": "已验证"
+        },
         {
           "class": "DepictionSubheaderView",
           "title": "v1.3.0 · iphoneos-arm64",
@@ -77,7 +103,7 @@
         },
         {
           "class": "DepictionMarkdownView",
-          "markdown": "- rootless（/var/jb）包，arm64；RootHide 需转换或使用 rootless 引导环境。\n- 1.3.0 是过渡版：用 JailFools 等工具把引擎注入到 App 的，升级后需覆盖 .app/Frameworks/VolManAudioQueue.dylib 并重新打开 App；验收看容器日志头 === v1.3.0。\n- 1.2.0 是稳定回退版，可直接安装 / 降级。\n- 依赖 Orion 运行时（dev.theos.orion），由系统按依赖安装。"
+          "markdown": "- rootless（/var/jb）包，arm64；RootHide 需转换或使用 rootless 引导环境。\n- 1.3.4 起：安装后 respring（注销）一次即可生效；用 JailFools/TrollFools 拷贝注入过的 App 由安装器自动刷新引擎副本，杀掉 App 重开验收容器日志头 === v1.3.4；若删过副本的 App 走中央注入则自动跟随。\n- 1.3.0 / 1.2.0 为稳定回退版，可直接安装 / 降级。\n- 依赖 Orion 运行时（dev.theos.orion），由系统按依赖安装。"
         }
       ]
     },
@@ -88,6 +114,27 @@
         {
           "class": "DepictionMarkdownView",
           "markdown": "Sileo：安装后在插件页长按「修改 / MODIFY」选择历史版本；Irisin / Zebra 可直接在版本列表选择。每个版本下方有 .deb 直链。"
+        },
+        {
+          "class": "DepictionSubheaderView",
+          "title": "v1.3.4 · 2026-11-18",
+          "useBoldText": true,
+          "useBottomMargin": true
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "验证",
+          "text": "已验证"
+        },
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "- 修快速调音音量指数衰减：App 回读缩放值不再被登记为基准（echo 基准污染防护）\n- 安装时自动刷新拷贝注入副本（JailFools/TrollFools），免手动重注入；postinst 逐条输出刷新结果\n- 新增失效自证探针：日志带 pid、渲染回调真实缩放统计（30s 节流）、包装行带采样率\n- 使用纪律：安装后 respring 一次；「听着失效」先看日志 RC探针 的缩放计数再归因"
+        },
+        {
+          "class": "DepictionTableButtonView",
+          "title": "下载 v1.3.4（iphoneos-arm64）",
+          "action": "https://chenlin8023.github.io/debs/com.local.volmanaudioqueue.full_1.3.4_iphoneos-arm64.deb",
+          "openExternal": true
         },
         {
           "class": "DepictionSubheaderView",
@@ -133,6 +180,21 @@
         },
         {
           "class": "DepictionSubheaderView",
+          "title": "v1.3.1 – 1.3.3 · 2026-11-18",
+          "useBoldText": true,
+          "useBottomMargin": true
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "状态",
+          "text": "未上架（改动并入 1.3.4 发布）"
+        },
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "- 1.3.1 echo 基准污染防护；1.3.2 postinst 自动刷新副本；1.3.3 诊断探针（pid / RC统计 / 采样率）。"
+        },
+        {
+          "class": "DepictionSubheaderView",
           "title": "v1.2.1 – 1.2.7 · 2026-11-03",
           "useBoldText": true,
           "useBottomMargin": true
@@ -173,7 +235,7 @@
         },
         {
           "class": "DepictionMarkdownView",
-          "markdown": "反馈时请附：App 容器 Documents 下的 VolMan 日志、日志头版本、注入形态（动态注入 / JailFools 拷贝）、复现步骤。"
+          "markdown": "反馈时请附：App 容器 Documents 下的 VolMan 日志、日志头版本、RC探针行（缩放统计）、注入形态（动态注入 / JailFools 拷贝）、复现步骤。"
         },
         {
           "class": "DepictionTableButtonView",

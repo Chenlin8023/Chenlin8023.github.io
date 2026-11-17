@@ -149,6 +149,29 @@ SHA256: bc893c0830a320b7a2c6dc8f4cad3441802e0c51f3b9718952319c5e4fab3b71
 MD5sum: e34f11a3463e10f16647a9b39454bd5e
 
 Package: com.local.volmanaudioqueue.full
+Section: Tweaks
+Priority: optional
+Maintainer: Chenlin8023
+Author: Chenlin8023
+Depends: mobilesubstrate, firmware (>= 15.0), dev.theos.orion (>= 1.0.0)
+Conflicts: byg.iosios.net.volume-manager, com.local.volmanaudioqueue
+Replaces: byg.iosios.net.volume-manager, com.local.volmanaudioqueue
+Architecture: iphoneos-arm64
+Version: 1.3.4
+Installed-Size: 1200
+Name: VolumeManager (Full)
+Description: 每个 App 独立音量，多个 App 可同时播放。
+ 实机验证：iPhone 15 Pro / iOS 17.2.1
+ 项目仓库：https://github.com/Chenlin8023/VolumeManager-iOS17
+Homepage: https://github.com/Chenlin8023/VolumeManager-iOS17
+SileoDepiction: https://chenlin8023.github.io/sileodepictions/com.local.volmanaudioqueue.full/index.json
+Depiction: https://chenlin8023.github.io/depictions/com.local.volmanaudioqueue.full/index.html
+Filename: debs/com.local.volmanaudioqueue.full_1.3.4_iphoneos-arm64.deb
+Size: 173972
+SHA256: 96923254ff440d0cc4d6c8099e4abf828538cbe17aca890c707975d3c118f70a
+MD5sum: 81a69c83bed07630c81f2b06c35a671b
+
+Package: com.local.volmanaudioqueue.full
 Version: 1.3.0
 Architecture: iphoneos-arm64
 Section: Tweaks
