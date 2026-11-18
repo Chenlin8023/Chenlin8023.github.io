@@ -11,17 +11,22 @@ https://chenlin8023.github.io/
 
 ## 收录的插件
 
-| 插件 | 当前版本 | 架构 | 实机验证 | 项目仓库 |
-|---|---|---|---|---|
-| LSTimeSeconds (RootHide) | 0.0.7-1 | `iphoneos-arm64e` | iPhone 15 Pro / iOS 17.2.1 | [LSTimeSeconds-iOS17](https://github.com/Chenlin8023/LSTimeSeconds-iOS17) |
-| LSTimeSeconds (rootless) | 0.0.7-5 | `iphoneos-arm64` | iOS 16.0.3（0.0.7-4/5） | 同上 |
-| AppLock+ (应用锁+) | 0.4.2-1 | `iphoneos-arm64e` | iPhone 15 Pro / iOS 17.2.1 | [AppLockPlus](https://github.com/Chenlin8023/AppLockPlus) |
-| NotifierIcons | 0.9.2 | `iphoneos-arm64` | iPhone 15 Pro / iOS 17.2.1 | [notifiericons](https://github.com/Chenlin8023/notifiericons) |
-| CallAssist PortLeak | 2.1.0 | `iphoneos-arm64e` | 2.1.0 待确认；2.0.14 已验证 | [CallAssist-PortLeak](https://github.com/Chenlin8023/CallAssist-PortLeak) |
-| VolumeManager (Full) | 1.3.4 / 1.3.0 / 1.2.0 | `iphoneos-arm64` | iPhone 15 Pro / iOS 17.2.1 | [VolumeManager-iOS17](https://github.com/Chenlin8023/VolumeManager-iOS17) |
-| VolumeManager 面板净化 | 1.1.0 | `iphoneos-arm64` | iPhone 15 Pro / iOS 17.2.1 | 同上 |
-| MUtool 工具箱（修改版 · 存续性维护） | 2.2.80-13 | `iphoneos-arm64` | iPhone 15 Pro / iOS 17.2.1 | [muzikeji](https://github.com/muzikeji) |
-| MUtool 工具箱（roothide · 授权破解版） | 2.2.89-1（另有 2.1.66-1） | `iphoneos-arm64e` | iPhone 15 Pro / iOS 17.2.1 | [muzikeji](https://github.com/muzikeji) |
+| 插件 | 分类 | 当前版本 | 架构 | 实机验证 | 项目仓库 |
+|---|---|---|---|---|---|
+| MUtool 工具箱（roothide · 授权破解版） | 系统 | 2.2.89-1（另有 2.1.66-1） | `iphoneos-arm64e` | iPhone 15 Pro / iOS 17.2.1 | [muzikeji](https://github.com/muzikeji) |
+| MUtool 工具箱（修改版 · 存续性维护） | 系统 | 2.2.80-13 | `iphoneos-arm64` | iPhone 15 Pro / iOS 17.2.1 | [muzikeji](https://github.com/muzikeji) |
+| VolumeManager (Full) | 系统 | 1.3.4 / 1.3.0 / 1.2.0 | `iphoneos-arm64` | iPhone 15 Pro / iOS 17.2.1 | [VolumeManager-iOS17](https://github.com/Chenlin8023/VolumeManager-iOS17) |
+| VolumeManager 面板净化 | 系统 | 1.1.0 | `iphoneos-arm64` | iPhone 15 Pro / iOS 17.2.1 | 同上 |
+| CallAssist PortLeak | 系统 | 2.1.0 | `iphoneos-arm64e` | 2.1.0 待确认；2.0.14 已验证（iPhone 15 Pro / iOS 17.2.1） | [CallAssist-PortLeak](https://github.com/Chenlin8023/CallAssist-PortLeak) |
+| AppLock+ (应用锁+) | 系统 | 0.4.2-1 | `iphoneos-arm64e` | iPhone 15 Pro / iOS 17.2.1 | [AppLockPlus](https://github.com/Chenlin8023/AppLockPlus) |
+| LSTimeSeconds (RootHide) | 锁屏 | 0.0.7-1 | `iphoneos-arm64e` | iPhone 15 Pro / iOS 17.2.1 | [LSTimeSeconds-iOS17](https://github.com/Chenlin8023/LSTimeSeconds-iOS17) |
+| LSTimeSeconds (rootless) | 锁屏 | 0.0.7-5 | `iphoneos-arm64` | iPhone 14 Pro / iOS 16.0.3（0.0.7-4/5） | 同上 |
+| Jikan（锁屏充电预估） | 锁屏 | 1.2.1-1+debug / 1.2.0 | `iphoneos-arm64e` | iPhone 15 Pro / iOS 17.2.1 | [Jikan](https://github.com/Chenlin8023/Jikan) |
+| NotifierIcons | 状态栏 | 0.9.2 | `iphoneos-arm64` | iPhone 15 Pro / iOS 17.2.1 | [notifiericons](https://github.com/Chenlin8023/notifiericons) |
+| Jikan 简体中文语言包 | 语言包 | 1.2.1 | `iphoneos-arm64e` | iPhone 15 Pro / iOS 17.2.1 | [Jikan](https://github.com/Chenlin8023/Jikan) |
+
+> 分类按插件**生效场景**：系统（工具箱 / 音量 / 安全 / 泄漏治理）、锁屏、状态栏、语言包。
+> 分类同步写入 Packages 的 `Section` 字段（Sileo 按此归组）与插件详情页；本源暂无纯「桌面」生效插件。
 
 ### 关键说明
 

@@ -18,6 +18,11 @@
       "tabname": "兼容性",
       "views": [
         {
+          "class": "DepictionTableTextView",
+          "title": "分类",
+          "text": "系统"
+        },
+        {
           "class": "DepictionSubheaderView",
           "title": "v1.1.0 · iphoneos-arm64",
           "useBoldText": true,

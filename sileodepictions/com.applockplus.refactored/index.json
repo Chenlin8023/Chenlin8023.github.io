@@ -18,6 +18,11 @@
       "tabname": "兼容性",
       "views": [
         {
+          "class": "DepictionTableTextView",
+          "title": "分类",
+          "text": "系统"
+        },
+        {
           "class": "DepictionSubheaderView",
           "title": "v0.4.2-1 · iphoneos-arm64e",
           "useBoldText": true,
@@ -51,7 +56,7 @@
         },
         {
           "class": "DepictionMarkdownView",
-          "markdown": "- 载体包：dylib 位于 /var/mobile/Documents/AppLockPlus/，用 Debs 导出或 Filza 取出，再由 TrollFools / JailFools 注入目标 App。\n- 不要过 RootHide 转换器；本包是免 substrate 的按应用注入 dylib。\n- 构建目标 iOS 14+；实机验证为 iPhone 15 Pro / iOS 17.2.1。"
+          "markdown": "- 载体包：dylib 位于 /var/mobile/Documents/AppLockPlus/，用 Debs 导出或 Filza 取出，再由 TrollFools / JailFools 注入目标 App。\n- 不要过 RootHide 转换器；本包是免 substrate 的按应用注入 dylib。\n- 构建目标 iOS 14+；实机验证为 iPhone 15 Pro / iOS 17.2.1，未在其它机型/系统单独验证（TrollStore / TrollFools 注入路线理论适用）。"
         }
       ]
     },

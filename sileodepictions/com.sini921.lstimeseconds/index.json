@@ -18,6 +18,11 @@
       "tabname": "兼容性",
       "views": [
         {
+          "class": "DepictionTableTextView",
+          "title": "分类",
+          "text": "锁屏"
+        },
+        {
           "class": "DepictionSubheaderView",
           "title": "v0.0.7-5 · iphoneos-arm64",
           "useBoldText": true,
@@ -26,7 +31,7 @@
         {
           "class": "DepictionTableTextView",
           "title": "机型",
-          "text": "AOD 机型（具体机型未记录）"
+          "text": "iPhone 14 Pro"
         },
         {
           "class": "DepictionTableTextView",
@@ -52,7 +57,7 @@
         {
           "class": "DepictionTableTextView",
           "title": "机型",
-          "text": "AOD 机型（具体机型未记录）"
+          "text": "iPhone 14 Pro"
         },
         {
           "class": "DepictionTableTextView",
@@ -103,7 +108,7 @@
         },
         {
           "class": "DepictionMarkdownView",
-          "markdown": "- AOD 暗屏不走秒：系统在暗屏使用 1Hz Flipbook，应用层无法刷新；亮屏立即恢复。\n- RootHide 用户请安装 LSTimeSeconds (RootHide)，不要与本包混装。\n- rootless 包安装到 /var/jb；普通 rootless 设备直接安装，RootHide 需转换或使用 rootless 引导环境。\n- 0.0.7-2 未单独验证；0.0.7-4 / 0.0.7-5 已在 iOS 16.0.3 真机验证。"
+          "markdown": "- AOD 暗屏不走秒：系统在暗屏使用 1Hz Flipbook，应用层无法刷新；亮屏立即恢复。\n- RootHide 用户请安装 LSTimeSeconds (RootHide)，不要与本包混装。\n- rootless 包安装到 /var/jb；普通 rootless 设备直接安装，RootHide 需转换或使用 rootless 引导环境。\n- 0.0.7-2 未单独验证；0.0.7-4 / 0.0.7-5 已在 iPhone 14 Pro（iOS 16.0.3）真机验证。"
         }
       ]
     },

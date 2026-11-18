@@ -59,7 +59,9 @@
             "自建 PSListController 面板在真机进入设置闪退；根因是 arm64e 类元数据缺少 PAC。版本号已回退到 0.0.7-1。"
           ]
         }
-      ]
+      ],
+      "category": "锁屏",
+      "section": "锁屏"
     },
     {
       "package": "com.sini921.lstimeseconds",
@@ -78,7 +80,7 @@
           "AOD 暗屏不走秒：系统在暗屏使用 1Hz Flipbook，应用层无法刷新；亮屏立即恢复。",
           "RootHide 用户请安装 LSTimeSeconds (RootHide)，不要与本包混装。",
           "rootless 包安装到 /var/jb；普通 rootless 设备直接安装，RootHide 需转换或使用 rootless 引导环境。",
-          "0.0.7-2 未单独验证；0.0.7-4 / 0.0.7-5 已在 iOS 16.0.3 真机验证。"
+          "0.0.7-2 未单独验证；0.0.7-4 / 0.0.7-5 已在 iPhone 14 Pro（iOS 16.0.3）真机验证。"
         ]
       },
       "repo_url": "https://github.com/Chenlin8023/LSTimeSeconds-iOS17",
@@ -90,7 +92,7 @@
           "arch": "iphoneos-arm64",
           "jailbreak": "rootless（/var/jb）",
           "devices": [
-            "AOD 机型（具体机型未记录）"
+            "iPhone 14 Pro"
           ],
           "ios": [
             "16.0.3"
@@ -108,7 +110,7 @@
           "arch": "iphoneos-arm64",
           "jailbreak": "rootless（/var/jb）",
           "devices": [
-            "AOD 机型（具体机型未记录）"
+            "iPhone 14 Pro"
           ],
           "ios": [
             "16.0.3"
@@ -156,7 +158,9 @@
             "设置面板二进制在 arm64e 上进入设置闪退；根因是 __objc_data 的 class/superclass 指针缺少 PAC。"
           ]
         }
-      ]
+      ],
+      "category": "锁屏",
+      "section": "锁屏"
     },
     {
       "package": "com.applockplus.refactored",
@@ -175,7 +179,7 @@
         "notes": [
           "载体包：dylib 位于 /var/mobile/Documents/AppLockPlus/，用 Debs 导出或 Filza 取出，再由 TrollFools / JailFools 注入目标 App。",
           "不要过 RootHide 转换器；本包是免 substrate 的按应用注入 dylib。",
-          "构建目标 iOS 14+；实机验证为 iPhone 15 Pro / iOS 17.2.1。"
+          "构建目标 iOS 14+；实机验证为 iPhone 15 Pro / iOS 17.2.1，未在其它机型/系统单独验证（TrollStore / TrollFools 注入路线理论适用）。"
         ]
       },
       "repo_url": "https://github.com/Chenlin8023/AppLockPlus",
@@ -199,7 +203,9 @@
             "双指双击设置入口；移除魔改版的 Telegram 推广行为"
           ]
         }
-      ]
+      ],
+      "category": "系统",
+      "section": "系统"
     },
     {
       "package": "com.chenlin8023.notifiericons",
@@ -258,7 +264,9 @@
             "真图标链路打通：启动期捕获 SBIconController → iconManager → iconModel.leafIconForIdentifier: → SBIconImageCache。"
           ]
         }
-      ]
+      ],
+      "category": "状态栏",
+      "section": "状态栏"
     },
     {
       "package": "com.local.callassistportleak",
@@ -327,7 +335,9 @@
             "2.0.7 修复 arm64e __cfstring isa 未认证导致的 SIGBUS；2.0.8 修复定时器被 ARC 释放、清扫从未运行的 bug。"
           ]
         }
-      ]
+      ],
+      "category": "系统",
+      "section": "系统"
     },
     {
       "package": "com.local.volmanaudioqueue.full",
@@ -433,7 +443,9 @@
             "1.1.3 修正净化模块文件权限（此前缺少执行位未加载）；1.1.0 新增面板净化。"
           ]
         }
-      ]
+      ],
+      "category": "系统",
+      "section": "系统"
     },
     {
       "package": "com.local.volmanprefsclean",
@@ -472,7 +484,9 @@
             "修复净化模块文件权限（此前缺少执行位，系统未加载）"
           ]
         }
-      ]
+      ],
+      "category": "系统",
+      "section": "系统"
     },
     {
       "package": "moe.waru.jikan",
@@ -541,7 +555,9 @@
             "已改用仓库自带 GitHub Actions（Apple 官方工具链）构建；留档见 Jikan/packages/local-pipeline-ref。"
           ]
         }
-      ]
+      ],
+      "category": "锁屏",
+      "section": "锁屏"
     },
     {
       "package": "moe.waru.jikan.lang.zh-hans",
@@ -578,7 +594,9 @@
             "首发：109 条界面文案简体中文翻译"
           ]
         }
-      ]
+      ],
+      "category": "语言包",
+      "section": "语言包"
     },
     {
       "package": "byg.iosios.net.mutool",
@@ -599,8 +617,7 @@
           "与官方包同 id：安装即覆盖官方版；回滚重装官方 2.2.80 即可。",
           "设置页已移除『设备授权 / 关于 / 推广』区块，各功能页不再出现未激活提示。",
           "官方声明 iOS 15–17；本包实机验证 iOS 17.2.1（iPhone 15 Pro · RootHide）。",
-          "2.2.80-11 起依赖 com.local.sysweatherbridge（自动定位 + 天气参数桥），源会自动安装。",
-          "2.2.80-13 起为存续性维护版：无 SysWeatherBridge 依赖，天气需手动经纬度（页脚有说明）；悬浮窗位置漂移修复保留。",
+          "2.2.80-13 起为存续性维护版：无 SysWeatherBridge 依赖（2.2.80-11 曾依赖的天气自动定位桥已退役，卸载该插件不影响本包），天气需手动经纬度（页脚有说明）；悬浮窗位置漂移修复保留。",
           "旧版 2.2.80-8 / -9 / -11 / -12 已下架（历史变更见本页更新日志摘要），仅提供 2.2.80-13。"
         ]
       },
@@ -640,7 +657,9 @@
             "2026-11-18 天气优化线终止（自动定位桥退役），收敛为存续性维护版 2.2.80-13：天气手动经纬度，模块不再调整"
           ]
         }
-      ]
+      ],
+      "category": "系统",
+      "section": "系统"
     },
     {
       "package": "com.muzi.mutool",
@@ -706,7 +725,9 @@
             "安装前请先卸载 byg.iosios.net.mutool 2.2.80-13（路径冲突不可共存）"
           ]
         }
-      ]
+      ],
+      "category": "系统",
+      "section": "系统"
     }
   ]
 }

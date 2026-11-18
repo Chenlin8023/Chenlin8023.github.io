@@ -18,6 +18,11 @@
       "tabname": "兼容性",
       "views": [
         {
+          "class": "DepictionTableTextView",
+          "title": "分类",
+          "text": "系统"
+        },
+        {
           "class": "DepictionSubheaderView",
           "title": "v2.2.80-13 · iphoneos-arm64",
           "useBoldText": true,
@@ -51,7 +56,7 @@
         },
         {
           "class": "DepictionMarkdownView",
-          "markdown": "- 基于 Muzi 官方 MUtool 2.2.80 deb 的二进制修改构建（非源码编译）；Package id / 依赖与官方包一致。\n- rootless（/var/jb），iphoneos-arm64（内含 arm64 + arm64e 双 slice），RootHide 下安装路径与官方包相同。\n- 与官方包同 id：安装即覆盖官方版；回滚重装官方 2.2.80 即可。\n- 设置页已移除『设备授权 / 关于 / 推广』区块，各功能页不再出现未激活提示。\n- 官方声明 iOS 15–17；本包实机验证 iOS 17.2.1（iPhone 15 Pro · RootHide）。\n- 2.2.80-11 起依赖 com.local.sysweatherbridge（自动定位 + 天气参数桥），源会自动安装。\n- 2.2.80-13 起为存续性维护版：无 SysWeatherBridge 依赖，天气需手动经纬度（页脚有说明）；悬浮窗位置漂移修复保留。\n- 旧版 2.2.80-8 / -9 / -11 / -12 已下架（历史变更见本页更新日志摘要），仅提供 2.2.80-13。"
+          "markdown": "- 基于 Muzi 官方 MUtool 2.2.80 deb 的二进制修改构建（非源码编译）；Package id / 依赖与官方包一致。\n- rootless（/var/jb），iphoneos-arm64（内含 arm64 + arm64e 双 slice），RootHide 下安装路径与官方包相同。\n- 与官方包同 id：安装即覆盖官方版；回滚重装官方 2.2.80 即可。\n- 设置页已移除『设备授权 / 关于 / 推广』区块，各功能页不再出现未激活提示。\n- 官方声明 iOS 15–17；本包实机验证 iOS 17.2.1（iPhone 15 Pro · RootHide）。\n- 2.2.80-13 起为存续性维护版：无 SysWeatherBridge 依赖（2.2.80-11 曾依赖的天气自动定位桥已退役，卸载该插件不影响本包），天气需手动经纬度（页脚有说明）；悬浮窗位置漂移修复保留。\n- 旧版 2.2.80-8 / -9 / -11 / -12 已下架（历史变更见本页更新日志摘要），仅提供 2.2.80-13。"
         }
       ]
     },

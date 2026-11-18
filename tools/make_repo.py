@@ -235,7 +235,7 @@ def build_sileo_depiction(package, repo, variants, deb_by_key):
                  "views": feature_views})
 
     # 2. Compatibility
-    compat_views = []
+    compat_views = [table_row("分类", package.get("category", "—"))]
     for variant in variants:
         compat_views.append(subheader("v%s · %s" % (variant["version"], variant["arch"])))
         compat_views.append(table_row("机型", "、".join(variant.get("devices") or ["—"])))
@@ -343,7 +343,7 @@ def render_web_page(package, repo, variants, deb_by_key):
 
     feature_html = "<ul>%s</ul>" % "".join("<li>%s</li>" % esc(x) for x in package["features"])
 
-    compat_html = []
+    compat_html = ['<div class="note"><b>分类：%s</b></div>' % esc(package.get("category", "—"))]
     for variant in variants:
         compat_html.append(
             '<div class="ver"><div class="head">v%s</div>'
@@ -432,7 +432,8 @@ def render_web_page(package, repo, variants, deb_by_key):
 
 def render_card(package, repo, variants):
     latest = variants[0]
-    tags = ['<span class="tag">%s</span>' % esc(latest.get("arch", "")),
+    tags = ['<span class="tag">%s</span>' % esc(package.get("category", "—")),
+            '<span class="tag">%s</span>' % esc(latest.get("arch", "")),
             '<span class="tag">%s</span>' % esc(latest.get("jailbreak", ""))]
     verified = latest.get("verified", "")
     tags.append('<span class="tag %s">%s</span>' %
@@ -472,7 +473,9 @@ def build_packages(repo_dir, meta, debs, mapping):
             set_field(fields, "Name", package["display_name"])
             if not any(k == "Priority" for k, _ in fields):
                 set_field(fields, "Priority", "optional")
-            if not any(k == "Section" for k, _ in fields):
+            if package.get("section"):
+                set_field(fields, "Section", package["section"])
+            elif not any(k == "Section" for k, _ in fields):
                 set_field(fields, "Section", "Tweaks")
 
             verified = variant.get("verified", "—")
@@ -537,10 +540,19 @@ def update_landing(repo_dir, meta, mapping):
     end = "<!-- PACKAGES:END -->"
     if begin not in text or end not in text:
         raise ValueError("index.html missing %s / %s markers" % (begin, end))
-    cards = []
+    # 按生效场景分类分组（顺序固定，未在表中的分类按字母序附后）
+    CATEGORY_ORDER = ["系统", "锁屏", "状态栏", "语言包"]
+    groups = {}
     for package in meta.packages:
-        variants = sort_variants(package)
-        cards.append(render_card(package, meta.repo, variants))
+        groups.setdefault(package.get("category") or "未分类", []).append(package)
+    ordered = [c for c in CATEGORY_ORDER if c in groups] + \
+        sorted(c for c in groups if c not in CATEGORY_ORDER)
+    cards = []
+    for cat in ordered:
+        cards.append('<h3 class="cat">%s</h3>' % esc(cat))
+        for package in groups[cat]:
+            variants = sort_variants(package)
+            cards.append(render_card(package, meta.repo, variants))
     new = text.split(begin)[0] + begin + "\n" + "\n".join(cards) + "\n    " + end + \
         text.split(end, 1)[1]
     with open(path, "w", encoding="utf-8", newline="\n") as fp:
