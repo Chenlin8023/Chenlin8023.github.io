@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="zh-CN"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>NotifierIcons · Chenlin8023 Repo</title><style>
+<title>应用通知小图标 · Chenlin8023 Repo</title><style>
 :root{--bg:#0b0d10;--card:#14181d;--line:#252b33;--text:#e8edf3;--muted:#93a1b1;--accent:#3ea6ff;--warn:#ffb454;--ok:#7ee0a8}
 *{box-sizing:border-box}
 body{margin:0;padding:34px 18px 64px;background:var(--bg);color:var(--text);
@@ -34,8 +34,8 @@ footer{color:#5f6b78;font-size:13px;margin-top:26px;text-align:center}
 </style></head>
 <body><div class="wrap">
 <div class="top"><a class="back" href="../../">← 返回 Chenlin8023 Repo</a></div>
-<h1>NotifierIcons</h1>
-<p class="sub">状态栏显示选中应用的通知小图标；有未读角标才出现，清零即消失。</p>
+<h1>应用通知小图标</h1>
+<p class="sub">状态栏显示选中应用的通知小图标（NotifierIcons）；有未读角标才出现，清零即消失。</p>
 <div class="tags"><span class="tag">iphoneos-arm64</span><span class="tag">rootless（/var/jb）</span><span class="tag ok">已验证</span></div>
 
 <div class="card" id="features"><h2>功能</h2><ul><li>状态栏下方显示选中 App 的通知小图标；有未读角标才出现，清零即消失（安卓通知语义）</li><li>真实 App 图标（format 0–12 自动探测 + 磁盘缓存 + 字母头像兜底）</li><li>最多 6 个，按应用名排序；独立悬浮窗渲染，与灵动岛布局解耦</li><li>位置预设（居中 / 岛左 / 岛右）+ 微调；改动即时生效；仅桌面 / 锁屏显示，进 App 自动消失</li><li>设置面板选择 App；2 秒轮询 + badge 事件双通道</li></ul></div>

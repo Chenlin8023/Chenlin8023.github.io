@@ -209,8 +209,8 @@
     },
     {
       "package": "com.chenlin8023.notifiericons",
-      "display_name": "NotifierIcons",
-      "summary": "状态栏显示选中应用的通知小图标；有未读角标才出现，清零即消失。",
+      "display_name": "应用通知小图标",
+      "summary": "状态栏显示选中应用的通知小图标（NotifierIcons）；有未读角标才出现，清零即消失。",
       "features": [
         "状态栏下方显示选中 App 的通知小图标；有未读角标才出现，清零即消失（安卓通知语义）",
         "真实 App 图标（format 0–12 自动探测 + 磁盘缓存 + 字母头像兜底）",
@@ -356,7 +356,8 @@
           "rootless（/var/jb）包，arm64；RootHide 需转换或使用 rootless 引导环境。",
           "1.3.4 起：安装后 respring（注销）一次即可生效；用 JailFools/TrollFools 拷贝注入过的 App 由安装器自动刷新引擎副本，杀掉 App 重开验收容器日志头 === v1.3.4；若删过副本的 App 走中央注入则自动跟随。",
           "1.3.0 / 1.2.0 为稳定回退版，可直接安装 / 降级。",
-          "依赖 Orion 运行时（dev.theos.orion），由系统按依赖安装。"
+          "依赖 Orion 运行时（dev.theos.orion），由系统按依赖安装。",
+          "独立的「VolumeManager 面板净化」补丁包（com.local.volmanprefsclean）已于 2026-11-18 下架删除：Full 包已内置净化功能，无需单独安装；已安装该补丁包的用户可直接卸载，不影响任何功能。"
         ]
       },
       "repo_url": "https://github.com/Chenlin8023/VolumeManager-iOS17",
@@ -441,47 +442,6 @@
           "status": "历史版本",
           "notes": [
             "1.1.3 修正净化模块文件权限（此前缺少执行位未加载）；1.1.0 新增面板净化。"
-          ]
-        }
-      ],
-      "category": "系统",
-      "section": "系统"
-    },
-    {
-      "package": "com.local.volmanprefsclean",
-      "display_name": "VolumeManager 面板净化",
-      "summary": "VolumeManager 设置面板净化补丁；移除推广与攻击性文字，功能开关保留。",
-      "features": [
-        "单独补丁，仅用于已安装原版 VolumeManager 的设备",
-        "移除面板中的打赏、推广、反盗版与攻击性文字",
-        "功能开关全部保留",
-        "VolumeManager (Full) 已内置本功能，无需再装"
-      ],
-      "compatibility": {
-        "notes": [
-          "rootless（/var/jb）包，arm64。",
-          "仅作为原版 VolumeManager 的补丁；Full 包用户不要重复安装。",
-          "实机验证：iPhone 15 Pro / iOS 17.2.1（RootHide）。"
-        ]
-      },
-      "repo_url": "https://github.com/Chenlin8023/VolumeManager-iOS17",
-      "log_hint": "反馈时请附：是否安装 VolumeManager (Full)、面板截图、模块是否加载。",
-      "variants": [
-        {
-          "version": "1.1.0",
-          "date": "2026-11-02",
-          "arch": "iphoneos-arm64",
-          "jailbreak": "rootless（/var/jb）",
-          "devices": [
-            "iPhone 15 Pro"
-          ],
-          "ios": [
-            "17.2.1"
-          ],
-          "verified": "已验证",
-          "changes": [
-            "静态 + 运行时双重净化：面板条目与运行时文案都处理",
-            "修复净化模块文件权限（此前缺少执行位，系统未加载）"
           ]
         }
       ],

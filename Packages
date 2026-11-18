@@ -114,8 +114,8 @@ Depends: mobilesubstrate, preferenceloader
 Architecture: iphoneos-arm64
 Version: 0.9.2
 Installed-Size: 444
-Name: NotifierIcons
-Description: 状态栏显示选中应用的通知小图标；有未读角标才出现，清零即消失。
+Name: 应用通知小图标
+Description: 状态栏显示选中应用的通知小图标（NotifierIcons）；有未读角标才出现，清零即消失。
  实机验证：iPhone 15 Pro / iOS 17.2.1
  项目仓库：https://github.com/Chenlin8023/notifiericons
 Homepage: https://github.com/Chenlin8023/notifiericons
@@ -215,26 +215,6 @@ Filename: debs/com.local.volmanaudioqueue.full_1.2.0_iphoneos-arm64.deb
 Size: 191328
 SHA256: ea50dc7d1909bdc89cc63c81f29fe9f205cc3d4063835cbf074e225a83282598
 MD5sum: cfcb65823ff547f24110083e422b381d
-
-Package: com.local.volmanprefsclean
-Version: 1.1.0
-Architecture: iphoneos-arm64
-Section: 系统
-Priority: optional
-Maintainer: Chenlin8023
-Author: Chenlin8023
-Depends: mobilesubstrate, firmware (>= 15.0)
-Name: VolumeManager 面板净化
-Description: VolumeManager 设置面板净化补丁；移除推广与攻击性文字，功能开关保留。
- 实机验证：iPhone 15 Pro / iOS 17.2.1
- 项目仓库：https://github.com/Chenlin8023/VolumeManager-iOS17
-Homepage: https://github.com/Chenlin8023/VolumeManager-iOS17
-SileoDepiction: https://chenlin8023.github.io/sileodepictions/com.local.volmanprefsclean/index.json
-Depiction: https://chenlin8023.github.io/depictions/com.local.volmanprefsclean/index.html
-Filename: debs/com.local.volmanprefsclean_1.1.0_iphoneos-arm64.deb
-Size: 14052
-SHA256: 621609da7db7d0e18579f21e5f804d217bf0c04a2253198a58da36d88fdb74eb
-MD5sum: b3f4ba71a6e65f42221448b32ab6bb77
 
 Package: moe.waru.jikan
 Maintainer: waruhachi
