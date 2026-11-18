@@ -330,11 +330,34 @@ Depends: mobilesubstrate, preferenceloader, firmware (>= 15.0)
 Conflicts: com.muzi.mutoollite
 Icon: https://muzikeji.github.io/sileo/icons/mutool.png
 Architecture: iphoneos-arm64e
+Version: 2.2.89-1
+Installed-Size: 5968
+Name: MUtool 工具箱（roothide · 授权破解版）
+Priority: optional
+Description: MUtool(roothide) 授权破解版：2.2.89-1（最新）仅去除授权门禁，功能与官方版一致；官方 2.2.89 原生修复天气与 iPhoneduo 相关问题，模块保持官方原样。另有旧版 2.1.66-1（旧 HMAC 授权体系，需授权码填任意非空字符）。
+ 实机验证：iPhone 15 Pro / iOS 17.2.1
+ 项目仓库：https://github.com/muzikeji
+Homepage: https://github.com/muzikeji
+SileoDepiction: https://chenlin8023.github.io/sileodepictions/com.muzi.mutool/index.json
+Depiction: https://chenlin8023.github.io/depictions/com.muzi.mutool/index.html
+Filename: debs/com.muzi.mutool_2.2.89-1_iphoneos-arm64e.deb
+Size: 921952
+SHA256: 9142234a969241becfb6eac58120e1e1d5fa38300e163df43f7d1b0cfa93584e
+MD5sum: 97d4363e7ea555a6969c5afc41daf8e6
+
+Package: com.muzi.mutool
+Maintainer: Muzi
+Author: Muzi
+Section: Tweaks
+Depends: mobilesubstrate, preferenceloader, firmware (>= 15.0)
+Conflicts: com.muzi.mutoollite
+Icon: https://muzikeji.github.io/sileo/icons/mutool.png
+Architecture: iphoneos-arm64e
 Version: 2.1.66-1
 Installed-Size: 4956
 Name: MUtool 工具箱（roothide · 授权破解版）
 Priority: optional
-Description: MUtool(roothide) 2.1.66 授权破解版：去除授权验证，设置内授权码填任意非空字符即可解锁全部功能。
+Description: MUtool(roothide) 授权破解版：2.2.89-1（最新）仅去除授权门禁，功能与官方版一致；官方 2.2.89 原生修复天气与 iPhoneduo 相关问题，模块保持官方原样。另有旧版 2.1.66-1（旧 HMAC 授权体系，需授权码填任意非空字符）。
  实机验证：iPhone 15 Pro / iOS 17.2.1
  项目仓库：https://github.com/muzikeji
 Homepage: https://github.com/muzikeji
