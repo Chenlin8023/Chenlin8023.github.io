@@ -341,7 +341,7 @@
     },
     {
       "package": "com.local.volmanaudioqueue.full",
-      "display_name": "VolumeManager (Full)",
+      "display_name": "音量管理器",
       "summary": "每个 App 独立音量，多个 App 可同时播放。",
       "features": [
         "每个 App 独立音量（最低静音）；多 App 同时播放，互不打断；改完立即生效",
@@ -367,6 +367,22 @@
       "repo_url": "https://github.com/Chenlin8023/VolumeManager-iOS17",
       "log_hint": "反馈时请附：App 容器 Documents 下的 VolMan 日志、日志头版本、RC探针行（缩放统计）、注入形态（动态注入 / JailFools 拷贝）、复现步骤。",
       "variants": [
+        {
+          "version": "2.0.4",
+          "date": "2026-11-19",
+          "arch": "iphoneos-arm64",
+          "jailbreak": "rootless（/var/jb）",
+          "devices": [
+            "iPhone 15 Pro"
+          ],
+          "ios": [
+            "17.2.1"
+          ],
+          "verified": "已验证",
+          "changes": [
+            "显示名改为「音量管理器」（Sileo 列表与插件页同步；Package id 不变，升级链不断）；功能与 2.0.3 完全一致"
+          ]
+        },
         {
           "version": "2.0.3",
           "date": "2026-11-19",
