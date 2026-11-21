@@ -6,7 +6,7 @@ Codename: ios
 Architectures: iphoneos-arm64e iphoneos-arm64 iphoneos-arm
 Components: main
 Description: iOS 16–17 越狱插件源；每版标注实机验证状态
-Date: Sat, 21 Nov 2026 17:39:45 UTC
+Date: Sat, 21 Nov 2026 17:47:54 UTC
 MD5Sum:
  8adfdf4a9e25c126e5c9fe845ff1b98a 18994 Packages
  633c0c2983372ff9a2403a3cff526664 4040 Packages.gz
