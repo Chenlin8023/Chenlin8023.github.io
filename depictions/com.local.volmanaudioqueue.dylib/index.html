@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>音量管理器 Dylib（注入版） · Chenlin8023 Repo</title><style>
+:root{--bg:#0b0d10;--card:#14181d;--line:#252b33;--text:#e8edf3;--muted:#93a1b1;--accent:#3ea6ff;--warn:#ffb454;--ok:#7ee0a8}
+*{box-sizing:border-box}
+body{margin:0;padding:34px 18px 64px;background:var(--bg);color:var(--text);
+font:15px/1.7 -apple-system,"SF Pro Text","PingFang SC","Microsoft YaHei",sans-serif;-webkit-text-size-adjust:100%}
+.wrap{max-width:760px;margin:0 auto}
+a{color:var(--accent)}
+.top{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-bottom:18px}
+.back{color:var(--muted);text-decoration:none;font-size:14px}
+h1{font-size:26px;margin:0 0 4px;letter-spacing:-.3px}
+.sub{color:var(--muted);margin:0 0 18px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px;margin-bottom:16px}
+.card h2{font-size:13px;margin:0 0 12px;color:var(--muted);text-transform:uppercase;letter-spacing:.08em}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.tag{display:inline-block;font-size:12px;padding:3px 9px;border-radius:6px;border:1px solid var(--line);color:var(--muted)}
+.tag.ok{color:var(--ok);border-color:#2c5a41}
+.tag.warn{color:var(--warn);border-color:#5a4526}
+.btn{display:inline-block;padding:9px 16px;border-radius:9px;background:var(--accent);color:#04121f;
+font-weight:600;text-decoration:none;font-size:14px;margin:6px 8px 0 0}
+.btn.ghost{background:transparent;color:var(--text);border:1px solid var(--line)}
+ul{margin:0;padding-left:20px}
+li{margin-bottom:7px}
+.note{color:var(--muted);font-size:14px}
+.ver{border-top:1px solid var(--line);padding:16px 0}
+.ver:first-of-type{border-top:0;padding-top:0}
+.ver .head{font-weight:600;font-size:16px}
+.ver .date{color:var(--muted);font-size:13px;margin-left:8px}
+.ver .status{font-size:13px;color:var(--accent);margin-top:4px}
+.ver ul{margin-top:8px;color:var(--muted)}
+footer{color:#5f6b78;font-size:13px;margin-top:26px;text-align:center}
+</style></head>
+<body><div class="wrap">
+<div class="top"><a class="back" href="../../">← 返回 Chenlin8023 Repo</a></div>
+<h1>音量管理器 Dylib（注入版）</h1>
+<p class="sub">摇一摇唤出音量弹窗；下载 deb 提取 dylib 导入 JailFools/TrollFools 注入对应 App，混音+每 App 音量。</p>
+<div class="tags"><span class="tag">iphoneos-arm64</span><span class="tag">rootless（/var/jb）dylib 注入</span><span class="tag ok">已验证</span></div>
+
+<div class="card" id="features"><h2>功能</h2><ul><li>每个 App 独立音量（最低静音）+ 混音层无条件生效：参与同播的 App 都注入即可同时播放</li><li>调音量 = App 内摇一摇唤出临时弹窗：拖动预览、松手生效、0.4 秒后弹窗自动收场（无常驻悬浮物）</li><li>无白名单 / 无总开关 / 无 Sileo 依赖：deb 仅为下载容器，dylib 导入 JailFools/TrollFools 注入即用</li><li>App 更新后 JailFools/TrollFools 持久化注入自动恢复，无需重新注入；引擎升级时重注一次即可</li><li>崩溃 App 止血开关：在对应 App 数据容器 Documents/ 下新建空文件 vmaq-novolume，重启 App 只关音量挂钩（混音照常）</li></ul></div>
+<div class="card" id="compatibility"><h2>兼容性</h2><div class="note"><b>分类：系统</b></div><div class="ver"><div class="head">v2.1.4</div><div class="date">2026-11-22 · iphoneos-arm64</div><div class="status">已验证</div><ul><li>机型：iPhone 15 Pro</li><li>验证 iOS：17.2.1</li><li>越狱形态：rootless（/var/jb）dylib 注入</li></ul></div><div class="note" style="margin-top:12px"><b>注意事项</b><ul><li>使用方式：下载 .deb 导入 JailFools/TrollFools 注入应用（或在 Filza 中解压 deb 提取 VolManAudioQueue.dylib 后导入），杀 App 重开生效。dylib 原文件直链：https://chenlin8023.github.io/dylib/VolManAudioQueue-2.1.4.dylib</li><li>与「音量管理器」full 版二选一：已装 full 请先用 Sileo 卸载再注入 dylib，否则双引擎叠加导致音量异常。</li><li>已知限制①：部分 App 只支持混音、无法调节音量（其音频路径未经过挂钩层）——混音不受影响。</li><li>已知限制②：个别 App 注入音量挂钩后闪退（实测：红果短剧 / 汽水音乐）——在对应数据容器 Documents/ 下新建空文件 vmaq-novolume 并重启 App，即可避免闪退（只保证混音，无音量调节）。</li><li>弹窗为临时卡片：拖动仅预览、松手生效并自动收场；期间部分 App（如抖音普通作品）可能短暂暂停视频，弹窗收场后自动恢复播放。</li><li>环境：rootless（/var/jb）dylib；实测 iPhone 15 Pro / iOS 17.2.1 / RootHide（JailFools 注入）。</li><li>本包安装到 Sileo 不会有任何效果（dylib 带惰性过滤器不会被加载）；请勿依赖安装生效。</li></ul></div></div>
+<div class="card" id="changelog"><h2>更新日志</h2><p class="note">Sileo：安装后在插件页长按「修改 / MODIFY」选择历史版本；Irisin / Zebra 可直接在版本列表选择。每个版本下方有 .deb 直链。</p><div class="ver"><div class="head">v2.1.4</div><div class="date">2026-11-22 · iphoneos-arm64</div><div class="status">已验证</div><ul><li>首发 dylib 注入版：引擎无闸门化（无白名单 / 无总开关），配置自包含在各 App 容器 Documents/</li><li>摇一摇唤出音量弹窗：拖动纯预览、松手唯一写入并生效、0.4 秒自动收场（无常驻悬浮物）</li><li>混音层无条件生效（App 更新后持久化注入自动恢复）；写盘与刷新全部在后台串行队列</li><li>vmaq-novolume per-App 止血开关：闪退 App 只关音量挂钩保混音</li><li>2.1.0 → 2.1.4 内部迭代定案：手势=摇一摇（双指手势与抖音其他插件 / AppLock+ 冲突）、写盘移出主线程、弹窗自动收场</li></ul><a class="btn ghost" href="../../debs/com.local.volmanaudioqueue.dylib_2.1.4_iphoneos-arm64.deb">下载 v2.1.4（iphoneos-arm64）</a></div></div>
+<div class="card" id="feedback"><h2>反馈</h2>
+<p>反馈时请附：插件版本、机型、iOS 版本、越狱环境、复现步骤、日志或截图。</p>
+<p class="note">反馈时请附：App 容器 Documents 下的 vmaq.log（含日志头版本行）、摇一摇与弹窗行为、是否已放 vmaq-novolume、复现步骤。</p>
+<a class="btn" href="https://github.com/Chenlin8023/Chenlin8023.github.io/issues/new?template=package-feedback.yml">提交问题 / 反馈</a>
+<a class="btn ghost" href="https://github.com/Chenlin8023/VolumeManager-iOS17">项目仓库</a>
+</div>
+<footer>Chenlin8023 Repo · <a href="https://github.com/Chenlin8023/VolumeManager-iOS17">https://github.com/Chenlin8023/VolumeManager-iOS17</a></footer>
+</div></body></html>

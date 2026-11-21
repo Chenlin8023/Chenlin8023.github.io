@@ -262,6 +262,26 @@ Size: 191328
 SHA256: ea50dc7d1909bdc89cc63c81f29fe9f205cc3d4063835cbf074e225a83282598
 MD5sum: cfcb65823ff547f24110083e422b381d
 
+Package: com.local.volmanaudioqueue.dylib
+Section: 系统
+Priority: optional
+Maintainer: Chenlin8023
+Author: Chenlin8023
+Architecture: iphoneos-arm64
+Version: 2.1.4
+Installed-Size: 176
+Name: 音量管理器 Dylib（注入版）
+Description: 摇一摇唤出音量弹窗；下载 deb 提取 dylib 导入 JailFools/TrollFools 注入对应 App，混音+每 App 音量。
+ 实机验证：iPhone 15 Pro / iOS 17.2.1
+ 项目仓库：https://github.com/Chenlin8023/VolumeManager-iOS17
+Homepage: https://github.com/Chenlin8023/VolumeManager-iOS17
+SileoDepiction: https://chenlin8023.github.io/sileodepictions/com.local.volmanaudioqueue.dylib/index.json
+Depiction: https://chenlin8023.github.io/depictions/com.local.volmanaudioqueue.dylib/index.html
+Filename: debs/com.local.volmanaudioqueue.dylib_2.1.4_iphoneos-arm64.deb
+Size: 39346
+SHA256: b83b3f5e6880dd791ece0a879c9ead8a7933655c08abdf56e4f93e52cb393f43
+MD5sum: 3986f8b73810888258c7af369bf6dc9b
+
 Package: moe.waru.jikan
 Maintainer: waruhachi
 Author: waruhachi
