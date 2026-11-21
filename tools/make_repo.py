@@ -492,8 +492,8 @@ def build_packages(repo_dir, meta, debs, mapping):
             set_field(fields, "Description", desc)
             set_field(fields, "Homepage", package["repo_url"])
             set_field(fields, "SileoDepiction",
-                      meta.repo["url"].rstrip("/") + "/sileodepictions/%s/index.json"
-                      % package["package"])
+                      meta.repo["url"].rstrip("/") + "/sileodepictions/%s/index.json?v=%s"
+                      % (package["package"], time.strftime("%Y%m%d")))
             set_field(fields, "Depiction",
                       meta.repo["url"].rstrip("/") + "/depictions/%s/index.html"
                       % package["package"])
