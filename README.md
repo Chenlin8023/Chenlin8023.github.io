@@ -13,9 +13,9 @@ https://chenlin8023.github.io/
 
 | 插件 | 分类 | 当前版本 | 架构 | 实机验证 | 项目仓库 |
 |---|---|---|---|---|---|
-| MUtool 工具箱（roothide · 授权破解版） | 系统 | 2.2.89-1（另有 2.1.66-1） | `iphoneos-arm64e` | iPhone 15 Pro / iOS 17.2.1 | [muzikeji](https://github.com/muzikeji) |
-| MUtool 工具箱（修改版 · 存续性维护） | 系统 | 2.2.80-13 | `iphoneos-arm64` | iPhone 15 Pro / iOS 17.2.1 | [muzikeji](https://github.com/muzikeji) |
-| VolumeManager (Full) | 系统 | 1.3.4 / 1.3.0 / 1.2.0 | `iphoneos-arm64` | iPhone 15 Pro / iOS 17.2.1 | [VolumeManager-iOS17](https://github.com/Chenlin8023/VolumeManager-iOS17) |
+| MUtool 工具箱（roothide · 授权破解版） | 系统 | 2.2.95-1（另有 2.2.89-2 / 2.2.89-1 / 2.1.66-1） | `iphoneos-arm64e` | iPhone 15 Pro / iOS 17.2.1 | [muzikeji](https://github.com/muzikeji) |
+| MUtool 工具箱（rootless · 授权破解版） | 系统 | 2.2.95-2（另有 2.2.80-13） | `iphoneos-arm64` | iPhone 15 Pro / iOS 17.2.1 | [muzikeji](https://github.com/muzikeji) |
+| VolumeManager (Full) | 系统 | 2.0.4（另有 2.0.3 / 1.3.4 / 1.3.0 / 1.2.0；dylib 线 2.1.4） | `iphoneos-arm64` | iPhone 15 Pro / iOS 17.2.1 | [VolumeManager-iOS17](https://github.com/Chenlin8023/VolumeManager-iOS17) |
 | CallAssist PortLeak | 系统 | 2.1.0 | `iphoneos-arm64e` | 2.1.0 待确认；2.0.14 已验证（iPhone 15 Pro / iOS 17.2.1） | [CallAssist-PortLeak](https://github.com/Chenlin8023/CallAssist-PortLeak) |
 | AppLock+ (应用锁+) | 系统 | 0.4.2-1 | `iphoneos-arm64e` | iPhone 15 Pro / iOS 17.2.1 | [AppLockPlus](https://github.com/Chenlin8023/AppLockPlus) |
 | LSTimeSeconds (RootHide) | 锁屏 | 0.0.7-1 | `iphoneos-arm64e` | iPhone 15 Pro / iOS 17.2.1 | [LSTimeSeconds-iOS17](https://github.com/Chenlin8023/LSTimeSeconds-iOS17) |
