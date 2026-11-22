@@ -9,7 +9,7 @@
       "views": [
         {
           "class": "DepictionMarkdownView",
-          "markdown": "- 基于 Muzi 官方 MUtool(roothide) 2.2.95 的二进制修改：仅去除授权，功能与官方版一致（本条目不展开功能介绍，详见官方说明）\n- 破解方法：授权门禁（MuziAuthShield）已在二进制层直接放行——无需填写授权码、不连接授权服务器，安装即用\n- 药丸天气模块为官方原样：系统天气源在 iOS 17 受系统限制，建议在设置中选 Open-Meteo 手填本地经纬度（可精确到小数点后四位，如 29.5621/106.5531）\n- 旧版 2.2.89-1 / 2.1.66-1 继续保留提供：2.1.66-1 为 UDID+配置码+HMAC 体系，破解方法不同（授权码栏填任意非空字符串即可），且官方本无天气模块"
+          "markdown": "- 基于 Muzi 官方 MUtool(roothide) 2.2.95 的二进制修改：仅去除授权，功能与官方版一致（本条目不展开功能介绍，详见官方说明）\n- 破解方法：授权门禁（MuziAuthShield）已在二进制层直接放行——无需填写授权码、不连接授权服务器，安装即用\n- 药丸天气模块为官方原样：系统天气源在 iOS 17 受系统限制，建议在设置中选 Open-Meteo 手填本地经纬度（可精确到小数点后四位，如 29.5621/106.5531）\n- 旧版 2.2.89-1 / 2.2.89-2 / 2.1.66-1 继续保留提供：2.2.89-2 在 2.2.89-1 基础上修复悬浮窗位置漂移（备份回退用）；2.1.66-1 为 UDID+配置码+HMAC 体系，破解方法不同（授权码栏填任意非空字符串即可），且官方本无天气模块"
         }
       ]
     },
@@ -47,6 +47,32 @@
           "class": "DepictionTableTextView",
           "title": "验证状态",
           "text": "已验证（用户实机确认破解生效）"
+        },
+        {
+          "class": "DepictionSubheaderView",
+          "title": "v2.2.89-2 · iphoneos-arm64e",
+          "useBoldText": true,
+          "useBottomMargin": true
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "机型",
+          "text": "iPhone 15 Pro"
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "验证 iOS",
+          "text": "17.2.1"
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "越狱形态",
+          "text": "roothide 原生（空前缀，RootHide 实测）"
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "验证状态",
+          "text": "已验证（用户实机确认：多次注销未复现漂移，使用正常）"
         },
         {
           "class": "DepictionSubheaderView",
@@ -143,6 +169,27 @@
         },
         {
           "class": "DepictionSubheaderView",
+          "title": "v2.2.89-2 · 2026-11-19",
+          "useBoldText": true,
+          "useBottomMargin": true
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "验证",
+          "text": "已验证（用户实机确认：多次注销未复现漂移，使用正常）"
+        },
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "- 基于 Muzi 官方 2.2.89 原始包：去除授权（同 2.2.89-1，MuziAuthShield 30 处恒返回已授权）+ 修复桌面悬浮信息药丸位置漂移（原版自带缺陷：已存坐标不再被重钳位重放，6 字节补丁，方案自 2.2.80-12 移植）\n- 无需填写授权码、不连接授权服务器；各功能设置开关语义保留\n- 静态验收：deb 内授权 30/30 + 漂移 6/6 回读（按重签后偏移）、签名区外代码零差异、ldid 重签、xz root:root\n- 备份回退版：2.2.95-1 为当前主推；若 2.2.95 线复现悬浮窗漂移可用本版替代\n- 安装前请先卸载 byg.iosios.net.mutool 2.2.80-13（路径冲突不可共存）"
+        },
+        {
+          "class": "DepictionTableButtonView",
+          "title": "下载 v2.2.89-2（iphoneos-arm64e）",
+          "action": "https://chenlin8023.github.io/debs/com.muzi.mutool_2.2.89-2_iphoneos-arm64e.deb",
+          "openExternal": true
+        },
+        {
+          "class": "DepictionSubheaderView",
           "title": "v2.2.89-1 · 2026-11-18",
           "useBoldText": true,
           "useBottomMargin": true
@@ -195,7 +242,7 @@
         },
         {
           "class": "DepictionMarkdownView",
-          "markdown": "反馈前请先确认版本：2.2.95-1 / 2.2.89-1 无需任何授权码；2.1.66-1 需在授权码栏填任意非空字符串。"
+          "markdown": "反馈前请先确认版本：2.2.95-1 / 2.2.89-1 / 2.2.89-2 无需任何授权码；2.1.66-1 需在授权码栏填任意非空字符串。"
         },
         {
           "class": "DepictionTableButtonView",

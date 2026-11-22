@@ -380,7 +380,7 @@ Version: 2.2.95-1
 Installed-Size: 7092
 Name: MUtool 工具箱（roothide · 授权破解版）
 Priority: optional
-Description: MUtool(roothide) 授权破解版：2.2.95-1（最新）仅去除授权门禁，功能与官方版一致，模块保持官方原样。另有旧版 2.2.89-1 与 2.1.66-1（旧 HMAC 授权体系，需授权码填任意非空字符）。
+Description: MUtool(roothide) 授权破解版：2.2.95-1（最新）仅去除授权门禁，功能与官方版一致，模块保持官方原样。另有旧版 2.2.89-1 / 2.2.89-2（漂移修复备份版）与 2.1.66-1（旧 HMAC 授权体系，需授权码填任意非空字符）。
  实机验证：iPhone 15 Pro / iOS 17.2.1
  项目仓库：https://github.com/muzikeji
 Homepage: https://github.com/muzikeji
@@ -399,11 +399,34 @@ Depends: mobilesubstrate, preferenceloader, firmware (>= 15.0)
 Conflicts: com.muzi.mutoollite
 Icon: https://muzikeji.github.io/sileo/icons/mutool.png
 Architecture: iphoneos-arm64e
+Version: 2.2.89-2
+Installed-Size: 5968
+Name: MUtool 工具箱（roothide · 授权破解版）
+Priority: optional
+Description: MUtool(roothide) 授权破解版：2.2.95-1（最新）仅去除授权门禁，功能与官方版一致，模块保持官方原样。另有旧版 2.2.89-1 / 2.2.89-2（漂移修复备份版）与 2.1.66-1（旧 HMAC 授权体系，需授权码填任意非空字符）。
+ 实机验证：iPhone 15 Pro / iOS 17.2.1
+ 项目仓库：https://github.com/muzikeji
+Homepage: https://github.com/muzikeji
+SileoDepiction: https://chenlin8023.github.io/sileodepictions/com.muzi.mutool/index.json?v=20261122
+Depiction: https://chenlin8023.github.io/depictions/com.muzi.mutool/index.html
+Filename: debs/com.muzi.mutool_2.2.89-2_iphoneos-arm64e.deb
+Size: 919624
+SHA256: 475b42d43ad50d9c0072855c0e8692a0ea0c86a817d2be12b0bdd56a7ff4d354
+MD5sum: 825c1a69faa5bf83e30af0b3bde0130f
+
+Package: com.muzi.mutool
+Maintainer: Muzi
+Author: Muzi
+Section: 系统
+Depends: mobilesubstrate, preferenceloader, firmware (>= 15.0)
+Conflicts: com.muzi.mutoollite
+Icon: https://muzikeji.github.io/sileo/icons/mutool.png
+Architecture: iphoneos-arm64e
 Version: 2.2.89-1
 Installed-Size: 5968
 Name: MUtool 工具箱（roothide · 授权破解版）
 Priority: optional
-Description: MUtool(roothide) 授权破解版：2.2.95-1（最新）仅去除授权门禁，功能与官方版一致，模块保持官方原样。另有旧版 2.2.89-1 与 2.1.66-1（旧 HMAC 授权体系，需授权码填任意非空字符）。
+Description: MUtool(roothide) 授权破解版：2.2.95-1（最新）仅去除授权门禁，功能与官方版一致，模块保持官方原样。另有旧版 2.2.89-1 / 2.2.89-2（漂移修复备份版）与 2.1.66-1（旧 HMAC 授权体系，需授权码填任意非空字符）。
  实机验证：iPhone 15 Pro / iOS 17.2.1
  项目仓库：https://github.com/muzikeji
 Homepage: https://github.com/muzikeji
@@ -426,7 +449,7 @@ Version: 2.1.66-1
 Installed-Size: 4956
 Name: MUtool 工具箱（roothide · 授权破解版）
 Priority: optional
-Description: MUtool(roothide) 授权破解版：2.2.95-1（最新）仅去除授权门禁，功能与官方版一致，模块保持官方原样。另有旧版 2.2.89-1 与 2.1.66-1（旧 HMAC 授权体系，需授权码填任意非空字符）。
+Description: MUtool(roothide) 授权破解版：2.2.95-1（最新）仅去除授权门禁，功能与官方版一致，模块保持官方原样。另有旧版 2.2.89-1 / 2.2.89-2（漂移修复备份版）与 2.1.66-1（旧 HMAC 授权体系，需授权码填任意非空字符）。
  实机验证：iPhone 15 Pro / iOS 17.2.1
  项目仓库：https://github.com/muzikeji
 Homepage: https://github.com/muzikeji
