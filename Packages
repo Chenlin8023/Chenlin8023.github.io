@@ -345,6 +345,30 @@ SHA256: 3f706d7a64081c3b7064c27e56dfa1896fd771ce51d6231f29785c6b3c7f6c0b
 MD5sum: b24112901fa84d43c93e7c002d9efad1
 
 Package: byg.iosios.net.mutool
+Version: 2.2.95-2
+Section: 系统
+Maintainer: 搬运工
+Depends: mobilesubstrate, preferenceloader, firmware (>= 15.0)
+Conflicts: com.muzi.mutoollite
+Architecture: iphoneos-arm64
+Installed-Size: 7100
+Author: Muzi
+Sponsor: 搬运工
+Icon: https://chinesebuilding.club/pic/cydia.png
+Name: MUtool 工具箱（rootless · 授权破解版）
+Priority: optional
+Description: MUtool(rootless) 授权破解版：2.2.95-2（最新）仅去除授权门禁，功能与官方版一致，模块保持官方原样。另有旧版 2.2.80-13（存续性维护版，官方 2.2.80 基线）。
+ 实机验证：iPhone 15 Pro / iOS 17.2.1
+ 项目仓库：https://github.com/muzikeji
+Homepage: https://github.com/muzikeji
+SileoDepiction: https://chenlin8023.github.io/sileodepictions/byg.iosios.net.mutool/index.json?v=20261122
+Depiction: https://chenlin8023.github.io/depictions/byg.iosios.net.mutool/index.html
+Filename: debs/byg.iosios.net.mutool_2.2.95-2_iphoneos-arm64.deb
+Size: 1148164
+SHA256: fcc28d7d989dc338c195cdaec1b25e5a7777a53f55b8512bd0abd9b55041bebc
+MD5sum: 1cdf8c24fe08031ddb10343f95282935
+
+Package: byg.iosios.net.mutool
 Version: 2.2.80-13
 Section: 系统
 Maintainer: 搬运工
@@ -355,9 +379,9 @@ Installed-Size: 5976
 Author: Muzi
 Sponsor: 搬运工
 Icon: https://chinesebuilding.club/pic/cydia.png
-Name: MUtool 工具箱（修改版）
+Name: MUtool 工具箱（rootless · 授权破解版）
 Priority: optional
-Description: MUtool 多功能工具集的本地修改构建（存续性维护版）：解除授权验证、移除授权与推广界面；天气保持官方模块，系统天气源在 iOS 17 不可用，请在设置中选 Open-Meteo 并手动输入本地经纬度（两位小数），更换地点后重新填写。
+Description: MUtool(rootless) 授权破解版：2.2.95-2（最新）仅去除授权门禁，功能与官方版一致，模块保持官方原样。另有旧版 2.2.80-13（存续性维护版，官方 2.2.80 基线）。
  实机验证：iPhone 15 Pro / iOS 17.2.1
  项目仓库：https://github.com/muzikeji
 Homepage: https://github.com/muzikeji
