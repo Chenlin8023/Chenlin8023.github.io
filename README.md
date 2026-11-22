@@ -36,8 +36,10 @@ https://chenlin8023.github.io/
     prefs 域仍是 `com.b4db1r3.lstsprefs`，设置可保留。两包互相 `Conflicts`，不能共存。
 - **CallAssist 当前发布包仍是旧 ID**：项目已更名 `CallAssistLeakGuard`，但源内 2.1.0 的
   Package 仍是 `com.local.callassistportleak`；2.1.0 更名重建与真机确认待完成。
-- **VolumeManager (Full)**：1.3.0 是过渡版，用 JailFools 注入过引擎的 App 升级后需重新注入；
-  1.2.0 是稳定回退版，两个版本都在索引里。
+- **MUtool 两条修改线互斥**：roothide 线（`com.muzi.mutool`，2.2.95-1）与 rootless 线
+  （`byg.iosios.net.mutool`，2.2.95-2）目标文件路径相同、不可共存，安装其一前先卸载另一条线。
+- **VolumeManager (Full)**：现役 2.0.4；另有 dylib 纯注入形态 `com.local.volmanaudioqueue.dylib`
+  2.1.4（AppLock+ 同款免闸门容器）。历史版本 2.0.3 / 1.3.4 / 1.3.0 / 1.2.0 保留可回退。
 - **未单独验证的版本**：LSTimeSeconds `0.0.7-2` 保留在历史里，但标注“未单独验证”；
   0.0.7-4 已覆盖其修复。
 
