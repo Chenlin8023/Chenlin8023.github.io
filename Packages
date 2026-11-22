@@ -376,11 +376,34 @@ Depends: mobilesubstrate, preferenceloader, firmware (>= 15.0)
 Conflicts: com.muzi.mutoollite
 Icon: https://muzikeji.github.io/sileo/icons/mutool.png
 Architecture: iphoneos-arm64e
+Version: 2.2.95-1
+Installed-Size: 7092
+Name: MUtool 工具箱（roothide · 授权破解版）
+Priority: optional
+Description: MUtool(roothide) 授权破解版：2.2.95-1（最新）仅去除授权门禁，功能与官方版一致，模块保持官方原样。另有旧版 2.2.89-1 与 2.1.66-1（旧 HMAC 授权体系，需授权码填任意非空字符）。
+ 实机验证：iPhone 15 Pro / iOS 17.2.1
+ 项目仓库：https://github.com/muzikeji
+Homepage: https://github.com/muzikeji
+SileoDepiction: https://chenlin8023.github.io/sileodepictions/com.muzi.mutool/index.json?v=20261122
+Depiction: https://chenlin8023.github.io/depictions/com.muzi.mutool/index.html
+Filename: debs/com.muzi.mutool_2.2.95-1_iphoneos-arm64e.deb
+Size: 1139516
+SHA256: 2ccb76c46cc186def8f5f748edb5da8fdfd18988c22366421b26b8ee64579d39
+MD5sum: e0ff7cbf9c50c310e10e7bb1ec55c4d1
+
+Package: com.muzi.mutool
+Maintainer: Muzi
+Author: Muzi
+Section: 系统
+Depends: mobilesubstrate, preferenceloader, firmware (>= 15.0)
+Conflicts: com.muzi.mutoollite
+Icon: https://muzikeji.github.io/sileo/icons/mutool.png
+Architecture: iphoneos-arm64e
 Version: 2.2.89-1
 Installed-Size: 5968
 Name: MUtool 工具箱（roothide · 授权破解版）
 Priority: optional
-Description: MUtool(roothide) 授权破解版：2.2.89-1（最新）仅去除授权门禁，功能与官方版一致；官方 2.2.89 原生修复天气与 iPhoneduo 相关问题，模块保持官方原样。另有旧版 2.1.66-1（旧 HMAC 授权体系，需授权码填任意非空字符）。
+Description: MUtool(roothide) 授权破解版：2.2.95-1（最新）仅去除授权门禁，功能与官方版一致，模块保持官方原样。另有旧版 2.2.89-1 与 2.1.66-1（旧 HMAC 授权体系，需授权码填任意非空字符）。
  实机验证：iPhone 15 Pro / iOS 17.2.1
  项目仓库：https://github.com/muzikeji
 Homepage: https://github.com/muzikeji
@@ -403,7 +426,7 @@ Version: 2.1.66-1
 Installed-Size: 4956
 Name: MUtool 工具箱（roothide · 授权破解版）
 Priority: optional
-Description: MUtool(roothide) 授权破解版：2.2.89-1（最新）仅去除授权门禁，功能与官方版一致；官方 2.2.89 原生修复天气与 iPhoneduo 相关问题，模块保持官方原样。另有旧版 2.1.66-1（旧 HMAC 授权体系，需授权码填任意非空字符）。
+Description: MUtool(roothide) 授权破解版：2.2.95-1（最新）仅去除授权门禁，功能与官方版一致，模块保持官方原样。另有旧版 2.2.89-1 与 2.1.66-1（旧 HMAC 授权体系，需授权码填任意非空字符）。
  实机验证：iPhone 15 Pro / iOS 17.2.1
  项目仓库：https://github.com/muzikeji
 Homepage: https://github.com/muzikeji

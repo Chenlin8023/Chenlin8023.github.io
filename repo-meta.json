@@ -724,12 +724,12 @@
     {
       "package": "com.muzi.mutool",
       "display_name": "MUtool 工具箱（roothide · 授权破解版）",
-      "summary": "MUtool(roothide) 授权破解版：2.2.89-1（最新）仅去除授权门禁，功能与官方版一致；官方 2.2.89 原生修复天气与 iPhoneduo 相关问题，模块保持官方原样。另有旧版 2.1.66-1（旧 HMAC 授权体系，需授权码填任意非空字符）。",
+      "summary": "MUtool(roothide) 授权破解版：2.2.95-1（最新）仅去除授权门禁，功能与官方版一致，模块保持官方原样。另有旧版 2.2.89-1 与 2.1.66-1（旧 HMAC 授权体系，需授权码填任意非空字符）。",
       "features": [
-        "基于 Muzi 官方 MUtool(roothide) 2.2.89 的二进制修改：仅去除授权，功能与官方版一致（本条目不展开功能介绍，详见官方说明）",
+        "基于 Muzi 官方 MUtool(roothide) 2.2.95 的二进制修改：仅去除授权，功能与官方版一致（本条目不展开功能介绍，详见官方说明）",
         "破解方法：授权门禁（MuziAuthShield）已在二进制层直接放行——无需填写授权码、不连接授权服务器，安装即用",
-        "官方 2.2.89 已修复天气与 iPhoneduo 问题：药丸天气模块为官方原样（系统天气源在 iOS 17 受系统限制，建议在设置中选 Open-Meteo 手填本地经纬度，可精确到小数点后四位，如 29.5621/106.5531）",
-        "旧版 2.1.66-1 继续保留提供：旧版为 UDID+配置码+HMAC 体系，破解方法不同（授权码栏填任意非空字符串即可），且官方本无天气模块"
+        "药丸天气模块为官方原样：系统天气源在 iOS 17 受系统限制，建议在设置中选 Open-Meteo 手填本地经纬度（可精确到小数点后四位，如 29.5621/106.5531）",
+        "旧版 2.2.89-1 / 2.1.66-1 继续保留提供：2.1.66-1 为 UDID+配置码+HMAC 体系，破解方法不同（授权码栏填任意非空字符串即可），且官方本无天气模块"
       ],
       "compatibility": {
         "notes": [
@@ -740,7 +740,7 @@
           "旧版 MUtool 修改版（2.2.80 线，rootless /var/jb）见「MUtool 工具箱（修改版）」条目，与本包二选一安装"
         ]
       },
-      "log_hint": "反馈前请先确认版本：2.2.89-1 无需任何授权码；2.1.66-1 需在授权码栏填任意非空字符串。",
+      "log_hint": "反馈前请先确认版本：2.2.95-1 / 2.2.89-1 无需任何授权码；2.1.66-1 需在授权码栏填任意非空字符串。",
       "repo_url": "https://github.com/muzikeji",
       "variants": [
         {
@@ -780,6 +780,26 @@
           "changes": [
             "基于 Muzi 官方 2.2.89 原始包：仅去除授权，其余（含官方修复的天气与 iPhoneduo）与官方包一致，不做净化等其它改动",
             "该版本授权体系为 MuziAuthShield（Ed25519 + 设备 UDID，服务器 s.i58.xyz）：statusForProduct / isAuthorizedForProduct:allowGrace: / remainingSecondsForProduct 三方法 × 5 二进制（MUtool / Capture / Pasted / Thermal / mutoolprefs）× arm64+arm64e 双切片共 30 处改为恒返回已授权",
+            "无需填写授权码、不连接授权服务器；各功能设置开关语义保留",
+            "静态验收：成品 deb 内 30/30 补丁点回读（按重签后偏移）、签名区前代码与数据零差异、ldid 重签、xz root:root",
+            "安装前请先卸载 byg.iosios.net.mutool 2.2.80-13（路径冲突不可共存）"
+          ]
+        },
+        {
+          "version": "2.2.95-1",
+          "date": "2026-11-22",
+          "arch": "iphoneos-arm64e",
+          "jailbreak": "roothide 原生（空前缀，RootHide 实测）",
+          "devices": [
+            "iPhone 15 Pro"
+          ],
+          "ios": [
+            "17.2.1"
+          ],
+          "verified": "已验证（用户实机确认破解生效）",
+          "changes": [
+            "基于 Muzi 官方 2.2.95 原始包：仅去除授权，其余与官方包一致，不做净化等其它改动",
+            "授权体系与 2.2.89 线同为 MuziAuthShield（Ed25519 + 设备 UDID）：statusForProduct / isAuthorizedForProduct:allowGrace: / remainingSecondsForProduct 三方法 × 5 二进制（MUtool / Capture / Pasted / Thermal / mutoolprefs）× arm64+arm64e 双切片共 30 处改为恒返回已授权",
             "无需填写授权码、不连接授权服务器；各功能设置开关语义保留",
             "静态验收：成品 deb 内 30/30 补丁点回读（按重签后偏移）、签名区前代码与数据零差异、ldid 重签、xz root:root",
             "安装前请先卸载 byg.iosios.net.mutool 2.2.80-13（路径冲突不可共存）"
