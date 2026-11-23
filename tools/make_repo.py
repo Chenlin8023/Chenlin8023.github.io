@@ -24,6 +24,7 @@ import os
 import re
 import shutil
 import struct
+import subprocess
 import sys
 import tarfile
 import time
@@ -56,8 +57,12 @@ def read_control(deb_path):
                 elif name.endswith(".xz") or name.endswith(".lzma"):
                     raw = lzma.decompress(data)
                 elif name.endswith(".zst"):
-                    import zstandard
-                    raw = zstandard.ZstdDecompressor().decompress(data)
+                    try:
+                        import zstandard
+                        raw = zstandard.ZstdDecompressor().decompress(data)
+                    except ModuleNotFoundError:
+                        # 没有 python 绑定时用 zstd 命令行兜底
+                        raw = subprocess.check_output(["zstd", "-d", "-c"], input=data)
                 else:
                     raw = data
                 with tarfile.open(fileobj=io.BytesIO(raw)) as tar:
@@ -230,7 +235,22 @@ def build_sileo_depiction(package, repo, variants, deb_by_key):
     tabs = []
 
     # 1. Features
-    feature_views = [markdown(md_bullets(package["features"]))]
+    feature_views = []
+    shots = package.get("screenshots") or []
+    if shots:
+        feature_views.append({
+            "class": "DepictionScreenshotsView",
+            "itemCornerRadius": 14,
+            "itemSize": "{220, 477}",
+            "screenshots": [
+                {
+                    "url": repo["url"].rstrip("/") + "/" + shot["path"].lstrip("/"),
+                    "accessibilityText": shot.get("caption", ""),
+                }
+                for shot in shots
+            ],
+        })
+    feature_views.append(markdown(md_bullets(package["features"])))
     tabs.append({"class": "DepictionStackView", "tabname": "功能",
                  "views": feature_views})
 
@@ -321,6 +341,10 @@ li{margin-bottom:7px}
 .ver .date{color:var(--muted);font-size:13px;margin-left:8px}
 .ver .status{font-size:13px;color:var(--accent);margin-top:4px}
 .ver ul{margin-top:8px;color:var(--muted)}
+.shots{display:flex;flex-wrap:wrap;gap:16px}
+.shot{margin:0;flex:0 1 220px;max-width:220px}
+.shot img{width:100%;border-radius:14px;border:1px solid var(--line);display:block}
+.shot figcaption{color:var(--muted);font-size:13px;line-height:1.5;margin-top:8px}
 footer{color:#5f6b78;font-size:13px;margin-top:26px;text-align:center}
 """
 
@@ -342,6 +366,18 @@ def render_web_page(package, repo, variants, deb_by_key):
                     esc(" / ".join(v["version"] for v in variants[1:])))
 
     feature_html = "<ul>%s</ul>" % "".join("<li>%s</li>" % esc(x) for x in package["features"])
+
+    shots_html = ""
+    shots = package.get("screenshots") or []
+    if shots:
+        figures = []
+        for shot in shots:
+            src = "../../" + shot["path"].lstrip("/")
+            cap = esc(shot.get("caption", ""))
+            figures.append('<figure class="shot"><img src="%s" alt="%s" loading="lazy">'
+                           '<figcaption>%s</figcaption></figure>' % (esc(src), cap, cap))
+        shots_html = ('<div class="card" id="shots"><h2>截图</h2>'
+                      '<div class="shots">%s</div></div>' % "".join(figures))
 
     compat_html = ['<div class="note"><b>分类：%s</b></div>' % esc(package.get("category", "—"))]
     for variant in variants:
@@ -404,6 +440,7 @@ def render_web_page(package, repo, variants, deb_by_key):
 <p class="sub">%(summary)s</p>
 <div class="tags">%(tags)s</div>
 
+%(shots)s
 <div class="card" id="features"><h2>功能</h2>%(features)s</div>
 <div class="card" id="compatibility"><h2>兼容性</h2>%(compat)s</div>
 <div class="card" id="changelog"><h2>更新日志</h2>%(changelog)s</div>
@@ -421,6 +458,7 @@ def render_web_page(package, repo, variants, deb_by_key):
         "css": WEB_CSS,
         "summary": esc(package["summary"]),
         "tags": "".join(tags),
+        "shots": shots_html,
         "features": feature_html,
         "compat": "".join(compat_html),
         "changelog": "".join(change_html),

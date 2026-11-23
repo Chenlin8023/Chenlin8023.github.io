@@ -30,6 +30,10 @@ li{margin-bottom:7px}
 .ver .date{color:var(--muted);font-size:13px;margin-left:8px}
 .ver .status{font-size:13px;color:var(--accent);margin-top:4px}
 .ver ul{margin-top:8px;color:var(--muted)}
+.shots{display:flex;flex-wrap:wrap;gap:16px}
+.shot{margin:0;flex:0 1 220px;max-width:220px}
+.shot img{width:100%;border-radius:14px;border:1px solid var(--line);display:block}
+.shot figcaption{color:var(--muted);font-size:13px;line-height:1.5;margin-top:8px}
 footer{color:#5f6b78;font-size:13px;margin-top:26px;text-align:center}
 </style></head>
 <body><div class="wrap">
@@ -37,6 +41,7 @@ footer{color:#5f6b78;font-size:13px;margin-top:26px;text-align:center}
 <h1>MUtool 工具箱（rootless · 授权破解版）</h1>
 <p class="sub">MUtool(rootless) 授权破解版：2.2.95-2（最新）仅去除授权门禁，功能与官方版一致，模块保持官方原样。另有旧版 2.2.80-13（存续性维护版，官方 2.2.80 基线）。</p>
 <div class="tags"><span class="tag">iphoneos-arm64</span><span class="tag">rootless /var/jb（RootHide 转换器实测）</span><span class="tag ok">已验证（用户实机确认：功能免授权直接可用）</span><span class="tag">另有 2.2.80-13</span></div>
+
 
 <div class="card" id="features"><h2>功能</h2><ul><li>基于 Muzi 官方 MUtool(rootless) 2.2.95 的二进制修改：仅去除授权，功能与官方版一致（本条目不展开功能介绍，详见官方说明）</li><li>破解方法：授权门禁（MuziAuthShield）已在二进制层直接放行——无需填写授权码、不连接授权服务器，安装即用</li><li>药丸天气模块为官方原样：系统天气源在 iOS 17 受系统限制，建议在设置中选 Open-Meteo 手填本地经纬度</li><li>旧版 2.2.80-13 继续保留提供：存续性维护版（官方 2.2.80 基线，含痕迹净化与悬浮窗漂移修复），功能较旧</li></ul></div>
 <div class="card" id="compatibility"><h2>兼容性</h2><div class="note"><b>分类：系统</b></div><div class="ver"><div class="head">v2.2.95-2</div><div class="date">2026-11-22 · iphoneos-arm64</div><div class="status">已验证（用户实机确认：功能免授权直接可用）</div><ul><li>机型：iPhone 15 Pro</li><li>验证 iOS：17.2.1</li><li>越狱形态：rootless /var/jb（RootHide 转换器实测）</li></ul></div><div class="ver"><div class="head">v2.2.80-13</div><div class="date">2026-11-18 · iphoneos-arm64</div><div class="status">已验证（用户实机确认：经纬度手填可用、药丸正常、功能免授权）</div><ul><li>机型：iPhone 15 Pro</li><li>验证 iOS：17.2.1</li><li>越狱形态：rootless /var/jb（RootHide 实测）</li></ul></div><div class="note" style="margin-top:12px"><b>注意事项</b><ul><li>rootless 包（iphoneos-arm64，内含 arm64 + arm64e 双 slice，/var/jb）：RootHide 下经转换器安装，路径与官方包相同；其它 rootless 环境直接安装</li><li>官方 rootless 包 id 为 com.muzi.mutool，本包重 id 发行以与 roothide 线并存；安装即覆盖官方 rootless 版，回滚重装官方包即可</li><li>⚠️ 与 roothide 线修改版 com.muzi.mutool（2.2.95-1）目标文件路径相同、不可共存：安装本包前请先卸载 roothide 线，二选一</li><li>官方声明 iOS 15–17；本包实机验证 iOS 17.2.1（iPhone 15 Pro · RootHide，经转换器安装）</li><li>roothide 线修改版见「MUtool 工具箱（roothide · 授权破解版）」条目</li></ul></div></div>

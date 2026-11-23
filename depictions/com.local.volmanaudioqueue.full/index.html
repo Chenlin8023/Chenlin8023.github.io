@@ -30,6 +30,10 @@ li{margin-bottom:7px}
 .ver .date{color:var(--muted);font-size:13px;margin-left:8px}
 .ver .status{font-size:13px;color:var(--accent);margin-top:4px}
 .ver ul{margin-top:8px;color:var(--muted)}
+.shots{display:flex;flex-wrap:wrap;gap:16px}
+.shot{margin:0;flex:0 1 220px;max-width:220px}
+.shot img{width:100%;border-radius:14px;border:1px solid var(--line);display:block}
+.shot figcaption{color:var(--muted);font-size:13px;line-height:1.5;margin-top:8px}
 footer{color:#5f6b78;font-size:13px;margin-top:26px;text-align:center}
 </style></head>
 <body><div class="wrap">
@@ -37,6 +41,7 @@ footer{color:#5f6b78;font-size:13px;margin-top:26px;text-align:center}
 <h1>音量管理器</h1>
 <p class="sub">每个 App 独立音量，多个 App 可同时播放。</p>
 <div class="tags"><span class="tag">iphoneos-arm64</span><span class="tag">rootless（/var/jb）</span><span class="tag ok">已验证</span><span class="tag">另有 2.0.3 / 1.3.4 / 1.3.0 / 1.2.0</span></div>
+
 
 <div class="card" id="features"><h2>功能</h2><ul><li>每个 App 独立音量（最低静音）；多 App 同时播放，互不打断；改完立即生效</li><li>v2.0 自研设置面板：应用白名单——未勾选 = 完全不注入（无渲染挂钩、无轮询）</li><li>白名单页：搜索栏 + 应用/系统组件两段分组，勾选即用</li><li>音量 HUD 仅显示白名单应用，未勾选应用回落系统音量条；HUD 透明化</li><li>总开关 / 混音开关实时生效（文件通道 + Darwin 通知热刷新）</li><li>混音策略层全局生效（面板「混音开关」控制，无影响模式），多 App 同播</li><li>重写音量引擎，消除 16 位 PCM 爆音</li></ul></div>
 <div class="card" id="compatibility"><h2>兼容性</h2><div class="note"><b>分类：系统</b></div><div class="ver"><div class="head">v2.0.4</div><div class="date">2026-11-19 · iphoneos-arm64</div><div class="status">已验证</div><ul><li>机型：iPhone 15 Pro</li><li>验证 iOS：17.2.1</li><li>越狱形态：rootless（/var/jb）</li></ul></div><div class="ver"><div class="head">v2.0.3</div><div class="date">2026-11-19 · iphoneos-arm64</div><div class="status">已验证</div><ul><li>机型：iPhone 15 Pro</li><li>验证 iOS：17.2.1</li><li>越狱形态：rootless（/var/jb）</li></ul></div><div class="ver"><div class="head">v1.3.4</div><div class="date">2026-11-18 · iphoneos-arm64</div><div class="status">已验证</div><ul><li>机型：iPhone 15 Pro</li><li>验证 iOS：17.2.1</li><li>越狱形态：rootless（/var/jb）</li></ul></div><div class="ver"><div class="head">v1.3.0</div><div class="date">2026-11-04 · iphoneos-arm64</div><div class="status">已验证</div><ul><li>机型：iPhone 15 Pro</li><li>验证 iOS：17.2.1</li><li>越狱形态：rootless（/var/jb）</li></ul></div><div class="ver"><div class="head">v1.2.0</div><div class="date">2026-10-23 · iphoneos-arm64</div><div class="status">已验证</div><ul><li>机型：iPhone 15 Pro</li><li>验证 iOS：17.2.1</li><li>越狱形态：rootless（/var/jb）</li></ul></div><div class="note" style="margin-top:12px"><b>注意事项</b><ul><li>⚠ 已知问题（2026-11-22）：目标 App 应用商店更新后，存在配置解析失效导致插件不生效（实测 QQ阅读：更新冲掉包内注入副本、中央注入未接管）——请改用源内「音量管理器 Dylib（注入版）」：dylib 形态配置自包含且注入持久化，App 更新后自动恢复。</li><li>rootless（/var/jb）包，arm64；RootHide 需转换或使用 rootless 引导环境。</li><li>v2.0.3 起为自研面板单入口：原版闭源面板 / 主模块 / 净化模块已移除，安装时自动清退（respring 后生效）。</li><li>总开关 / 混音开关实时生效；应用白名单：未勾选 = 不装音量挂钩，勾选改动需重启对应 App 生效。</li><li>音量 HUD 滑杆列表仅显示白名单应用；未勾选应用按音量键回落系统音量条。</li><li>已知限制：部分沙盒 App 中央配置不可达（红果短剧 / 汽水音乐类）——这些 App 无音量调节，与白名单 App 同播时可能被掐断；混音层全局生效不受影响。</li><li>依赖 Orion 运行时（dev.theos.orion），由系统按依赖安装。</li><li>独立的「VolumeManager 面板净化」补丁包（com.local.volmanprefsclean）已随 v2.0.0 一并退役：已安装用户可直接卸载。</li><li>1.3.4 及更早为稳定回退版，可直接安装 / 降级。</li></ul></div></div>

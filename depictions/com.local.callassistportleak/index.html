@@ -30,6 +30,10 @@ li{margin-bottom:7px}
 .ver .date{color:var(--muted);font-size:13px;margin-left:8px}
 .ver .status{font-size:13px;color:var(--accent);margin-top:4px}
 .ver ul{margin-top:8px;color:var(--muted)}
+.shots{display:flex;flex-wrap:wrap;gap:16px}
+.shot{margin:0;flex:0 1 220px;max-width:220px}
+.shot img{width:100%;border-radius:14px;border:1px solid var(--line);display:block}
+.shot figcaption{color:var(--muted);font-size:13px;line-height:1.5;margin-top:8px}
 footer{color:#5f6b78;font-size:13px;margin-top:26px;text-align:center}
 </style></head>
 <body><div class="wrap">
@@ -37,6 +41,7 @@ footer{color:#5f6b78;font-size:13px;margin-top:26px;text-align:center}
 <h1>CallAssist PortLeak</h1>
 <p class="sub">SpringBoard Mach 端口泄漏的侦查与止血工具；定责并抑制 CallAssist 的 IOKit 轮询泄漏。</p>
 <div class="tags"><span class="tag">iphoneos-arm64e</span><span class="tag">RootHide 原生</span><span class="tag warn">待确认（2.0.14 已验证）</span></div>
+
 
 <div class="card" id="features"><h2>功能</h2><ul><li>观测：每 5 分钟输出端口 / fd 统计、Top 调用点、xpcA / xpcF / p5 指标</li><li>既有止血：CFUserNotification 应答端口宽限后取消、摘除泄漏 RunLoop 源、fd 超水位时复核后关闭</li><li>XPC 接管-宽限-回收：钩住 xpc_connection_create*，栈回溯确认插件驱动且服务名命中回收名单</li><li>512 槽指针去重；5 秒清扫；默认 10 秒宽限后 xpc_connection_cancel + xpc_release</li><li>系统框架直呼与纯系统路径的连接不碰；回收服务名单可通过 config.plist 配置</li><li>原生 roothide arm64e</li></ul></div>
 <div class="card" id="compatibility"><h2>兼容性</h2><div class="note"><b>分类：系统</b></div><div class="ver"><div class="head">v2.1.0</div><div class="date">2026-11-03 · iphoneos-arm64e</div><div class="status">待确认（2.0.14 已验证）</div><ul><li>机型：iPhone 15 Pro</li><li>验证 iOS：17.2.1</li><li>越狱形态：RootHide 原生</li></ul></div><div class="note" style="margin-top:12px"><b>注意事项</b><ul><li>项目已更名 CallAssistLeakGuard；当前发布包 ID 仍是旧 ID com.local.callassistportleak，2.1.0 更名重建待完成。</li><li>2.1.0 待真机确认；2.0.14 已验证回收有效。</li><li>从旧 ID（com.local.bioprotectleakguard）升级必须先卸载旧包；新旧共存会双重注入。</li><li>原生 roothide arm64e，不要过 RootHide 转换器。</li></ul></div></div>

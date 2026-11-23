@@ -30,6 +30,10 @@ li{margin-bottom:7px}
 .ver .date{color:var(--muted);font-size:13px;margin-left:8px}
 .ver .status{font-size:13px;color:var(--accent);margin-top:4px}
 .ver ul{margin-top:8px;color:var(--muted)}
+.shots{display:flex;flex-wrap:wrap;gap:16px}
+.shot{margin:0;flex:0 1 220px;max-width:220px}
+.shot img{width:100%;border-radius:14px;border:1px solid var(--line);display:block}
+.shot figcaption{color:var(--muted);font-size:13px;line-height:1.5;margin-top:8px}
 footer{color:#5f6b78;font-size:13px;margin-top:26px;text-align:center}
 </style></head>
 <body><div class="wrap">
@@ -37,6 +41,7 @@ footer{color:#5f6b78;font-size:13px;margin-top:26px;text-align:center}
 <h1>音量管理器 Dylib（注入版）</h1>
 <p class="sub">摇一摇唤出音量弹窗；下载 deb 提取 dylib 导入 JailFools/TrollFools 注入对应 App，混音+每 App 音量。</p>
 <div class="tags"><span class="tag">iphoneos-arm64</span><span class="tag">rootless（/var/jb）dylib 注入</span><span class="tag ok">已验证</span></div>
+
 
 <div class="card" id="features"><h2>功能</h2><ul><li>每个 App 独立音量（最低静音）+ 混音层无条件生效：参与同播的 App 都注入即可同时播放</li><li>调音量 = App 内摇一摇唤出临时弹窗：拖动预览、松手生效、0.4 秒后弹窗自动收场（无常驻悬浮物）</li><li>无白名单 / 无总开关 / 无 Sileo 依赖：deb 仅为下载容器，dylib 导入 JailFools/TrollFools 注入即用</li><li>App 更新后 JailFools/TrollFools 持久化注入自动恢复，无需重新注入；引擎升级时重注一次即可</li><li>崩溃 App 止血开关：在对应 App 数据容器 Documents/ 下新建空文件 vmaq-novolume，重启 App 只关音量挂钩（混音照常）</li></ul></div>
 <div class="card" id="compatibility"><h2>兼容性</h2><div class="note"><b>分类：系统</b></div><div class="ver"><div class="head">v2.1.4</div><div class="date">2026-11-22 · iphoneos-arm64</div><div class="status">已验证</div><ul><li>机型：iPhone 15 Pro</li><li>验证 iOS：17.2.1</li><li>越狱形态：rootless（/var/jb）dylib 注入</li></ul></div><div class="note" style="margin-top:12px"><b>注意事项</b><ul><li>使用方式：下载 .deb 导入 JailFools/TrollFools 注入应用（或在 Filza 中解压 deb 提取 VolManAudioQueue.dylib 后导入），杀 App 重开生效。dylib 原文件直链：https://chenlin8023.github.io/dylib/VolManAudioQueue-2.1.4.dylib</li><li>与「音量管理器」full 版二选一：已装 full 请先用 Sileo 卸载再注入 dylib，否则双引擎叠加导致音量异常。</li><li>已知限制①：部分 App 只支持混音、无法调节音量（其音频路径未经过挂钩层）——混音不受影响。</li><li>已知限制②：个别 App 注入音量挂钩后闪退（实测：红果短剧 / 汽水音乐）——在对应数据容器 Documents/ 下新建空文件 vmaq-novolume 并重启 App，即可避免闪退（只保证混音，无音量调节）。</li><li>弹窗为临时卡片：拖动仅预览、松手生效并自动收场；期间部分 App（如抖音普通作品）可能短暂暂停视频，弹窗收场后自动恢复播放。</li><li>环境：rootless（/var/jb）dylib；实测 iPhone 15 Pro / iOS 17.2.1 / RootHide（JailFools 注入）。</li><li>本包安装到 Sileo 不会有任何效果（dylib 带惰性过滤器不会被加载）；请勿依赖安装生效。</li></ul></div></div>

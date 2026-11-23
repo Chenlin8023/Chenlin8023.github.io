@@ -30,6 +30,10 @@ li{margin-bottom:7px}
 .ver .date{color:var(--muted);font-size:13px;margin-left:8px}
 .ver .status{font-size:13px;color:var(--accent);margin-top:4px}
 .ver ul{margin-top:8px;color:var(--muted)}
+.shots{display:flex;flex-wrap:wrap;gap:16px}
+.shot{margin:0;flex:0 1 220px;max-width:220px}
+.shot img{width:100%;border-radius:14px;border:1px solid var(--line);display:block}
+.shot figcaption{color:var(--muted);font-size:13px;line-height:1.5;margin-top:8px}
 footer{color:#5f6b78;font-size:13px;margin-top:26px;text-align:center}
 </style></head>
 <body><div class="wrap">
@@ -37,6 +41,7 @@ footer{color:#5f6b78;font-size:13px;margin-top:26px;text-align:center}
 <h1>LSTimeSeconds (rootless)</h1>
 <p class="sub">锁屏时钟显示实时秒数，支持字号缩放与上下位置调节（rootless /var/jb 构建）。</p>
 <div class="tags"><span class="tag">iphoneos-arm64</span><span class="tag">rootless（/var/jb）</span><span class="tag ok">已验证</span><span class="tag">另有 0.0.7-4 / 0.0.7-2</span></div>
+
 
 <div class="card" id="features"><h2>功能</h2><ul><li>锁屏时钟显示实时秒数，自动跟随设备 12/24 小时制</li><li>字号缩放 0.60–1.25（默认 0.88），以壁纸原始字号为基准，不抖动</li><li>上下位置调节 ±100pt，解除裁剪；时钟水平自动居中</li><li>长按进入壁纸自定义时静默旁路，滤镜、字体、景深编辑保持系统原样</li><li>熄屏暂停刷新省电，亮屏立即恢复并校准</li><li>设置面板：启用开关、字号滑块、位置滑块、注销按钮</li></ul></div>
 <div class="card" id="compatibility"><h2>兼容性</h2><div class="note"><b>分类：锁屏</b></div><div class="ver"><div class="head">v0.0.7-5</div><div class="date">2026-11-02 · iphoneos-arm64</div><div class="status">已验证</div><ul><li>机型：iPhone 14 Pro</li><li>验证 iOS：16.0.3</li><li>越狱形态：rootless（/var/jb）</li></ul></div><div class="ver"><div class="head">v0.0.7-4</div><div class="date">2026-11-02 · iphoneos-arm64</div><div class="status">已验证</div><ul><li>机型：iPhone 14 Pro</li><li>验证 iOS：16.0.3</li><li>越狱形态：rootless（/var/jb）</li></ul></div><div class="ver"><div class="head">v0.0.7-2</div><div class="date">2026-11-02 · iphoneos-arm64</div><div class="status">未单独验证</div><ul><li>机型：未单独验证</li><li>验证 iOS：—</li><li>越狱形态：rootless（/var/jb）</li></ul></div><div class="note" style="margin-top:12px"><b>注意事项</b><ul><li>AOD 暗屏不走秒：系统在暗屏使用 1Hz Flipbook，应用层无法刷新；亮屏立即恢复。</li><li>RootHide 用户请安装 LSTimeSeconds (RootHide)，不要与本包混装。</li><li>rootless 包安装到 /var/jb；普通 rootless 设备直接安装，RootHide 需转换或使用 rootless 引导环境。</li><li>0.0.7-2 未单独验证；0.0.7-4 / 0.0.7-5 已在 iPhone 14 Pro（iOS 16.0.3）真机验证。</li></ul></div></div>

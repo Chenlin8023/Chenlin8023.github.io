@@ -30,6 +30,10 @@ li{margin-bottom:7px}
 .ver .date{color:var(--muted);font-size:13px;margin-left:8px}
 .ver .status{font-size:13px;color:var(--accent);margin-top:4px}
 .ver ul{margin-top:8px;color:var(--muted)}
+.shots{display:flex;flex-wrap:wrap;gap:16px}
+.shot{margin:0;flex:0 1 220px;max-width:220px}
+.shot img{width:100%;border-radius:14px;border:1px solid var(--line);display:block}
+.shot figcaption{color:var(--muted);font-size:13px;line-height:1.5;margin-top:8px}
 footer{color:#5f6b78;font-size:13px;margin-top:26px;text-align:center}
 </style></head>
 <body><div class="wrap">
@@ -37,6 +41,7 @@ footer{color:#5f6b78;font-size:13px;margin-top:26px;text-align:center}
 <h1>应用通知小图标</h1>
 <p class="sub">状态栏显示选中应用的通知小图标（NotifierIcons）；有未读角标才出现，清零即消失。</p>
 <div class="tags"><span class="tag">iphoneos-arm64</span><span class="tag">rootless（/var/jb）</span><span class="tag ok">已验证</span></div>
+
 
 <div class="card" id="features"><h2>功能</h2><ul><li>状态栏下方显示选中 App 的通知小图标；有未读角标才出现，清零即消失（安卓通知语义）</li><li>真实 App 图标（format 0–12 自动探测 + 磁盘缓存 + 字母头像兜底）</li><li>最多 6 个，按应用名排序；独立悬浮窗渲染，与灵动岛布局解耦</li><li>位置预设（居中 / 岛左 / 岛右）+ 微调；改动即时生效；仅桌面 / 锁屏显示，进 App 自动消失</li><li>设置面板选择 App；2 秒轮询 + badge 事件双通道</li></ul></div>
 <div class="card" id="compatibility"><h2>兼容性</h2><div class="note"><b>分类：状态栏</b></div><div class="ver"><div class="head">v0.9.2</div><div class="date">2026-11-03 · iphoneos-arm64</div><div class="status">已验证</div><ul><li>机型：iPhone 15 Pro</li><li>验证 iOS：17.2.1</li><li>越狱形态：rootless（/var/jb）</li></ul></div><div class="note" style="margin-top:12px"><b>注意事项</b><ul><li>仅注入 SpringBoard：桌面 / 锁屏生效，App 内不显示。</li><li>0.9.2 起无角标化：不再显示红色角标数字，图标出现即通知、清零即隐藏。</li><li>rootless（/var/jb）包，arm64；RootHide 需转换或使用 rootless 引导环境。</li></ul></div></div>

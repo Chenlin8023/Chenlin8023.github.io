@@ -106,6 +106,29 @@ SHA256: 6cec5fb5004cdbf0b0bbe9a8d378e309dda2a858a37073df0f4a8f7a87f90481
 MD5sum: eecd5c8feb632280d1b606b2cd3c234b
 
 Package: com.chenlin8023.solo.full
+Version: 1.0.1-16
+Architecture: iphoneos-arm64
+Section: 系统
+Maintainer: Chenlin8023
+Author: OaksTheAwesome & Chenlin8023
+Depends: mobilesubstrate (>= 0.9.5000), preferenceloader
+Conflicts: com.oakstheawesome.solo, com.chenlin8023.soloplus
+Replaces: com.oakstheawesome.solo, com.chenlin8023.soloplus
+Installed-Size: 2140
+Name: Solo1.0.1优化
+Priority: optional
+Description: Solo 1.0.1 + Solo+ 增强层合并的完整单包：Duo 时间开关 / 5G 小号 A 标识 / 环下电量、状态栏保留、Dock 6 图标、轮播铺满，装完即用。
+ 实机验证：待实机确认（本轮摘除歌词模块）；iPhone 15 Pro / iOS 17.2.1
+ 项目仓库：https://github.com/Chenlin8023/SoloPlus
+Homepage: https://github.com/Chenlin8023/SoloPlus
+SileoDepiction: https://chenlin8023.github.io/sileodepictions/com.chenlin8023.solo.full/index.json?v=20261123
+Depiction: https://chenlin8023.github.io/depictions/com.chenlin8023.solo.full/index.html
+Filename: debs/com.chenlin8023.solo.full_1.0.1-16_iphoneos-arm64.deb
+Size: 451316
+SHA256: 9038f24d4571ef0f43337e92b20d133d4bd46d9a56c7046b4778c966342bd420
+MD5sum: fb7f6ae550e26319de19312f288827bf
+
+Package: com.chenlin8023.solo.full
 Version: 1.0.1-2
 Architecture: iphoneos-arm64
 Section: 系统
@@ -117,7 +140,7 @@ Replaces: com.oakstheawesome.solo, com.chenlin8023.soloplus
 Installed-Size: 2108
 Name: Solo1.0.1优化
 Priority: optional
-Description: Solo 1.0.1 + Solo+ 增强层合并的完整单包：状态栏保留、Duo 时间开关与环下电量、Dock 6 图标、轮播铺满，装完即用。
+Description: Solo 1.0.1 + Solo+ 增强层合并的完整单包：Duo 时间开关 / 5G 小号 A 标识 / 环下电量、状态栏保留、Dock 6 图标、轮播铺满，装完即用。
  实机验证：待实机确认（新增 Duo 细节）；iPhone 15 Pro / iOS 17.2.1
  项目仓库：https://github.com/Chenlin8023/SoloPlus
 Homepage: https://github.com/Chenlin8023/SoloPlus
@@ -140,7 +163,7 @@ Replaces: com.oakstheawesome.solo, com.chenlin8023.soloplus
 Installed-Size: 2108
 Name: Solo1.0.1优化
 Priority: optional
-Description: Solo 1.0.1 + Solo+ 增强层合并的完整单包：状态栏保留、Duo 时间开关与环下电量、Dock 6 图标、轮播铺满，装完即用。
+Description: Solo 1.0.1 + Solo+ 增强层合并的完整单包：Duo 时间开关 / 5G 小号 A 标识 / 环下电量、状态栏保留、Dock 6 图标、轮播铺满，装完即用。
  实机验证：组成件已验证（合并包未单独跑机）；iPhone 15 Pro / iOS 17.2.1
  项目仓库：https://github.com/Chenlin8023/SoloPlus
 Homepage: https://github.com/Chenlin8023/SoloPlus

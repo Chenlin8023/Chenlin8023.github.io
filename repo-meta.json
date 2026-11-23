@@ -210,14 +210,20 @@
     {
       "package": "com.chenlin8023.solo.full",
       "display_name": "Solo1.0.1优化",
-      "summary": "Solo 1.0.1 + Solo+ 增强层合并的完整单包：状态栏保留、Duo 时间开关与环下电量、Dock 6 图标、轮播铺满，装完即用。",
+      "summary": "Solo 1.0.1 + Solo+ 增强层合并的完整单包：Duo 时间开关 / 5G 小号 A 标识 / 环下电量、状态栏保留、Dock 6 图标、轮播铺满，装完即用。",
+      "screenshots": [
+        {
+          "path": "screenshots/com.chenlin8023.solo.full/duo-home-1.jpg",
+          "caption": "1.0.1-16 实机主屏：Duo 读数「5G + 小号 A」、圆环下方 97% 电量，Duo 时间已在面板关掉"
+        }
+      ],
       "features": [
         "合并完整版：内含 Solo 1.0.1 本体与 Solo+ 增强层，装一个包即含全部功能，不必再单独安装官方 Solo",
         "状态栏：接管 Solo 在主屏渐隐系统状态栏的行为，强制保留；不需要时可在面板关掉",
         "Duo：新增独立显示开关，隐藏 Duo 状态环/读数时轮播仍可单独使用（Duo 尺寸与轮播硬绑定，不做单独调节）",
-        "Duo 时间：可单独关掉 Duo 上方的时间文字（状态栏已有时间），默认开",
-        "Duo 电量：圆环下方显示剩余电量百分比，≤20% 红色、充电绿色，默认开",
-        "数据标识：Duo 读数里的 5G 显示为「5G + 小号大写 A」（62% 字号、底部与 5G 同基线）；LTE/3G/E/Wi-Fi 保持原样，字号 0.8–1.4、字重可调",
+        "Duo 时间：可单独关掉 Duo 上方的时间文字（状态栏已有时间），默认开；关掉后在 setText:/setAttributedText: 里换空串，并在 setHidden:/setAlpha:/setTextColor: 三处压制，Solo 重建玻璃/快照层也不会再糊出时间",
+        "Duo 电量：圆环下方显示剩余电量百分比（64×22 标签挂 Duo 容器同层、按容器 frame 水平居中，修掉贴近右缘被夹回左边约 14pt 的问题）；≤20% 红色、充电绿色，上下微调 −8/−4/0/+4/+8，UIDevice + IOKit.ps 双源、10 秒刷新，默认开",
+        "数据标识：Duo 读数里的 5G 显示为「5G + 小号大写 A」（62% 字号、底部与 5G 同基线、字重跟随原标签）；LTE/3G/E/Wi-Fi 保持原样，标识字号 0.8–1.4、字重 跟随/细/常规/中粗/粗 五档",
         "Dockicon：竖排 Dock 上限 5/6（6 个图标需手动拖入，依赖 Atria）；图标大小 0.85–1.0 走 iconContentScale，只缩图标内容、不改 Dock 列表几何",
         "Dock 防呆：6 图标时 Dock 列表自动下移；切回 5 并注销后约 3 秒自动把最后一个图标迁回主屏，迁移失败则保持 6 并写日志，不强制弹出（不再进安全模式）",
         "轮播铺满：复位 Solo 的 content scale fix（约 0.83），小组件内容铺满 364×170 轮播背景，可在面板关闭（可能裁切小组件边缘）",
@@ -228,7 +234,7 @@
       "compatibility": {
         "notes": [
           "独立 Package ID（com.chenlin8023.solo.full）：安装时经 Conflicts/Replaces 自动替换官方 com.oakstheawesome.solo 1.0.1 与独立增强包 com.chenlin8023.soloplus，避免双注入；卸载本包会一并移除 Solo 本体。",
-          "合并包 1.0.1-1 由已实机验收的 Solo+ 1.0.0 与未改动的官方 Solo 1.0.1 原文件重组而成，本版未单独跑机；安装后请 respring，并确认 设置 → Solo → 增强 可正常进入。",
+          "1.0.1-16 由已实机验收的 Solo+ 1.3.0（摘除歌词模块后）与未改动的官方 Solo 1.0.1 原文件重组而成；安装后请 respring，并确认 设置 → Solo → 增强 可正常进入，面板里不再有「桌面歌词」一项。",
           "本包内含 Solo 1.0.1 原文件，Solo 的二进制与商标归原作者 OaksTheAwesome；打包方未获上游再分发授权，仅作本机整合发布，请勿二次转载本 deb。",
           "基于 Solo 1.0.1 私有实现（UnduoWidgetCarousel / SBDockIconListView / SBIconListModel 等），Solo 或 iOS 升级后可能需要适配。",
           "rootless 包（/var/jb，iphoneos-arm64），面向 iOS 16–17；RootHide 经转换器安装，原生 roothide 环境请用转换器或 rootless 引导。",
@@ -241,6 +247,29 @@
       "repo_url": "https://github.com/Chenlin8023/SoloPlus",
       "log_hint": "日志：/var/jb/var/mobile/Library/Preferences/Solo/Logs/Solo.log（Solo+ 行以 [Solo+] 开头；面板「写入调试日志」开启后才有）",
       "variants": [
+        {
+          "version": "1.0.1-16",
+          "date": "2026-11-23",
+          "arch": "iphoneos-arm64",
+          "jailbreak": "rootless（/var/jb）",
+          "devices": [
+            "iPhone 15 Pro"
+          ],
+          "ios": [
+            "17.2.1"
+          ],
+          "verified": "待实机确认（本轮摘除歌词模块）",
+          "changes": [
+            "移除「桌面歌词」模块：悬浮窗、LRCLIB 拉词、媒体探测与 SBMediaController hook、Solo 媒体缓存只读层全部摘除，面板只剩 状态栏 / Duo / 轮播铺满 / Dockicon",
+            "Duo 时间：关掉后直接在 setText:/setAttributedText: 里换空串，并在 setHidden:/setAlpha:/setTextColor: 三处压制，Solo 重建玻璃/快照层也不会再糊出时间；只恢复自己打过标记的视图",
+            "Duo 数据标识：5G 显示为「5G + 小号大写 A」（62% 字号、底部与 5G 同基线），其余 LTE/3G/E/Wi-Fi 原样；字号 0.8–1.4、字重 跟随/细/常规/中粗/粗 五档",
+            "Duo 电量：64×22 标签挂在 Duo 容器同层、按容器 frame 水平居中，修掉贴近右缘被夹回左边约 14pt 的问题；上下微调 −8/−4/0/+4/+8；≤20% 红、充电绿；UIDevice + IOKit.ps 双源、10 秒刷新",
+            "Duo 细节：隐藏读数下方 ≤44pt 的图片类符号（定位箭头等），不碰电量标签；容器换锚点即时重跑，不等 1 秒 tick",
+            "面板注入补齐：Solo 设置页「增强」分组 + 4 个子页（状态栏 / Duo / 轮播铺满 / Dockicon）+ 调试日志开关",
+            "构建：arm64 + arm64e 双切片 + CFString isa PAC（auth=108 plain=0）+ ldid -S；Solo 原文件逐字节未改",
+            "本版不含任何网络请求与媒体 hook，常驻开销与包体都比带歌词的版本更小"
+          ]
+        },
         {
           "version": "1.0.1-2",
           "date": "2026-11-23",

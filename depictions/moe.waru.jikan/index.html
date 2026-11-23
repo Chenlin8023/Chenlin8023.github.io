@@ -30,6 +30,10 @@ li{margin-bottom:7px}
 .ver .date{color:var(--muted);font-size:13px;margin-left:8px}
 .ver .status{font-size:13px;color:var(--accent);margin-top:4px}
 .ver ul{margin-top:8px;color:var(--muted)}
+.shots{display:flex;flex-wrap:wrap;gap:16px}
+.shot{margin:0;flex:0 1 220px;max-width:220px}
+.shot img{width:100%;border-radius:14px;border:1px solid var(--line);display:block}
+.shot figcaption{color:var(--muted);font-size:13px;line-height:1.5;margin-top:8px}
 footer{color:#5f6b78;font-size:13px;margin-top:26px;text-align:center}
 </style></head>
 <body><div class="wrap">
@@ -37,6 +41,7 @@ footer{color:#5f6b78;font-size:13px;margin-top:26px;text-align:center}
 <h1>Jikan（锁屏充电预估）</h1>
 <p class="sub">在锁定屏幕上实时显示充满电（或目标电量）所需的时间预估。</p>
 <div class="tags"><span class="tag">iphoneos-arm64e</span><span class="tag">RootHide 原生</span><span class="tag ok">已验证</span><span class="tag">另有 1.2.0</span></div>
+
 
 <div class="card" id="features"><h2>功能</h2><ul><li>锁屏胶囊实时显示距充满电/目标电量的时间，支持 Apple 官方模型与 Jikan 历史学习两种算法</li><li>充电目标可调：Apple 模型 80/85/90/95/100%，Jikan 算法 1–100% 任选</li><li>胶囊样式（经典/进度环）、位置（横竖屏独立）、背景透明度可调</li><li>堆叠显示电池电压、温度、充电功率；达到目标电量时推送通知</li><li>可与 ChargeLimiter 同步充电上限；可隐藏滑动解锁文字与专注模式指示器</li></ul></div>
 <div class="card" id="compatibility"><h2>兼容性</h2><div class="note"><b>分类：锁屏</b></div><div class="ver"><div class="head">v1.2.1-1+debug</div><div class="date">2026-11-08 · iphoneos-arm64e</div><div class="status">已验证</div><ul><li>机型：iPhone 15 Pro</li><li>验证 iOS：17.2.1</li><li>越狱形态：RootHide 原生</li></ul></div><div class="ver"><div class="head">v1.2.0</div><div class="date">2026-11-06 · iphoneos-arm64e</div><div class="status">已验证</div><ul><li>机型：iPhone 15 Pro</li><li>验证 iOS：17.2.1</li><li>越狱形态：RootHide 原生</li></ul></div><div class="note" style="margin-top:12px"><b>注意事项</b><ul><li>原生 roothide arm64e（iphoneos-arm64e），直接安装，不要过 RootHide 转换器。</li><li>1.2.1-1+debug 为内置简体中文的分支构建（Chenlin8023 fork）；1.2.0 为上游 waruhachi 原版英文界面。</li><li>与简体中文语言包（moe.waru.jikan.lang.zh-hans）互斥，二选一。</li><li>iOS 14+；依赖 mobilesubstrate、preferenceloader。</li></ul></div></div>
