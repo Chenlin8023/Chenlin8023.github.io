@@ -106,6 +106,29 @@ SHA256: 6cec5fb5004cdbf0b0bbe9a8d378e309dda2a858a37073df0f4a8f7a87f90481
 MD5sum: eecd5c8feb632280d1b606b2cd3c234b
 
 Package: com.chenlin8023.solo.full
+Version: 1.0.1-24
+Architecture: iphoneos-arm64
+Section: 系统
+Maintainer: Chenlin8023
+Author: OaksTheAwesome & Chenlin8023
+Depends: mobilesubstrate (>= 0.9.5000), preferenceloader
+Conflicts: com.oakstheawesome.solo, com.chenlin8023.soloplus
+Replaces: com.oakstheawesome.solo, com.chenlin8023.soloplus
+Installed-Size: 2144
+Name: Solo1.0.1优化
+Priority: optional
+Description: Solo 1.0.1 + Solo+ 增强层合并的完整单包：Duo 时间开关 / 5G 小号 A 标识 / 环下电量、状态栏保留、Dock 6 图标、轮播铺满，装完即用。
+ 实机验证：双机实机验收（同 1.0.1-23）；本版仅为判定收窄加固，已验收路径行为不变；iPhone 15 Pro、iPhone 14 Pro Max / iOS 17.2.1、16.5
+ 项目仓库：https://github.com/Chenlin8023/SoloPlus
+Homepage: https://github.com/Chenlin8023/SoloPlus
+SileoDepiction: https://chenlin8023.github.io/sileodepictions/com.chenlin8023.solo.full/index.json?v=20261124
+Depiction: https://chenlin8023.github.io/depictions/com.chenlin8023.solo.full/index.html
+Filename: debs/com.chenlin8023.solo.full_1.0.1-24_iphoneos-arm64.deb
+Size: 457312
+SHA256: d8dc0c9c0d009ecd6f5a752089d4c30496a2dd3ddba19cf3f4ea0315407d0af6
+MD5sum: a5c7e9d37febaee322d735b58cb2d9fb
+
+Package: com.chenlin8023.solo.full
 Version: 1.0.1-23
 Architecture: iphoneos-arm64
 Section: 系统

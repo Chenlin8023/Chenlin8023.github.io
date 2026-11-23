@@ -18,7 +18,7 @@ https://chenlin8023.github.io/
 | VolumeManager (Full) | 系统 | 2.0.4（另有 2.0.3 / 1.3.4 / 1.3.0 / 1.2.0；dylib 线 2.1.4） | `iphoneos-arm64` | iPhone 15 Pro / iOS 17.2.1 | [VolumeManager-iOS17](https://github.com/Chenlin8023/VolumeManager-iOS17) |
 | CallAssist PortLeak | 系统 | 2.1.0 | `iphoneos-arm64e` | 2.1.0 待确认；2.0.14 已验证（iPhone 15 Pro / iOS 17.2.1） | [CallAssist-PortLeak](https://github.com/Chenlin8023/CallAssist-PortLeak) |
 | AppLock+ (应用锁+) | 系统 | 0.4.2-1 | `iphoneos-arm64e` | iPhone 15 Pro / iOS 17.2.1 | [AppLockPlus](https://github.com/Chenlin8023/AppLockPlus) |
-| Solo1.0.1优化 | 系统 | 1.0.1-23（另有 1.0.1-16 / 1.0.1-2 / 1.0.1-1） | `iphoneos-arm64` | 双机实机验收：iPhone 15 Pro / iOS 17.2.1（含 Lunora 美化共存）+ iPhone 14 Pro Max / iOS 16.5 | [SoloPlus](https://github.com/Chenlin8023/SoloPlus) |
+| Solo1.0.1优化 | 系统 | 1.0.1-24（另有 1.0.1-23 / 1.0.1-16 / 1.0.1-2 / 1.0.1-1） | `iphoneos-arm64` | 双机实机验收：iPhone 15 Pro / iOS 17.2.1（含 Lunora 美化共存）+ iPhone 14 Pro Max / iOS 16.5；1.0.1-24 为判定收窄加固 | [SoloPlus](https://github.com/Chenlin8023/SoloPlus) |
 | LSTimeSeconds (RootHide) | 锁屏 | 0.0.7-1 | `iphoneos-arm64e` | iPhone 15 Pro / iOS 17.2.1 | [LSTimeSeconds-iOS17](https://github.com/Chenlin8023/LSTimeSeconds-iOS17) |
 | LSTimeSeconds (rootless) | 锁屏 | 0.0.7-5 | `iphoneos-arm64` | iPhone 14 Pro / iOS 16.0.3（0.0.7-4/5） | 同上 |
 | Jikan（锁屏充电预估） | 锁屏 | 1.2.1-1+debug / 1.2.0 | `iphoneos-arm64e` | iPhone 15 Pro / iOS 17.2.1 | [Jikan](https://github.com/Chenlin8023/Jikan) |

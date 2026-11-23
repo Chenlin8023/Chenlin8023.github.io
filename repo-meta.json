@@ -234,7 +234,7 @@
       "compatibility": {
         "notes": [
           "独立 Package ID（com.chenlin8023.solo.full）：安装时经 Conflicts/Replaces 自动替换官方 com.oakstheawesome.solo 1.0.1 与独立增强包 com.chenlin8023.soloplus，避免双注入；卸载本包会一并移除 Solo 本体。",
-          "1.0.1-16 由已实机验收的 Solo+ 1.3.0（摘除歌词模块后）与未改动的官方 Solo 1.0.1 原文件重组而成；安装后请 respring，并确认 设置 → Solo → 增强 可正常进入，面板里不再有「桌面歌词」一项。",
+          "1.0.1-24 由 Solo+ 1.3.8 与未改动的官方 Solo 1.0.1 原文件重组；状态栏主题共存（适配 Lunora 等美化插件，未美化区域听 Solo、美化区域按胶囊配置让位）与 iOS 16.5 兼容已在 iPhone 15 Pro / iOS 17.2.1（含 Lunora）与 iPhone 14 Pro Max / iOS 16.5 实机验收；安装后请 respring，并确认 设置 → Solo → 增强 可正常进入。",
           "本包内含 Solo 1.0.1 原文件，Solo 的二进制与商标归原作者 OaksTheAwesome；打包方未获上游再分发授权，仅作本机整合发布，请勿二次转载本 deb。",
           "基于 Solo 1.0.1 私有实现（UnduoWidgetCarousel / SBDockIconListView / SBIconListModel 等），Solo 或 iOS 升级后可能需要适配。",
           "rootless 包（/var/jb，iphoneos-arm64），面向 iOS 16–17；RootHide 经转换器安装，原生 roothide 环境请用转换器或 rootless 引导。",
@@ -247,6 +247,25 @@
       "repo_url": "https://github.com/Chenlin8023/SoloPlus",
       "log_hint": "日志：/var/jb/var/mobile/Library/Preferences/Solo/Logs/Solo.log（Solo+ 行以 [Solo+] 开头；面板「写入调试日志」开启后才有）",
       "variants": [
+        {
+          "version": "1.0.1-24",
+          "date": "2026-11-24",
+          "arch": "iphoneos-arm64",
+          "jailbreak": "rootless（/var/jb）",
+          "devices": [
+            "iPhone 15 Pro",
+            "iPhone 14 Pro Max"
+          ],
+          "ios": [
+            "17.2.1",
+            "16.5"
+          ],
+          "verified": "双机实机验收（同 1.0.1-23）；本版仅为判定收窄加固，已验收路径行为不变",
+          "changes": [
+            "主题覆盖层识别加固（iOS 16.5 防护）：跳过 MTMaterialView 等系统材质类前缀（MT），并要求覆盖层横贯状态栏（宽度 ≥ 前景视图 60%，Lunora 的 overlay 为整条 393×54 不受影响）——防止旧 _UIStatusBar 同层的系统辅助视图被误判成美化覆盖层、错误触发让位",
+            "严格收窄判定：17.2.1 + Lunora 的已验收行为不变；其余与 1.0.1-23 完全一致（主题共存语义、iOS 16.5 兼容、挂载/布局时机同步、CC 回主屏瞬间胶囊一瞬呈现的已知残留）"
+          ]
+        },
         {
           "version": "1.0.1-23",
           "date": "2026-11-24",
