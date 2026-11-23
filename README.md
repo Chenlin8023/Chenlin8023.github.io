@@ -18,7 +18,7 @@ https://chenlin8023.github.io/
 | VolumeManager (Full) | 系统 | 2.0.4（另有 2.0.3 / 1.3.4 / 1.3.0 / 1.2.0；dylib 线 2.1.4） | `iphoneos-arm64` | iPhone 15 Pro / iOS 17.2.1 | [VolumeManager-iOS17](https://github.com/Chenlin8023/VolumeManager-iOS17) |
 | CallAssist PortLeak | 系统 | 2.1.0 | `iphoneos-arm64e` | 2.1.0 待确认；2.0.14 已验证（iPhone 15 Pro / iOS 17.2.1） | [CallAssist-PortLeak](https://github.com/Chenlin8023/CallAssist-PortLeak) |
 | AppLock+ (应用锁+) | 系统 | 0.4.2-1 | `iphoneos-arm64e` | iPhone 15 Pro / iOS 17.2.1 | [AppLockPlus](https://github.com/Chenlin8023/AppLockPlus) |
-| Solo1.0.1优化 | 系统 | 1.0.1-16（另有 1.0.1-2 / 1.0.1-1） | `iphoneos-arm64` | 1.0.1-1 组成件已验证；1.0.1-2 的 Duo 细节待确认；1.0.1-16 待实机确认（摘除歌词模块） | [SoloPlus](https://github.com/Chenlin8023/SoloPlus) |
+| Solo1.0.1优化 | 系统 | 1.0.1-23（另有 1.0.1-16 / 1.0.1-2 / 1.0.1-1） | `iphoneos-arm64` | 双机实机验收：iPhone 15 Pro / iOS 17.2.1（含 Lunora 美化共存）+ iPhone 14 Pro Max / iOS 16.5 | [SoloPlus](https://github.com/Chenlin8023/SoloPlus) |
 | LSTimeSeconds (RootHide) | 锁屏 | 0.0.7-1 | `iphoneos-arm64e` | iPhone 15 Pro / iOS 17.2.1 | [LSTimeSeconds-iOS17](https://github.com/Chenlin8023/LSTimeSeconds-iOS17) |
 | LSTimeSeconds (rootless) | 锁屏 | 0.0.7-5 | `iphoneos-arm64` | iPhone 14 Pro / iOS 16.0.3（0.0.7-4/5） | 同上 |
 | Jikan（锁屏充电预估） | 锁屏 | 1.2.1-1+debug / 1.2.0 | `iphoneos-arm64e` | iPhone 15 Pro / iOS 17.2.1 | [Jikan](https://github.com/Chenlin8023/Jikan) |
@@ -31,13 +31,16 @@ https://chenlin8023.github.io/
 
 ### 关键说明
 
-- **Solo1.0.1优化（1.0.1-16）**：`com.chenlin8023.solo.full` 把官方 Solo 1.0.1 与 Solo+ 增强层
+- **Solo1.0.1优化（1.0.1-23）**：`com.chenlin8023.solo.full` 把官方 Solo 1.0.1 与 Solo+ 增强层
   合成单包，`Conflicts/Replaces: com.oakstheawesome.solo, com.chenlin8023.soloplus`——
   装本包等于替换官方 Solo 与旧独立增强包，卸载会一并移除 Solo 本体。
-  1.0.1-16 **摘除了桌面歌词模块**（悬浮窗 / LRCLIB 拉词 / 媒体 hook 全部下线），面板只剩
-  状态栏 / Duo / 轮播铺满 / Dockicon；本轮重点在 Duo：时间可单独关闭（关掉后连 Solo 的
-  玻璃/快照层都拿不到文字）、数据标识 5G 显示为「5G + 小号 A」、圆环下方电量按容器 frame
-  居中并修正了贴右缘被夹回左边的问题，详情页首图就是实机效果。
+  1.0.1-23 的状态栏保留重构为**主题共存语义**：未美化区域由 Solo 强制显示，
+  Lunora 等自绘状态栏的美化插件渲染的区域按其胶囊配置自动让位（区域随胶囊开关组合自适应）；
+  同时补齐 iOS 16.5 兼容（主屏状态栏在 UIStatusBarWindow），双机实机验收
+  （iPhone 15 Pro / iOS 17.2.1 含 Lunora 共存 + iPhone 14 Pro Max / iOS 16.5）。
+  1.0.1-16 摘除了桌面歌词模块（悬浮窗 / LRCLIB 拉词 / 媒体 hook 全部下线），面板只剩
+  状态栏 / Duo / 轮播铺满 / Dockicon；数据标识 5G 显示为「5G + 小号 A」、圆环下方电量按
+  容器 frame 居中。
   包内含 Solo 原文件（逐字节未改），未获上游再分发授权，仅在本源站发布，勿二次转载。
 
 - **LSTimeSeconds 已拆成两个 Package ID**：

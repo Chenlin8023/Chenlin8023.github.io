@@ -20,7 +20,7 @@
         },
         {
           "class": "DepictionMarkdownView",
-          "markdown": "- 合并完整版：内含 Solo 1.0.1 本体与 Solo+ 增强层，装一个包即含全部功能，不必再单独安装官方 Solo\n- 状态栏：接管 Solo 在主屏渐隐系统状态栏的行为，强制保留；不需要时可在面板关掉\n- Duo：新增独立显示开关，隐藏 Duo 状态环/读数时轮播仍可单独使用（Duo 尺寸与轮播硬绑定，不做单独调节）\n- Duo 时间：可单独关掉 Duo 上方的时间文字（状态栏已有时间），默认开；关掉后在 setText:/setAttributedText: 里换空串，并在 setHidden:/setAlpha:/setTextColor: 三处压制，Solo 重建玻璃/快照层也不会再糊出时间\n- Duo 电量：圆环下方显示剩余电量百分比（64×22 标签挂 Duo 容器同层、按容器 frame 水平居中，修掉贴近右缘被夹回左边约 14pt 的问题）；≤20% 红色、充电绿色，上下微调 −8/−4/0/+4/+8，UIDevice + IOKit.ps 双源、10 秒刷新，默认开\n- 数据标识：Duo 读数里的 5G 显示为「5G + 小号大写 A」（62% 字号、底部与 5G 同基线、字重跟随原标签）；LTE/3G/E/Wi-Fi 保持原样，标识字号 0.8–1.4、字重 跟随/细/常规/中粗/粗 五档\n- Dockicon：竖排 Dock 上限 5/6（6 个图标需手动拖入，依赖 Atria）；图标大小 0.85–1.0 走 iconContentScale，只缩图标内容、不改 Dock 列表几何\n- Dock 防呆：6 图标时 Dock 列表自动下移；切回 5 并注销后约 3 秒自动把最后一个图标迁回主屏，迁移失败则保持 6 并写日志，不强制弹出（不再进安全模式）\n- 轮播铺满：复位 Solo 的 content scale fix（约 0.83），小组件内容铺满 364×170 轮播背景，可在面板关闭（可能裁切小组件边缘）\n- 面板：入口注入 Solo 设置页「增强」分组——状态栏 / Duo / 轮播铺满 / Dockicon + 调试日志开关，开关写 Solo 自己的域，注销后保持\n- 构建：arm64 + arm64e FAT 双切片（SpringBoard 只加载 arm64e 切片），arm64e CFString isa PAC 补丁（diversity 0x6AE1）+ ldid -S，产物断言 isa: auth>0 plain=0\n- Solo 原文件逐字节未改：只新增 SoloPlus.dylib / SoloPlus.plist 与 5 个面板 plist，卸载不会留下被改写的 Solo 二进制"
+          "markdown": "- 合并完整版：内含 Solo 1.0.1 本体与 Solo+ 增强层，装一个包即含全部功能，不必再单独安装官方 Solo\n- 状态栏：保留系统状态栏（主题共存语义——未美化区域强制显示，Lunora 等美化插件渲染区域按其胶囊配置自动让位）；iOS 16.5 与 17.2.1 均实机验证，不需要时可在面板关掉\n- Duo：新增独立显示开关，隐藏 Duo 状态环/读数时轮播仍可单独使用（Duo 尺寸与轮播硬绑定，不做单独调节）\n- Duo 时间：可单独关掉 Duo 上方的时间文字（状态栏已有时间），默认开；关掉后在 setText:/setAttributedText: 里换空串，并在 setHidden:/setAlpha:/setTextColor: 三处压制，Solo 重建玻璃/快照层也不会再糊出时间\n- Duo 电量：圆环下方显示剩余电量百分比（64×22 标签挂 Duo 容器同层、按容器 frame 水平居中，修掉贴近右缘被夹回左边约 14pt 的问题）；≤20% 红色、充电绿色，上下微调 −8/−4/0/+4/+8，UIDevice + IOKit.ps 双源、10 秒刷新，默认开\n- 数据标识：Duo 读数里的 5G 显示为「5G + 小号大写 A」（62% 字号、底部与 5G 同基线、字重跟随原标签）；LTE/3G/E/Wi-Fi 保持原样，标识字号 0.8–1.4、字重 跟随/细/常规/中粗/粗 五档\n- Dockicon：竖排 Dock 上限 5/6（6 个图标需手动拖入，依赖 Atria）；图标大小 0.85–1.0 走 iconContentScale，只缩图标内容、不改 Dock 列表几何\n- Dock 防呆：6 图标时 Dock 列表自动下移；切回 5 并注销后约 3 秒自动把最后一个图标迁回主屏，迁移失败则保持 6 并写日志，不强制弹出（不再进安全模式）\n- 轮播铺满：复位 Solo 的 content scale fix（约 0.83），小组件内容铺满 364×170 轮播背景，可在面板关闭（可能裁切小组件边缘）\n- 面板：入口注入 Solo 设置页「增强」分组——状态栏 / Duo / 轮播铺满 / Dockicon + 调试日志开关，开关写 Solo 自己的域，注销后保持\n- 构建：arm64 + arm64e FAT 双切片（SpringBoard 只加载 arm64e 切片），arm64e CFString isa PAC 补丁（diversity 0x6AE1）+ ldid -S，产物断言 isa: auth>0 plain=0\n- Solo 原文件逐字节未改：只新增 SoloPlus.dylib / SoloPlus.plist 与 5 个面板 plist，卸载不会留下被改写的 Solo 二进制"
         }
       ]
     },
@@ -32,6 +32,32 @@
           "class": "DepictionTableTextView",
           "title": "分类",
           "text": "系统"
+        },
+        {
+          "class": "DepictionSubheaderView",
+          "title": "v1.0.1-23 · iphoneos-arm64",
+          "useBoldText": true,
+          "useBottomMargin": true
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "机型",
+          "text": "iPhone 15 Pro、iPhone 14 Pro Max"
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "验证 iOS",
+          "text": "17.2.1、16.5"
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "越狱形态",
+          "text": "rootless（/var/jb）"
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "验证状态",
+          "text": "双机实机验收：iPhone 15 Pro / iOS 17.2.1（含 Lunora 美化插件共存）+ iPhone 14 Pro Max / iOS 16.5"
         },
         {
           "class": "DepictionSubheaderView",
@@ -130,6 +156,27 @@
         {
           "class": "DepictionMarkdownView",
           "markdown": "Sileo：安装后在插件页长按「修改 / MODIFY」选择历史版本；Irisin / Zebra 可直接在版本列表选择。每个版本下方有 .deb 直链。"
+        },
+        {
+          "class": "DepictionSubheaderView",
+          "title": "v1.0.1-23 · 2026-11-24",
+          "useBoldText": true,
+          "useBottomMargin": true
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "验证",
+          "text": "双机实机验收：iPhone 15 Pro / iOS 17.2.1（含 Lunora 美化插件共存）+ iPhone 14 Pro Max / iOS 16.5"
+        },
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "- 状态栏保留重构为「主题共存」语义（适配 Lunora 等自绘状态栏的美化插件）：未美化区域由 Solo 强制显示，美化插件实际渲染的区域（按其覆盖层胶囊 frame 识别）自动让位，区域随胶囊开关组合自适应\n- iOS 16.5 兼容：主屏可见状态栏在 UIStatusBarWindow，主页窗口判定补齐（SBMainSwitcherWindow / UIStatusBarWindow）\n- 主题在场判据=覆盖层存在（不看可见性，Lunora 转场会瞬时藏 overlay 但压制不停）；让位=胶囊「有效可见」，overlay 被藏期间整条原生条都听 Solo\n- 挂载（didMoveToWindow）/布局（layoutSubviews）时机同步让位状态，消除进出 App/控制中心的状态栏内容闪动\n- 已知残留（用户确认接受）：CC 关闭回主屏瞬间美化胶囊需要一瞬呈现（Lunora 自身转场时序），期间短暂显示原生条\n- 诊断日志：hook 归属探测（sbhook ownership）+ 状态栏层级 dump（sbdump）+ blocked/ignored/yield 全链路\n- 构建：arm64 + arm64e FAT 双切片 + CFString isa PAC（auth=123 plain=0）+ ldid -S；Solo 原文件逐字节未改\n- 包含 Solo+ 1.3.7；Duo / Dockicon / 轮播铺满等功能与 1.3.0 一致"
+        },
+        {
+          "class": "DepictionTableButtonView",
+          "title": "下载 v1.0.1-23（iphoneos-arm64）",
+          "action": "https://chenlin8023.github.io/debs/com.chenlin8023.solo.full_1.0.1-23_iphoneos-arm64.deb",
+          "openExternal": true
         },
         {
           "class": "DepictionSubheaderView",
