@@ -210,11 +210,13 @@
     {
       "package": "com.chenlin8023.solo.full",
       "display_name": "Solo1.0.1优化",
-      "summary": "Solo 1.0.1 + Solo+ 增强层合并的完整单包：状态栏保留、Duo 独立开关、5G 小号 A、Dock 6 图标、轮播铺满，装完即用。",
+      "summary": "Solo 1.0.1 + Solo+ 增强层合并的完整单包：状态栏保留、Duo 时间开关与环下电量、Dock 6 图标、轮播铺满，装完即用。",
       "features": [
         "合并完整版：内含 Solo 1.0.1 本体与 Solo+ 增强层，装一个包即含全部功能，不必再单独安装官方 Solo",
         "状态栏：接管 Solo 在主屏渐隐系统状态栏的行为，强制保留；不需要时可在面板关掉",
         "Duo：新增独立显示开关，隐藏 Duo 状态环/读数时轮播仍可单独使用（Duo 尺寸与轮播硬绑定，不做单独调节）",
+        "Duo 时间：可单独关掉 Duo 上方的时间文字（状态栏已有时间），默认开",
+        "Duo 电量：圆环下方显示剩余电量百分比，≤20% 红色、充电绿色，默认开",
         "数据标识：Duo 读数里的 5G 显示为「5G + 小号大写 A」（62% 字号、底部与 5G 同基线）；LTE/3G/E/Wi-Fi 保持原样，字号 0.8–1.4、字重可调",
         "Dockicon：竖排 Dock 上限 5/6（6 个图标需手动拖入，依赖 Atria）；图标大小 0.85–1.0 走 iconContentScale，只缩图标内容、不改 Dock 列表几何",
         "Dock 防呆：6 图标时 Dock 列表自动下移；切回 5 并注销后约 3 秒自动把最后一个图标迁回主屏，迁移失败则保持 6 并写日志，不强制弹出（不再进安全模式）",
@@ -232,12 +234,35 @@
           "rootless 包（/var/jb，iphoneos-arm64），面向 iOS 16–17；RootHide 经转换器安装，原生 roothide 环境请用转换器或 rootless 引导。",
           "Dock 6 图标与竖排布局依赖 Atria（实测 1.4.1-11）；未安装 Atria 时其余功能正常。",
           "已知限制：Dock 拖动/换位仍有可感知卡顿；Dock 内放文件夹时不建议同时开 6 图标；轮播铺满可能裁切小组件边缘。",
-          "面板入口：设置 → Solo → 增强；调试日志默认关闭，开启后写 /var/jb/var/mobile/Library/Preferences/Solo/Logs/Solo.log（[Solo+] 前缀）。"
+          "面板入口：设置 → Solo → 增强；调试日志默认关闭，开启后写 /var/jb/var/mobile/Library/Preferences/Solo/Logs/Solo.log（[Solo+] 前缀）。",
+          "Duo 细节两项按运行时视图特征定位（时钟文字类 UnduoClockMirroredLabel + 从数据读数向上推断圆环），首次上机若位置或命中不对，开启调试日志后把 duo ring / duo time hide / battery host 行反馈即可定点修正。"
         ]
       },
       "repo_url": "https://github.com/Chenlin8023/SoloPlus",
       "log_hint": "日志：/var/jb/var/mobile/Library/Preferences/Solo/Logs/Solo.log（Solo+ 行以 [Solo+] 开头；面板「写入调试日志」开启后才有）",
       "variants": [
+        {
+          "version": "1.0.1-2",
+          "date": "2026-11-23",
+          "arch": "iphoneos-arm64",
+          "jailbreak": "rootless（/var/jb）",
+          "devices": [
+            "iPhone 15 Pro"
+          ],
+          "ios": [
+            "17.2.1"
+          ],
+          "verified": "待实机确认（新增 Duo 细节）",
+          "changes": [
+            "新增「显示 Duo 时间」：单独隐藏 Duo 上方的时间文字，状态栏已有时间时不重复显示（默认开）",
+            "新增「Duo 下方电量」：圆环下方显示剩余电量百分比，≤20% 红色、充电绿色（默认开）",
+            "电量优先 UIDevice.batteryLevel，取不到时 dlsym 调 IOKit.ps（Current/Max Capacity、Is Charging）兜底，不新增链接依赖",
+            "圆环定位：从数据读数向上推断（优先近似正方形、其次面积最大），电量标签挂到圆环宿主层下方，横向居中、4pt 间距，宿主裁剪时自动上移一层",
+            "时间隐藏只作用于 Solo 时钟文字类 UnduoClockMirroredLabel 与「Duo 容器内、圆环上方」的普通时间标签；不碰状态栏，且只恢复自己打过标记的视图",
+            "新增调试日志行 duo ring / duo time hide / battery host，便于定位视图层级",
+            "Solo 原文件逐字节未改；arm64+arm64e 双切片 + PAC 断言（auth>0 plain=0）依旧通过"
+          ]
+        },
         {
           "version": "1.0.1-1",
           "date": "2026-11-23",

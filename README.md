@@ -18,7 +18,7 @@ https://chenlin8023.github.io/
 | VolumeManager (Full) | 系统 | 2.0.4（另有 2.0.3 / 1.3.4 / 1.3.0 / 1.2.0；dylib 线 2.1.4） | `iphoneos-arm64` | iPhone 15 Pro / iOS 17.2.1 | [VolumeManager-iOS17](https://github.com/Chenlin8023/VolumeManager-iOS17) |
 | CallAssist PortLeak | 系统 | 2.1.0 | `iphoneos-arm64e` | 2.1.0 待确认；2.0.14 已验证（iPhone 15 Pro / iOS 17.2.1） | [CallAssist-PortLeak](https://github.com/Chenlin8023/CallAssist-PortLeak) |
 | AppLock+ (应用锁+) | 系统 | 0.4.2-1 | `iphoneos-arm64e` | iPhone 15 Pro / iOS 17.2.1 | [AppLockPlus](https://github.com/Chenlin8023/AppLockPlus) |
-| Solo1.0.1优化 | 系统 | 1.0.1-1 | `iphoneos-arm64` | 组成件已验证（合并包未单独跑机） | [SoloPlus](https://github.com/Chenlin8023/SoloPlus) |
+| Solo1.0.1优化 | 系统 | 1.0.1-2（另有 1.0.1-1） | `iphoneos-arm64` | 1.0.1-1 组成件已验证；1.0.1-2 的 Duo 细节待确认 | [SoloPlus](https://github.com/Chenlin8023/SoloPlus) |
 | LSTimeSeconds (RootHide) | 锁屏 | 0.0.7-1 | `iphoneos-arm64e` | iPhone 15 Pro / iOS 17.2.1 | [LSTimeSeconds-iOS17](https://github.com/Chenlin8023/LSTimeSeconds-iOS17) |
 | LSTimeSeconds (rootless) | 锁屏 | 0.0.7-5 | `iphoneos-arm64` | iPhone 14 Pro / iOS 16.0.3（0.0.7-4/5） | 同上 |
 | Jikan（锁屏充电预估） | 锁屏 | 1.2.1-1+debug / 1.2.0 | `iphoneos-arm64e` | iPhone 15 Pro / iOS 17.2.1 | [Jikan](https://github.com/Chenlin8023/Jikan) |
@@ -31,9 +31,11 @@ https://chenlin8023.github.io/
 
 ### 关键说明
 
-- **Solo1.0.1优化（1.0.1-1）**：`com.chenlin8023.solo.full` 把官方 Solo 1.0.1 与 Solo+ 增强层
+- **Solo1.0.1优化（1.0.1-2）**：`com.chenlin8023.solo.full` 把官方 Solo 1.0.1 与 Solo+ 增强层
   合成单包，`Conflicts/Replaces: com.oakstheawesome.solo, com.chenlin8023.soloplus`——
   装本包等于替换官方 Solo 与旧独立增强包，卸载会一并移除 Solo 本体。
+  1.0.1-2 新增「显示 Duo 时间」与「Duo 下方电量」两项（面板：增强 → Duo → Duo 细节），
+  按运行时视图特征定位，首次上机若位置不对可按调试日志行（`duo ring` / `battery host`）反馈。
   包内含 Solo 原文件（逐字节未改），未获上游再分发授权，仅在本源站发布，勿二次转载。
 
 - **LSTimeSeconds 已拆成两个 Package ID**：

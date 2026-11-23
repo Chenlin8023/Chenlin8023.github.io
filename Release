@@ -6,12 +6,12 @@ Codename: ios
 Architectures: iphoneos-arm64e iphoneos-arm64 iphoneos-arm
 Components: main
 Description: iOS 16–17 越狱插件源；每版标注实机验证状态
-Date: Mon, 23 Nov 2026 09:21:11 UTC
+Date: Mon, 23 Nov 2026 09:45:34 UTC
 MD5Sum:
- 3e28b3e59c16f5385f6df4614240de97 23659 Packages
- e5fd8ff1fdf5f42d34099c1b6a1d4a9a 4492 Packages.gz
- 36a4758e5e58a231b3da737fb8b1f559 4060 Packages.xz
+ 9c89b8aa294312bf4fbd01ba7c530c09 24807 Packages
+ 527951495ec4f01a263693fbfc6c1e50 4603 Packages.gz
+ 6de2de2c00859d49a6b0e3f42ffd1681 4148 Packages.xz
 SHA256:
- d9a353a1af47e8476adcc9215d9c20c712492ffab725358fc5c3be6c6696930e 23659 Packages
- 63467b2df11ccacc61cbbc1467fa30b36fa18ff10fe4ec65611fd6fbe2b9652d 4492 Packages.gz
- 5ec9f7d7a5e7901a532cce89d6527c97efab571ba386a5254887859e40ba6959 4060 Packages.xz
+ af94059b5aa7c1f454b9def82f1f5d7eb696cdbf5c89fa95813191549fe82c4c 24807 Packages
+ 3febeff35f20c98cc21d6205229aee0ca47fecfd6d724306ddca6c3e04d112c8 4603 Packages.gz
+ fa4731e8580363ba3198d9f2f35efe3dca26944e2ee75a0ff30e5212fbd29cf0 4148 Packages.xz
