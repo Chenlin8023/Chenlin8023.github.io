@@ -9,7 +9,7 @@
       "views": [
         {
           "class": "DepictionMarkdownView",
-          "markdown": "- 每个 App 独立音量（最低静音）；多 App 同时播放，互不打断；改完立即生效\n- v2.0 自研设置面板：应用白名单——未勾选 = 完全不注入（无渲染挂钩、无轮询）\n- 白名单页：搜索栏 + 应用/系统组件两段分组，勾选即用\n- 音量 HUD 仅显示白名单应用，未勾选应用回落系统音量条；HUD 透明化\n- 总开关 / 混音开关实时生效（文件通道 + Darwin 通知热刷新）\n- 混音策略层全局生效（面板「混音开关」控制，无影响模式），多 App 同播\n- 重写音量引擎，消除 16 位 PCM 爆音"
+          "markdown": "- 每个 App 独立音量（最低静音），即时生效\n- 应用白名单：未勾选 = 完全不注入\n- 音量 HUD 只显示白名单应用，支持透明化\n- 混音开关实时生效，多 App 同播"
         }
       ]
     },
@@ -160,7 +160,7 @@
         },
         {
           "class": "DepictionMarkdownView",
-          "markdown": "- ⚠ 已知问题（2026-11-22）：目标 App 应用商店更新后，存在配置解析失效导致插件不生效（实测 QQ阅读：更新冲掉包内注入副本、中央注入未接管）——请改用源内「音量管理器 Dylib（注入版）」：dylib 形态配置自包含且注入持久化，App 更新后自动恢复。\n- rootless（/var/jb）包，arm64；RootHide 需转换或使用 rootless 引导环境。\n- v2.0.3 起为自研面板单入口：原版闭源面板 / 主模块 / 净化模块已移除，安装时自动清退（respring 后生效）。\n- 总开关 / 混音开关实时生效；应用白名单：未勾选 = 不装音量挂钩，勾选改动需重启对应 App 生效。\n- 音量 HUD 滑杆列表仅显示白名单应用；未勾选应用按音量键回落系统音量条。\n- 已知限制：部分沙盒 App 中央配置不可达（红果短剧 / 汽水音乐类）——这些 App 无音量调节，与白名单 App 同播时可能被掐断；混音层全局生效不受影响。\n- 依赖 Orion 运行时（dev.theos.orion），由系统按依赖安装。\n- 独立的「VolumeManager 面板净化」补丁包（com.local.volmanprefsclean）已随 v2.0.0 一并退役：已安装用户可直接卸载。\n- 1.3.4 及更早为稳定回退版，可直接安装 / 降级。"
+          "markdown": "- 实机验证 iPhone 15 Pro / iOS 17.2.1；rootless（/var/jb），arm64\n- 已知限制：部分沙盒 App（红果/汽水类）无音量调节\n- App 商店更新后注入可能失效；推荐改用「音量管理器 Dylib（注入版）」（二选一）"
         }
       ]
     },
@@ -185,7 +185,7 @@
         },
         {
           "class": "DepictionMarkdownView",
-          "markdown": "- 显示名改为「音量管理器」（Sileo 列表与插件页同步；Package id 不变，升级链不断）；功能与 2.0.3 完全一致"
+          "markdown": "- 显示名改为「音量管理器」"
         },
         {
           "class": "DepictionTableButtonView",
@@ -206,7 +206,7 @@
         },
         {
           "class": "DepictionMarkdownView",
-          "markdown": "- v2.0 大版本：自研设置面板（PS 原生渲染）整体替换闭源面板，旧面板/主模块/净化模块退役（安装时自动清退）\n- 应用白名单：未勾选 = 完全不注入（无渲染挂钩、无 0.5s 轮询）；白名单页搜索栏 + 应用/系统组件分段\n- 音量 HUD 滑杆列表仅显示白名单应用（AXSpringBoardServer 过滤，名单缓存 + 通知热刷新）；未勾选应用回落系统音量条\n- 总开关 / 混音开关实时生效（文件通道 + Darwin 通知；旧面板同款机制 RE 定案）\n- 混音层全局生效 + 无条件 MixWithOthers（修「后启动 App 掐断先启动 App」的时序竞态）\n- 已知限制：部分沙盒 App 中央配置不可达（红果短剧 / 汽水音乐类），这些 App 无音量调节且可能与白名单 App 同播互掐\n- 使用纪律：安装后 respring 一次；白名单改动需重启对应 App；「听着失效」先看日志头版本与 RC 探针再归因"
+          "markdown": "- 自研面板替换旧面板，应用白名单上线"
         },
         {
           "class": "DepictionTableButtonView",
@@ -227,7 +227,7 @@
         },
         {
           "class": "DepictionMarkdownView",
-          "markdown": "- 修快速调音音量指数衰减：App 回读缩放值不再被登记为基准（echo 基准污染防护）\n- 安装时自动刷新拷贝注入副本（JailFools/TrollFools），免手动重注入；postinst 逐条输出刷新结果\n- 新增失效自证探针：日志带 pid、渲染回调真实缩放统计（30s 节流）、包装行带采样率\n- 使用纪律：安装后 respring 一次；「听着失效」先看日志 RC探针 的缩放计数再归因"
+          "markdown": "- 音量缩放防护 + 安装自动刷新注入副本"
         },
         {
           "class": "DepictionTableButtonView",
@@ -248,7 +248,7 @@
         },
         {
           "class": "DepictionMarkdownView",
-          "markdown": "- 渲染回调层 ctx 表 32→512，修复长时间播放后静音失效\n- 新增 ctx 占用 / 峰值 / 累计包装日志，失败不再静默\n- 不采用动态扩容：渲染回调持有槽位指针，realloc 会让已装回调的 refCon 失效"
+          "markdown": "- 修长时间播放后静音失效"
         },
         {
           "class": "DepictionTableButtonView",
@@ -269,7 +269,7 @@
         },
         {
           "class": "DepictionMarkdownView",
-          "markdown": "- 新增混音策略层，多 App 稳定同时播放\n- 全量包整合设置面板、音量 HUD、音量引擎；面板净化\n- 作为 1.3.0 的稳定回退版保留"
+          "markdown": "- 新增混音层，多 App 同播"
         },
         {
           "class": "DepictionTableButtonView",
@@ -290,7 +290,7 @@
         },
         {
           "class": "DepictionMarkdownView",
-          "markdown": "- 2.0.0 rc1：旧面板清退；2.0.1：HUD 过滤挂钩 I/O 风暴修正（名单缓存 + 通知失效）；2.0.2：混音层恢复全局（方案 A）。"
+          "markdown": "- rc 迭代，改动并入 2.0.3"
         },
         {
           "class": "DepictionSubheaderView",
@@ -305,7 +305,7 @@
         },
         {
           "class": "DepictionMarkdownView",
-          "markdown": "- 1.3.1 echo 基准污染防护；1.3.2 postinst 自动刷新副本；1.3.3 诊断探针（pid / RC统计 / 采样率）。"
+          "markdown": "- 改动并入 1.3.4"
         },
         {
           "class": "DepictionSubheaderView",
@@ -320,7 +320,7 @@
         },
         {
           "class": "DepictionMarkdownView",
-          "markdown": "- 多变量优化期，结论不可归因；1.3.0 由 1.2.0 + ctx 512 重新定案。"
+          "markdown": "- 多变量优化期，由 1.3.0 重新定案"
         },
         {
           "class": "DepictionSubheaderView",
@@ -335,7 +335,7 @@
         },
         {
           "class": "DepictionMarkdownView",
-          "markdown": "- 1.1.3 修正净化模块文件权限（此前缺少执行位未加载）；1.1.0 新增面板净化。"
+          "markdown": "- 面板净化与权限修正"
         }
       ]
     },

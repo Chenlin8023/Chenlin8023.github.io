@@ -9,7 +9,7 @@
       "views": [
         {
           "class": "DepictionMarkdownView",
-          "markdown": "- 锁屏时钟显示实时秒数，自动跟随设备 12/24 小时制\n- 字号缩放 0.60–1.25（默认 0.88），以壁纸原始字号为基准，不抖动\n- 上下位置调节 ±100pt，解除裁剪；时钟水平自动居中\n- 长按进入壁纸自定义时静默旁路，滤镜、字体、景深编辑保持系统原样\n- 熄屏暂停刷新省电，亮屏立即恢复并校准\n- 设置面板：启用开关、字号滑块、位置滑块、注销按钮"
+          "markdown": "- 锁屏时钟显示实时秒数，自动跟随 12/24 小时制\n- 字号缩放（0.60–1.25）与上下位置可调\n- 熄屏暂停刷新省电，亮屏立即恢复\n- 自带设置面板（启用 / 字号 / 位置 / 注销）"
         }
       ]
     },
@@ -108,7 +108,7 @@
         },
         {
           "class": "DepictionMarkdownView",
-          "markdown": "- AOD 暗屏不走秒：系统在暗屏使用 1Hz Flipbook，应用层无法刷新；亮屏立即恢复。\n- RootHide 用户请安装 LSTimeSeconds (RootHide)，不要与本包混装。\n- rootless 包安装到 /var/jb；普通 rootless 设备直接安装，RootHide 需转换或使用 rootless 引导环境。\n- 0.0.7-2 未单独验证；0.0.7-4 / 0.0.7-5 已在 iPhone 14 Pro（iOS 16.0.3）真机验证。"
+          "markdown": "- 实机验证 iPhone 14 Pro / iOS 16.0.3；rootless（/var/jb）\n- RootHide 用户请装 LSTimeSeconds (RootHide)，两包勿混装\n- AOD 暗屏不走秒（系统限制），亮屏立即恢复"
         }
       ]
     },
@@ -133,7 +133,7 @@
         },
         {
           "class": "DepictionMarkdownView",
-          "markdown": "- 日志超过 256KB 轮转为 .1，避免长期使用无限增长\n- 1Hz 计时器首次 fire 对齐到下一个整秒（+10ms），秒数跳动更匀\n- 刷新与停表逻辑与 0.0.7-4 一致"
+          "markdown": "- 日志轮转与整秒对齐，秒数跳动更匀"
         },
         {
           "class": "DepictionTableButtonView",
@@ -154,7 +154,7 @@
         },
         {
           "class": "DepictionMarkdownView",
-          "markdown": "- 修复 iOS 16 熄屏再亮屏后秒数冻结：tick 不再依据 g_isScreenOff 跳过刷新\n- 熄屏、背光 state=2、视图注销时不再停止计时器，避免停止后无人重启\n- 撤回 0.0.7-3 的全局 block 方案，改为最小改动"
+          "markdown": "- 修复 iOS 16 熄屏再亮屏秒数冻结"
         },
         {
           "class": "DepictionTableButtonView",
@@ -175,7 +175,7 @@
         },
         {
           "class": "DepictionMarkdownView",
-          "markdown": "- rootless 适配：substrate 依赖与 /var/jb rpath\n- 设置面板改为源码编译，修复 arm64e 类元数据 PAC 导致的闪退\n- 功能与 RootHide 版一致，后续 0.0.7-4 已覆盖其修复"
+          "markdown": "- rootless 适配，功能与 RootHide 版一致"
         },
         {
           "class": "DepictionTableButtonView",
@@ -196,7 +196,7 @@
         },
         {
           "class": "DepictionMarkdownView",
-          "markdown": "- 新增全局 block 被 ARC retain，clang19 生成的 block isa 没有 PAC，objc_retain 时 SIGBUS；在 iOS 16.0.3 触发安全模式。"
+          "markdown": "- 全局 block 方案真机崩溃，撤回"
         },
         {
           "class": "DepictionSubheaderView",
@@ -211,7 +211,7 @@
         },
         {
           "class": "DepictionMarkdownView",
-          "markdown": "- 设置面板二进制在 arm64e 上进入设置闪退；根因是 __objc_data 的 class/superclass 指针缺少 PAC。"
+          "markdown": "- 设置面板真机闪退，撤回"
         }
       ]
     },

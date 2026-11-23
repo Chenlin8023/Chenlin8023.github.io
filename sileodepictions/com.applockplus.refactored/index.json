@@ -9,7 +9,7 @@
       "views": [
         {
           "class": "DepictionMarkdownView",
-          "markdown": "- 按应用注入：适合会检测越狱、无法全局注入的 App（TrollFools / JailFools）\n- 6 位应用锁密码；首次启动强制设置，不使用默认 0000\n- Face ID / 触控 ID 作为快捷方式；取消、失败或识别不可用时停留在密码键盘，不放行\n- 密码 PBKDF2-SHA256（2 万次迭代 + 16 字节随机盐），优先存 Keychain；恒定时间比较\n- 连续输错 5 次起指数冷却（1→2→4…分钟，上限 17 小时），状态持久化，杀进程不重置\n- 后台快照模糊遮盖；双指双击进入设置；支持 UIWindowScene / SwiftUI\n- 载体包：dylib 需手动注入目标 App，装完不会全局生效"
+          "markdown": "- 6 位应用锁密码，首次启动强制设置\n- Face ID / 触控 ID 快捷解锁，失败停留密码页\n- 连续输错指数冷却，杀进程不重置\n- 后台快照模糊遮盖；双指双击进设置\n- dylib 由 TrollFools / JailFools 注入目标 App"
         }
       ]
     },
@@ -56,7 +56,7 @@
         },
         {
           "class": "DepictionMarkdownView",
-          "markdown": "- 载体包：dylib 位于 /var/mobile/Documents/AppLockPlus/，用 Debs 导出或 Filza 取出，再由 TrollFools / JailFools 注入目标 App。\n- 不要过 RootHide 转换器；本包是免 substrate 的按应用注入 dylib。\n- 构建目标 iOS 14+；实机验证为 iPhone 15 Pro / iOS 17.2.1，未在其它机型/系统单独验证（TrollStore / TrollFools 注入路线理论适用）。"
+          "markdown": "- dylib 在 /var/mobile/Documents/AppLockPlus/ 取出，注入后杀 App 重开生效\n- 实机验证 iPhone 15 Pro / iOS 17.2.1；构建目标 iOS 14+\n- 免 substrate，不要过 RootHide 转换器"
         }
       ]
     },
@@ -81,7 +81,7 @@
         },
         {
           "class": "DepictionMarkdownView",
-          "markdown": "- 重构自 tien0246/ProtectedApp；修复 Face ID 取消即放行、快速返回解锁、明文密码、默认 0000 等绕过与安全问题\n- 首次启动强制设置 6 位密码；完整中文设置面板；Keychain/PBKDF2 存储；指数冷却；后台快照模糊；UIWindowScene 适配\n- 双指双击设置入口；移除魔改版的 Telegram 推广行为"
+          "markdown": "- 重构自 ProtectedApp：修复多个解锁绕过问题，补齐密码/生物识别/冷却/中文面板"
         },
         {
           "class": "DepictionTableButtonView",

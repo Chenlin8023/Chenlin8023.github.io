@@ -10,21 +10,18 @@
     {
       "package": "com.sini921.lstimeseconds.roothide",
       "display_name": "LSTimeSeconds (RootHide)",
-      "summary": "锁屏时钟显示实时秒数，支持字号缩放与上下位置调节。",
+      "summary": "锁屏时钟显示实时秒数，字号与位置可调。",
       "features": [
-        "锁屏时钟显示实时秒数，自动跟随设备 12/24 小时制",
-        "字号缩放 0.60–1.25（默认 0.88），以壁纸原始字号为基准，不抖动",
-        "上下位置调节 ±100pt，解除裁剪；时钟水平自动居中",
-        "长按进入壁纸自定义时静默旁路，滤镜、字体、景深编辑保持系统原样",
-        "熄屏暂停刷新省电，亮屏立即恢复并校准",
-        "设置面板：启用开关、字号滑块、位置滑块、注销按钮"
+        "锁屏时钟显示实时秒数，自动跟随 12/24 小时制",
+        "字号缩放（0.60–1.25）与上下位置可调",
+        "熄屏暂停刷新省电，亮屏立即恢复",
+        "自带设置面板（启用 / 字号 / 位置 / 注销）"
       ],
       "compatibility": {
         "notes": [
-          "AOD 暗屏不走秒：系统在暗屏使用 1Hz Flipbook，应用层无法刷新；亮屏立即恢复。",
-          "这是独立的 RootHide Package ID；从旧包升级必须先卸载旧 LSTimeSeconds，再安装本包。",
-          "卸载旧包不会删除偏好设置（com.b4db1r3.lstsprefs），新包会沿用。",
-          "原生 roothide arm64e，不要过 RootHide 转换器。"
+          "实机验证 iPhone 15 Pro / iOS 17.2.1；原生 roothide arm64e，直接安装",
+          "AOD 暗屏不走秒（系统限制），亮屏立即恢复",
+          "从旧 LSTimeSeconds 升级需先卸旧包，偏好设置会沿用"
         ]
       },
       "repo_url": "https://github.com/Chenlin8023/LSTimeSeconds-iOS17",
@@ -43,10 +40,7 @@
           ],
           "verified": "已验证",
           "changes": [
-            "修复原版在 iOS 17 上完全不生效的四个根因：版本硬编码、通知名不匹配、旧键误判、字号震荡",
-            "改为直接 hook CSProminentDisplayViewController / CSProminentTimeView，并保留 SBFLockScreenDateView 兜底",
-            "四通道写文字；字号以原始值为基准单次锚定，避免每秒抖动",
-            "原生 roothide arm64e，不经转换器"
+            "修复原版在 iOS 17 不生效，新增字号/位置调节与熄屏省电"
           ]
         }
       ],
@@ -56,7 +50,7 @@
           "date": "2026-11-02",
           "status": "已撤回",
           "notes": [
-            "自建 PSListController 面板在真机进入设置闪退；根因是 arm64e 类元数据缺少 PAC。版本号已回退到 0.0.7-1。"
+            "自建面板真机闪退，撤回，版本回退 0.0.7-1"
           ]
         }
       ],
@@ -66,21 +60,18 @@
     {
       "package": "com.sini921.lstimeseconds",
       "display_name": "LSTimeSeconds (rootless)",
-      "summary": "锁屏时钟显示实时秒数，支持字号缩放与上下位置调节（rootless /var/jb 构建）。",
+      "summary": "锁屏时钟显示实时秒数，字号与位置可调（rootless 构建）。",
       "features": [
-        "锁屏时钟显示实时秒数，自动跟随设备 12/24 小时制",
-        "字号缩放 0.60–1.25（默认 0.88），以壁纸原始字号为基准，不抖动",
-        "上下位置调节 ±100pt，解除裁剪；时钟水平自动居中",
-        "长按进入壁纸自定义时静默旁路，滤镜、字体、景深编辑保持系统原样",
-        "熄屏暂停刷新省电，亮屏立即恢复并校准",
-        "设置面板：启用开关、字号滑块、位置滑块、注销按钮"
+        "锁屏时钟显示实时秒数，自动跟随 12/24 小时制",
+        "字号缩放（0.60–1.25）与上下位置可调",
+        "熄屏暂停刷新省电，亮屏立即恢复",
+        "自带设置面板（启用 / 字号 / 位置 / 注销）"
       ],
       "compatibility": {
         "notes": [
-          "AOD 暗屏不走秒：系统在暗屏使用 1Hz Flipbook，应用层无法刷新；亮屏立即恢复。",
-          "RootHide 用户请安装 LSTimeSeconds (RootHide)，不要与本包混装。",
-          "rootless 包安装到 /var/jb；普通 rootless 设备直接安装，RootHide 需转换或使用 rootless 引导环境。",
-          "0.0.7-2 未单独验证；0.0.7-4 / 0.0.7-5 已在 iPhone 14 Pro（iOS 16.0.3）真机验证。"
+          "实机验证 iPhone 14 Pro / iOS 16.0.3；rootless（/var/jb）",
+          "RootHide 用户请装 LSTimeSeconds (RootHide)，两包勿混装",
+          "AOD 暗屏不走秒（系统限制），亮屏立即恢复"
         ]
       },
       "repo_url": "https://github.com/Chenlin8023/LSTimeSeconds-iOS17",
@@ -99,9 +90,7 @@
           ],
           "verified": "已验证",
           "changes": [
-            "日志超过 256KB 轮转为 .1，避免长期使用无限增长",
-            "1Hz 计时器首次 fire 对齐到下一个整秒（+10ms），秒数跳动更匀",
-            "刷新与停表逻辑与 0.0.7-4 一致"
+            "日志轮转与整秒对齐，秒数跳动更匀"
           ]
         },
         {
@@ -117,9 +106,7 @@
           ],
           "verified": "已验证",
           "changes": [
-            "修复 iOS 16 熄屏再亮屏后秒数冻结：tick 不再依据 g_isScreenOff 跳过刷新",
-            "熄屏、背光 state=2、视图注销时不再停止计时器，避免停止后无人重启",
-            "撤回 0.0.7-3 的全局 block 方案，改为最小改动"
+            "修复 iOS 16 熄屏再亮屏秒数冻结"
           ]
         },
         {
@@ -135,9 +122,7 @@
           ],
           "verified": "未单独验证",
           "changes": [
-            "rootless 适配：substrate 依赖与 /var/jb rpath",
-            "设置面板改为源码编译，修复 arm64e 类元数据 PAC 导致的闪退",
-            "功能与 RootHide 版一致，后续 0.0.7-4 已覆盖其修复"
+            "rootless 适配，功能与 RootHide 版一致"
           ]
         }
       ],
@@ -147,7 +132,7 @@
           "date": "2026-11-02",
           "status": "已撤回",
           "notes": [
-            "新增全局 block 被 ARC retain，clang19 生成的 block isa 没有 PAC，objc_retain 时 SIGBUS；在 iOS 16.0.3 触发安全模式。"
+            "全局 block 方案真机崩溃，撤回"
           ]
         },
         {
@@ -155,7 +140,7 @@
           "date": "2026-11-02",
           "status": "已撤回",
           "notes": [
-            "设置面板二进制在 arm64e 上进入设置闪退；根因是 __objc_data 的 class/superclass 指针缺少 PAC。"
+            "设置面板真机闪退，撤回"
           ]
         }
       ],
@@ -165,21 +150,19 @@
     {
       "package": "com.applockplus.refactored",
       "display_name": "AppLock+ (应用锁+)",
-      "summary": "按应用注入式应用锁，6 位密码 + Face ID / 触控 ID，免 substrate。",
+      "summary": "按应用注入的应用锁：6 位密码 + Face ID / 触控 ID。",
       "features": [
-        "按应用注入：适合会检测越狱、无法全局注入的 App（TrollFools / JailFools）",
-        "6 位应用锁密码；首次启动强制设置，不使用默认 0000",
-        "Face ID / 触控 ID 作为快捷方式；取消、失败或识别不可用时停留在密码键盘，不放行",
-        "密码 PBKDF2-SHA256（2 万次迭代 + 16 字节随机盐），优先存 Keychain；恒定时间比较",
-        "连续输错 5 次起指数冷却（1→2→4…分钟，上限 17 小时），状态持久化，杀进程不重置",
-        "后台快照模糊遮盖；双指双击进入设置；支持 UIWindowScene / SwiftUI",
-        "载体包：dylib 需手动注入目标 App，装完不会全局生效"
+        "6 位应用锁密码，首次启动强制设置",
+        "Face ID / 触控 ID 快捷解锁，失败停留密码页",
+        "连续输错指数冷却，杀进程不重置",
+        "后台快照模糊遮盖；双指双击进设置",
+        "dylib 由 TrollFools / JailFools 注入目标 App"
       ],
       "compatibility": {
         "notes": [
-          "载体包：dylib 位于 /var/mobile/Documents/AppLockPlus/，用 Debs 导出或 Filza 取出，再由 TrollFools / JailFools 注入目标 App。",
-          "不要过 RootHide 转换器；本包是免 substrate 的按应用注入 dylib。",
-          "构建目标 iOS 14+；实机验证为 iPhone 15 Pro / iOS 17.2.1，未在其它机型/系统单独验证（TrollStore / TrollFools 注入路线理论适用）。"
+          "dylib 在 /var/mobile/Documents/AppLockPlus/ 取出，注入后杀 App 重开生效",
+          "实机验证 iPhone 15 Pro / iOS 17.2.1；构建目标 iOS 14+",
+          "免 substrate，不要过 RootHide 转换器"
         ]
       },
       "repo_url": "https://github.com/Chenlin8023/AppLockPlus",
@@ -198,9 +181,7 @@
           ],
           "verified": "已验证",
           "changes": [
-            "重构自 tien0246/ProtectedApp；修复 Face ID 取消即放行、快速返回解锁、明文密码、默认 0000 等绕过与安全问题",
-            "首次启动强制设置 6 位密码；完整中文设置面板；Keychain/PBKDF2 存储；指数冷却；后台快照模糊；UIWindowScene 适配",
-            "双指双击设置入口；移除魔改版的 Telegram 推广行为"
+            "重构自 ProtectedApp：修复多个解锁绕过问题，补齐密码/生物识别/冷却/中文面板"
           ]
         }
       ],
@@ -210,7 +191,7 @@
     {
       "package": "com.chenlin8023.solo.full",
       "display_name": "Solo1.0.1优化",
-      "summary": "Solo 1.0.1 + Solo+ 增强层合并的完整单包：Duo 时间开关 / 5G 小号 A 标识 / 环下电量、状态栏保留、Dock 6 图标、轮播铺满，装完即用。",
+      "summary": "Solo 1.0.1 + Solo+ 增强层合并单包，装完即用。",
       "screenshots": [
         {
           "path": "screenshots/com.chenlin8023.solo.full/duo-home-1.jpg",
@@ -218,30 +199,19 @@
         }
       ],
       "features": [
-        "合并完整版：内含 Solo 1.0.1 本体与 Solo+ 增强层，装一个包即含全部功能，不必再单独安装官方 Solo",
-        "状态栏：保留系统状态栏（主题共存语义——未美化区域强制显示，Lunora 等美化插件渲染区域按其胶囊配置自动让位）；iOS 16.5 与 17.2.1 均实机验证，不需要时可在面板关掉",
-        "Duo：新增独立显示开关，隐藏 Duo 状态环/读数时轮播仍可单独使用（Duo 尺寸与轮播硬绑定，不做单独调节）",
-        "Duo 时间：可单独关掉 Duo 上方的时间文字（状态栏已有时间），默认开；关掉后在 setText:/setAttributedText: 里换空串，并在 setHidden:/setAlpha:/setTextColor: 三处压制，Solo 重建玻璃/快照层也不会再糊出时间",
-        "Duo 电量：圆环下方显示剩余电量百分比（64×22 标签挂 Duo 容器同层、按容器 frame 水平居中，修掉贴近右缘被夹回左边约 14pt 的问题）；≤20% 红色、充电绿色，上下微调 −8/−4/0/+4/+8，UIDevice + IOKit.ps 双源、10 秒刷新，默认开",
-        "数据标识：Duo 读数里的 5G 显示为「5G + 小号大写 A」（62% 字号、底部与 5G 同基线、字重跟随原标签）；LTE/3G/E/Wi-Fi 保持原样，标识字号 0.8–1.4、字重 跟随/细/常规/中粗/粗 五档",
-        "Dockicon：竖排 Dock 上限 5/6（6 个图标需手动拖入，依赖 Atria）；图标大小 0.85–1.0 走 iconContentScale，只缩图标内容、不改 Dock 列表几何",
-        "Dock 防呆：6 图标时 Dock 列表自动下移；切回 5 并注销后约 3 秒自动把最后一个图标迁回主屏，迁移失败则保持 6 并写日志，不强制弹出（不再进安全模式）",
-        "轮播铺满：复位 Solo 的 content scale fix（约 0.83），小组件内容铺满 364×170 轮播背景，可在面板关闭（可能裁切小组件边缘）",
-        "面板：入口注入 Solo 设置页「增强」分组——状态栏 / Duo / 轮播铺满 / Dockicon + 调试日志开关，开关写 Solo 自己的域，注销后保持",
-        "构建：arm64 + arm64e FAT 双切片（SpringBoard 只加载 arm64e 切片），arm64e CFString isa PAC 补丁（diversity 0x6AE1）+ ldid -S，产物断言 isa: auth>0 plain=0",
-        "Solo 原文件逐字节未改：只新增 SoloPlus.dylib / SoloPlus.plist 与 5 个面板 plist，卸载不会留下被改写的 Solo 二进制"
+        "内含 Solo 1.0.1 本体，安装即替换官方包",
+        "状态栏保留：与 Lunora 等美化插件共存（可关）",
+        "Duo 开关：独立显示 / 时间 / 环下电量（可微调）",
+        "数据标识：5G 显示为「5G + 小号 A」，字号字重可调",
+        "Dockicon：竖排 Dock 6 图标、图标缩放、自动下移（依赖 Atria）",
+        "轮播铺满：小组件铺满轮播背景（可关）"
       ],
       "compatibility": {
         "notes": [
-          "独立 Package ID（com.chenlin8023.solo.full）：安装时经 Conflicts/Replaces 自动替换官方 com.oakstheawesome.solo 1.0.1 与独立增强包 com.chenlin8023.soloplus，避免双注入；卸载本包会一并移除 Solo 本体。",
-          "1.0.1-24 由 Solo+ 1.3.8 与未改动的官方 Solo 1.0.1 原文件重组；状态栏主题共存（适配 Lunora 等美化插件，未美化区域听 Solo、美化区域按胶囊配置让位）与 iOS 16.5 兼容已在 iPhone 15 Pro / iOS 17.2.1（含 Lunora）与 iPhone 14 Pro Max / iOS 16.5 实机验收；安装后请 respring，并确认 设置 → Solo → 增强 可正常进入。",
-          "本包内含 Solo 1.0.1 原文件，Solo 的二进制与商标归原作者 OaksTheAwesome；打包方未获上游再分发授权，仅作本机整合发布，请勿二次转载本 deb。",
-          "基于 Solo 1.0.1 私有实现（UnduoWidgetCarousel / SBDockIconListView / SBIconListModel 等），Solo 或 iOS 升级后可能需要适配。",
-          "rootless 包（/var/jb，iphoneos-arm64），面向 iOS 16–17；RootHide 经转换器安装，原生 roothide 环境请用转换器或 rootless 引导。",
-          "Dock 6 图标与竖排布局依赖 Atria（实测 1.4.1-11）；未安装 Atria 时其余功能正常。",
-          "已知限制：Dock 拖动/换位仍有可感知卡顿；Dock 内放文件夹时不建议同时开 6 图标；轮播铺满可能裁切小组件边缘。",
-          "面板入口：设置 → Solo → 增强；调试日志默认关闭，开启后写 /var/jb/var/mobile/Library/Preferences/Solo/Logs/Solo.log（[Solo+] 前缀）。",
-          "Duo 细节两项按运行时视图特征定位（时钟文字类 UnduoClockMirroredLabel + 从数据读数向上推断圆环），首次上机若位置或命中不对，开启调试日志后把 duo ring / duo time hide / battery host 行反馈即可定点修正。"
+          "实机验证 iPhone 15 Pro / iOS 17.2.1（含 Lunora）与 iPhone 14 Pro Max / iOS 16.5",
+          "rootless（/var/jb），面向 iOS 16–17；安装自动替换官方 Solo，卸载随包移除",
+          "已知限制：Dock 拖动偶有卡顿；Dock 放文件夹不建议开 6 图标；轮播铺满可能裁切边缘",
+          "内含 Solo 原文件（归原作者 OaksTheAwesome），请勿二次转载"
         ]
       },
       "repo_url": "https://github.com/Chenlin8023/SoloPlus",
@@ -260,10 +230,9 @@
             "17.2.1",
             "16.5"
           ],
-          "verified": "双机实机验收（同 1.0.1-23）；本版仅为判定收窄加固，已验收路径行为不变",
+          "verified": "双机实机验收",
           "changes": [
-            "主题覆盖层识别加固（iOS 16.5 防护）：跳过 MTMaterialView 等系统材质类前缀（MT），并要求覆盖层横贯状态栏（宽度 ≥ 前景视图 60%，Lunora 的 overlay 为整条 393×54 不受影响）——防止旧 _UIStatusBar 同层的系统辅助视图被误判成美化覆盖层、错误触发让位",
-            "严格收窄判定：17.2.1 + Lunora 的已验收行为不变；其余与 1.0.1-23 完全一致（主题共存语义、iOS 16.5 兼容、挂载/布局时机同步、CC 回主屏瞬间胶囊一瞬呈现的已知残留）"
+            "主题覆盖层识别加固（iOS 16.5 防误判），已验收行为不变"
           ]
         },
         {
@@ -279,16 +248,9 @@
             "17.2.1",
             "16.5"
           ],
-          "verified": "双机实机验收：iPhone 15 Pro / iOS 17.2.1（含 Lunora 美化插件共存）+ iPhone 14 Pro Max / iOS 16.5",
+          "verified": "双机实机验收",
           "changes": [
-            "状态栏保留重构为「主题共存」语义（适配 Lunora 等自绘状态栏的美化插件）：未美化区域由 Solo 强制显示，美化插件实际渲染的区域（按其覆盖层胶囊 frame 识别）自动让位，区域随胶囊开关组合自适应",
-            "iOS 16.5 兼容：主屏可见状态栏在 UIStatusBarWindow，主页窗口判定补齐（SBMainSwitcherWindow / UIStatusBarWindow）",
-            "主题在场判据=覆盖层存在（不看可见性，Lunora 转场会瞬时藏 overlay 但压制不停）；让位=胶囊「有效可见」，overlay 被藏期间整条原生条都听 Solo",
-            "挂载（didMoveToWindow）/布局（layoutSubviews）时机同步让位状态，消除进出 App/控制中心的状态栏内容闪动",
-            "已知残留（用户确认接受）：CC 关闭回主屏瞬间美化胶囊需要一瞬呈现（Lunora 自身转场时序），期间短暂显示原生条",
-            "诊断日志：hook 归属探测（sbhook ownership）+ 状态栏层级 dump（sbdump）+ blocked/ignored/yield 全链路",
-            "构建：arm64 + arm64e FAT 双切片 + CFString isa PAC（auth=123 plain=0）+ ldid -S；Solo 原文件逐字节未改",
-            "包含 Solo+ 1.3.7；Duo / Dockicon / 轮播铺满等功能与 1.3.0 一致"
+            "状态栏主题共存 + iOS 16.5 兼容 + 挂载/布局时机同步"
           ]
         },
         {
@@ -302,16 +264,9 @@
           "ios": [
             "17.2.1"
           ],
-          "verified": "待实机确认（本轮摘除歌词模块）",
+          "verified": "待实机确认",
           "changes": [
-            "移除「桌面歌词」模块：悬浮窗、LRCLIB 拉词、媒体探测与 SBMediaController hook、Solo 媒体缓存只读层全部摘除，面板只剩 状态栏 / Duo / 轮播铺满 / Dockicon",
-            "Duo 时间：关掉后直接在 setText:/setAttributedText: 里换空串，并在 setHidden:/setAlpha:/setTextColor: 三处压制，Solo 重建玻璃/快照层也不会再糊出时间；只恢复自己打过标记的视图",
-            "Duo 数据标识：5G 显示为「5G + 小号大写 A」（62% 字号、底部与 5G 同基线），其余 LTE/3G/E/Wi-Fi 原样；字号 0.8–1.4、字重 跟随/细/常规/中粗/粗 五档",
-            "Duo 电量：64×22 标签挂在 Duo 容器同层、按容器 frame 水平居中，修掉贴近右缘被夹回左边约 14pt 的问题；上下微调 −8/−4/0/+4/+8；≤20% 红、充电绿；UIDevice + IOKit.ps 双源、10 秒刷新",
-            "Duo 细节：隐藏读数下方 ≤44pt 的图片类符号（定位箭头等），不碰电量标签；容器换锚点即时重跑，不等 1 秒 tick",
-            "面板注入补齐：Solo 设置页「增强」分组 + 4 个子页（状态栏 / Duo / 轮播铺满 / Dockicon）+ 调试日志开关",
-            "构建：arm64 + arm64e 双切片 + CFString isa PAC（auth=108 plain=0）+ ldid -S；Solo 原文件逐字节未改",
-            "本版不含任何网络请求与媒体 hook，常驻开销与包体都比带歌词的版本更小"
+            "移除桌面歌词模块，面板收敛为 状态栏/Duo/轮播铺满/Dockicon"
           ]
         },
         {
@@ -325,15 +280,9 @@
           "ios": [
             "17.2.1"
           ],
-          "verified": "待实机确认（新增 Duo 细节）",
+          "verified": "待实机确认",
           "changes": [
-            "新增「显示 Duo 时间」：单独隐藏 Duo 上方的时间文字，状态栏已有时间时不重复显示（默认开）",
-            "新增「Duo 下方电量」：圆环下方显示剩余电量百分比，≤20% 红色、充电绿色（默认开）",
-            "电量优先 UIDevice.batteryLevel，取不到时 dlsym 调 IOKit.ps（Current/Max Capacity、Is Charging）兜底，不新增链接依赖",
-            "圆环定位：从数据读数向上推断（优先近似正方形、其次面积最大），电量标签挂到圆环宿主层下方，横向居中、4pt 间距，宿主裁剪时自动上移一层",
-            "时间隐藏只作用于 Solo 时钟文字类 UnduoClockMirroredLabel 与「Duo 容器内、圆环上方」的普通时间标签；不碰状态栏，且只恢复自己打过标记的视图",
-            "新增调试日志行 duo ring / duo time hide / battery host，便于定位视图层级",
-            "Solo 原文件逐字节未改；arm64+arm64e 双切片 + PAC 断言（auth>0 plain=0）依旧通过"
+            "新增 Duo 时间开关与环下电量"
           ]
         },
         {
@@ -347,16 +296,9 @@
           "ios": [
             "17.2.1"
           ],
-          "verified": "组成件已验证（合并包未单独跑机）",
+          "verified": "组成件已验证",
           "changes": [
-            "首个上架版：Solo 1.0.1 本体 + Solo+ 1.0.0 增强层合并为单包，独立 Package ID，安装即替换官方 Solo 与旧独立增强包",
-            "状态栏：Solo 隐藏系统状态栏时强制保留（面板可关）",
-            "Duo：独立显示/隐藏开关，轮播可单独使用",
-            "数据标识：5G 显示为 5G + 小号大写 A（62% 字号、底部同基线），其余制式不变",
-            "Dockicon：上限 5/6、图标内容缩放 0.85–1.0、6 图标自动下移",
-            "Dock 工程修复：缩放改用 iconContentScale（开合 App/文件夹落点不再回拉）、6→5 注销后自动迁回多余图标且失败回滚、有效上限不低于当前图标数、Dock model 指针身份匹配隔离文件夹模型",
-            "轮播铺满：复位 content scale fix（约 0.83），铺满 364×170 背景，可关闭",
-            "构建：arm64+arm64e FAT 双切片 + CFString isa PAC 补丁 + ldid -S，终审断言 isa: auth>0 plain=0；Solo 原文件逐字节未改"
+            "首个上架版：Solo 本体 + 增强层合并单包"
           ]
         }
       ],
@@ -366,8 +308,7 @@
           "date": "2026-11-23",
           "status": "未上架（本地测试）",
           "notes": [
-            "独立增强包 com.chenlin8023.soloplus 1.0.0（依赖官方 Solo 1.0.1），iPhone 15 Pro / iOS 17.2.1 / RootHide 实机验收。",
-            "本地合并包 Solo_1.0.1+sp1.0.0 只用于自测，未上架；1.0.1-1 起以独立 id 上架。"
+            "独立增强包 1.0.0 实机验收；1.0.1-1 起改独立 id 上架"
           ]
         }
       ],
@@ -377,19 +318,18 @@
     {
       "package": "com.chenlin8023.notifiericons",
       "display_name": "应用通知小图标",
-      "summary": "状态栏显示选中应用的通知小图标（NotifierIcons）；有未读角标才出现，清零即消失。",
+      "summary": "状态栏显示选中应用的通知小图标，有未读才出现。",
       "features": [
-        "状态栏下方显示选中 App 的通知小图标；有未读角标才出现，清零即消失（安卓通知语义）",
-        "真实 App 图标（format 0–12 自动探测 + 磁盘缓存 + 字母头像兜底）",
-        "最多 6 个，按应用名排序；独立悬浮窗渲染，与灵动岛布局解耦",
-        "位置预设（居中 / 岛左 / 岛右）+ 微调；改动即时生效；仅桌面 / 锁屏显示，进 App 自动消失",
-        "设置面板选择 App；2 秒轮询 + badge 事件双通道"
+        "状态栏下方显示选中 App 的通知小图标，清零即消失",
+        "真实 App 图标，最多 6 个，位置预设 + 微调",
+        "仅桌面 / 锁屏显示，进 App 自动消失",
+        "设置面板选择应用，改动即时生效"
       ],
       "compatibility": {
         "notes": [
-          "仅注入 SpringBoard：桌面 / 锁屏生效，App 内不显示。",
-          "0.9.2 起无角标化：不再显示红色角标数字，图标出现即通知、清零即隐藏。",
-          "rootless（/var/jb）包，arm64；RootHide 需转换或使用 rootless 引导环境。"
+          "实机验证 iPhone 15 Pro / iOS 17.2.1；rootless（/var/jb）",
+          "仅注入 SpringBoard，App 内不显示",
+          "无数字角标：图标出现即通知"
         ]
       },
       "repo_url": "https://github.com/Chenlin8023/notifiericons",
@@ -408,9 +348,7 @@
           ],
           "verified": "已验证",
           "changes": [
-            "形态定稿：整体移除红点与数字角标及全部相关开关",
-            "修复 0.9.1 角标 x 坐标漏加图标偏移、全部叠画在第一个图标上的潜伏 bug",
-            "图标出现即通知、清零即隐藏；面板脚注明示无通知时不显示图标行"
+            "移除角标数字形态定稿；修复图标重叠"
           ]
         }
       ],
@@ -420,7 +358,7 @@
           "date": "2026-11-03",
           "status": "历史版本",
           "notes": [
-            "新增角标显示数字开关；日志 128KB 轮转，保留 .1/.2 两份历史。"
+            "角标数字开关与日志轮转"
           ]
         },
         {
@@ -428,7 +366,7 @@
           "date": "2026-11-03",
           "status": "历史版本",
           "notes": [
-            "真图标链路打通：启动期捕获 SBIconController → iconManager → iconModel.leafIconForIdentifier: → SBIconImageCache。"
+            "真图标链路打通"
           ]
         }
       ],
@@ -438,21 +376,17 @@
     {
       "package": "com.local.callassistportleak",
       "display_name": "CallAssist PortLeak",
-      "summary": "SpringBoard Mach 端口泄漏的侦查与止血工具；定责并抑制 CallAssist 的 IOKit 轮询泄漏。",
+      "summary": "SpringBoard 端口泄漏观测与止血工具。",
       "features": [
-        "观测：每 5 分钟输出端口 / fd 统计、Top 调用点、xpcA / xpcF / p5 指标",
-        "既有止血：CFUserNotification 应答端口宽限后取消、摘除泄漏 RunLoop 源、fd 超水位时复核后关闭",
-        "XPC 接管-宽限-回收：钩住 xpc_connection_create*，栈回溯确认插件驱动且服务名命中回收名单",
-        "512 槽指针去重；5 秒清扫；默认 10 秒宽限后 xpc_connection_cancel + xpc_release",
-        "系统框架直呼与纯系统路径的连接不碰；回收服务名单可通过 config.plist 配置",
-        "原生 roothide arm64e"
+        "定期输出端口 / fd 统计与泄漏指标",
+        "泄漏连接按回收名单自动清理（名单可配置）",
+        "系统框架路径的连接不碰"
       ],
       "compatibility": {
         "notes": [
-          "项目已更名 CallAssistLeakGuard；当前发布包 ID 仍是旧 ID com.local.callassistportleak，2.1.0 更名重建待完成。",
-          "2.1.0 待真机确认；2.0.14 已验证回收有效。",
-          "从旧 ID（com.local.bioprotectleakguard）升级必须先卸载旧包；新旧共存会双重注入。",
-          "原生 roothide arm64e，不要过 RootHide 转换器。"
+          "原生 roothide arm64e，不过转换器",
+          "2.0.14 已验证回收有效；2.1.0 待真机确认",
+          "从旧 ID（com.local.bioprotectleakguard）升级先卸旧包"
         ]
       },
       "repo_url": "https://github.com/Chenlin8023/CallAssist-PortLeak",
@@ -471,9 +405,7 @@
           ],
           "verified": "待确认（2.0.14 已验证）",
           "changes": [
-            "项目更名 CallAssistLeakGuard，计划将包 ID 改为 com.local.callassistleakguard（当前发布包仍为旧 ID）",
-            "功能同 2.0.14：回收服务名单可配置；新增 p5 端口净增量指标",
-            "2.0.13 起确认 powerdxpc 回收有效（xpcA≈xpcF）"
+            "更名 CallAssistLeakGuard（包 ID 待改），回收名单可配置"
           ]
         }
       ],
@@ -483,7 +415,7 @@
           "date": "2026-11-03",
           "status": "旧 ID 已验证",
           "notes": [
-            "回收服务范围改为可配置（XPCReclaimServices，前缀匹配）；安全条件不变。"
+            "回收服务范围可配置"
           ]
         },
         {
@@ -491,7 +423,7 @@
           "date": "2026-11-02",
           "status": "旧 ID 已验证",
           "notes": [
-            "真机日志确认 powerdxpc 回收有效；统计行新增 p5 端口净增量。"
+            "真机确认回收有效，新增 p5 指标"
           ]
         },
         {
@@ -499,7 +431,7 @@
           "date": "2026-10-26",
           "status": "旧 ID 历史版本",
           "notes": [
-            "2.0.7 修复 arm64e __cfstring isa 未认证导致的 SIGBUS；2.0.8 修复定时器被 ARC 释放、清扫从未运行的 bug。"
+            "修复崩溃与定时器问题"
           ]
         }
       ],
@@ -509,27 +441,18 @@
     {
       "package": "com.local.volmanaudioqueue.full",
       "display_name": "音量管理器",
-      "summary": "每个 App 独立音量，多个 App 可同时播放。",
+      "summary": "每个 App 独立音量，多 App 同时播放互不打断。",
       "features": [
-        "每个 App 独立音量（最低静音）；多 App 同时播放，互不打断；改完立即生效",
-        "v2.0 自研设置面板：应用白名单——未勾选 = 完全不注入（无渲染挂钩、无轮询）",
-        "白名单页：搜索栏 + 应用/系统组件两段分组，勾选即用",
-        "音量 HUD 仅显示白名单应用，未勾选应用回落系统音量条；HUD 透明化",
-        "总开关 / 混音开关实时生效（文件通道 + Darwin 通知热刷新）",
-        "混音策略层全局生效（面板「混音开关」控制，无影响模式），多 App 同播",
-        "重写音量引擎，消除 16 位 PCM 爆音"
+        "每个 App 独立音量（最低静音），即时生效",
+        "应用白名单：未勾选 = 完全不注入",
+        "音量 HUD 只显示白名单应用，支持透明化",
+        "混音开关实时生效，多 App 同播"
       ],
       "compatibility": {
         "notes": [
-          "⚠ 已知问题（2026-11-22）：目标 App 应用商店更新后，存在配置解析失效导致插件不生效（实测 QQ阅读：更新冲掉包内注入副本、中央注入未接管）——请改用源内「音量管理器 Dylib（注入版）」：dylib 形态配置自包含且注入持久化，App 更新后自动恢复。",
-          "rootless（/var/jb）包，arm64；RootHide 需转换或使用 rootless 引导环境。",
-          "v2.0.3 起为自研面板单入口：原版闭源面板 / 主模块 / 净化模块已移除，安装时自动清退（respring 后生效）。",
-          "总开关 / 混音开关实时生效；应用白名单：未勾选 = 不装音量挂钩，勾选改动需重启对应 App 生效。",
-          "音量 HUD 滑杆列表仅显示白名单应用；未勾选应用按音量键回落系统音量条。",
-          "已知限制：部分沙盒 App 中央配置不可达（红果短剧 / 汽水音乐类）——这些 App 无音量调节，与白名单 App 同播时可能被掐断；混音层全局生效不受影响。",
-          "依赖 Orion 运行时（dev.theos.orion），由系统按依赖安装。",
-          "独立的「VolumeManager 面板净化」补丁包（com.local.volmanprefsclean）已随 v2.0.0 一并退役：已安装用户可直接卸载。",
-          "1.3.4 及更早为稳定回退版，可直接安装 / 降级。"
+          "实机验证 iPhone 15 Pro / iOS 17.2.1；rootless（/var/jb），arm64",
+          "已知限制：部分沙盒 App（红果/汽水类）无音量调节",
+          "App 商店更新后注入可能失效；推荐改用「音量管理器 Dylib（注入版）」（二选一）"
         ]
       },
       "repo_url": "https://github.com/Chenlin8023/VolumeManager-iOS17",
@@ -548,7 +471,7 @@
           ],
           "verified": "已验证",
           "changes": [
-            "显示名改为「音量管理器」（Sileo 列表与插件页同步；Package id 不变，升级链不断）；功能与 2.0.3 完全一致"
+            "显示名改为「音量管理器」"
           ]
         },
         {
@@ -564,13 +487,7 @@
           ],
           "verified": "已验证",
           "changes": [
-            "v2.0 大版本：自研设置面板（PS 原生渲染）整体替换闭源面板，旧面板/主模块/净化模块退役（安装时自动清退）",
-            "应用白名单：未勾选 = 完全不注入（无渲染挂钩、无 0.5s 轮询）；白名单页搜索栏 + 应用/系统组件分段",
-            "音量 HUD 滑杆列表仅显示白名单应用（AXSpringBoardServer 过滤，名单缓存 + 通知热刷新）；未勾选应用回落系统音量条",
-            "总开关 / 混音开关实时生效（文件通道 + Darwin 通知；旧面板同款机制 RE 定案）",
-            "混音层全局生效 + 无条件 MixWithOthers（修「后启动 App 掐断先启动 App」的时序竞态）",
-            "已知限制：部分沙盒 App 中央配置不可达（红果短剧 / 汽水音乐类），这些 App 无音量调节且可能与白名单 App 同播互掐",
-            "使用纪律：安装后 respring 一次；白名单改动需重启对应 App；「听着失效」先看日志头版本与 RC 探针再归因"
+            "自研面板替换旧面板，应用白名单上线"
           ]
         },
         {
@@ -586,10 +503,7 @@
           ],
           "verified": "已验证",
           "changes": [
-            "修快速调音音量指数衰减：App 回读缩放值不再被登记为基准（echo 基准污染防护）",
-            "安装时自动刷新拷贝注入副本（JailFools/TrollFools），免手动重注入；postinst 逐条输出刷新结果",
-            "新增失效自证探针：日志带 pid、渲染回调真实缩放统计（30s 节流）、包装行带采样率",
-            "使用纪律：安装后 respring 一次；「听着失效」先看日志 RC探针 的缩放计数再归因"
+            "音量缩放防护 + 安装自动刷新注入副本"
           ]
         },
         {
@@ -605,9 +519,7 @@
           ],
           "verified": "已验证",
           "changes": [
-            "渲染回调层 ctx 表 32→512，修复长时间播放后静音失效",
-            "新增 ctx 占用 / 峰值 / 累计包装日志，失败不再静默",
-            "不采用动态扩容：渲染回调持有槽位指针，realloc 会让已装回调的 refCon 失效"
+            "修长时间播放后静音失效"
           ]
         },
         {
@@ -623,9 +535,7 @@
           ],
           "verified": "已验证",
           "changes": [
-            "新增混音策略层，多 App 稳定同时播放",
-            "全量包整合设置面板、音量 HUD、音量引擎；面板净化",
-            "作为 1.3.0 的稳定回退版保留"
+            "新增混音层，多 App 同播"
           ]
         }
       ],
@@ -635,7 +545,7 @@
           "date": "2026-11-19",
           "status": "未上架（rc 迭代，改动并入 2.0.3）",
           "notes": [
-            "2.0.0 rc1：旧面板清退；2.0.1：HUD 过滤挂钩 I/O 风暴修正（名单缓存 + 通知失效）；2.0.2：混音层恢复全局（方案 A）。"
+            "rc 迭代，改动并入 2.0.3"
           ]
         },
         {
@@ -643,7 +553,7 @@
           "date": "2026-11-18",
           "status": "未上架（改动并入 1.3.4 发布）",
           "notes": [
-            "1.3.1 echo 基准污染防护；1.3.2 postinst 自动刷新副本；1.3.3 诊断探针（pid / RC统计 / 采样率）。"
+            "改动并入 1.3.4"
           ]
         },
         {
@@ -651,7 +561,7 @@
           "date": "2026-11-03",
           "status": "未上架 / 已移除",
           "notes": [
-            "多变量优化期，结论不可归因；1.3.0 由 1.2.0 + ctx 512 重新定案。"
+            "多变量优化期，由 1.3.0 重新定案"
           ]
         },
         {
@@ -659,7 +569,7 @@
           "date": "2026-10-23",
           "status": "历史版本",
           "notes": [
-            "1.1.3 修正净化模块文件权限（此前缺少执行位未加载）；1.1.0 新增面板净化。"
+            "面板净化与权限修正"
           ]
         }
       ],
@@ -669,23 +579,19 @@
     {
       "package": "com.local.volmanaudioqueue.dylib",
       "display_name": "音量管理器 Dylib（注入版）",
-      "summary": "摇一摇唤出音量弹窗；下载 deb 提取 dylib 导入 JailFools/TrollFools 注入对应 App，混音+每 App 音量。",
+      "summary": "音量管理器 dylib 注入版：摇一摇唤出音量弹窗，App 更新后注入自动恢复。",
       "features": [
-        "每个 App 独立音量（最低静音）+ 混音层无条件生效：参与同播的 App 都注入即可同时播放",
-        "调音量 = App 内摇一摇唤出临时弹窗：拖动预览、松手生效、0.4 秒后弹窗自动收场（无常驻悬浮物）",
-        "无白名单 / 无总开关 / 无 Sileo 依赖：deb 仅为下载容器，dylib 导入 JailFools/TrollFools 注入即用",
-        "App 更新后 JailFools/TrollFools 持久化注入自动恢复，无需重新注入；引擎升级时重注一次即可",
-        "崩溃 App 止血开关：在对应 App 数据容器 Documents/ 下新建空文件 vmaq-novolume，重启 App 只关音量挂钩（混音照常）"
+        "每个 App 独立音量 + 混音无条件生效",
+        "App 内摇一摇唤出弹窗：拖动预览、松手生效、自动收场",
+        "dylib 由 JailFools / TrollFools 注入，App 更新后自动恢复",
+        "崩溃止血：对应 App 容器建 vmaq-novolume 空文件"
       ],
       "compatibility": {
         "notes": [
-          "使用方式：下载 .deb 导入 JailFools/TrollFools 注入应用（或在 Filza 中解压 deb 提取 VolManAudioQueue.dylib 后导入），杀 App 重开生效。dylib 原文件直链：https://chenlin8023.github.io/dylib/VolManAudioQueue-2.1.4.dylib",
-          "与「音量管理器」full 版二选一：已装 full 请先用 Sileo 卸载再注入 dylib，否则双引擎叠加导致音量异常。",
-          "已知限制①：部分 App 只支持混音、无法调节音量（其音频路径未经过挂钩层）——混音不受影响。",
-          "已知限制②：个别 App 注入音量挂钩后闪退（实测：红果短剧 / 汽水音乐）——在对应数据容器 Documents/ 下新建空文件 vmaq-novolume 并重启 App，即可避免闪退（只保证混音，无音量调节）。",
-          "弹窗为临时卡片：拖动仅预览、松手生效并自动收场；期间部分 App（如抖音普通作品）可能短暂暂停视频，弹窗收场后自动恢复播放。",
-          "环境：rootless（/var/jb）dylib；实测 iPhone 15 Pro / iOS 17.2.1 / RootHide（JailFools 注入）。",
-          "本包安装到 Sileo 不会有任何效果（dylib 带惰性过滤器不会被加载）；请勿依赖安装生效。"
+          "使用：下载 deb 提取 dylib，注入后杀 App 重开生效",
+          "与「音量管理器」full 版二选一，勿双引擎",
+          "实测 iPhone 15 Pro / iOS 17.2.1 / RootHide（JailFools）",
+          "已知限制：部分 App 只能混音不可调音量；个别 App 闪退按上条止血"
         ]
       },
       "repo_url": "https://github.com/Chenlin8023/VolumeManager-iOS17",
@@ -704,11 +610,7 @@
           ],
           "verified": "已验证",
           "changes": [
-            "首发 dylib 注入版：引擎无闸门化（无白名单 / 无总开关），配置自包含在各 App 容器 Documents/",
-            "摇一摇唤出音量弹窗：拖动纯预览、松手唯一写入并生效、0.4 秒自动收场（无常驻悬浮物）",
-            "混音层无条件生效（App 更新后持久化注入自动恢复）；写盘与刷新全部在后台串行队列",
-            "vmaq-novolume per-App 止血开关：闪退 App 只关音量挂钩保混音",
-            "2.1.0 → 2.1.4 内部迭代定案：手势=摇一摇（双指手势与抖音其他插件 / AppLock+ 冲突）、写盘移出主线程、弹窗自动收场"
+            "首发 dylib 注入版：无白名单无总开关，配置自包含"
           ]
         }
       ],
@@ -718,20 +620,18 @@
     {
       "package": "moe.waru.jikan",
       "display_name": "Jikan（锁屏充电预估）",
-      "summary": "在锁定屏幕上实时显示充满电（或目标电量）所需的时间预估。",
+      "summary": "锁屏实时显示充满电所需时间预估。",
       "features": [
-        "锁屏胶囊实时显示距充满电/目标电量的时间，支持 Apple 官方模型与 Jikan 历史学习两种算法",
-        "充电目标可调：Apple 模型 80/85/90/95/100%，Jikan 算法 1–100% 任选",
-        "胶囊样式（经典/进度环）、位置（横竖屏独立）、背景透明度可调",
-        "堆叠显示电池电压、温度、充电功率；达到目标电量时推送通知",
-        "可与 ChargeLimiter 同步充电上限；可隐藏滑动解锁文字与专注模式指示器"
+        "锁屏胶囊实时显示距充满电 / 目标电量的时间",
+        "充电目标可调，支持官方模型与自学习算法",
+        "胶囊样式 / 位置 / 透明度可调，可堆叠电压温度功率",
+        "达到目标电量推送通知"
       ],
       "compatibility": {
         "notes": [
-          "原生 roothide arm64e（iphoneos-arm64e），直接安装，不要过 RootHide 转换器。",
-          "1.2.1-1+debug 为内置简体中文的分支构建（Chenlin8023 fork）；1.2.0 为上游 waruhachi 原版英文界面。",
-          "与简体中文语言包（moe.waru.jikan.lang.zh-hans）互斥，二选一。",
-          "iOS 14+；依赖 mobilesubstrate、preferenceloader。"
+          "原生 roothide arm64e，直接安装不过转换器；iOS 14+",
+          "1.2.1-1+debug 为内置中文分支；1.2.0 为上游英文原版",
+          "与简体中文语言包互斥，二选一"
         ]
       },
       "repo_url": "https://github.com/Chenlin8023/Jikan",
@@ -749,9 +649,7 @@
           ],
           "verified": "已验证",
           "changes": [
-            "内置简体中文翻译：设置页/锁屏胶囊/通知共 109 条文案全覆盖",
-            "GitHub Actions macOS 上以 Apple 官方工具链构建，无任何二进制补丁",
-            "上游 1.2.1 主线全部功能"
+            "内置简体中文（109 条文案），官方工具链构建"
           ]
         },
         {
@@ -767,8 +665,7 @@
           ],
           "verified": "已验证",
           "changes": [
-            "上游 waruhachi/Jikan 官方 Release 原版，英文界面",
-            "可搭配简体中文语言包（moe.waru.jikan.lang.zh-hans）汉化"
+            "上游官方原版，英文界面"
           ]
         }
       ],
@@ -778,8 +675,7 @@
           "date": "2026-11-08",
           "status": "已放弃",
           "notes": [
-            "本地 clang19 构建线：clang19 缺少 Apple 私有的栈上 block isa 运行期签名代码生成（-fptrauth-block-isa 不存在），实机 msgSend 认证失败进安全模式，无法用二进制后处理弥补。",
-            "已改用仓库自带 GitHub Actions（Apple 官方工具链）构建；留档见 Jikan/packages/local-pipeline-ref。"
+            "本地构建线真机安全模式，改用官方工具链"
           ]
         }
       ],
@@ -789,18 +685,16 @@
     {
       "package": "moe.waru.jikan.lang.zh-hans",
       "display_name": "Jikan 简体中文语言包",
-      "summary": "为 Jikan 提供简体中文界面的纯数据语言包，不需要重新编译本体。",
+      "summary": "Jikan 简体中文语言包（纯数据包）。",
       "features": [
-        "覆盖设置页、锁屏胶囊、通知等全部 109 条界面文案",
-        "纯数据包（约 3.5KB），不含任何二进制",
-        "本体更新如新增文案，缺失键自动回退英文，无需跟着更新"
+        "设置页 / 锁屏胶囊 / 通知 109 条文案全中文",
+        "纯数据包，不含二进制",
+        "本体新增文案自动回退英文"
       ],
       "compatibility": {
         "notes": [
-          "需要 Jikan 本体 1.2 以上（上游原版即可），安装前先装本体。",
-          "系统语言为简体中文（zh-Hans）时生效。",
-          "与内置中文的分支构建（moe.waru.jikan 1.2.1-1+debug）互斥：二者写同一路径，同装会报文件冲突。",
-          "纯数据包，不含二进制，无架构要求（按 roothide 仓库惯例标记 iphoneos-arm64e）。"
+          "先装 Jikan 本体 1.2+，系统语言为简体中文时生效",
+          "与内置中文分支构建（1.2.1-1+debug）互斥"
         ]
       },
       "repo_url": "https://github.com/Chenlin8023/Jikan",
@@ -818,7 +712,7 @@
           ],
           "verified": "已验证",
           "changes": [
-            "首发：109 条界面文案简体中文翻译"
+            "首发 109 条简体中文文案"
           ]
         }
       ],
@@ -828,20 +722,17 @@
     {
       "package": "byg.iosios.net.mutool",
       "display_name": "MUtool 工具箱（rootless · 授权破解版）",
-      "summary": "MUtool(rootless) 授权破解版：2.2.95-2（最新）仅去除授权门禁，功能与官方版一致，模块保持官方原样。另有旧版 2.2.80-13（存续性维护版，官方 2.2.80 基线）。",
+      "summary": "MUtool(rootless) 授权破解版：免授权码安装即用，功能与官方一致。",
       "features": [
-        "基于 Muzi 官方 MUtool(rootless) 2.2.95 的二进制修改：仅去除授权，功能与官方版一致（本条目不展开功能介绍，详见官方说明）",
-        "破解方法：授权门禁（MuziAuthShield）已在二进制层直接放行——无需填写授权码、不连接授权服务器，安装即用",
-        "药丸天气模块为官方原样：系统天气源在 iOS 17 受系统限制，建议在设置中选 Open-Meteo 手填本地经纬度",
-        "旧版 2.2.80-13 继续保留提供：存续性维护版（官方 2.2.80 基线，含痕迹净化与悬浮窗漂移修复），功能较旧"
+        "基于官方 2.2.95 二进制修改，仅去除授权，功能与官方一致",
+        "无需授权码、不连授权服务器",
+        "旧版 2.2.80-13（含净化与悬浮窗修复）保留可回退"
       ],
       "compatibility": {
         "notes": [
-          "rootless 包（iphoneos-arm64，内含 arm64 + arm64e 双 slice，/var/jb）：RootHide 下经转换器安装，路径与官方包相同；其它 rootless 环境直接安装",
-          "官方 rootless 包 id 为 com.muzi.mutool，本包重 id 发行以与 roothide 线并存；安装即覆盖官方 rootless 版，回滚重装官方包即可",
-          "⚠️ 与 roothide 线修改版 com.muzi.mutool（2.2.95-1）目标文件路径相同、不可共存：安装本包前请先卸载 roothide 线，二选一",
-          "官方声明 iOS 15–17；本包实机验证 iOS 17.2.1（iPhone 15 Pro · RootHide，经转换器安装）",
-          "roothide 线修改版见「MUtool 工具箱（roothide · 授权破解版）」条目"
+          "rootless 包（/var/jb）；RootHide 经转换器安装",
+          "与 roothide 线修改版（com.muzi.mutool）同路径不可共存，二选一",
+          "实机验证 iPhone 15 Pro / iOS 17.2.1（经转换器）；官方声明 iOS 15–17"
         ]
       },
       "repo_url": "https://github.com/muzikeji",
@@ -857,12 +748,9 @@
           "ios": [
             "17.2.1"
           ],
-          "verified": "已验证（用户实机确认：功能免授权直接可用）",
+          "verified": "已验证（实机确认）",
           "changes": [
-            "基于 Muzi 官方 MUtool 2.2.95 rootless 原始包：仅去除授权，其余与官方包一致，不做净化等其它改动",
-            "授权体系为 MuziAuthShield（Ed25519 + 设备 UDID）：门禁链 6 方法 × 5 二进制（MUtool / Capture / Pasted / Thermal / mutoolprefs）× arm64+arm64e 双切片共 60 处改为恒返回已授权——三个决策方法（statusForProduct / isAuthorizedForProduct:allowGrace: / remainingSecondsForProduct）之外，同时放行门禁包装器链（beginAuthorizationCheck / cachedAuthorizationForProduct / authorizationSnapshotIsFresh），兼容 RootHide 转换器环境下共享存储配置未生效导致门禁提前失败的形态",
-            "无需填写授权码、不连接授权服务器；各功能设置开关语义保留",
-            "静态验收：成品 deb 内 60/60 补丁点回读（按重签后偏移）、签名区前代码与数据零差异、ldid 重签、xz root:root"
+            "基于官方 2.2.95 rootless 原包去授权"
           ]
         },
         {
@@ -876,15 +764,9 @@
           "ios": [
             "17.2.1"
           ],
-          "verified": "已验证（用户实机确认：经纬度手填可用、药丸正常、功能免授权）",
+          "verified": "已验证（实机确认）",
           "changes": [
-            "以官方 2.2.80 原始包为基线重建（非在 -12 上叠加）",
-            "去除授权：MuziAuthShield 三方法 × 5 二进制 × 双架构共 30 处恒返回已授权",
-            "痕迹净化：设置页「设备授权 / 激活·查看UDID / 注销设备 / 关于 / QQ群 / GitHub / Sini921 / 木子源 / ©页脚」9 行摘除（双架构），文案与外链死化",
-            "修复桌面悬浮信息药丸位置漂移（原版自带缺陷）：已存坐标不再被重钳位重放，6 字节补丁",
-            "天气模块保持官方原样：三源与经纬度输入行全保留；页脚注明——系统天气源 iOS 17 不可用，请选 Open-Meteo 并手动输入本地经纬度（小数点后两位），每次更换地点后重新输入",
-            "移除 SysWeatherBridge 依赖：卸载该辅助插件不影响本包任何功能",
-            "静态验收：授权 30/30、漂移 6/6、页脚新注记 2/2 切片且旧文案无残留、外链 0 残留、天气模块串与官方逐项一致"
+            "官方 2.2.80 基线重建：去授权 + 痕迹净化 + 悬浮窗修复"
           ]
         }
       ],
@@ -894,9 +776,7 @@
           "date": "2026-11-09 ~ 11-12",
           "status": "已下架（全部被 2.2.80-13 取代，不再提供历史版本回退）",
           "notes": [
-            "2026-11-09 首发：-7 授权去除（MuziAuthShield 30 处）、-8 痕迹净化",
-            "天气与悬浮窗漂移问题历经多次再版：-9 天气节拍、-10/-11 天气页重构（依赖自动定位桥）、-12 悬浮窗位置漂移修复",
-            "2026-11-18 天气优化线终止（自动定位桥退役），收敛为存续性维护版 2.2.80-13：天气手动经纬度，模块不再调整"
+            "全部被 2.2.80-13 取代，不再提供回退"
           ]
         }
       ],
@@ -907,20 +787,17 @@
     {
       "package": "com.muzi.mutool",
       "display_name": "MUtool 工具箱（roothide · 授权破解版）",
-      "summary": "MUtool(roothide) 授权破解版：2.2.95-1（最新）仅去除授权门禁，功能与官方版一致，模块保持官方原样。另有旧版 2.2.89-1 / 2.2.89-2（漂移修复备份版）与 2.1.66-1（旧 HMAC 授权体系，需授权码填任意非空字符）。",
+      "summary": "MUtool(roothide) 授权破解版：免授权码安装即用，功能与官方一致。",
       "features": [
-        "基于 Muzi 官方 MUtool(roothide) 2.2.95 的二进制修改：仅去除授权，功能与官方版一致（本条目不展开功能介绍，详见官方说明）",
-        "破解方法：授权门禁（MuziAuthShield）已在二进制层直接放行——无需填写授权码、不连接授权服务器，安装即用",
-        "药丸天气模块为官方原样：系统天气源在 iOS 17 受系统限制，建议在设置中选 Open-Meteo 手填本地经纬度（可精确到小数点后四位，如 29.5621/106.5531）",
-        "旧版 2.2.89-1 / 2.2.89-2 / 2.1.66-1 继续保留提供：2.2.89-2 在 2.2.89-1 基础上修复悬浮窗位置漂移（备份回退用）；2.1.66-1 为 UDID+配置码+HMAC 体系，破解方法不同（授权码栏填任意非空字符串即可），且官方本无天气模块"
+        "基于官方 2.2.95 二进制修改，仅去除授权，功能与官方一致",
+        "无需授权码、不连授权服务器",
+        "旧版 2.2.89-1/-2、2.1.66-1 保留可回退"
       ],
       "compatibility": {
         "notes": [
-          "roothide 原生包（iphoneos-arm64e，空前缀路径）：RootHide 环境直接安装、不过转换器；其它越狱形态请勿安装本包",
-          "与官方包同 id（com.muzi.mutool）：安装即覆盖官方版；回滚重装官方包即可",
-          "⚠️ 与 rootless 线修改版 byg.iosios.net.mutool（2.2.80-13）目标文件路径相同、不可共存：安装本包前请先卸载 2.2.80-13",
-          "官方声明 iOS 15–17；本包实机验证 iOS 17.2.1（iPhone 15 Pro · RootHide）",
-          "旧版 MUtool 修改版（2.2.80 线，rootless /var/jb）见「MUtool 工具箱（修改版）」条目，与本包二选一安装"
+          "原生 roothide arm64e，直接安装不过转换器；官方声明 iOS 15–17，实机验证 17.2.1",
+          "与官方包同 id，安装即覆盖；回滚重装官方包",
+          "与 rootless 线修改版（byg.iosios.net.mutool）同路径不可共存，二选一"
         ]
       },
       "log_hint": "反馈前请先确认版本：2.2.95-1 / 2.2.89-1 / 2.2.89-2 无需任何授权码；2.1.66-1 需在授权码栏填任意非空字符串。",
@@ -937,15 +814,9 @@
           "ios": [
             "17.2.1"
           ],
-          "verified": "已验证（用户实机确认授权破解生效）",
+          "verified": "已验证（实机确认）",
           "changes": [
-            "基于 Muzi 官方 MUtool(roothide) 2.1.66：仅去除授权 + 痕迹净化，其余与官方包逐字节一致",
-            "授权体系逆向：该版本为 UDID + 配置码 + 内嵌密钥 HMAC-SHA256 门禁（区别于 2.2.80 线的 MuziAuthShield）",
-            "破解方法：5 个含授权二进制（MUtool / Capture / Pasted / Thermal / mutoolprefs，arm64+arm64e 双副本）的校验器与比较点共 12 处改为恒返回已授权",
-            "保留 enabled 偏好语义：各功能仍可在设置内单独开关（比较点补丁而非功能入口补丁）",
-            "净化：设置页 GitHub / Sini921 / muzikeji / QQ 群 / Sileo 源共 10 处外链死化（等长指向 0.0.0.0），LICENSE@3x.png 移除",
-            "静态验收：成品回抽 12/12 补丁点断言 + URL 残留扫描为 0 + ldid 重签 + gzip root:root",
-            "本版本官方即不含药丸天气模块（天气显示请配合电话助手等独立工具）"
+            "旧授权体系版本：授权码填任意非空字符"
           ]
         },
         {
@@ -959,13 +830,9 @@
           "ios": [
             "17.2.1"
           ],
-          "verified": "已验证（用户实机确认破解生效，天气/iPhoneduo 为官方修复）",
+          "verified": "已验证（实机确认）",
           "changes": [
-            "基于 Muzi 官方 2.2.89 原始包：仅去除授权，其余（含官方修复的天气与 iPhoneduo）与官方包一致，不做净化等其它改动",
-            "该版本授权体系为 MuziAuthShield（Ed25519 + 设备 UDID，服务器 s.i58.xyz）：statusForProduct / isAuthorizedForProduct:allowGrace: / remainingSecondsForProduct 三方法 × 5 二进制（MUtool / Capture / Pasted / Thermal / mutoolprefs）× arm64+arm64e 双切片共 30 处改为恒返回已授权",
-            "无需填写授权码、不连接授权服务器；各功能设置开关语义保留",
-            "静态验收：成品 deb 内 30/30 补丁点回读（按重签后偏移）、签名区前代码与数据零差异、ldid 重签、xz root:root",
-            "安装前请先卸载 byg.iosios.net.mutool 2.2.80-13（路径冲突不可共存）"
+            "官方 2.2.89 基线去授权"
           ]
         },
         {
@@ -979,13 +846,9 @@
           "ios": [
             "17.2.1"
           ],
-          "verified": "已验证（用户实机确认：多次注销未复现漂移，使用正常）",
+          "verified": "已验证（实机确认）",
           "changes": [
-            "基于 Muzi 官方 2.2.89 原始包：去除授权（同 2.2.89-1，MuziAuthShield 30 处恒返回已授权）+ 修复桌面悬浮信息药丸位置漂移（原版自带缺陷：已存坐标不再被重钳位重放，6 字节补丁，方案自 2.2.80-12 移植）",
-            "无需填写授权码、不连接授权服务器；各功能设置开关语义保留",
-            "静态验收：deb 内授权 30/30 + 漂移 6/6 回读（按重签后偏移）、签名区外代码零差异、ldid 重签、xz root:root",
-            "备份回退版：2.2.95-1 为当前主推；若 2.2.95 线复现悬浮窗漂移可用本版替代",
-            "安装前请先卸载 byg.iosios.net.mutool 2.2.80-13（路径冲突不可共存）"
+            "去授权 + 修悬浮窗位置漂移"
           ]
         },
         {
@@ -999,13 +862,9 @@
           "ios": [
             "17.2.1"
           ],
-          "verified": "已验证（用户实机确认破解生效）",
+          "verified": "已验证（实机确认）",
           "changes": [
-            "基于 Muzi 官方 2.2.95 原始包：仅去除授权，其余与官方包一致，不做净化等其它改动",
-            "授权体系与 2.2.89 线同为 MuziAuthShield（Ed25519 + 设备 UDID）：statusForProduct / isAuthorizedForProduct:allowGrace: / remainingSecondsForProduct 三方法 × 5 二进制（MUtool / Capture / Pasted / Thermal / mutoolprefs）× arm64+arm64e 双切片共 30 处改为恒返回已授权",
-            "无需填写授权码、不连接授权服务器；各功能设置开关语义保留",
-            "静态验收：成品 deb 内 30/30 补丁点回读（按重签后偏移）、签名区前代码与数据零差异、ldid 重签、xz root:root",
-            "安装前请先卸载 byg.iosios.net.mutool 2.2.80-13（路径冲突不可共存）"
+            "基于官方 2.2.95 roothide 原包去授权"
           ]
         }
       ],

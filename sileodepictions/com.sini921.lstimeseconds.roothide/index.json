@@ -9,7 +9,7 @@
       "views": [
         {
           "class": "DepictionMarkdownView",
-          "markdown": "- 锁屏时钟显示实时秒数，自动跟随设备 12/24 小时制\n- 字号缩放 0.60–1.25（默认 0.88），以壁纸原始字号为基准，不抖动\n- 上下位置调节 ±100pt，解除裁剪；时钟水平自动居中\n- 长按进入壁纸自定义时静默旁路，滤镜、字体、景深编辑保持系统原样\n- 熄屏暂停刷新省电，亮屏立即恢复并校准\n- 设置面板：启用开关、字号滑块、位置滑块、注销按钮"
+          "markdown": "- 锁屏时钟显示实时秒数，自动跟随 12/24 小时制\n- 字号缩放（0.60–1.25）与上下位置可调\n- 熄屏暂停刷新省电，亮屏立即恢复\n- 自带设置面板（启用 / 字号 / 位置 / 注销）"
         }
       ]
     },
@@ -56,7 +56,7 @@
         },
         {
           "class": "DepictionMarkdownView",
-          "markdown": "- AOD 暗屏不走秒：系统在暗屏使用 1Hz Flipbook，应用层无法刷新；亮屏立即恢复。\n- 这是独立的 RootHide Package ID；从旧包升级必须先卸载旧 LSTimeSeconds，再安装本包。\n- 卸载旧包不会删除偏好设置（com.b4db1r3.lstsprefs），新包会沿用。\n- 原生 roothide arm64e，不要过 RootHide 转换器。"
+          "markdown": "- 实机验证 iPhone 15 Pro / iOS 17.2.1；原生 roothide arm64e，直接安装\n- AOD 暗屏不走秒（系统限制），亮屏立即恢复\n- 从旧 LSTimeSeconds 升级需先卸旧包，偏好设置会沿用"
         }
       ]
     },
@@ -81,7 +81,7 @@
         },
         {
           "class": "DepictionMarkdownView",
-          "markdown": "- 修复原版在 iOS 17 上完全不生效的四个根因：版本硬编码、通知名不匹配、旧键误判、字号震荡\n- 改为直接 hook CSProminentDisplayViewController / CSProminentTimeView，并保留 SBFLockScreenDateView 兜底\n- 四通道写文字；字号以原始值为基准单次锚定，避免每秒抖动\n- 原生 roothide arm64e，不经转换器"
+          "markdown": "- 修复原版在 iOS 17 不生效，新增字号/位置调节与熄屏省电"
         },
         {
           "class": "DepictionTableButtonView",
@@ -102,7 +102,7 @@
         },
         {
           "class": "DepictionMarkdownView",
-          "markdown": "- 自建 PSListController 面板在真机进入设置闪退；根因是 arm64e 类元数据缺少 PAC。版本号已回退到 0.0.7-1。"
+          "markdown": "- 自建面板真机闪退，撤回，版本回退 0.0.7-1"
         }
       ]
     },

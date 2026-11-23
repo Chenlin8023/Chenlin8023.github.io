@@ -9,7 +9,7 @@
       "views": [
         {
           "class": "DepictionMarkdownView",
-          "markdown": "- 观测：每 5 分钟输出端口 / fd 统计、Top 调用点、xpcA / xpcF / p5 指标\n- 既有止血：CFUserNotification 应答端口宽限后取消、摘除泄漏 RunLoop 源、fd 超水位时复核后关闭\n- XPC 接管-宽限-回收：钩住 xpc_connection_create*，栈回溯确认插件驱动且服务名命中回收名单\n- 512 槽指针去重；5 秒清扫；默认 10 秒宽限后 xpc_connection_cancel + xpc_release\n- 系统框架直呼与纯系统路径的连接不碰；回收服务名单可通过 config.plist 配置\n- 原生 roothide arm64e"
+          "markdown": "- 定期输出端口 / fd 统计与泄漏指标\n- 泄漏连接按回收名单自动清理（名单可配置）\n- 系统框架路径的连接不碰"
         }
       ]
     },
@@ -56,7 +56,7 @@
         },
         {
           "class": "DepictionMarkdownView",
-          "markdown": "- 项目已更名 CallAssistLeakGuard；当前发布包 ID 仍是旧 ID com.local.callassistportleak，2.1.0 更名重建待完成。\n- 2.1.0 待真机确认；2.0.14 已验证回收有效。\n- 从旧 ID（com.local.bioprotectleakguard）升级必须先卸载旧包；新旧共存会双重注入。\n- 原生 roothide arm64e，不要过 RootHide 转换器。"
+          "markdown": "- 原生 roothide arm64e，不过转换器\n- 2.0.14 已验证回收有效；2.1.0 待真机确认\n- 从旧 ID（com.local.bioprotectleakguard）升级先卸旧包"
         }
       ]
     },
@@ -81,7 +81,7 @@
         },
         {
           "class": "DepictionMarkdownView",
-          "markdown": "- 项目更名 CallAssistLeakGuard，计划将包 ID 改为 com.local.callassistleakguard（当前发布包仍为旧 ID）\n- 功能同 2.0.14：回收服务名单可配置；新增 p5 端口净增量指标\n- 2.0.13 起确认 powerdxpc 回收有效（xpcA≈xpcF）"
+          "markdown": "- 更名 CallAssistLeakGuard（包 ID 待改），回收名单可配置"
         },
         {
           "class": "DepictionTableButtonView",
@@ -102,7 +102,7 @@
         },
         {
           "class": "DepictionMarkdownView",
-          "markdown": "- 回收服务范围改为可配置（XPCReclaimServices，前缀匹配）；安全条件不变。"
+          "markdown": "- 回收服务范围可配置"
         },
         {
           "class": "DepictionSubheaderView",
@@ -117,7 +117,7 @@
         },
         {
           "class": "DepictionMarkdownView",
-          "markdown": "- 真机日志确认 powerdxpc 回收有效；统计行新增 p5 端口净增量。"
+          "markdown": "- 真机确认回收有效，新增 p5 指标"
         },
         {
           "class": "DepictionSubheaderView",
@@ -132,7 +132,7 @@
         },
         {
           "class": "DepictionMarkdownView",
-          "markdown": "- 2.0.7 修复 arm64e __cfstring isa 未认证导致的 SIGBUS；2.0.8 修复定时器被 ARC 释放、清扫从未运行的 bug。"
+          "markdown": "- 修复崩溃与定时器问题"
         }
       ]
     },

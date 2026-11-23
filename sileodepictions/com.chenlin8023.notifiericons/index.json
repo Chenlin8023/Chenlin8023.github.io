@@ -9,7 +9,7 @@
       "views": [
         {
           "class": "DepictionMarkdownView",
-          "markdown": "- 状态栏下方显示选中 App 的通知小图标；有未读角标才出现，清零即消失（安卓通知语义）\n- 真实 App 图标（format 0–12 自动探测 + 磁盘缓存 + 字母头像兜底）\n- 最多 6 个，按应用名排序；独立悬浮窗渲染，与灵动岛布局解耦\n- 位置预设（居中 / 岛左 / 岛右）+ 微调；改动即时生效；仅桌面 / 锁屏显示，进 App 自动消失\n- 设置面板选择 App；2 秒轮询 + badge 事件双通道"
+          "markdown": "- 状态栏下方显示选中 App 的通知小图标，清零即消失\n- 真实 App 图标，最多 6 个，位置预设 + 微调\n- 仅桌面 / 锁屏显示，进 App 自动消失\n- 设置面板选择应用，改动即时生效"
         }
       ]
     },
@@ -56,7 +56,7 @@
         },
         {
           "class": "DepictionMarkdownView",
-          "markdown": "- 仅注入 SpringBoard：桌面 / 锁屏生效，App 内不显示。\n- 0.9.2 起无角标化：不再显示红色角标数字，图标出现即通知、清零即隐藏。\n- rootless（/var/jb）包，arm64；RootHide 需转换或使用 rootless 引导环境。"
+          "markdown": "- 实机验证 iPhone 15 Pro / iOS 17.2.1；rootless（/var/jb）\n- 仅注入 SpringBoard，App 内不显示\n- 无数字角标：图标出现即通知"
         }
       ]
     },
@@ -81,7 +81,7 @@
         },
         {
           "class": "DepictionMarkdownView",
-          "markdown": "- 形态定稿：整体移除红点与数字角标及全部相关开关\n- 修复 0.9.1 角标 x 坐标漏加图标偏移、全部叠画在第一个图标上的潜伏 bug\n- 图标出现即通知、清零即隐藏；面板脚注明示无通知时不显示图标行"
+          "markdown": "- 移除角标数字形态定稿；修复图标重叠"
         },
         {
           "class": "DepictionTableButtonView",
@@ -102,7 +102,7 @@
         },
         {
           "class": "DepictionMarkdownView",
-          "markdown": "- 新增角标显示数字开关；日志 128KB 轮转，保留 .1/.2 两份历史。"
+          "markdown": "- 角标数字开关与日志轮转"
         },
         {
           "class": "DepictionSubheaderView",
@@ -117,7 +117,7 @@
         },
         {
           "class": "DepictionMarkdownView",
-          "markdown": "- 真图标链路打通：启动期捕获 SBIconController → iconManager → iconModel.leafIconForIdentifier: → SBIconImageCache。"
+          "markdown": "- 真图标链路打通"
         }
       ]
     },

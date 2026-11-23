@@ -9,7 +9,7 @@
       "views": [
         {
           "class": "DepictionMarkdownView",
-          "markdown": "- 每个 App 独立音量（最低静音）+ 混音层无条件生效：参与同播的 App 都注入即可同时播放\n- 调音量 = App 内摇一摇唤出临时弹窗：拖动预览、松手生效、0.4 秒后弹窗自动收场（无常驻悬浮物）\n- 无白名单 / 无总开关 / 无 Sileo 依赖：deb 仅为下载容器，dylib 导入 JailFools/TrollFools 注入即用\n- App 更新后 JailFools/TrollFools 持久化注入自动恢复，无需重新注入；引擎升级时重注一次即可\n- 崩溃 App 止血开关：在对应 App 数据容器 Documents/ 下新建空文件 vmaq-novolume，重启 App 只关音量挂钩（混音照常）"
+          "markdown": "- 每个 App 独立音量 + 混音无条件生效\n- App 内摇一摇唤出弹窗：拖动预览、松手生效、自动收场\n- dylib 由 JailFools / TrollFools 注入，App 更新后自动恢复\n- 崩溃止血：对应 App 容器建 vmaq-novolume 空文件"
         }
       ]
     },
@@ -56,7 +56,7 @@
         },
         {
           "class": "DepictionMarkdownView",
-          "markdown": "- 使用方式：下载 .deb 导入 JailFools/TrollFools 注入应用（或在 Filza 中解压 deb 提取 VolManAudioQueue.dylib 后导入），杀 App 重开生效。dylib 原文件直链：https://chenlin8023.github.io/dylib/VolManAudioQueue-2.1.4.dylib\n- 与「音量管理器」full 版二选一：已装 full 请先用 Sileo 卸载再注入 dylib，否则双引擎叠加导致音量异常。\n- 已知限制①：部分 App 只支持混音、无法调节音量（其音频路径未经过挂钩层）——混音不受影响。\n- 已知限制②：个别 App 注入音量挂钩后闪退（实测：红果短剧 / 汽水音乐）——在对应数据容器 Documents/ 下新建空文件 vmaq-novolume 并重启 App，即可避免闪退（只保证混音，无音量调节）。\n- 弹窗为临时卡片：拖动仅预览、松手生效并自动收场；期间部分 App（如抖音普通作品）可能短暂暂停视频，弹窗收场后自动恢复播放。\n- 环境：rootless（/var/jb）dylib；实测 iPhone 15 Pro / iOS 17.2.1 / RootHide（JailFools 注入）。\n- 本包安装到 Sileo 不会有任何效果（dylib 带惰性过滤器不会被加载）；请勿依赖安装生效。"
+          "markdown": "- 使用：下载 deb 提取 dylib，注入后杀 App 重开生效\n- 与「音量管理器」full 版二选一，勿双引擎\n- 实测 iPhone 15 Pro / iOS 17.2.1 / RootHide（JailFools）\n- 已知限制：部分 App 只能混音不可调音量；个别 App 闪退按上条止血"
         }
       ]
     },
@@ -81,7 +81,7 @@
         },
         {
           "class": "DepictionMarkdownView",
-          "markdown": "- 首发 dylib 注入版：引擎无闸门化（无白名单 / 无总开关），配置自包含在各 App 容器 Documents/\n- 摇一摇唤出音量弹窗：拖动纯预览、松手唯一写入并生效、0.4 秒自动收场（无常驻悬浮物）\n- 混音层无条件生效（App 更新后持久化注入自动恢复）；写盘与刷新全部在后台串行队列\n- vmaq-novolume per-App 止血开关：闪退 App 只关音量挂钩保混音\n- 2.1.0 → 2.1.4 内部迭代定案：手势=摇一摇（双指手势与抖音其他插件 / AppLock+ 冲突）、写盘移出主线程、弹窗自动收场"
+          "markdown": "- 首发 dylib 注入版：无白名单无总开关，配置自包含"
         },
         {
           "class": "DepictionTableButtonView",

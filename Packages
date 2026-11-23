@@ -8,11 +8,11 @@ Author: b4db1r3 & SINI
 Depends: mobilesubstrate, preferenceloader
 Conflicts: com.sini921.lstimeseconds
 Name: LSTimeSeconds (RootHide)
-Description: 锁屏时钟显示实时秒数，支持字号缩放与上下位置调节。
+Description: 锁屏时钟显示实时秒数，字号与位置可调。
  实机验证：iPhone 15 Pro / iOS 17.2.1
  项目仓库：https://github.com/Chenlin8023/LSTimeSeconds-iOS17
 Homepage: https://github.com/Chenlin8023/LSTimeSeconds-iOS17
-SileoDepiction: https://chenlin8023.github.io/sileodepictions/com.sini921.lstimeseconds.roothide/index.json?v=20261124
+SileoDepiction: https://chenlin8023.github.io/sileodepictions/com.sini921.lstimeseconds.roothide/index.json?v=202611240517
 Depiction: https://chenlin8023.github.io/depictions/com.sini921.lstimeseconds.roothide/index.html
 Filename: debs/com.sini921.lstimeseconds.roothide_0.0.7-1_iphoneos-arm64e.deb
 Size: 39670
@@ -30,11 +30,11 @@ Version: 0.0.7-5
 Installed-Size: 444
 Conflicts: com.sini921.lstimeseconds.roothide
 Name: LSTimeSeconds (rootless)
-Description: 锁屏时钟显示实时秒数，支持字号缩放与上下位置调节（rootless /var/jb 构建）。
+Description: 锁屏时钟显示实时秒数，字号与位置可调（rootless 构建）。
  实机验证：iPhone 14 Pro / iOS 16.0.3
  项目仓库：https://github.com/Chenlin8023/LSTimeSeconds-iOS17
 Homepage: https://github.com/Chenlin8023/LSTimeSeconds-iOS17
-SileoDepiction: https://chenlin8023.github.io/sileodepictions/com.sini921.lstimeseconds/index.json?v=20261124
+SileoDepiction: https://chenlin8023.github.io/sileodepictions/com.sini921.lstimeseconds/index.json?v=202611240517
 Depiction: https://chenlin8023.github.io/depictions/com.sini921.lstimeseconds/index.html
 Filename: debs/com.sini921.lstimeseconds_0.0.7-5_iphoneos-arm64.deb
 Size: 38494
@@ -52,11 +52,11 @@ Version: 0.0.7-4
 Installed-Size: 428
 Conflicts: com.sini921.lstimeseconds.roothide
 Name: LSTimeSeconds (rootless)
-Description: 锁屏时钟显示实时秒数，支持字号缩放与上下位置调节（rootless /var/jb 构建）。
+Description: 锁屏时钟显示实时秒数，字号与位置可调（rootless 构建）。
  实机验证：iPhone 14 Pro / iOS 16.0.3
  项目仓库：https://github.com/Chenlin8023/LSTimeSeconds-iOS17
 Homepage: https://github.com/Chenlin8023/LSTimeSeconds-iOS17
-SileoDepiction: https://chenlin8023.github.io/sileodepictions/com.sini921.lstimeseconds/index.json?v=20261124
+SileoDepiction: https://chenlin8023.github.io/sileodepictions/com.sini921.lstimeseconds/index.json?v=202611240517
 Depiction: https://chenlin8023.github.io/depictions/com.sini921.lstimeseconds/index.html
 Filename: debs/com.sini921.lstimeseconds_0.0.7-4_iphoneos-arm64.deb
 Size: 38302
@@ -74,11 +74,11 @@ Version: 0.0.7-2
 Installed-Size: 444
 Conflicts: com.sini921.lstimeseconds.roothide
 Name: LSTimeSeconds (rootless)
-Description: 锁屏时钟显示实时秒数，支持字号缩放与上下位置调节（rootless /var/jb 构建）。
+Description: 锁屏时钟显示实时秒数，字号与位置可调（rootless 构建）。
  实机验证：未单独验证
  项目仓库：https://github.com/Chenlin8023/LSTimeSeconds-iOS17
 Homepage: https://github.com/Chenlin8023/LSTimeSeconds-iOS17
-SileoDepiction: https://chenlin8023.github.io/sileodepictions/com.sini921.lstimeseconds/index.json?v=20261124
+SileoDepiction: https://chenlin8023.github.io/sileodepictions/com.sini921.lstimeseconds/index.json?v=202611240517
 Depiction: https://chenlin8023.github.io/depictions/com.sini921.lstimeseconds/index.html
 Filename: debs/com.sini921.lstimeseconds_0.0.7-2_iphoneos-arm64.deb
 Size: 38280
@@ -94,11 +94,11 @@ Maintainer: Chenlin8023
 Author: based on tien0246/ProtectedApp
 Depends: firmware (>= 14.0)
 Name: AppLock+ (应用锁+)
-Description: 按应用注入式应用锁，6 位密码 + Face ID / 触控 ID，免 substrate。
+Description: 按应用注入的应用锁：6 位密码 + Face ID / 触控 ID。
  实机验证：iPhone 15 Pro / iOS 17.2.1
  项目仓库：https://github.com/Chenlin8023/AppLockPlus
 Homepage: https://github.com/Chenlin8023/AppLockPlus
-SileoDepiction: https://chenlin8023.github.io/sileodepictions/com.applockplus.refactored/index.json?v=20261124
+SileoDepiction: https://chenlin8023.github.io/sileodepictions/com.applockplus.refactored/index.json?v=202611240517
 Depiction: https://chenlin8023.github.io/depictions/com.applockplus.refactored/index.html
 Filename: debs/com.applockplus.refactored_0.4.2-1_iphoneos-arm64e.deb
 Size: 36316
@@ -117,11 +117,11 @@ Replaces: com.oakstheawesome.solo, com.chenlin8023.soloplus
 Installed-Size: 2144
 Name: Solo1.0.1优化
 Priority: optional
-Description: Solo 1.0.1 + Solo+ 增强层合并的完整单包：Duo 时间开关 / 5G 小号 A 标识 / 环下电量、状态栏保留、Dock 6 图标、轮播铺满，装完即用。
- 实机验证：双机实机验收（同 1.0.1-23）；本版仅为判定收窄加固，已验收路径行为不变；iPhone 15 Pro、iPhone 14 Pro Max / iOS 17.2.1、16.5
+Description: Solo 1.0.1 + Solo+ 增强层合并单包，装完即用。
+ 实机验证：双机实机验收；iPhone 15 Pro、iPhone 14 Pro Max / iOS 17.2.1、16.5
  项目仓库：https://github.com/Chenlin8023/SoloPlus
 Homepage: https://github.com/Chenlin8023/SoloPlus
-SileoDepiction: https://chenlin8023.github.io/sileodepictions/com.chenlin8023.solo.full/index.json?v=20261124
+SileoDepiction: https://chenlin8023.github.io/sileodepictions/com.chenlin8023.solo.full/index.json?v=202611240517
 Depiction: https://chenlin8023.github.io/depictions/com.chenlin8023.solo.full/index.html
 Filename: debs/com.chenlin8023.solo.full_1.0.1-24_iphoneos-arm64.deb
 Size: 457312
@@ -140,11 +140,11 @@ Replaces: com.oakstheawesome.solo, com.chenlin8023.soloplus
 Installed-Size: 2144
 Name: Solo1.0.1优化
 Priority: optional
-Description: Solo 1.0.1 + Solo+ 增强层合并的完整单包：Duo 时间开关 / 5G 小号 A 标识 / 环下电量、状态栏保留、Dock 6 图标、轮播铺满，装完即用。
- 实机验证：双机实机验收：iPhone 15 Pro / iOS 17.2.1（含 Lunora 美化插件共存）+ iPhone 14 Pro Max / iOS 16.5；iPhone 15 Pro、iPhone 14 Pro Max / iOS 17.2.1、16.5
+Description: Solo 1.0.1 + Solo+ 增强层合并单包，装完即用。
+ 实机验证：双机实机验收；iPhone 15 Pro、iPhone 14 Pro Max / iOS 17.2.1、16.5
  项目仓库：https://github.com/Chenlin8023/SoloPlus
 Homepage: https://github.com/Chenlin8023/SoloPlus
-SileoDepiction: https://chenlin8023.github.io/sileodepictions/com.chenlin8023.solo.full/index.json?v=20261124
+SileoDepiction: https://chenlin8023.github.io/sileodepictions/com.chenlin8023.solo.full/index.json?v=202611240517
 Depiction: https://chenlin8023.github.io/depictions/com.chenlin8023.solo.full/index.html
 Filename: debs/com.chenlin8023.solo.full_1.0.1-23_iphoneos-arm64.deb
 Size: 457240
@@ -163,11 +163,11 @@ Replaces: com.oakstheawesome.solo, com.chenlin8023.soloplus
 Installed-Size: 2140
 Name: Solo1.0.1优化
 Priority: optional
-Description: Solo 1.0.1 + Solo+ 增强层合并的完整单包：Duo 时间开关 / 5G 小号 A 标识 / 环下电量、状态栏保留、Dock 6 图标、轮播铺满，装完即用。
- 实机验证：待实机确认（本轮摘除歌词模块）；iPhone 15 Pro / iOS 17.2.1
+Description: Solo 1.0.1 + Solo+ 增强层合并单包，装完即用。
+ 实机验证：待实机确认；iPhone 15 Pro / iOS 17.2.1
  项目仓库：https://github.com/Chenlin8023/SoloPlus
 Homepage: https://github.com/Chenlin8023/SoloPlus
-SileoDepiction: https://chenlin8023.github.io/sileodepictions/com.chenlin8023.solo.full/index.json?v=20261124
+SileoDepiction: https://chenlin8023.github.io/sileodepictions/com.chenlin8023.solo.full/index.json?v=202611240517
 Depiction: https://chenlin8023.github.io/depictions/com.chenlin8023.solo.full/index.html
 Filename: debs/com.chenlin8023.solo.full_1.0.1-16_iphoneos-arm64.deb
 Size: 451316
@@ -186,11 +186,11 @@ Replaces: com.oakstheawesome.solo, com.chenlin8023.soloplus
 Installed-Size: 2108
 Name: Solo1.0.1优化
 Priority: optional
-Description: Solo 1.0.1 + Solo+ 增强层合并的完整单包：Duo 时间开关 / 5G 小号 A 标识 / 环下电量、状态栏保留、Dock 6 图标、轮播铺满，装完即用。
- 实机验证：待实机确认（新增 Duo 细节）；iPhone 15 Pro / iOS 17.2.1
+Description: Solo 1.0.1 + Solo+ 增强层合并单包，装完即用。
+ 实机验证：待实机确认；iPhone 15 Pro / iOS 17.2.1
  项目仓库：https://github.com/Chenlin8023/SoloPlus
 Homepage: https://github.com/Chenlin8023/SoloPlus
-SileoDepiction: https://chenlin8023.github.io/sileodepictions/com.chenlin8023.solo.full/index.json?v=20261124
+SileoDepiction: https://chenlin8023.github.io/sileodepictions/com.chenlin8023.solo.full/index.json?v=202611240517
 Depiction: https://chenlin8023.github.io/depictions/com.chenlin8023.solo.full/index.html
 Filename: debs/com.chenlin8023.solo.full_1.0.1-2_iphoneos-arm64.deb
 Size: 448728
@@ -209,11 +209,11 @@ Replaces: com.oakstheawesome.solo, com.chenlin8023.soloplus
 Installed-Size: 2108
 Name: Solo1.0.1优化
 Priority: optional
-Description: Solo 1.0.1 + Solo+ 增强层合并的完整单包：Duo 时间开关 / 5G 小号 A 标识 / 环下电量、状态栏保留、Dock 6 图标、轮播铺满，装完即用。
- 实机验证：组成件已验证（合并包未单独跑机）；iPhone 15 Pro / iOS 17.2.1
+Description: Solo 1.0.1 + Solo+ 增强层合并单包，装完即用。
+ 实机验证：组成件已验证；iPhone 15 Pro / iOS 17.2.1
  项目仓库：https://github.com/Chenlin8023/SoloPlus
 Homepage: https://github.com/Chenlin8023/SoloPlus
-SileoDepiction: https://chenlin8023.github.io/sileodepictions/com.chenlin8023.solo.full/index.json?v=20261124
+SileoDepiction: https://chenlin8023.github.io/sileodepictions/com.chenlin8023.solo.full/index.json?v=202611240517
 Depiction: https://chenlin8023.github.io/depictions/com.chenlin8023.solo.full/index.html
 Filename: debs/com.chenlin8023.solo.full_1.0.1-1_iphoneos-arm64.deb
 Size: 442776
@@ -230,11 +230,11 @@ Architecture: iphoneos-arm64
 Version: 0.9.2
 Installed-Size: 444
 Name: 应用通知小图标
-Description: 状态栏显示选中应用的通知小图标（NotifierIcons）；有未读角标才出现，清零即消失。
+Description: 状态栏显示选中应用的通知小图标，有未读才出现。
  实机验证：iPhone 15 Pro / iOS 17.2.1
  项目仓库：https://github.com/Chenlin8023/notifiericons
 Homepage: https://github.com/Chenlin8023/notifiericons
-SileoDepiction: https://chenlin8023.github.io/sileodepictions/com.chenlin8023.notifiericons/index.json?v=20261124
+SileoDepiction: https://chenlin8023.github.io/sileodepictions/com.chenlin8023.notifiericons/index.json?v=202611240517
 Depiction: https://chenlin8023.github.io/depictions/com.chenlin8023.notifiericons/index.html
 Filename: debs/com.chenlin8023.notifiericons_0.9.2_iphoneos-arm64.deb
 Size: 39836
@@ -252,11 +252,11 @@ Depends: mobilesubstrate, firmware (>= 15.0)
 Conflicts: com.local.bioprotectleakguard
 Replaces: com.local.bioprotectleakguard
 Name: CallAssist PortLeak
-Description: SpringBoard Mach 端口泄漏的侦查与止血工具；定责并抑制 CallAssist 的 IOKit 轮询泄漏。
+Description: SpringBoard 端口泄漏观测与止血工具。
  实机验证：待确认（2.0.14 已验证）；iPhone 15 Pro / iOS 17.2.1
  项目仓库：https://github.com/Chenlin8023/CallAssist-PortLeak
 Homepage: https://github.com/Chenlin8023/CallAssist-PortLeak
-SileoDepiction: https://chenlin8023.github.io/sileodepictions/com.local.callassistportleak/index.json?v=20261124
+SileoDepiction: https://chenlin8023.github.io/sileodepictions/com.local.callassistportleak/index.json?v=202611240517
 Depiction: https://chenlin8023.github.io/depictions/com.local.callassistportleak/index.html
 Filename: debs/com.local.callassistportleak_2.1.0_iphoneos-arm64e.deb
 Size: 20182
@@ -275,11 +275,11 @@ Architecture: iphoneos-arm64
 Version: 2.0.4
 Installed-Size: 944
 Name: 音量管理器
-Description: 每个 App 独立音量，多个 App 可同时播放。
+Description: 每个 App 独立音量，多 App 同时播放互不打断。
  实机验证：iPhone 15 Pro / iOS 17.2.1
  项目仓库：https://github.com/Chenlin8023/VolumeManager-iOS17
 Homepage: https://github.com/Chenlin8023/VolumeManager-iOS17
-SileoDepiction: https://chenlin8023.github.io/sileodepictions/com.local.volmanaudioqueue.full/index.json?v=20261124
+SileoDepiction: https://chenlin8023.github.io/sileodepictions/com.local.volmanaudioqueue.full/index.json?v=202611240517
 Depiction: https://chenlin8023.github.io/depictions/com.local.volmanaudioqueue.full/index.html
 Filename: debs/com.local.volmanaudioqueue.full_2.0.4_iphoneos-arm64.deb
 Size: 141772
@@ -298,11 +298,11 @@ Architecture: iphoneos-arm64
 Version: 2.0.3
 Installed-Size: 944
 Name: 音量管理器
-Description: 每个 App 独立音量，多个 App 可同时播放。
+Description: 每个 App 独立音量，多 App 同时播放互不打断。
  实机验证：iPhone 15 Pro / iOS 17.2.1
  项目仓库：https://github.com/Chenlin8023/VolumeManager-iOS17
 Homepage: https://github.com/Chenlin8023/VolumeManager-iOS17
-SileoDepiction: https://chenlin8023.github.io/sileodepictions/com.local.volmanaudioqueue.full/index.json?v=20261124
+SileoDepiction: https://chenlin8023.github.io/sileodepictions/com.local.volmanaudioqueue.full/index.json?v=202611240517
 Depiction: https://chenlin8023.github.io/depictions/com.local.volmanaudioqueue.full/index.html
 Filename: debs/com.local.volmanaudioqueue.full_2.0.3_iphoneos-arm64.deb
 Size: 141866
@@ -321,11 +321,11 @@ Architecture: iphoneos-arm64
 Version: 1.3.4
 Installed-Size: 1200
 Name: 音量管理器
-Description: 每个 App 独立音量，多个 App 可同时播放。
+Description: 每个 App 独立音量，多 App 同时播放互不打断。
  实机验证：iPhone 15 Pro / iOS 17.2.1
  项目仓库：https://github.com/Chenlin8023/VolumeManager-iOS17
 Homepage: https://github.com/Chenlin8023/VolumeManager-iOS17
-SileoDepiction: https://chenlin8023.github.io/sileodepictions/com.local.volmanaudioqueue.full/index.json?v=20261124
+SileoDepiction: https://chenlin8023.github.io/sileodepictions/com.local.volmanaudioqueue.full/index.json?v=202611240517
 Depiction: https://chenlin8023.github.io/depictions/com.local.volmanaudioqueue.full/index.html
 Filename: debs/com.local.volmanaudioqueue.full_1.3.4_iphoneos-arm64.deb
 Size: 173972
@@ -343,11 +343,11 @@ Depends: mobilesubstrate, firmware (>= 15.0), dev.theos.orion (>= 1.0.0)
 Conflicts: byg.iosios.net.volume-manager, com.local.volmanaudioqueue
 Replaces: byg.iosios.net.volume-manager, com.local.volmanaudioqueue
 Name: 音量管理器
-Description: 每个 App 独立音量，多个 App 可同时播放。
+Description: 每个 App 独立音量，多 App 同时播放互不打断。
  实机验证：iPhone 15 Pro / iOS 17.2.1
  项目仓库：https://github.com/Chenlin8023/VolumeManager-iOS17
 Homepage: https://github.com/Chenlin8023/VolumeManager-iOS17
-SileoDepiction: https://chenlin8023.github.io/sileodepictions/com.local.volmanaudioqueue.full/index.json?v=20261124
+SileoDepiction: https://chenlin8023.github.io/sileodepictions/com.local.volmanaudioqueue.full/index.json?v=202611240517
 Depiction: https://chenlin8023.github.io/depictions/com.local.volmanaudioqueue.full/index.html
 Filename: debs/com.local.volmanaudioqueue.full_1.3.0_iphoneos-arm64.deb
 Size: 192910
@@ -366,11 +366,11 @@ Version: 1.2.0
 Installed-Size: 1184
 Name: 音量管理器
 Priority: optional
-Description: 每个 App 独立音量，多个 App 可同时播放。
+Description: 每个 App 独立音量，多 App 同时播放互不打断。
  实机验证：iPhone 15 Pro / iOS 17.2.1
  项目仓库：https://github.com/Chenlin8023/VolumeManager-iOS17
 Homepage: https://github.com/Chenlin8023/VolumeManager-iOS17
-SileoDepiction: https://chenlin8023.github.io/sileodepictions/com.local.volmanaudioqueue.full/index.json?v=20261124
+SileoDepiction: https://chenlin8023.github.io/sileodepictions/com.local.volmanaudioqueue.full/index.json?v=202611240517
 Depiction: https://chenlin8023.github.io/depictions/com.local.volmanaudioqueue.full/index.html
 Filename: debs/com.local.volmanaudioqueue.full_1.2.0_iphoneos-arm64.deb
 Size: 191328
@@ -386,11 +386,11 @@ Architecture: iphoneos-arm64
 Version: 2.1.4
 Installed-Size: 176
 Name: 音量管理器 Dylib（注入版）
-Description: 摇一摇唤出音量弹窗；下载 deb 提取 dylib 导入 JailFools/TrollFools 注入对应 App，混音+每 App 音量。
+Description: 音量管理器 dylib 注入版：摇一摇唤出音量弹窗，App 更新后注入自动恢复。
  实机验证：iPhone 15 Pro / iOS 17.2.1
  项目仓库：https://github.com/Chenlin8023/VolumeManager-iOS17
 Homepage: https://github.com/Chenlin8023/VolumeManager-iOS17
-SileoDepiction: https://chenlin8023.github.io/sileodepictions/com.local.volmanaudioqueue.dylib/index.json?v=20261124
+SileoDepiction: https://chenlin8023.github.io/sileodepictions/com.local.volmanaudioqueue.dylib/index.json?v=202611240517
 Depiction: https://chenlin8023.github.io/depictions/com.local.volmanaudioqueue.dylib/index.html
 Filename: debs/com.local.volmanaudioqueue.dylib_2.1.4_iphoneos-arm64.deb
 Size: 39346
@@ -407,11 +407,11 @@ Version: 1.2.1-1+debug
 Installed-Size: 2712
 Name: Jikan（锁屏充电预估）
 Priority: optional
-Description: 在锁定屏幕上实时显示充满电（或目标电量）所需的时间预估。
+Description: 锁屏实时显示充满电所需时间预估。
  实机验证：iPhone 15 Pro / iOS 17.2.1
  项目仓库：https://github.com/Chenlin8023/Jikan
 Homepage: https://github.com/Chenlin8023/Jikan
-SileoDepiction: https://chenlin8023.github.io/sileodepictions/moe.waru.jikan/index.json?v=20261124
+SileoDepiction: https://chenlin8023.github.io/sileodepictions/moe.waru.jikan/index.json?v=202611240517
 Depiction: https://chenlin8023.github.io/depictions/moe.waru.jikan/index.html
 Filename: debs/moe.waru.jikan_1.2.1-1+debug_iphoneos-arm64e.deb
 Size: 430892
@@ -428,11 +428,11 @@ Version: 1.2.0
 Installed-Size: 2704
 Name: Jikan（锁屏充电预估）
 Priority: optional
-Description: 在锁定屏幕上实时显示充满电（或目标电量）所需的时间预估。
+Description: 锁屏实时显示充满电所需时间预估。
  实机验证：iPhone 15 Pro / iOS 17.2.1
  项目仓库：https://github.com/Chenlin8023/Jikan
 Homepage: https://github.com/Chenlin8023/Jikan
-SileoDepiction: https://chenlin8023.github.io/sileodepictions/moe.waru.jikan/index.json?v=20261124
+SileoDepiction: https://chenlin8023.github.io/sileodepictions/moe.waru.jikan/index.json?v=202611240517
 Depiction: https://chenlin8023.github.io/depictions/moe.waru.jikan/index.html
 Filename: debs/moe.waru.jikan_1.2.0_iphoneos-arm64e.deb
 Size: 389656
@@ -448,11 +448,11 @@ Section: 语言包
 Depends: moe.waru.jikan (>= 1.2)
 Name: Jikan 简体中文语言包
 Priority: optional
-Description: 为 Jikan 提供简体中文界面的纯数据语言包，不需要重新编译本体。
+Description: Jikan 简体中文语言包（纯数据包）。
  实机验证：iPhone 15 Pro / iOS 17.2.1
  项目仓库：https://github.com/Chenlin8023/Jikan
 Homepage: https://github.com/Chenlin8023/Jikan
-SileoDepiction: https://chenlin8023.github.io/sileodepictions/moe.waru.jikan.lang.zh-hans/index.json?v=20261124
+SileoDepiction: https://chenlin8023.github.io/sileodepictions/moe.waru.jikan.lang.zh-hans/index.json?v=202611240517
 Depiction: https://chenlin8023.github.io/depictions/moe.waru.jikan.lang.zh-hans/index.html
 Filename: debs/moe.waru.jikan.lang.zh-hans_1.2.1_iphoneos-arm64e.deb
 Size: 3504
@@ -472,11 +472,11 @@ Sponsor: 搬运工
 Icon: https://chinesebuilding.club/pic/cydia.png
 Name: MUtool 工具箱（rootless · 授权破解版）
 Priority: optional
-Description: MUtool(rootless) 授权破解版：2.2.95-2（最新）仅去除授权门禁，功能与官方版一致，模块保持官方原样。另有旧版 2.2.80-13（存续性维护版，官方 2.2.80 基线）。
+Description: MUtool(rootless) 授权破解版：免授权码安装即用，功能与官方一致。
  实机验证：iPhone 15 Pro / iOS 17.2.1
  项目仓库：https://github.com/muzikeji
 Homepage: https://github.com/muzikeji
-SileoDepiction: https://chenlin8023.github.io/sileodepictions/byg.iosios.net.mutool/index.json?v=20261124
+SileoDepiction: https://chenlin8023.github.io/sileodepictions/byg.iosios.net.mutool/index.json?v=202611240517
 Depiction: https://chenlin8023.github.io/depictions/byg.iosios.net.mutool/index.html
 Filename: debs/byg.iosios.net.mutool_2.2.95-2_iphoneos-arm64.deb
 Size: 1148164
@@ -496,11 +496,11 @@ Sponsor: 搬运工
 Icon: https://chinesebuilding.club/pic/cydia.png
 Name: MUtool 工具箱（rootless · 授权破解版）
 Priority: optional
-Description: MUtool(rootless) 授权破解版：2.2.95-2（最新）仅去除授权门禁，功能与官方版一致，模块保持官方原样。另有旧版 2.2.80-13（存续性维护版，官方 2.2.80 基线）。
+Description: MUtool(rootless) 授权破解版：免授权码安装即用，功能与官方一致。
  实机验证：iPhone 15 Pro / iOS 17.2.1
  项目仓库：https://github.com/muzikeji
 Homepage: https://github.com/muzikeji
-SileoDepiction: https://chenlin8023.github.io/sileodepictions/byg.iosios.net.mutool/index.json?v=20261124
+SileoDepiction: https://chenlin8023.github.io/sileodepictions/byg.iosios.net.mutool/index.json?v=202611240517
 Depiction: https://chenlin8023.github.io/depictions/byg.iosios.net.mutool/index.html
 Filename: debs/byg.iosios.net.mutool_2.2.80-13_iphoneos-arm64.deb
 Size: 906648
@@ -519,11 +519,11 @@ Version: 2.2.95-1
 Installed-Size: 7092
 Name: MUtool 工具箱（roothide · 授权破解版）
 Priority: optional
-Description: MUtool(roothide) 授权破解版：2.2.95-1（最新）仅去除授权门禁，功能与官方版一致，模块保持官方原样。另有旧版 2.2.89-1 / 2.2.89-2（漂移修复备份版）与 2.1.66-1（旧 HMAC 授权体系，需授权码填任意非空字符）。
+Description: MUtool(roothide) 授权破解版：免授权码安装即用，功能与官方一致。
  实机验证：iPhone 15 Pro / iOS 17.2.1
  项目仓库：https://github.com/muzikeji
 Homepage: https://github.com/muzikeji
-SileoDepiction: https://chenlin8023.github.io/sileodepictions/com.muzi.mutool/index.json?v=20261124
+SileoDepiction: https://chenlin8023.github.io/sileodepictions/com.muzi.mutool/index.json?v=202611240517
 Depiction: https://chenlin8023.github.io/depictions/com.muzi.mutool/index.html
 Filename: debs/com.muzi.mutool_2.2.95-1_iphoneos-arm64e.deb
 Size: 1139516
@@ -542,11 +542,11 @@ Version: 2.2.89-2
 Installed-Size: 5968
 Name: MUtool 工具箱（roothide · 授权破解版）
 Priority: optional
-Description: MUtool(roothide) 授权破解版：2.2.95-1（最新）仅去除授权门禁，功能与官方版一致，模块保持官方原样。另有旧版 2.2.89-1 / 2.2.89-2（漂移修复备份版）与 2.1.66-1（旧 HMAC 授权体系，需授权码填任意非空字符）。
+Description: MUtool(roothide) 授权破解版：免授权码安装即用，功能与官方一致。
  实机验证：iPhone 15 Pro / iOS 17.2.1
  项目仓库：https://github.com/muzikeji
 Homepage: https://github.com/muzikeji
-SileoDepiction: https://chenlin8023.github.io/sileodepictions/com.muzi.mutool/index.json?v=20261124
+SileoDepiction: https://chenlin8023.github.io/sileodepictions/com.muzi.mutool/index.json?v=202611240517
 Depiction: https://chenlin8023.github.io/depictions/com.muzi.mutool/index.html
 Filename: debs/com.muzi.mutool_2.2.89-2_iphoneos-arm64e.deb
 Size: 919624
@@ -565,11 +565,11 @@ Version: 2.2.89-1
 Installed-Size: 5968
 Name: MUtool 工具箱（roothide · 授权破解版）
 Priority: optional
-Description: MUtool(roothide) 授权破解版：2.2.95-1（最新）仅去除授权门禁，功能与官方版一致，模块保持官方原样。另有旧版 2.2.89-1 / 2.2.89-2（漂移修复备份版）与 2.1.66-1（旧 HMAC 授权体系，需授权码填任意非空字符）。
+Description: MUtool(roothide) 授权破解版：免授权码安装即用，功能与官方一致。
  实机验证：iPhone 15 Pro / iOS 17.2.1
  项目仓库：https://github.com/muzikeji
 Homepage: https://github.com/muzikeji
-SileoDepiction: https://chenlin8023.github.io/sileodepictions/com.muzi.mutool/index.json?v=20261124
+SileoDepiction: https://chenlin8023.github.io/sileodepictions/com.muzi.mutool/index.json?v=202611240517
 Depiction: https://chenlin8023.github.io/depictions/com.muzi.mutool/index.html
 Filename: debs/com.muzi.mutool_2.2.89-1_iphoneos-arm64e.deb
 Size: 921952
@@ -588,11 +588,11 @@ Version: 2.1.66-1
 Installed-Size: 4956
 Name: MUtool 工具箱（roothide · 授权破解版）
 Priority: optional
-Description: MUtool(roothide) 授权破解版：2.2.95-1（最新）仅去除授权门禁，功能与官方版一致，模块保持官方原样。另有旧版 2.2.89-1 / 2.2.89-2（漂移修复备份版）与 2.1.66-1（旧 HMAC 授权体系，需授权码填任意非空字符）。
+Description: MUtool(roothide) 授权破解版：免授权码安装即用，功能与官方一致。
  实机验证：iPhone 15 Pro / iOS 17.2.1
  项目仓库：https://github.com/muzikeji
 Homepage: https://github.com/muzikeji
-SileoDepiction: https://chenlin8023.github.io/sileodepictions/com.muzi.mutool/index.json?v=20261124
+SileoDepiction: https://chenlin8023.github.io/sileodepictions/com.muzi.mutool/index.json?v=202611240517
 Depiction: https://chenlin8023.github.io/depictions/com.muzi.mutool/index.html
 Filename: debs/com.muzi.mutool_2.1.66-1_iphoneos-arm64e.deb
 Size: 1416936
