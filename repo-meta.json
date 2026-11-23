@@ -208,6 +208,75 @@
       "section": "系统"
     },
     {
+      "package": "com.chenlin8023.solo.full",
+      "display_name": "Solo1.0.1优化",
+      "summary": "Solo 1.0.1 + Solo+ 增强层合并的完整单包：状态栏保留、Duo 独立开关、5G 小号 A、Dock 6 图标、轮播铺满，装完即用。",
+      "features": [
+        "合并完整版：内含 Solo 1.0.1 本体与 Solo+ 增强层，装一个包即含全部功能，不必再单独安装官方 Solo",
+        "状态栏：接管 Solo 在主屏渐隐系统状态栏的行为，强制保留；不需要时可在面板关掉",
+        "Duo：新增独立显示开关，隐藏 Duo 状态环/读数时轮播仍可单独使用（Duo 尺寸与轮播硬绑定，不做单独调节）",
+        "数据标识：Duo 读数里的 5G 显示为「5G + 小号大写 A」（62% 字号、底部与 5G 同基线）；LTE/3G/E/Wi-Fi 保持原样，字号 0.8–1.4、字重可调",
+        "Dockicon：竖排 Dock 上限 5/6（6 个图标需手动拖入，依赖 Atria）；图标大小 0.85–1.0 走 iconContentScale，只缩图标内容、不改 Dock 列表几何",
+        "Dock 防呆：6 图标时 Dock 列表自动下移；切回 5 并注销后约 3 秒自动把最后一个图标迁回主屏，迁移失败则保持 6 并写日志，不强制弹出（不再进安全模式）",
+        "轮播铺满：复位 Solo 的 content scale fix（约 0.83），小组件内容铺满 364×170 轮播背景，可在面板关闭（可能裁切小组件边缘）",
+        "面板：入口注入 Solo 设置页「增强」分组——状态栏 / Duo / 轮播铺满 / Dockicon + 调试日志开关，开关写 Solo 自己的域，注销后保持",
+        "构建：arm64 + arm64e FAT 双切片（SpringBoard 只加载 arm64e 切片），arm64e CFString isa PAC 补丁（diversity 0x6AE1）+ ldid -S，产物断言 isa: auth>0 plain=0",
+        "Solo 原文件逐字节未改：只新增 SoloPlus.dylib / SoloPlus.plist 与 5 个面板 plist，卸载不会留下被改写的 Solo 二进制"
+      ],
+      "compatibility": {
+        "notes": [
+          "独立 Package ID（com.chenlin8023.solo.full）：安装时经 Conflicts/Replaces 自动替换官方 com.oakstheawesome.solo 1.0.1 与独立增强包 com.chenlin8023.soloplus，避免双注入；卸载本包会一并移除 Solo 本体。",
+          "合并包 1.0.1-1 由已实机验收的 Solo+ 1.0.0 与未改动的官方 Solo 1.0.1 原文件重组而成，本版未单独跑机；安装后请 respring，并确认 设置 → Solo → 增强 可正常进入。",
+          "本包内含 Solo 1.0.1 原文件，Solo 的二进制与商标归原作者 OaksTheAwesome；打包方未获上游再分发授权，仅作本机整合发布，请勿二次转载本 deb。",
+          "基于 Solo 1.0.1 私有实现（UnduoWidgetCarousel / SBDockIconListView / SBIconListModel 等），Solo 或 iOS 升级后可能需要适配。",
+          "rootless 包（/var/jb，iphoneos-arm64），面向 iOS 16–17；RootHide 经转换器安装，原生 roothide 环境请用转换器或 rootless 引导。",
+          "Dock 6 图标与竖排布局依赖 Atria（实测 1.4.1-11）；未安装 Atria 时其余功能正常。",
+          "已知限制：Dock 拖动/换位仍有可感知卡顿；Dock 内放文件夹时不建议同时开 6 图标；轮播铺满可能裁切小组件边缘。",
+          "面板入口：设置 → Solo → 增强；调试日志默认关闭，开启后写 /var/jb/var/mobile/Library/Preferences/Solo/Logs/Solo.log（[Solo+] 前缀）。"
+        ]
+      },
+      "repo_url": "https://github.com/Chenlin8023/SoloPlus",
+      "log_hint": "日志：/var/jb/var/mobile/Library/Preferences/Solo/Logs/Solo.log（Solo+ 行以 [Solo+] 开头；面板「写入调试日志」开启后才有）",
+      "variants": [
+        {
+          "version": "1.0.1-1",
+          "date": "2026-11-23",
+          "arch": "iphoneos-arm64",
+          "jailbreak": "rootless（/var/jb）",
+          "devices": [
+            "iPhone 15 Pro"
+          ],
+          "ios": [
+            "17.2.1"
+          ],
+          "verified": "组成件已验证（合并包未单独跑机）",
+          "changes": [
+            "首个上架版：Solo 1.0.1 本体 + Solo+ 1.0.0 增强层合并为单包，独立 Package ID，安装即替换官方 Solo 与旧独立增强包",
+            "状态栏：Solo 隐藏系统状态栏时强制保留（面板可关）",
+            "Duo：独立显示/隐藏开关，轮播可单独使用",
+            "数据标识：5G 显示为 5G + 小号大写 A（62% 字号、底部同基线），其余制式不变",
+            "Dockicon：上限 5/6、图标内容缩放 0.85–1.0、6 图标自动下移",
+            "Dock 工程修复：缩放改用 iconContentScale（开合 App/文件夹落点不再回拉）、6→5 注销后自动迁回多余图标且失败回滚、有效上限不低于当前图标数、Dock model 指针身份匹配隔离文件夹模型",
+            "轮播铺满：复位 content scale fix（约 0.83），铺满 364×170 背景，可关闭",
+            "构建：arm64+arm64e FAT 双切片 + CFString isa PAC 补丁 + ldid -S，终审断言 isa: auth>0 plain=0；Solo 原文件逐字节未改"
+          ]
+        }
+      ],
+      "history": [
+        {
+          "version": "1.0.0",
+          "date": "2026-11-23",
+          "status": "未上架（本地测试）",
+          "notes": [
+            "独立增强包 com.chenlin8023.soloplus 1.0.0（依赖官方 Solo 1.0.1），iPhone 15 Pro / iOS 17.2.1 / RootHide 实机验收。",
+            "本地合并包 Solo_1.0.1+sp1.0.0 只用于自测，未上架；1.0.1-1 起以独立 id 上架。"
+          ]
+        }
+      ],
+      "category": "系统",
+      "section": "系统"
+    },
+    {
       "package": "com.chenlin8023.notifiericons",
       "display_name": "应用通知小图标",
       "summary": "状态栏显示选中应用的通知小图标（NotifierIcons）；有未读角标才出现，清零即消失。",
