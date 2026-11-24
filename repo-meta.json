@@ -200,23 +200,43 @@
       ],
       "features": [
         "内含 Solo 1.0.1 本体，安装即替换官方包",
-        "状态栏保留：与 Lunora 等美化插件共存（可关）",
-        "Duo 开关：独立显示 / 时间 / 环下电量（可微调）",
+        "状态栏保留开关：主屏原生状态栏可保持显示（默认开）",
+        "美化共存：自动适配 Lunora 胶囊 / 电话助手，按优先级显示",
+        "Duo 开关：独立显示 / 时间 / 环下电量",
         "数据标识：5G 显示为「5G + 小号 A」，字号字重可调",
-        "Dockicon：竖排 Dock 6 图标、图标缩放、自动下移（依赖 Atria）",
+        "Dock 图标上限 5–8（大小/间距请用 Atria 等插件调节）",
         "轮播铺满：小组件铺满轮播背景（可关）"
       ],
       "compatibility": {
         "notes": [
-          "实机验证 iPhone 15 Pro / iOS 17.2.1（含 Lunora）与 iPhone 14 Pro Max / iOS 16.5",
-          "rootless（/var/jb），面向 iOS 16–17；安装自动替换官方 Solo，卸载随包移除",
-          "已知限制：Dock 拖动偶有卡顿；Dock 放文件夹不建议开 6 图标；轮播铺满可能裁切边缘",
+          "实机验证 iPhone 15 Pro / iOS 17.2.1（Lunora + 电话助手共存）；rootless（/var/jb），iOS 16–17",
+          "重要：状态栏美化类插件（Lunora 胶囊、电话助手等）请勿同时开启多个，二选一；切换配置后建议注销一次",
+          "已知限制：App 内 Lunora 胶囊与电话助手可能重合（二选一规避）；Dock 放文件夹不建议开 6+ 图标；轮播铺满可能裁切边缘",
           "内含 Solo 原文件（归原作者 OaksTheAwesome），请勿二次转载"
         ]
       },
       "repo_url": "https://github.com/Chenlin8023/SoloPlus",
       "log_hint": "日志：/var/jb/var/mobile/Library/Preferences/Solo/Logs/Solo.log（Solo+ 行以 [Solo+] 开头；面板「写入调试日志」开启后才有）",
       "variants": [
+        {
+          "version": "1.0.1-41",
+          "date": "2026-11-25",
+          "arch": "iphoneos-arm64",
+          "jailbreak": "rootless（/var/jb）",
+          "devices": [
+            "iPhone 15 Pro"
+          ],
+          "ios": [
+            "17.2.1"
+          ],
+          "verified": "实机验收",
+          "changes": [
+            "状态栏三方共存重做：Lunora 胶囊 / 电话助手 / 原生按优先级自动协同",
+            "锁屏状态栏：右列原生常显，左列跟随胶囊「锁屏可见」开关",
+            "关闭 Lunora 后主屏状态栏立即恢复，插件开关切换不再残留",
+            "Dock：图标上限扩展 5–8，修复拖入崩溃与错位；大小/间距交由 Atria 调节"
+          ]
+        },
         {
           "version": "1.0.1-24",
           "date": "2026-11-24",

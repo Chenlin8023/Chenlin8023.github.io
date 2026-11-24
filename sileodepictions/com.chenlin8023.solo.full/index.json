@@ -20,7 +20,7 @@
         },
         {
           "class": "DepictionMarkdownView",
-          "markdown": "- 内含 Solo 1.0.1 本体，安装即替换官方包\n- 状态栏保留：与 Lunora 等美化插件共存（可关）\n- Duo 开关：独立显示 / 时间 / 环下电量（可微调）\n- 数据标识：5G 显示为「5G + 小号 A」，字号字重可调\n- Dockicon：竖排 Dock 6 图标、图标缩放、自动下移（依赖 Atria）\n- 轮播铺满：小组件铺满轮播背景（可关）"
+          "markdown": "- 内含 Solo 1.0.1 本体，安装即替换官方包\n- 状态栏保留开关：主屏原生状态栏可保持显示（默认开）\n- 美化共存：自动适配 Lunora 胶囊 / 电话助手，按优先级显示\n- Duo 开关：独立显示 / 时间 / 环下电量\n- 数据标识：5G 显示为「5G + 小号 A」，字号字重可调\n- Dock 图标上限 5–8（大小/间距请用 Atria 等插件调节）\n- 轮播铺满：小组件铺满轮播背景（可关）"
         }
       ]
     },
@@ -32,6 +32,32 @@
           "class": "DepictionTableTextView",
           "title": "分类",
           "text": "系统"
+        },
+        {
+          "class": "DepictionSubheaderView",
+          "title": "v1.0.1-41 · iphoneos-arm64",
+          "useBoldText": true,
+          "useBottomMargin": true
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "机型",
+          "text": "iPhone 15 Pro"
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "验证 iOS",
+          "text": "17.2.1"
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "越狱形态",
+          "text": "rootless（/var/jb）"
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "验证状态",
+          "text": "实机验收"
         },
         {
           "class": "DepictionSubheaderView",
@@ -171,7 +197,7 @@
         },
         {
           "class": "DepictionMarkdownView",
-          "markdown": "- 实机验证 iPhone 15 Pro / iOS 17.2.1（含 Lunora）与 iPhone 14 Pro Max / iOS 16.5\n- rootless（/var/jb），面向 iOS 16–17；安装自动替换官方 Solo，卸载随包移除\n- 已知限制：Dock 拖动偶有卡顿；Dock 放文件夹不建议开 6 图标；轮播铺满可能裁切边缘\n- 内含 Solo 原文件（归原作者 OaksTheAwesome），请勿二次转载"
+          "markdown": "- 实机验证 iPhone 15 Pro / iOS 17.2.1（Lunora + 电话助手共存）；rootless（/var/jb），iOS 16–17\n- 重要：状态栏美化类插件（Lunora 胶囊、电话助手等）请勿同时开启多个，二选一；切换配置后建议注销一次\n- 已知限制：App 内 Lunora 胶囊与电话助手可能重合（二选一规避）；Dock 放文件夹不建议开 6+ 图标；轮播铺满可能裁切边缘\n- 内含 Solo 原文件（归原作者 OaksTheAwesome），请勿二次转载"
         }
       ]
     },
@@ -182,6 +208,27 @@
         {
           "class": "DepictionMarkdownView",
           "markdown": "Sileo：安装后在插件页长按「修改 / MODIFY」选择历史版本；Irisin / Zebra 可直接在版本列表选择。每个版本下方有 .deb 直链。"
+        },
+        {
+          "class": "DepictionSubheaderView",
+          "title": "v1.0.1-41 · 2026-11-25",
+          "useBoldText": true,
+          "useBottomMargin": true
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "验证",
+          "text": "实机验收"
+        },
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "- 状态栏三方共存重做：Lunora 胶囊 / 电话助手 / 原生按优先级自动协同\n- 锁屏状态栏：右列原生常显，左列跟随胶囊「锁屏可见」开关\n- 关闭 Lunora 后主屏状态栏立即恢复，插件开关切换不再残留\n- Dock：图标上限扩展 5–8，修复拖入崩溃与错位；大小/间距交由 Atria 调节"
+        },
+        {
+          "class": "DepictionTableButtonView",
+          "title": "下载 v1.0.1-41（iphoneos-arm64）",
+          "action": "https://chenlin8023.github.io/debs/com.chenlin8023.solo.full_1.0.1-41_iphoneos-arm64.deb",
+          "openExternal": true
         },
         {
           "class": "DepictionSubheaderView",
